@@ -1,0 +1,80 @@
+body {
+	background-color: #242424;
+	font-family: 'Lato', Helvetica, Arial;
+}
+
+#main {
+	background-color: #21478d;
+	height: 70vh;
+	min-height: 300px;
+}
+
+#logo {
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#contact {
+	text-align: center;
+	min-height: 200px;
+}
+
+#contact h2 {
+	color: #dcdcdc;
+	font-weight: 300;
+	padding-top: 2em;
+	margin: 0;
+	font-size: 1.6em;
+}
+
+#contact h2 em {
+	font-style: normal;
+	color: #fcfd8d;
+}
+
+#contact p {
+	color: #707070;
+	font-weight: 400;
+	margin: 1em 0 0;
+	font-size: 0.8em;
+}
+
+#contact p a {
+	color: #c0c0c0;
+	text-decoration: none;
+}
+
+#contact p a:hover {
+	color: #fff;
+}
+
+/* @media Rule */
+@media all and (max-width: 640px) {
+	#main {
+		min-height: 200px;
+		height: 60vh;
+	}
+	
+	#logo {
+		width: 200px;
+	}
+	
+	#contact h2 {
+		padding-top: 6vh;
+		margin: 0 10px;
+	}
+	
+	#contact p {
+		margin: 1em 10px 0;
+	}
+}
+
+/* @media Rule */
+@media all and (max-width: 359px) {
+	#contact h2 {
+		font-size: 1.3em;
+	}
+}

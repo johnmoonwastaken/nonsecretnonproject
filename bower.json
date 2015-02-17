@@ -1,0 +1,28 @@
+{
+  "name": "trainingful",
+  "version": "0.0.0",
+  "homepage": "www.trainingful.com",
+  "authors": [
+    "Renbo"
+  ],
+  "description": "Trainingful website",
+  "main": "index.php",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "training"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.4"
+  }
+}
