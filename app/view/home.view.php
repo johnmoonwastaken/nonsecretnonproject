@@ -121,6 +121,34 @@
 				<div class="3u form-date-cell">
 					<input type="text" id="searchbox-end" name="end" placeholder="End date" class="form-text form-date"><span class="icon calendar" style="font-size:1.2em;"></span>
 				</div>
+					<script>
+						var curDate = new Date();
+						var dd = curDate.getDate();
+						var mm = curDate.getMonth()+1;
+						var yyyy = curDate.getFullYear();
+						if(dd<10) {
+							dd='0'+dd
+							} 
+						if(mm<10) {
+						    mm='0'+mm
+						    } 
+						yyyy = yyyy+1;
+						document.getElementById('searchbox-end').value = yyyy+'-'+mm+'-'+dd;
+
+						curDate.setDate(curDate.getDate()+1);
+						dd = curDate.getDate();
+						mm = curDate.getMonth()+1;
+						yyyy = curDate.getFullYear();
+						if(dd<10) {
+							dd='0'+dd
+							} 
+						if(mm<10) {
+						    mm='0'+mm
+						    } 
+						document.getElementById('searchbox-start').value = yyyy+'-'+mm+'-'+dd;
+					</script>
+						
+					</script>
 					<script type="text/javascript">
     	           $(document).ready(function() {
         	          $('#searchbox-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
