@@ -1,6 +1,7 @@
 		<script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
 		<link href="../../bower_components/paper-button/paper-button.html" rel="import">
 		<link href="../../bower_components/paper-dialog/paper-action-dialog.html" rel="import">
+		<link href="../../bower_components/paper-slider/paper-slider.html" rel="import">
 		
 <style>
 	#main-section {
@@ -163,7 +164,6 @@
 	}
 		</style>
 
-
 		<div class="overlay">
 		</div>
 		<div class="container" id="topnav">
@@ -186,11 +186,26 @@
 					<div class="row 25% uniform">
 						<div class="12u" style="border-bottom:1px solid #d7d7d7">
 							<!--needs a box with vendor logo, then on right course name, date/time and location --> 
-							<!--paper slider for all 4 of the below ratings -->
-							<p><h4>OVERALL RATING</h4></p>
-							<p><h5> &nbsp;&nbsp;&nbsp; Instructor</h5></p> 
-							<p><h5> &nbsp;&nbsp;&nbsp; Facility/Comfort</h5></p> 
-							<p><h5> &nbsp;&nbsp;&nbsp; Materials/Handouts</h5></p> 
+							<!--appropriate number indication next to the slider -->
+							<p><h4>OVERALL RATING<paper-slider min="1" max="5" value="5" pin="true" snaps="true">
+							<style>
+								paper-slider::shadow #sliderKnobInner {
+  								background-color: #ffb830;
+								}
+								paper-slider::shadow #sliderBar::shadow #activeProgress {
+ 								background-color: #ffb830;
+								}
+								paper-slider::shadow #sliderKnobInner::before {
+ 								background-color: #ffb830;
+								}
+								paper-slider::shadow #sliderKnob > #sliderKnobInner::after {
+  								color: #000000;
+								}
+							</style>
+							</paper-slider></h4></p>
+							<p><h5> &nbsp;&nbsp;&nbsp; Instructor<paper-slider min="1" max="4" value="4" pin="true" snaps="true"></h5></p> 
+							<p><h5> &nbsp;&nbsp;&nbsp; Facility/Comfort<paper-slider min="1" max="4" value="4" pin="true" snaps="true"></h5></p> </h5></p> 
+							<p><h5> &nbsp;&nbsp;&nbsp; Materials/Handouts<paper-slider min="1" max="4" value="4" pin="true" snaps="true"></h5></p> </h5></p> 
 						</div>
 						<div class="12u" style="border-bottom:1px solid #d7d7d7">
 							<p><h4>Your Review</h4></p>
