@@ -22,152 +22,8 @@
 		font-weight: 400;
 		font-size: 0.8em;
 	}
-<<<<<<< HEAD
 
-	#signin-content {
-		overflow: hidden;
-		background: #fff;
-	}
-
-	#signin-content h1 {
-		margin: 0 0 0;
-		font-size: 2.2em;
-		color: #666;
-	}
-
-	#signin-content h2 {
-		font-weight:300;
-	}
-	
-	#signin-content h3 {
-		font-weight: 300;
-		font-size: 1.4em;
-	}
-
-	#signin-content h4 {
-		color:#666;
-		font-weight: 400;
-		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
-	}
-
-	#signin-content h5 {
-		color:#666;
-		margin-left: 0.2em;
-		font-weight: 400;
-		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
-	}
-
-	#signin-content .recommended {
-		font-size: 0.7em;
-		font-weight: 600;
-		color: #4ca166;
-	}
-	
-	#signin-content .benefits {
-		list-style: none;
-		font-weight: 400;
-		font-size: 0.85em;
-		color: #666;
-	}
-
-	#signin-content .benefits li:before {
-		content:"- ";
-	}
-	
-	#signin-content .benefits li {
-		margin-top: 2px;
-	}
-
-	#signin-content .button-other {
-		height: 40px;
-		width: 250px;
-		text-align: left;
-		border-radius: 3px;
-		border: 0;
-		color: #fff;
-		font-size: 1.2em;
-		box-shadow: 1px 1px 5px #888888;
-	}
-
-	#signin-content .other-linkedin {
-		background: #007bb6;
-	}
-	#signin-content .other-linkedin:hover {
-		background: #1086be;
-	}
-	#signin-content .other-facebook {
-		background: #3b579d;
-	}
-	#signin-content .other-facebook:hover {
-		background: #4c68af;
-	}
-
-	#signin-content .other-google {
-		background: #dd4b39;
-	}
-	#signin-content .other-google:hover {
-		background: #ef5f4d;
-	}
-
-	#signin-content .other-twitter {
-		background: #00b0ed;
-	}
-	#signin-content .other-twitter:hover {
-		background: #14bffb;
-	}
-
-	#signin-content .other-button-icon {
-		padding-top: 20px;
-		height: 40px;
-		width: 30px;
-		border-right: 1px solid rgba(0, 0, 0, .05);
-		float:left;
-		margin-left: 5px;
-	}
-
-	#signin-content .sign-up-other {
-		font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
-		font-size: 0.8em;
-		font-weight: 300;
-		margin: 10px 0px 0px 50px;
-	}
-
-	#signin-content .button-linkedin {
-		margin: 20px 0px 50px 80px;
-		height: 60px;
-		width: 350px;
-		text-align: left;
-		background: #007bb6;
-		border-radius: 3px;
-		border: 0;
-		color: #fff;
-		font-size: 2em;
-		box-shadow: 1px 1px 5px #888888;
-	}
-
-	#signin-content .button-linkedin:hover {
-		background: #1086be;
-	}
-	
-	#signin-content .linkedin-button-icon {
-		padding-top: 30px;
-		height: 60px;
-		width: 50px;
-		border-right: 1px solid rgba(0, 0, 0, .05);
-		float:left;
-		margin-left: 5px;
-	}
-	
-	#signin-content .sign-up-linkedin {
-		font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
-		font-size: 0.7em;
-		font-weight: 300;
-		margin: 15px 0px 0px 90px;
-	}
-		</style>
-=======
 </style>
->>>>>>> origin/master
 
 		<div class="overlay">
 		</div>
@@ -185,10 +41,183 @@
 		</div>
 
 
-			<paper-action-dialog backdrop id="review-dialog" heading="Write a Review"
+			<paper-action-dialog backdrop id="review-dialog"
 						  transition="paper-dialog-transition-bottom" style="display:none;">
-				<div id="signin-content">
-					<div class="row 25% uniform">
+
+<style>
+					#signin-content {
+						overflow: hidden;
+						background: #fff;
+					}
+
+					#signin-content h1 {
+						margin: 0 0 0;
+						font-size: 2.2em;
+						color: #666;
+					}
+
+					#signin-content h2 {
+						font-weight:300;
+					}
+					
+					#signin-content h3 {
+						font-weight: 300;
+						font-size: 1.4em;
+					}
+
+					#signin-content h4 {
+						color:#666;
+						font-weight: 400;
+						font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+					}
+
+					#signin-content h5 {
+						color:#666;
+						margin-left: 0.2em;
+						font-weight: 400;
+						font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+					}
+
+					#signin-content .recommended {
+						font-size: 0.7em;
+						font-weight: 600;
+						color: #4ca166;
+					}
+					
+					#signin-content .benefits {
+						list-style: none;
+						font-weight: 400;
+						font-size: 0.85em;
+						color: #666;
+					}
+
+					#signin-content .benefits li:before {
+						content:"- ";
+					}
+					
+					#signin-content .benefits li {
+						margin-top: 2px;
+					}
+
+					#signin-content .button-other {
+						height: 40px;
+						width: 250px;
+						text-align: left;
+						border-radius: 3px;
+						border: 0;
+						color: #fff;
+						font-size: 1.2em;
+						box-shadow: 1px 1px 5px #888888;
+					}
+
+					#signin-content .other-linkedin {
+						background: #007bb6;
+					}
+					#signin-content .other-linkedin:hover {
+						background: #1086be;
+					}
+					#signin-content .other-facebook {
+						background: #3b579d;
+					}
+					#signin-content .other-facebook:hover {
+						background: #4c68af;
+					}
+
+					#signin-content .other-google {
+						background: #dd4b39;
+					}
+					#signin-content .other-google:hover {
+						background: #ef5f4d;
+					}
+
+					#signin-content .other-twitter {
+						background: #00b0ed;
+					}
+					#signin-content .other-twitter:hover {
+						background: #14bffb;
+					}
+
+					#signin-content .other-button-icon {
+						padding-top: 20px;
+						height: 40px;
+						width: 30px;
+						border-right: 1px solid rgba(0, 0, 0, .05);
+						float:left;
+						margin-left: 5px;
+					}
+
+					#signin-content .sign-up-other {
+						font-family: 'Lato', Helvetica, Arial, Sans Serif;
+						font-size: 0.8em;
+						font-weight: 300;
+						margin: 10px 0px 0px 50px;
+					}
+
+					#signin-content .button-linkedin {
+						margin: 20px 0px 50px 80px;
+						height: 60px;
+						width: 350px;
+						text-align: left;
+						background: #007bb6;
+						border-radius: 3px;
+						border: 0;
+						color: #fff;
+						font-size: 2em;
+						box-shadow: 1px 1px 5px #888888;
+					}
+
+					#signin-content .button-linkedin:hover {
+						background: #1086be;
+					}
+					
+					#signin-content .linkedin-button-icon {
+						padding-top: 30px;
+						height: 60px;
+						width: 50px;
+						border-right: 1px solid rgba(0, 0, 0, .05);
+						float:left;
+						margin-left: 5px;
+					}
+					
+					#signin-content .sign-up-linkedin {
+						font-family: 'Lato', Helvetica, Arial, Sans Serif;
+						font-size: 0.7em;
+						font-weight: 300;
+						margin: 15px 0px 0px 90px;
+					}
+
+					#signin-content .header {
+						font-size:1.5em;
+						font-family: 'Lato', 'Open Sans', Helvetica, Arial, Sans Serif;
+						font-weight: 300;
+					}
+
+					.left-side-buttons {
+						border-right:1px solid #d7d7d7;
+						padding-bottom:10px;
+						margin-left:20px;
+						margin-top:20px;
+						padding-right:65px;
+						float:left;
+					}
+					.right-side-buttons {
+						padding-left:350px;
+						padding-bottom:10px;
+						padding-top:10px;
+					}
+					.clear {
+						clear: both;
+					}
+					.fine-print {
+						padding-top: 10px;
+						text-align:center;
+						font-size: 13px;
+						color: #aaaaaa;
+					}
+				</style>
+
+				<div id="signin-content"><span class="header">Write a Review</span>
+					<div>
 						<div class="12u" style="border-bottom:1px solid #d7d7d7">
 							<!--needs a box with vendor logo, then on right course name, date/time and location --> 
 							<!--appropriate number indication next to the slider -->
