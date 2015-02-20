@@ -218,7 +218,7 @@
 
 				<div id="signin-content"><span class="header">Write a Review</span>
 					<div>
-						<div class="12u" style="border-bottom:1px solid #d7d7d7;max-width:400px;">
+						<div class="12u" style="border-bottom:1px solid #d7d7d7;width:450px;">
 							<!--needs a box with vendor logo, then on right course name, date/time and location --> 
 							<!--appropriate number indication next to the slider -->
 							<p><h4>OVERALL RATING</h4></p>
