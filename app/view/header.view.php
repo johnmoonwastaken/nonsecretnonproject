@@ -218,28 +218,68 @@
 
 				<div id="signin-content"><span class="header">Write a Review</span>
 					<div>
-						<div class="12u" style="border-bottom:1px solid #d7d7d7">
+						<div class="12u" style="border-bottom:1px solid #d7d7d7;max-width:400px;">
 							<!--needs a box with vendor logo, then on right course name, date/time and location --> 
 							<!--appropriate number indication next to the slider -->
-							<p><h4>OVERALL RATING<paper-slider min="1" max="5" value="5" pin="true" snaps="true">
+							<p><h4>OVERALL RATING</h4></p>
+							<section>
+							<div>
+								<span style="width:80px;padding-left:13px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">1</span>
+								<span style="width:80px;padding-left:82px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">2</span>
+								<span style="width:80px;padding-left:81px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">3</span>
+								<span style="width:80px;padding-left:81px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">4</span>
+								<span style="width:80px;padding-left:82px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">5</span>
+							</div>
+							<paper-slider min="1" max="5" value="3" pin="true" snaps="true" style="width:400px;">
 							<style>
-								paper-slider::shadow #sliderKnobInner {
-  								background-color: #ffb830;
-								}
 								paper-slider::shadow #sliderBar::shadow #activeProgress {
- 								background-color: #ffb830;
-								}
-								paper-slider::shadow #sliderKnobInner::before {
- 								background-color: #ffb830;
+ 								background-color: #ffffff;
 								}
 								paper-slider::shadow #sliderKnob > #sliderKnobInner::after {
-  								color: #000000;
+  								color: #ffffff;
+								}
+								paper-slider::shadow #sliderBar::shadow #progressContainer {
+ 								background-color: #ffffff;
+								}
+								paper-slider::shadow #sliderBar::shadow #secondaryProgress {
+ 								background-color: #ffffff;
 								}
 							</style>
-							</paper-slider></h4></p>
-							<p><h5> &nbsp;&nbsp;&nbsp; Instructor<paper-slider min="1" max="4" value="4" pin="true" snaps="true"></h5></p> 
-							<p><h5> &nbsp;&nbsp;&nbsp; Facility/Comfort<paper-slider min="1" max="4" value="4" pin="true" snaps="true"></h5></p> </h5></p> 
-							<p><h5> &nbsp;&nbsp;&nbsp; Materials/Handouts<paper-slider min="1" max="4" value="4" pin="true" snaps="true"></h5></p> </h5></p> 
+							</paper-slider>
+
+							<div style="padding-left:8px;"><h5>Instructor</h5></div>
+							<div>
+								<span style="width:80px;padding-left:13px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Not Good</span>
+								<span style="width:80px;padding-left:22px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Ok</span>
+								<span style="width:80px;padding-left:47px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Good</span>
+							</div>
+							<paper-slider min="-1" max="1" value="0" pin="true" snaps="true"></paper-slider>
+
+							<div style="padding-left:8px;"><h5>Depth of Knowledge/Course</h5></div>
+							<div>
+								<span style="width:80px;padding-left:13px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Not Good</span>
+								<span style="width:80px;padding-left:22px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Ok</span>
+								<span style="width:80px;padding-left:47px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Good</span>
+							</div>
+							<paper-slider min="-1" max="1" value="0" pin="true" snaps="true"></paper-slider>
+
+							<div style="padding-left:8px;"><h5>Facilities & Food</h5></div>
+							<div>
+								<span style="width:80px;padding-left:13px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Not Good</span>
+								<span style="width:80px;padding-left:22px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Ok</span>
+								<span style="width:80px;padding-left:47px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Good</span>
+							</div>
+							<paper-slider min="-1" max="1" value="0" pin="true" snaps="true"></paper-slider>
+							
+							<div style="padding-left:8px;"><h5>Materials & Handouts</h5></div>
+							<div>
+								<span style="width:80px;padding-left:13px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Not Good</span>
+								<span style="width:80px;padding-left:22px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Ok</span>
+								<span style="width:80px;padding-left:47px;font-size:0.7em;font-weight:600;margin-bottom:-10px;">Good</span>
+							</div>
+							<paper-slider min="-1" max="1" value="0" pin="true" snaps="true"></paper-slider>
+							
+							</section>
 						</div>
 						<div class="12u" style="border-bottom:1px solid #d7d7d7">
 							<p><h4>Your Review</h4></p>
