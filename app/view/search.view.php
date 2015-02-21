@@ -247,7 +247,7 @@
 	}
 	
 	.sessions-list .session-price-container small {
-		line-height: 1em;
+		line-height: 1.5em;
 	}
 	
 	.sessions-list .chevron-container {
@@ -298,14 +298,14 @@
 		<div class="container">
 		
 			<div id="query-summary-bar" class="container">
-				<h1>Training about "PMP"</h1>
-				<p>In <strong>Vancouver, BC</strong> between <strong>09/30/2014</strong> and <strong>10/31/2014</strong> <small>(<a href="#">Change Search</a>)</small></p>
+				<h1>Training about "<?php echo $keywords; ?>"</h1>
+				<p>In <strong><?php if (empty($location)) { echo "everywhere"; } else echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="#">Change Search</a>)</small></p>
 			</div>
 			
 			<div id="search-control-bar" class="container">
 				<div class="row">
 					<div class="3u">
-						<h4 id="results-counter">Filter 245 results:</h4>
+						<h4 id="results-counter">Filter <?php echo $totalResults; ?> results:</h4>
 					</div>
 					<div class="9u">
 						<ul id="type-switcher">
@@ -332,6 +332,37 @@
 					</div>
 					<div class="9u">
 						<ul id="results-list">
+							<?php if (is_array($courseList) and $totalResults > 0) { foreach($courseList as $course): ?>
+							<li><!--
+								<div class="result-rating">
+									<span class="rating s4" title="4 stars"></span>
+								</div>
+							-->
+								<h2><a href="<?php echo $course['course_id']; ?>"><?php echo $course['course_name']; ?></a></h2>
+								<p><strong><?php echo $course['vendor_name']; ?>:</strong> <?php $pos=strpos($course['course_description'], ' ', 190); echo substr($course['course_description'],0,$pos) . '...';?></p>
+								<img src="images/samples/esi-international.png" alt="<?php echo $course['vendor_name']; ?>" class="company-logo">
+								<ul class="sessions-list">
+									<?php foreach($course['sessionList'] as $session): ?>
+									<li>
+										<a href="course?id=<?php echo $course['course_id']; ?>">
+											<div class="chevron-container">
+												<span class="icon chevron-right"></span>
+											</div>
+											<span class="icon calendar"></span>
+											<div class="session-price-container">
+												<h4><?php echo $session['cost']; ?></h4>
+												<small><?php echo $session['currency']; ?></small>
+											</div>
+											<h4 class="session-dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></h4>
+											<small class="session-location">Vancouver, BC</small>
+										</a>
+									</li>
+									<?php endforeach; ?>
+								</ul>
+							</li>
+							<?php endforeach; } else echo "<li>Sorry, no results available, please try another search.</li>";?>
+						</ul>
+							<!--
 							<li>
 								<div class="result-rating">
 									<span class="rating s4" title="4 stars"></span>
@@ -374,6 +405,7 @@
 								<small class="more-sessions"><a href="#">4 more sessions <span class="icon triangle-down"></span></a></small>
 							</li>
 							
+
 							<li>
 								<div class="result-rating">
 									<span class="rating s4" title="4 stars"></span>
@@ -400,6 +432,7 @@
 								<small class="more-sessions"><a href="#">4 more sessions <span class="icon triangle-down"></span></a></small>
 							</li>
 						</ul>
+						-->
 					</div>
 				</div>
 			</div>

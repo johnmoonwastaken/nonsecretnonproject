@@ -6,7 +6,7 @@ $search_sql = "
 	FROM categories
 	LEFT JOIN course
 	ON categories.category_id=course.category_id
-	WHERE type = ? and parent_category_id = '-1'
+	WHERE type = ? and parent_category_id = '-1' and active = 1
 	GROUP BY category_name
 	ORDER BY category_name asc";
 		
