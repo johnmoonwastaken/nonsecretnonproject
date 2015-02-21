@@ -338,7 +338,7 @@
 									<span class="rating s4" title="4 stars"></span>
 								</div>
 							-->
-								<h2><a href="<?php echo $course['course_id']; ?>"><?php echo $course['course_name']; ?></a></h2>
+								<h2><a href="course?id=<?php echo $course['course_id']; ?>"><?php echo $course['course_name']; ?></a></h2>
 								<p><strong><?php echo $course['vendor_name']; ?>:</strong> <?php $pos=strpos($course['course_description'], ' ', 190); echo substr($course['course_description'],0,$pos) . '...';?></p>
 								<img src="images/samples/esi-international.png" alt="<?php echo $course['vendor_name']; ?>" class="company-logo">
 								<ul class="sessions-list">
@@ -354,7 +354,7 @@
 												<small><?php echo $session['currency']; ?></small>
 											</div>
 											<h4 class="session-dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></h4>
-											<small class="session-location">Vancouver, BC</small>
+											<small class="session-location"><?php echo $session['location']; ?></small>
 										</a>
 									</li>
 									<?php endforeach; ?>
