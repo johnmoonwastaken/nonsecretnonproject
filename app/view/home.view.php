@@ -177,7 +177,7 @@
 					<?php
 					$total_columns = 3;
 					// We check to make sure we have an array of $functions (this is to avoid unnecessary warnings)
-					if (isset($functions) && is_array($functions)) {
+					if (isset($functions) && is_array($functions) && count($functions) > 0) {
 						// Divide the array of $functions into three (one for each column)
 						$functionslist = array_chunk($functions, count($functions) % $total_columns == 0 ? count($functions) / $total_columns : count($functions) / $total_columns + 1);
 					} else {
@@ -185,21 +185,21 @@
 					}				
 					?>
 					<ul class="4u category-list">
-					<?php foreach($functionslist[0] as $function): ?>
+					<?php if (is_array($functionslist[0])) { foreach($functionslist[0] as $function): ?>
 						<li><a href="#"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
-					<?php endforeach;?>
+					<?php endforeach; }?>
 					</ul>
 					
 					<ul class="4u category-list">
-					<?php foreach($functionslist[1] as $function): ?>
+					<?php if (is_array($functionslist[1])) { foreach($functionslist[1] as $function): ?>
 						<li><a href="#"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
-					<?php endforeach;?>
+					<?php endforeach; }?>
 					</ul>
 					
 					<ul class="4u category-list">
-					<?php foreach($functionslist[2] as $function): ?>
+					<?php if (is_array($functionslist[2])) { foreach($functionslist[2] as $function): ?>
 						<li><a href="#"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
-					<?php endforeach;?>
+					<?php endforeach; }?>
 					</ul>
 				</div>
 			</div>
@@ -209,29 +209,29 @@
 					<?php
 					$total_columns = 3;
 					// We check to make sure we have an array of $functions (this is to avoid unnecessary warnings)
-					if (isset($industries) && is_array($industries)) {
+					if (isset($industries) && is_array($industries) && count($industries) > 0) {
 						// Divide the array of $functions into three (one for each column)
 						$industrieslist = array_chunk($industries, count($industries) % $total_columns == 0 ? count($industries) / $total_columns : count($industries) / $total_columns + 1);
 					} else {
 						$industrieslist = array();
-					}				
+					}
 					?>
 					<ul class="4u category-list">
-					<?php foreach($industrieslist[0] as $industries): ?>
+					<?php if (is_array($industrieslist[0])) { foreach($industrieslist[0] as $industries): ?>
 						<li><a href="#"><?php echo $industries['name']; ?> <span style="font-weight:bold">(<?php echo $industries['course_count']; ?>)</span></a></li>
-					<?php endforeach;?>
+					<?php endforeach; }?>
 					</ul>
 
 					<ul class="4u category-list">
-					<?php foreach($industrieslist[1] as $industries): ?>
+					<?php if (is_array($industrieslist[1])) { foreach($industrieslist[1] as $industries): ?>
 						<li><a href="#"><?php echo $industries['name']; ?> <span style="font-weight:bold">(<?php echo $industries['course_count']; ?>)</span></a></li>
-					<?php endforeach;?>
+					<?php endforeach; }?>
 					</ul>
 
 					<ul class="4u category-list">
-					<?php foreach($industrieslist[2] as $industries): ?>
+					<?php if (is_array($industrieslist[2])) { foreach($industrieslist[2] as $industries): ?>
 						<li><a href="#"><?php echo $industries['name']; ?> <span style="font-weight:bold">(<?php echo $industries['course_count']; ?>)</span></a></li>
-					<?php endforeach;?>
+					<?php endforeach; }?>
 					</ul>
 				</div>
 			</div>			
