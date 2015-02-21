@@ -157,7 +157,7 @@
 	               });
     	           </script>
 				<div class="6u">
-					<input type="text" id="searchbox-location" name="location" placeholder="Location" class="form-text">
+					<input type="text" id="searchbox-location" name="location" placeholder="Location" class="form-text" value="Vancouver">
 				</div>
 			</div>
 			<div class="row 25% uniform">

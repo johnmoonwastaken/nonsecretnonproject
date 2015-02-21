@@ -50,4 +50,4 @@ $templateFields = array('functions' => $functionsCategories,
 						'industries' => $industriesCategories);
 
 displayTemplate('home', $templateFields);
-displayTemplate('footer', $templateFields);
+displayTemplate('footer');
