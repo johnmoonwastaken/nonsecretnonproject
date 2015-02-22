@@ -103,12 +103,12 @@
 		<form id="searchbox" action="search" method="get">
 			<div class="row">
 				<div class="12u">
-					<input type="text" id="searchbox-keywords" name="keywords" placeholder="Search courses, vendor, description" class="form-text">
+					<input type="text" id="searchbox-keywords" name="keywords" placeholder="Search courses, vendor, description" class="form-text" <?php if ($_GET['keywords']) { echo 'value='.$_GET['keywords']; } ?>>
 				</div>
 			</div>
 			<div class="row 25% uniform">
 				<div class="3u form-date-cell">
-					<input type="text" id="searchbox-start" name="start" placeholder="Start date" class="form-text form-date"><span class="icon calendar" style="font-size:1.2em;"></span>
+					<input type="text" id="searchbox-start" name="start" placeholder="Start date" class="form-text form-date" <?php if ($_GET['start']) { echo 'value='.$_GET['start']; } ?>><span class="icon calendar" style="font-size:1.2em;"></span>
 					<script type="text/javascript">
 	               $(document).ready(function() {
     	              $('#searchbox-start').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
@@ -119,33 +119,37 @@
 
 				</div>
 				<div class="3u form-date-cell">
-					<input type="text" id="searchbox-end" name="end" placeholder="End date" class="form-text form-date"><span class="icon calendar" style="font-size:1.2em;"></span>
+					<input type="text" id="searchbox-end" name="end" placeholder="End date" class="form-text form-date" <?php if ($_GET['end']) { echo 'value='.$_GET['end']; } ?>><span class="icon calendar" style="font-size:1.2em;"></span>
 				</div>
 					<script>
-						var curDate = new Date();
-						var dd = curDate.getDate();
-						var mm = curDate.getMonth()+1;
-						var yyyy = curDate.getFullYear();
-						if(dd<10) {
-							dd='0'+dd
-							} 
-						if(mm<10) {
-						    mm='0'+mm
-						    } 
-						yyyy = yyyy+1;
-						document.getElementById('searchbox-end').value = yyyy+'-'+mm+'-'+dd;
+						if (document.getElementById('searchbox-end').value == '') {
+							var curDate = new Date();
+							var dd = curDate.getDate();
+							var mm = curDate.getMonth()+1;
+							var yyyy = curDate.getFullYear();
+							if(dd<10) {
+								dd='0'+dd
+								} 
+							if(mm<10) {
+							    mm='0'+mm
+							    } 
+							yyyy = yyyy+1;
+							document.getElementById('searchbox-end').value = yyyy+'-'+mm+'-'+dd;
+						}
 
-						curDate.setDate(curDate.getDate()+1);
-						dd = curDate.getDate();
-						mm = curDate.getMonth()+1;
-						yyyy = curDate.getFullYear();
-						if(dd<10) {
-							dd='0'+dd
-							} 
-						if(mm<10) {
-						    mm='0'+mm
-						    } 
-						document.getElementById('searchbox-start').value = yyyy+'-'+mm+'-'+dd;
+						if (document.getElementById('searchbox-start').value == '') {
+							curDate.setDate(curDate.getDate()+1);
+							dd = curDate.getDate();
+							mm = curDate.getMonth()+1;
+							yyyy = curDate.getFullYear();
+							if(dd<10) {
+								dd='0'+dd
+								} 
+							if(mm<10) {
+							    mm='0'+mm
+							    } 
+							document.getElementById('searchbox-start').value = yyyy+'-'+mm+'-'+dd;
+						}
 					</script>
 						
 					</script>
@@ -157,7 +161,7 @@
 	               });
     	           </script>
 				<div class="6u">
-					<input type="text" id="searchbox-location" name="location" placeholder="Location" class="form-text" value="Vancouver">
+					<input type="text" id="searchbox-location" name="location" placeholder="Location" class="form-text"  <?php if ($_GET['location']) { echo 'value='.$_GET['location']; } else echo 'value="Vancouver"'; ?>>
 				</div>
 			</div>
 			<div class="row 25% uniform">

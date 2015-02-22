@@ -112,7 +112,7 @@
 		width: 100%;
 		margin: 0;
 		padding: 5px 0 0;
-		border-right: 1px solid #d7d7d7;
+		/*border-right: 1px solid #d7d7d7;*/
 	}
 	
 	#filters-accordion li {
@@ -231,6 +231,7 @@
 		color: #969696;
 		margin: 0 0 0 23px;
 		display: block;
+		line-height: 1.5em;
 	}
 	
 	.sessions-list .session-price-container {
@@ -299,19 +300,21 @@
 		
 			<div id="query-summary-bar" class="container">
 				<h1>Training about "<?php echo $keywords; ?>"</h1>
-				<p>In <strong><?php if (empty($location)) { echo "everywhere"; } else echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="#">Change Search</a>)</small></p>
+				<p>In <strong><?php if (empty($location)) { echo "everywhere"; } else echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
 			</div>
 			
 			<div id="search-control-bar" class="container">
 				<div class="row">
 					<div class="3u">
-						<h4 id="results-counter">Filter <?php echo $totalResults; ?> results:</h4>
+						<h4 id="results-counter"><!--Filter--> Showing <?php echo $totalResults; ?> results:</h4>
 					</div>
 					<div class="9u">
 						<ul id="type-switcher">
 							<li class="active"><span class="tick"></span><a href="#">All Training</a></li>
+							<!--
 							<li><span class="tick"></span><a href="#">Courses</a></li>
 							<li><span class="tick"></span><a href="#">Conferences</a></li>
+							-->
 						</ul>
 						
 					</div>
@@ -322,12 +325,14 @@
 				<div class="row">
 					<div class="3u">
 						<ul id="filters-accordion">
+							<!--
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Name contains</a>
 							</li>
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Vendor</a>
 							</li>
+						-->
 						</ul>
 					</div>
 					<div class="9u">
@@ -404,34 +409,6 @@
 								</ul>
 								<small class="more-sessions"><a href="#">4 more sessions <span class="icon triangle-down"></span></a></small>
 							</li>
-							
-
-							<li>
-								<div class="result-rating">
-									<span class="rating s4" title="4 stars"></span>
-								</div>
-								<h2><a href="#">PMP Exam Power Prep</a></h2>
-								<p>Immerse yourself in ESI's PMP Exam Power Prep and you'll be well on your way to passing PMI's PMPcertification</p>
-								<img src="images/samples/esi-international.png" alt="ESI International" class="company-logo">
-								<ul class="sessions-list">
-									<li>
-										<a href="#">
-											<div class="chevron-container">
-												<span class="icon chevron-right"></span>
-											</div>
-											<span class="icon calendar"></span>
-											<div class="session-price-container">
-												<h4>$2495.00</h4>
-												<small>CAD</small>
-											</div>
-											<h4 class="session-dates">Oct 6, 2014 - Oct 10, 2014</h4>
-											<small class="session-location">Vancouver, BC</small>
-										</a>
-									</li>
-								</ul>
-								<small class="more-sessions"><a href="#">4 more sessions <span class="icon triangle-down"></span></a></small>
-							</li>
-						</ul>
 						-->
 					</div>
 				</div>
