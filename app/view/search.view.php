@@ -300,7 +300,7 @@
 		
 			<div id="query-summary-bar" class="container">
 				<h1>Training about "<?php echo $keywords; ?>"</h1>
-				<p>In <strong><?php if (empty($location)) { echo "everywhere"; } else echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
+				<p>In <strong><?php if (empty($location)) { $location = "Everywhere"; echo "Everywhere"; } else echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
 			</div>
 			
 			<div id="search-control-bar" class="container">

@@ -16,8 +16,12 @@ $search_sql = "
 		and (course_session.location LIKE ? OR course_session.metro_name LIKE ?)
 	ORDER BY course_id, start_date, course.click_count";
 
+	$search_location = $_GET['location'];
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
-	$get_results->execute(array("%".$_GET["keywords"]."%",$_GET["start"],$_GET["end"],"%".$_GET["location"]."%","%".$_GET["location"]."%"));
+	if ($_GET['location'] == "Everywhere" || $_GET['location'] == "everywhere") {
+		$search_location = '';
+	}
+	$get_results->execute(array("%".$_GET["keywords"]."%",$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
 
 	$course_count = -1;
 	$session_count = 0;

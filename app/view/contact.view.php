@@ -88,8 +88,8 @@
 	}
 
 	#contact-content .button-other {
-		height: 40px;
-		width: 40px;
+		height: 35px;
+		width: 35px;
 		text-align: left;
 		border-radius: 3px;
 		border: 0;
@@ -101,37 +101,21 @@
 	#contact-content .other-linkedin {
 		background: #007bb6;
 	}
-	#contact-content .other-linkedin:hover {
-		background: #1086be;
-	}
 	#contact-content .other-facebook {
 		background: #3b579d;
 	}
-	#contact-content .other-facebook:hover {
-		background: #4c68af;
-	}
-
 	#contact-content .other-google {
 		background: #dd4b39;
 	}
-	#contact-content .other-google:hover {
-		background: #ef5f4d;
-	}
-
 	#contact-content .other-twitter {
 		background: #00b0ed;
 	}
-	#contact-content .other-twitter:hover {
-		background: #14bffb;
-	}
-
 	#contact-content .other-button-icon {
-		padding-top: 20px;
-		height: 40px;
+		padding-top: 18px;
+		height: 30px;
 		width: 30px;
-		border-right: 1px solid rgba(0, 0, 0, .05);
 		float:left;
-		margin-left: 5px;
+		margin-left: 7px;
 	}
 </style>
 <body>
@@ -147,15 +131,15 @@
 				<p><h1>the contact info</h1></p>
 			</div>
 			<div id="contact-content">
-				<p>
-					<h4>trainingful is headquartered in Vancouver, BC, Canada. <br /><br />
+				<p><h4>
+					Trainingful is headquartered in Vancouver, Canada. <br />
 					Find us on your favorite social media websites!<br /><br />
-					<p><button type="submit" class="button-other other-linkedin"><div class="icon linkedin other-button-icon"></div><div class="sign-up-other">Sign In with LinkedIn</div></button></p><h5><a href="https://www.linkedin.com/company/trainingful-com/">trainingful on LinkedIn</a></h5><br /><br />
-					<p><button type="submit" class="button-other other-facebook"><div class="icon facebook other-button-icon"></div><div class="sign-up-other">Sign In with Facebook</div></button></p><h5><a href="https://www.facebook.com/trainingful">trainingful on Facebook</a></h5><br /><br />
-					<p><button type="submit" class="button-other other-google"><div class="icon google other-button-icon"></div><div class="sign-up-other">Sign In with Google</div></button></p><h5><a href="https://plus.google.com/u/0/103971240408505697822">trainingful on Google+</a></h5><br /><br />
-					<p><button type="submit" class="button-other other-twitter"><div class="icon twitter other-button-icon"></div><div class="sign-up-other">Sign In with Twitter</div></button></p><h5><a href="https://twitter.com/trainingful">trainingful on Twitter</a></h5><br /><br />
-					We love getting your feedback! Contact us at <a href="mailto:support@trainingful.com">support@trainingful.com</a>.</h4>
-				</p>
+					<div class="button-other other-linkedin" style="float:left"><div class="icon linkedin other-button-icon"></div></div><div style="padding-left:50px;"><h5><a href="https://www.linkedin.com/company/trainingful-com/">trainingful on LinkedIn</a></h5></div><br />
+					<div class="button-other other-facebook" style="float:left"><div class="icon facebook other-button-icon"></div></div><div style="padding-left:50px;"><h5><a href="https://www.facebook.com/trainingful">trainingful on Facebook</a></h5></div><br />
+					<div class="button-other other-google" style="float:left"><div class="icon google other-button-icon"></div></div><div style="padding-left:50px;"><h5><a href="https://plus.google.com/u/0/103971240408505697822">trainingful on Google+</a></h5></div><br />
+					<div class="button-other other-twitter" style="float:left"><div class="icon twitter other-button-icon"></div></div><div style="padding-left:50px;"><h5><a href="https://twitter.com/trainingful">trainingful on Twitter</a></h5></div><br />
+					We love getting your feedback! Contact us at <a href="mailto:support@trainingful.com">support@trainingful.com</a>.
+				</h4></p>
 			</div>
 		</div>
 	</section>
