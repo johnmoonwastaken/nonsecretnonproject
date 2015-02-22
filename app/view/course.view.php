@@ -220,7 +220,7 @@
 		<div class="container" id="main-container">
 		
 			<div id="query-summary-bar" class="container">
-				<p><strong>Back to Results</strong> | In <strong>Vancouver, BC</strong> between <strong>09/30/2014</strong> and <strong>10/31/2014</strong></p>
+				<p><strong><a href="search?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Back to Results</a></strong> | In <strong><?php echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong></p>
 			</div>
 			<div id="main-content">
 				<div class="row 25% uniform">

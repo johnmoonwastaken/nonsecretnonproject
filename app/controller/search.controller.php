@@ -1,6 +1,5 @@
 <?php
 
-$templateFields = array();
 $courseList = array();
 
 $search_sql = "
