@@ -1,4 +1,4 @@
-		<meta charset="UTF-16">
+		<meta charset="UTF-8">
 		<script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
 		<link href="../../bower_components/paper-button/paper-button.html" rel="import">
 		<link href="../../bower_components/paper-dialog/paper-action-dialog.html" rel="import">

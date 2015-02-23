@@ -344,7 +344,7 @@
 								</div>
 							-->
 								<h2><a href="course?id=<?php echo $course['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>"><?php echo $course['course_name']; ?></a></h2>
-								<p><strong><?php echo $course['vendor_name']; ?>:</strong> <?php $pos=strpos($course['course_description'], ' ', 190); echo substr($course['course_description'],0,$pos) . '...';?></p>
+								<p><strong><?php echo $course['vendor_name']; ?>:</strong> <?php $pos=mb_strpos($course['course_description'], ' ', 190); echo mb_substr($course['course_description'],0,$pos) . '...';?></p>
 								<img src="images/samples/esi-international.png" alt="<?php echo $course['vendor_name']; ?>" class="company-logo">
 								<ul class="sessions-list">
 									<?php foreach($course['sessionList'] as $session): ?>
