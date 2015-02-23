@@ -226,9 +226,11 @@
 				<div class="row 25% uniform">
 					<div class="9u">
 						<div id="content-section">
-							<h1>PMP Exam Power Prep &nbsp;&nbsp;<span class="rating s4" title="4 stars"></span></h1>
-							<p style="margin-top:-1.3em;"><span><h5>Project Management - General</h5></span></p>
-							<p><h4>Immerse yourself in ESI’s PMP® Exam Power Prep and you'll be well on your way to passing PMI’s PMP® certification exam. This course is for you if you've met PMI's requirements put forth in the PMP® Credential Application. This intensive five day course integrates in-depth topic reviews with morning instructor-led lecture and afternoon structured personal study time, including individual assistance from your PMP® certified instructor. <a href="#">Read More ></a></h4></p>
+							<h1><?php echo $course_name; ?>
+							<!-- &nbsp;&nbsp;<span class="rating s4" title="4 stars"></span> --></h1>
+							<p style="margin-top:-1.3em;"><span><h5><?php if ($parent_category_name == "") { echo $category_name; } else { echo parent_category_name." - ".category_name; }?></h5></span></p>
+							<p><h4><?php echo $course_description; ?>
+							<!-- <a href="#">Read More ></a> --></h4></p>
 
 							<div id="ratings-section">
 							
