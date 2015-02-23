@@ -29,13 +29,17 @@
 		</div>
 		<div class="container" id="topnav">
 			<ul class="leftnav">
+				<!--
 				<li><a href="#">Explore Vendors</a></li>
 				<li><a href="#">Explore Categories</a></li>
+			-->
 			</ul>
 			<ul class="rightnav">
+				<!--
 				<li><a href="#" onClick="document.getElementById('review-dialog').toggle();">Write a Review</a></li>
 				<li><a href="signup">Register</a></li>
 				<li><a href="#" onClick="document.getElementById('si-dialog').toggle();">Sign In</a></li>
+			-->
 			</ul>
 			<a href="/" id="header-logo"><img src="images/header-logo.png" alt="Trainingful"></a>
 		</div>
