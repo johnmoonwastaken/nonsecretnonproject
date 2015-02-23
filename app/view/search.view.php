@@ -359,7 +359,7 @@
 												<small><?php echo $session['currency']; ?></small>
 											</div>
 											<h4 class="session-dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></h4>
-											<small class="session-location"><?php echo $session['location']; ?></small>
+											<small class="session-location"><?php echo $session['metro_name']; ?></small>
 										</a>
 									</li>
 									<?php endforeach; ?>

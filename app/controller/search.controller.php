@@ -22,6 +22,11 @@ $search_sql = "
 	}
 	$get_results->execute(array("%".$_GET["keywords"]."%",$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
 
+$save_search_sql = "
+	INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name) VALUES (?, ?, ?, ?, ?)";
+$query = $GLOBALS['_db']->prepare($save_search_sql);
+$query->execute(array($_GET["keywords"],$_SERVER['REMOTE_ADDR'],$_GET["start"],$_GET["end"],$search_location));
+
 	$course_count = -1;
 	$session_count = 0;
 	$last_course_id = 0;

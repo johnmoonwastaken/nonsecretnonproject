@@ -57,7 +57,10 @@ foreach ($get_results as $temp) {
 	$sessionList[$session_count]['metro_name'] = $temp['metro_name'];
 	$sessionList[$session_count]['currency'] = $temp['currency'];
 	if ($currency == "USD" || "CAD" || "HKD" || "SGD") {
-		$sessionList[$session_count]['cost'] = "$" . number_format((float)$cost,2,'.','');
+		$sessionList[$session_count]['cost'] = "$" . number_format((float)$temp['cost'],2,'.','');
+	}
+	else  {
+		$sessionList[$session_count]['cost'] = number_format((float)$temp['cost'],2,'.','');
 	}
 	$session_count++;
 }

@@ -46,7 +46,8 @@
 	#content-section {
 		position: relative;
 		border-right: 1px solid #d7d7d7;
-		padding: 0;
+		padding: 0 20px 0 20px;
+		border-bottom: 1px solid #d7d7d7;
 	}
 
 	#info-bar {
@@ -82,7 +83,7 @@
 
 	#info-sessions li {
 		padding: 20px 0 20px 10px;
-		border-bottom: 1px solid #d7d7d7;
+		border-top: 1px solid #d7d7d7;
 	}
 	
 	#info-sessions .dates {
@@ -126,7 +127,7 @@
 		border-left: 1px solid #d7d7d7;
 		border-right: 1px solid #d7d7d7;
 		border-bottom: 1px solid #d7d7d7;
-		padding: 0px 0px 0px 20px;
+		padding: 0px 0px 0px 0px;
 	}
 	
 	#main-content h1 {
@@ -190,7 +191,6 @@
 	
 	#ratings-section {
 		position: relative;
-		border-top: 1px solid #d7d7d7;
 	}
 
 	#vendor-image .company-logo {
@@ -216,7 +216,7 @@
 		<?php include 'header.view.php' ?>
 	</header>
 	
-	<section id="main-section">
+	<section id="main-section">1
 		<div class="container" id="main-container">
 		
 			<div id="query-summary-bar" class="container">
@@ -231,7 +231,6 @@
 							<p style="margin-top:-1.3em;"><span><h5><?php if ($parent_category_name == "") { echo $category_name; } else { echo parent_category_name." - ".category_name; }?></h5></span></p>
 							<p><h4><?php echo $course_description; ?>
 							<!-- <a href="#">Read More ></a> --></h4></p>
-
 							<div id="ratings-section">
 							
 								<div class="row 25% uniform" style="float:right;margin: 0px 15px 0px 0px;">
@@ -239,7 +238,7 @@
 										<button type="submit" class="form-submit" onClick="document.getElementById('review-dialog').toggle();">Write a Review</button>
 									</div>
 								</div>
-
+<!--
 								<p><h2 style="margin-top:30px;">15 reviews from our community</h2></p>
 
 <div class="wrapper"><div id="rating-percent">100<span style="font-size:0.5em;">%</span><div id="average-rating">Average Rating</div></div>
@@ -249,10 +248,11 @@
 								
 								<p>This is test content.</p>
 								<p>This is test content.</p>
+							-->
 							</div>
 						</div>
 					</div>
-					<div class="3u" style="padding:0;">
+					<div class="3u" style="padding:0;margin-left:0px;border-left:1px solid #d7d7d7;">
 					
 						<div id="vendor-image">
 							<img src="images/samples/esi-international.png" alt="ESI International" class="company-logo">
@@ -260,24 +260,16 @@
 						
 						<ul id="info-tags">
 							<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
-							30 PDU towards PMP <br />
+							30 PDU towards PMP </li><br />
 							<li><span class="icon price-tag"></span> <strong>Filed and Tagged</strong><br />
-							PMP, Project Management
+							PMP, Project Management</li>
 						</ul>
 						
 						<ul id="info-sessions">
-							<li><span class="icon calendar"></span> <span class="dates">Oct 6, 2014 - Oct 10, 2014</span>
-								<div class="location">Vancouver, BC</div><div class="price">$2495.00 CAD</div>
-							<li><span class="icon calendar"></span> <span class="dates">Nov 16, 2014 - Nov 20, 2014</span>
-								<div class="location">Washington, DC</div><div class="price">$2495.00 CAD</div>
-							<li><span class="icon calendar"></span> <span class="dates">Dec 6, 2014 - Dec 10, 2014</span>
-								<div class="location">San Francisco, CA</div><div class="price">$2495.00 CAD</div>
-							<li><span class="icon calendar"></span> <span class="dates">Dec 6, 2014 - Dec 10, 2014</span>
-								<div class="location">San Francisco, CA</div><div class="price">$2495.00 CAD</div>
-							<li><span class="icon calendar"></span> <span class="dates">Dec 6, 2014 - Dec 10, 2014</span>
-								<div class="location">San Francisco, CA</div><div class="price">$2495.00 CAD</div>
-							<li><span class="icon calendar"></span> <span class="dates">Dec 6, 2014 - Dec 10, 2014</span>
-								<div class="location">San Francisco, CA</div><div class="price">$2495.00 CAD</div>
+							<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
+								<li><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
+								<div class="location"><?php echo $session['metro_name']; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div></li>
+							<?php endforeach; } ?>
 						</ul>
 					</div>
 				</div>
@@ -285,5 +277,4 @@
 		
 		</div>
 		
-		
-	</section>
+</section>
