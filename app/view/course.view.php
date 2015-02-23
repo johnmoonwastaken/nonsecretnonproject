@@ -287,11 +287,3 @@
 		
 		
 	</section>
-	
-				<paper-dialog id="review-dialog" heading="Write A Review"
-						  transition="paper-dialog-transition-bottom">
-			  <p>This app would like to launch a small, unmanned vehicle
-				 into space.</p>
-			  <paper-button dismissive>Cancel</paper-button>
-			  <paper-button affirmative default>OK</paper-button>
-			</paper-dialog>
