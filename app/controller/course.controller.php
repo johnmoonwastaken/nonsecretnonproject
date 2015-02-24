@@ -17,7 +17,7 @@ $courseInfo = array();
 
 $course_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $course_name = $course_result['course_name'];
-$course_description = $course_result['course_description'];
+$course_description = nl2br($course_result['course_description']);
 $course_avg_rating = $course_result['course_rating'];
 $vendor_name = $course_result['vendor_name'];
 $branding_url = $course_result['branding_url'];
