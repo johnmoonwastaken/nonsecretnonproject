@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<?php include 'favicon.php' ?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
 

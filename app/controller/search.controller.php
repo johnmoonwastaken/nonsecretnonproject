@@ -36,6 +36,7 @@ $query->execute(array($_GET["keywords"],$_SERVER['REMOTE_ADDR'],$_GET["start"],$
 		$vendor_name = $temp['vendor_name'];
 		$course_name = $temp['course_name'];
 		$course_description = $temp['course_description'];
+		$branding_url = $temp['branding_url'];
 		$avg_rating = $temp['avg_rating'];
 		$session_id = $temp['session_id'];
 		$start_date = $temp['start_date'];
@@ -53,6 +54,7 @@ $query->execute(array($_GET["keywords"],$_SERVER['REMOTE_ADDR'],$_GET["start"],$
 			$courseList[$course_count]['vendor_name'] = $vendor_name;
 			$courseList[$course_count]['course_name'] = $course_name;
 			$courseList[$course_count]['course_description'] = $course_description;
+			$courseList[$course_count]['branding_url'] = $branding_url;
 			$courseList[$course_count]['avg_rating'] = $avg_rating;
 			$session_count = 0;
 		}

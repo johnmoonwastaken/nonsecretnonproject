@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<?php include 'favicon.php' ?>
 	<title>trainingful</title>
 	
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -197,6 +198,8 @@
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
+		margin-top: 20px;
+		margin-bottom: 10px;
 		max-width: 240px;
 	}	
 	</style>
@@ -257,7 +260,7 @@
 					<div class="3u" style="padding:0;margin-left:0px;border-left:1px solid #d7d7d7;">
 					
 						<div id="vendor-image">
-							<img src="images/samples/esi-international.png" alt="ESI International" class="company-logo">
+							<img src="images/vendors/<?php if ($course['branding_url'] == '-1' || $course['branding_url'] == "") { echo 'trainingful-branding-140.gif'; } else echo $course['branding_url']; ?>" alt="ESI International" class="company-logo">
 						</div>
 						
 						<ul id="info-tags">

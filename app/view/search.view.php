@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<?php include 'favicon.php' ?>
 	<title>trainingful</title>
 	
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -345,7 +346,7 @@
 							-->
 								<h2><a href="course?id=<?php echo $course['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>"><?php echo $course['course_name']; ?></a></h2>
 								<p><strong><?php echo $course['vendor_name']; ?>:</strong> <?php $pos=mb_strpos($course['course_description'], ' ', 190); echo mb_substr($course['course_description'],0,$pos) . '...';?></p>
-								<img src="images/samples/esi-international.png" alt="<?php echo $course['vendor_name']; ?>" class="company-logo">
+								<img src="images/vendors/<?php if ($course['branding_url'] == '-1' || $course['branding_url'] == "") { echo 'trainingful-branding-70.gif'; } else echo $course['branding_url']; ?>" alt="<?php echo $course['vendor_name']; ?>" class="company-logo">
 								<ul class="sessions-list">
 									<?php foreach($course['sessionList'] as $session): ?>
 									<li>
