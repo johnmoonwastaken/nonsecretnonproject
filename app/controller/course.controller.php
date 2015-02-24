@@ -33,7 +33,7 @@ if ($parent_category_id != -1) {
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($parent_category_id));
 	$category_result = $get_results->fetch(PDO::FETCH_ASSOC);
-	$parent_category_name = $category_result['parent_category_name'];
+	$parent_category_name = $category_result['category_name'];
 }
 
 $search_sql = "

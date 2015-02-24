@@ -230,7 +230,7 @@
 						<div id="content-section">
 							<h1><?php echo $course_name; ?>
 							<!-- &nbsp;&nbsp;<span class="rating s4" title="4 stars"></span> --></h1>
-							<p style="margin-top:-1.3em;"><span><h5><?php if ($parent_category_name == "") { echo $category_name; } else { echo parent_category_name." - ".category_name; }?></h5></span></p>
+							<p style="margin-top:-1.3em;"><span><h5><?php if ($parent_category_name == "") { echo $category_name; } else { echo $parent_category_name." - ".$category_name; }?></h5></span></p>
 							<p><h4><?php echo $course_description; ?>
 							<!-- <a href="#">Read More ></a> --></h4></p>
 							<div id="ratings-section">
