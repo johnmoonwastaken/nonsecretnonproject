@@ -22,16 +22,16 @@ $course_avg_rating = $course_result['course_rating'];
 $vendor_name = $course_result['vendor_name'];
 $branding_url = $course_result['branding_url'];
 $category_name = $course_result['category_name'];
-$parent_category_id = $course_result['primary_category_id'];
+$parent_category_id = $course_result['parent_category_id'];
 $parent_category_name = "";
 
-if ($primary_category_id != -1) {
+if ($parent_category_id != -1) {
 	$search_sql = "
 		SELECT category_name
 		FROM categories
 		WHERE category_id = ?";	
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
-	$get_results->execute(array($primary_category_id));
+	$get_results->execute(array($parent_category_id));
 	$category_result = $get_results->fetch(PDO::FETCH_ASSOC);
 	$parent_category_name = $category_result['parent_category_name'];
 }
