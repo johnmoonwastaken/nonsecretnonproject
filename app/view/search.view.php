@@ -300,11 +300,11 @@
 		<div class="container">
 		
 			<div id="query-summary-bar" class="container">
-				<?php if ($_GET['keywords']): ?>
+				<?php if ($_GET['start']): ?>
 				<h1>Training about "<?php echo $keywords; ?>"</h1>
 				<p>In <strong><?php if (empty($location)) { $location = "Everywhere"; echo "Everywhere"; } else echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
 				<?php else: ?>
-				<h1>Explore Categories</h1>
+					<h1>Explore Categories</h1>
 				<?php endif; ?>
 			</div>
 			

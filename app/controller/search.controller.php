@@ -89,7 +89,7 @@ foreach ($get_results as $temp) {
 
 if ($_GET['category']) {
 	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count+1,
-		'category' => $_GET['category']);
+		'category_id' => $_GET['category_id']);
 }
 else {
 	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count+1,
