@@ -140,6 +140,10 @@
 		margin-right: 3px;
 	}
 
+	.explore-list {
+		list-style: none;
+	}
+
 	.explore-list a {
 		color: #555;
 		text-decoration: none;
