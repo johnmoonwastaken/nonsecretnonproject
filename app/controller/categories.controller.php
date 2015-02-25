@@ -28,7 +28,7 @@ $search_sql = "
 	FROM categories
 	LEFT JOIN course
 	ON categories.category_id=course.category_id
-	WHERE parent_category_id != '-1' and active = 1
+	WHERE parent_category_id != '-1' and active_sessions > 0
 	GROUP BY category_name
 	ORDER BY type, parent_category_id, category_name asc";
 		

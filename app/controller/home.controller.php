@@ -2,13 +2,15 @@
 
 $functionsCategories = array();
 $search_sql = "
-	SELECT categories.category_id, categories.category_name, COUNT(course.course_id) AS course_count 
-	FROM categories
+	SELECT p.category_id, p.category_name, COUNT(course.course_id) AS course_count 
+	FROM categories s
+	INNER JOIN categories p
+	ON p.category_id = s.parent_category_id
 	LEFT JOIN course
-	ON categories.category_id=course.category_id
-	WHERE type = ? and parent_category_id = '-1' and active = 1
-	GROUP BY category_name
-	ORDER BY category_name asc";
+	ON s.category_id=course.category_id
+	WHERE p.type = ? and p.parent_category_id = '-1' and active_sessions > 0
+	GROUP BY p.category_name
+	ORDER BY p.category_name asc";
 		
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array('Function'));
