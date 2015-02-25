@@ -139,6 +139,15 @@
 	#filters-accordion > li > a > .icon {
 		margin-right: 3px;
 	}
+
+	.explore-list a {
+		color: #555;
+		text-decoration: none;
+	}
+	
+	.explore-list a:hover {
+		text-decoration: underline;
+	}
 	
 	#results-list {
 		list-style: none;
@@ -329,7 +338,34 @@
 										<?php if($parentCategories['type'] != $lastType) { $lastType = $parentCategories['type']; echo '<div style="margin-bottom:15px;"><h2>'.$parentCategories['type'].'</h2></div>';} ?>
 										<div>
 											<div><h5><?php echo $parentCategories['category_name']; ?></h5></div>
-											<div style="font-size:0.7em;"><?php foreach($parentCategories['sub_categories'] as $sub_category) { echo "<a href=\"search?category=".$sub_category['id']."\">".$sub_category['category_name']." <strong>(".$sub_category['course_count'].")</strong></a>"; } ?></a>
+											<div class="row" style="font-size:0.7em;">
+												<?php
+												$total_columns = 3;
+												// We check to make sure we have an array of $functions (this is to avoid unnecessary warnings)
+												if (isset($parentCategories['sub_categories']) && is_array($parentCategories['sub_categories']) && count($parentCategories['sub_categories']) > 0) {
+													// Divide the array of $functions into three (one for each column)
+													$sub_categoryList = array_chunk($parentCategories['sub_categories'], count($parentCategories['sub_categories']) % $total_columns == 0 ? count($parentCategories['sub_categories']) / $total_columns : count($parentCategories['sub_categories']) / $total_columns + 1);
+												} else {
+													$sub_categoryList = array();
+												}				
+												?>
+												<ul class="4u explore-list">
+												<?php if (is_array($sub_categoryList[0])) { foreach($sub_categoryList[0] as $sub): ?>
+													<li><a href="search?category=<?php echo $sub['id']; ?>"><?php echo $sub['category_name']; ?> <strong>(<?php echo $sub['course_count']; ?>)</strong></a></li>
+												<?php endforeach; }?>
+												</ul>
+												
+												<ul class="4u explore-list">
+												<?php if (is_array($sub_categoryList[1])) { foreach($sub_categoryList[1] as $sub): ?>
+													<li><a href="search?category=<?php echo $sub['id']; ?>"><?php echo $sub['category_name']; ?> <strong>(<?php echo $sub['course_count']; ?>)</strong></a></li>
+												<?php endforeach; }?>
+												</ul>
+												
+												<ul class="4u explore-list">
+												<?php if (is_array($sub_categoryList[2])) { foreach($sub_categoryList[2] as $sub): ?>
+													<li><a href="search?category=<?php echo $sub['id']; ?>"><?php echo $sub['category_name']; ?> <strong>(<?php echo $sub['course_count']; ?>)</strong></a></li>
+												<?php endforeach; }?>
+												</ul>
 											</div>
 										</div>
 									</li>

@@ -13,10 +13,10 @@ if ($_GET['category']) {
 		ON course.vendor_id = vendor.vendor_id
 		LEFT JOIN categories
 		ON course.category_id = categories.category_id
-		WHERE course.category_id = ? and course.active = 1 and course_session.active = 1
+		WHERE course.category_id = ? and course.active = 1 and course_session.active = 1 and course_session.start_date > ?
 		ORDER BY course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
-	$get_results->execute(array($_GET['category']));
+	$get_results->execute(array($_GET['category'], date('Y-m-d')));
 }
 else {
 	$search_sql = "
