@@ -29,7 +29,7 @@ $search_sql = "
 	LEFT JOIN course
 	ON categories.category_id=course.category_id
 	WHERE parent_category_id != '-1' and active_sessions > 0
-	GROUP BY category_name
+	GROUP BY category_id
 	ORDER BY type, parent_category_id, category_name asc";
 		
 $get_results = $GLOBALS['_db']->prepare($search_sql);
