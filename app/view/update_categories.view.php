@@ -1,5 +1,9 @@
 <?php
 
+$clear_update_sql = "UPDATE course SET active_sessions=0 WHERE 1";
+$get_results = $GLOBALS['_db']->prepare($clear_update_sql);
+$get_results->execute();
+
 $batch_update_sql = "SELECT course_id, COUNT(course_id) AS course_count 
 	FROM course_session 
 	WHERE active = 1 and start_date > ? GROUP BY course_id";
