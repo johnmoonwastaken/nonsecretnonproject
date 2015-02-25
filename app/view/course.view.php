@@ -46,7 +46,6 @@
 	
 	#content-section {
 		position: relative;
-		border-right: 1px solid #d7d7d7;
 		padding: 0 20px 0 20px;
 		border-bottom: 1px solid #d7d7d7;
 	}
@@ -66,12 +65,14 @@
 		font-size: 0.8em;
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
 		list-style: none;
-		padding: 0 0 10px 10px;
+		padding: 0 0 0px 0px;
+		border-bottom: 1px solid #d7d7d7;
 	}
 
 	#info-tags li {
-		padding-top:10px;
-		}
+		padding: 10px 10px 10px 10px;
+		border-top: 1px solid #d7d7d7;
+	}
 
 	#info-sessions {
 		margin:0;
@@ -84,7 +85,7 @@
 
 	#info-sessions li {
 		padding: 20px 0 20px 10px;
-		border-top: 1px solid #d7d7d7;
+		border-bottom: 1px solid #d7d7d7;
 	}
 	
 	#info-sessions .dates {
@@ -108,6 +109,10 @@
 		font-size: 0.9em;
 		color: #aaa;
 	}
+
+	#info-sessions .selected {
+		background-color: #CDE4D4;
+	}
 	
 	#main-section {
 		background: #f8f8f8;
@@ -126,7 +131,6 @@
 		background: #fff;
 		border-top: 7px solid #4ca166;
 		border-left: 1px solid #d7d7d7;
-		border-right: 1px solid #d7d7d7;
 		border-bottom: 1px solid #d7d7d7;
 		padding: 0px 0px 0px 0px;
 	}
@@ -201,7 +205,12 @@
 		margin-top: 20px;
 		margin-bottom: 10px;
 		max-width: 240px;
-	}	
+	}
+
+	#vendor-name {
+		text-align: center;
+		color: #999;
+	}
 	</style>
 	
 	<script src="js/jquery-2.1.1.min.js"></script>
@@ -228,8 +237,8 @@
 				<?php endif; ?>
 			</div>
 			<div id="main-content">
-				<div class="row 25% uniform">
-					<div class="9u">
+				<div class="row 25% uniform" style="border-right:1px solid #d7d7d7;">
+					<div class="9u" style="border-right:1px solid #d7d7d7;border-bottom: 1px solid red;">
 						<div id="content-section">
 							<h1><?php echo $course_name; ?>
 							<!-- &nbsp;&nbsp;<span class="rating s4" title="4 stars"></span> --></h1>
@@ -257,29 +266,35 @@
 							</div>
 						</div>
 					</div>
-					<div class="3u" style="padding:0;margin-left:0px;border-left:1px solid #d7d7d7;">
+					<div class="3u" style="padding:0;">
 					
 						<div id="vendor-image">
 							<img src="images/vendors/<?php if ($course['branding_url'] == '-1' || $course['branding_url'] == "") { echo 'trainingful-branding-140.gif'; } else echo $course['branding_url']; ?>" alt="ESI International" class="company-logo">
 						</div>
-						
+						<div id="vendor-name">
+							<strong><?php echo $vendor_name; ?></strong>
+						</div>
 						<ul id="info-tags">
 							<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
-							30 PDU towards PMP </li><br />
+							30 PDU towards PMP </li>
 							<li><span class="icon price-tag"></span> <strong>Filed and Tagged</strong><br />
 							PMP, Project Management</li>
 						</ul>
 						
 						<ul id="info-sessions">
 							<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
-								<li><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
+								<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
 								<div class="location"><?php echo $session['metro_name']; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div></li>
 							<?php endforeach; } ?>
 						</ul>
 					</div>
 				</div>
+				<div class="row 25% uniform" style="border:1px solid yellow">
+					<div class="12u">
+						test
+					</div>
+				</div>
 			</div>
-		
 		</div>
 		
 </section>

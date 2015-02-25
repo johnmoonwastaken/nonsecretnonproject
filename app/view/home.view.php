@@ -196,19 +196,19 @@
 					?>
 					<ul class="4u category-list">
 					<?php if (is_array($functionslist[0])) { foreach($functionslist[0] as $function): ?>
-						<li><a href="#"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
+						<li><a href="categories"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
 					<?php endforeach; }?>
 					</ul>
 					
 					<ul class="4u category-list">
 					<?php if (is_array($functionslist[1])) { foreach($functionslist[1] as $function): ?>
-						<li><a href="#"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
+						<li><a href="categories"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
 					<?php endforeach; }?>
 					</ul>
 					
 					<ul class="4u category-list">
 					<?php if (is_array($functionslist[2])) { foreach($functionslist[2] as $function): ?>
-						<li><a href="#"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
+						<li><a href="categories"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
 					<?php endforeach; }?>
 					</ul>
 				</div>

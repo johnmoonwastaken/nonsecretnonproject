@@ -40,11 +40,11 @@ $search_sql = "
 	SELECT course_session.session_id, course_session.start_date, course_session.end_date, course_session.location, 
 		course_session.metro_name, course_session.cost, course_session.currency
 	FROM course_session
-	WHERE course_session.course_id = ? and course_session.active = 1
+	WHERE course_session.course_id = ? and course_session.active = 1 and course_session.start_date > ?
 	ORDER BY start_date, metro_name";
 
 $get_results = $GLOBALS['_db']->prepare($search_sql);
-$get_results->execute(array($_GET["id"]));
+$get_results->execute(array($_GET["id"], date("Y-m-d")));
 
 $sessionList = array();
 
