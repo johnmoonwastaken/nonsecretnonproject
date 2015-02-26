@@ -111,11 +111,10 @@
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
 		list-style: none;
 		padding:0;
-		border-right: 5px solid #4ca166;
 	}
 
 	#info-sessions li {
-		padding: 20px 0 20px 10px;
+		padding: 20px 0 0px 10px;
 		border-bottom: 1px solid #d7d7d7;
 		cursor: pointer;
 	}
@@ -235,6 +234,16 @@
 		text-align: center;
 		color: #999;
 	}
+
+	.folded-corner {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 16px 16px;
+		border-color: transparent transparent #4ca067 transparent;
+		margin:0 0 -1px 234px;
+		-webkit-transform: rotate(360deg);
+	}
 	</style>
 	
 	<script src="js/jquery-2.1.1.min.js"></script>
@@ -338,10 +347,16 @@
 							PMP, Project Management</li>
 						</ul>
 						
-						<ul id="info-sessions" unresolved>
+						<ul id="info-sessions">
+							<div style="padding:10px 0 10px 10px;border-bottom: 5px solid #4ca166;">
+								<span class="icon triangle-down"></span> <strong>Register & Session Information</strong>
+							</div>
 							<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
-								<li unresolved <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);"><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
-								<div class="location"><?php echo $session['metro_name']; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div></li>
+								<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);"><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
+								<div class="location"><?php echo $session['metro_name']; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
+								<!-- <img src="../../images/lower-triangle.png" style="margin: 0px 0 -5px 234px;" /> -->
+								<div class="folded-corner"></div>
+							</li>
 							<?php endforeach; } ?>
 						</ul>
 					</div>
