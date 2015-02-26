@@ -220,27 +220,29 @@
 	</script>
 	<script>
 	var sessioninfo = [];
+
 	<?php foreach($sessionList as $session): ?>
-		sessioninfo[<?php echo $session['session_id']; ?>] = {session_type: "<?php echo $session['session_type']; ?>", 
-			start_date: "<?php echo $session['start_date']; ?>", start_date_time: "<?php echo $session['start_date_time']; ?>",
-			end_date: "<?php echo $session['end_date']; ?>", end_date_time: "<?php echo $session['end_date_time']; ?>",
-			metro_name: "<?php echo $session['metro_name']; ?>", location: "<?php echo $session['location']; ?>",
-			cost: "<?php echo $session['cost']; ?>", currency: "<?php echo $session['currency']; ?>", description: "<?php echo $session['description']; ?>"
-		};
+	sessioninfo[<?php echo $session['session_id']; ?>] = {session_type: "<?php echo $session['session_type']; ?>", start_date: "<?php echo $session['start_date_formatted']; ?>", start_date_time: "<?php echo $session['start_date_time']; ?>", end_date: "<?php echo $session['end_date_formatted']; ?>", end_date_time: "<?php echo $session['end_date_time']; ?>", metro_name: "<?php echo $session['metro_name']; ?>", location: "<?php echo $session['location']; ?>", cost: "<?php echo $session['cost']; ?>", currency: "<?php echo $session['currency']; ?>", description: "<?php echo $session['description']; ?>"};
 	<?php endforeach; ?>
+
 	function showSession(session_id) {
 		document.getElementById('session-dialog').toggle();
 		if (sessioninfo[session_id].session_type != "-1") {
-			document.getElementById('detailed_session_type').innerHTML = "<strong>" + sessioninfo[session_id].session_type +"</strong>: ";
+			document.getElementById('detailed_session_type').innerHTML = "" + sessioninfo[session_id].session_type +": ";
 		}
+
 		if (sessioninfo[session_id].description != "-1") {
-			document.getElementById('detailed_description').innerHTML = sessioninfo[session_id].description + "<br />";
+			document.getElementById('detailed_description').innerHTML = "<p>" + sessioninfo[session_id].description + "</p>";
 		}
+
 		if (sessioninfo[session_id].location != "-1") {
-			document.getElementById('detailed_location').innerHTML = sessioninfo[session_id].location + "<br />";
+			document.getElementById('detailed_location').innerHTML = "<p>" + sessioninfo[session_id].location + "</p>";
+		}
+		else if (sessioninfo[session_id].metro_name != "-1") {
+			document.getElementById('detailed_location').innerHTML = "<p>" + sessioninfo[session_id].metro_name + "</p>";
 		}
 		else {
-			document.getElementById('detailed_location').innerHTML = sessioninfo[session_id].metro_name + "<br />";
+			document.getElementById('detailed_location').innerHTML = "";
 		}
 		document.getElementById('detailed_start').innerHTML = sessioninfo[session_id].start_date + " " + sessioninfo[session_id].start_date_time;
 		document.getElementById('detailed_end').innerHTML = sessioninfo[session_id].end_date + " " + sessioninfo[session_id].end_date_time;
@@ -309,7 +311,7 @@
 						
 						<ul id="info-sessions">
 							<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
-								<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>)"><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
+								<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);"><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
 								<div class="location"><?php echo $session['metro_name']; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div></li>
 							<?php endforeach; } ?>
 						</ul>
@@ -391,7 +393,7 @@
 						</div>
 						<div class="12u" style="font-size:0.8em;">
 							<p>
-								<span id="detailed_session_type"></span><span id="detailed_start"></span> to <span id="detailed_end"></span><br />
+								<span id="detailed_session_type"></span><strong><span id="detailed_start"></span></strong> to <strong><span id="detailed_end"></span></strong><br />
 								<span id="detailed_description"></span>
 								<span id="detailed_location"></span>
 								<span id="detailed_cost"></span>
