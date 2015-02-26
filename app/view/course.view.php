@@ -219,6 +219,10 @@
 	});
 	</script>
 	<script>
+	window.addEventListener('polymer-ready', function() {
+	        document.querySelector('#session-dialog').classList.add('hidden');
+	      });
+	
 	var sessioninfo = [];
 
 	<?php foreach($sessionList as $session): ?>
@@ -386,7 +390,7 @@
 					}
 				</style>
 
-				<div id="signin-content" style="max-width:450px;"><span class="header"><?php echo $course_name; ?></span>
+				<div id="signin-content" style="max-width:450px;" unresolved><span class="header"><?php echo $course_name; ?></span>
 					<div>
 						<div class="12u" style="width:450px;border-top:1px solid #d7d7d7;margin-top:20px;">
 							<p><h4>Session Information</h4></p>
