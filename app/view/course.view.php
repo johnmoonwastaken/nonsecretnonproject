@@ -44,6 +44,36 @@
 		margin-top:-5px;
 	}
 	
+	#container2 {
+		clear:left;
+		float:left;
+		width:100%;
+		overflow:hidden;
+		border-right:1px solid #d7d7d7;
+	}
+	#container1 {
+		float:left;
+		width:100%;
+		position:relative;
+		right:260px;
+		border-right:1px solid #d7d7d7;
+	}
+
+	#col1 {
+		float:left;
+		width:727px;
+		position:relative;
+		left:260px;
+		overflow:hidden;
+	}
+	#col2 {
+		float:left;
+		width:260px;
+		position:relative;
+		left:261px;
+		overflow:hidden;
+	}
+
 	#content-section {
 		position: relative;
 		padding: 0 20px 0 20px;
@@ -150,10 +180,6 @@
 		font-weight:400;
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
 	}
-	#map-canvas {
-        width: 500px;
-        height: 400px;
-      }
 
 	#query-summary-bar {
 		background: rgba(0, 0, 0, 0.5);
@@ -265,8 +291,10 @@
 				<?php endif; ?>
 			</div>
 			<div id="main-content">
-				<div class="row 25% uniform" style="border-right:1px solid #d7d7d7;">
-					<div class="9u" style="border-right:1px solid #d7d7d7;border-bottom: 1px solid red;">
+				<div class="row 25% uniform">
+					<div id="container2">
+					<div id="container1">
+					<div class="9u" id="col1">
 						<div id="content-section">
 							<h1><?php echo $course_name; ?>
 							<!-- &nbsp;&nbsp;<span class="rating s4" title="4 stars"></span> --></h1>
@@ -277,7 +305,7 @@
 							
 								<div class="row 25% uniform" style="float:right;margin: 0px 15px 0px 0px;">
 									<div class="12u">
-										<button type="submit" class="form-submit" onClick="document.getElementById('review-dialog').toggle();">Write a Review</button>
+										<button unresolved type="submit" class="form-submit" onClick="document.getElementById('review-dialog').toggle();">Write a Review</button>
 									</div>
 								</div>
 <!--
@@ -294,7 +322,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="3u" style="padding:0;">
+					<div class="3u" style="padding:0;" id="col2">
 					
 						<div id="vendor-image">
 							<img src="images/vendors/<?php if ($course['branding_url'] == '-1' || $course['branding_url'] == "") { echo 'trainingful-branding-140.gif'; } else echo $course['branding_url']; ?>" alt="ESI International" class="company-logo">
@@ -309,22 +337,18 @@
 							PMP, Project Management</li>
 						</ul>
 						
-						<ul id="info-sessions">
+						<ul id="info-sessions" unresolved>
 							<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
-								<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);"><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
+								<li unresolved <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);"><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
 								<div class="location"><?php echo $session['metro_name']; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div></li>
 							<?php endforeach; } ?>
 						</ul>
 					</div>
-				</div>
-
-				<div class="row 0% uniform" style="border:1px solid yellow;clear:both;">
-					<div class="12u">
-						Left side does not drag down if right side is long.
+					</div>
 					</div>
 				</div>
 
-			<paper-action-dialog backdrop id="session-dialog" transition="paper-dialog-transition-bottom" style="display:none;">
+			<paper-action-dialog backdrop id="session-dialog" transition="paper-dialog-transition-bottom" style="display:none;" unresolved>
 				<style>
 					#signin-content {
 						overflow: hidden;
