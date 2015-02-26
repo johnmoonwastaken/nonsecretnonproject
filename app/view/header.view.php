@@ -30,9 +30,9 @@
 		<div class="container" id="topnav">
 			<ul class="leftnav">
 				<!--
-				<li><a href="#">Explore Vendors</a></li>
-				<li><a href="#">Explore Categories</a></li>
-			-->
+				<li><a href="#">Explore Vendors</a></li>-->
+				<li><a href="categories">Explore Categories</a></li>
+			
 			</ul>
 			<ul class="rightnav">
 				<!--
@@ -45,10 +45,8 @@
 		</div>
 
 
-			<paper-action-dialog backdrop id="review-dialog"
-						  transition="paper-dialog-transition-bottom" style="display:none;">
-
-<style>
+			<paper-action-dialog backdrop id="review-dialog" transition="paper-dialog-transition-bottom" style="display:none;">
+				<style>
 					#signin-content {
 						overflow: hidden;
 						background: #fff;

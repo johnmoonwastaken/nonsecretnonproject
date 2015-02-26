@@ -86,8 +86,13 @@
 	#info-sessions li {
 		padding: 20px 0 20px 10px;
 		border-bottom: 1px solid #d7d7d7;
+		cursor: pointer;
 	}
 	
+	#info-sessions li:hover {
+		background: #cde4d4;
+	}
+
 	#info-sessions .dates {
 		font-weight: 400;
 		font-size: 1.2em;
@@ -111,19 +116,7 @@
 	}
 
 	#info-sessions .selected {
-		background-color: #CDE4D4;
-	}
-	
-	#main-section {
-		background: #f8f8f8;
-		position: relative;
-		padding-bottom: 40px;
-	}
-	
-	#main-container {
-		position: relative;
-		top: -160px;
-		margin-bottom: -160px;
+		background-color: #cde4d4;
 	}
 	
 	#main-content {
@@ -221,6 +214,33 @@
 		containers: '990px'
 	});
 	</script>
+	<script>
+	var sessioninfo = [];
+	<?php foreach($sessionList as $session): ?>
+		sessioninfo[<?php echo $session['session_id']; ?>] = {session_type: "<?php echo $session['session_type']; ?>", 
+			start_date: "<?php echo $session['start_date']; ?>", start_date_time: "<?php echo $session['start_date_time']; ?>",
+			end_date: "<?php echo $session['end_date']; ?>", end_date_time: "<?php echo $session['end_date_time']; ?>",
+			metro_name: "<?php echo $session['metro_name']; ?>", location: "<?php echo $session['location']; ?>",
+			cost: "<?php echo $session['cost']; ?>", currency: "<?php echo $session['currency']; ?>", description: "<?php echo $session['description']; ?>"
+		};
+	<?php endforeach; ?>
+	function showSession(session_id) {
+		document.getElementById('session-dialog').toggle();
+		document.getElementById('detailed_session_type').innerHTML = sessioninfo[session_id].session_type;
+		if (sessioninfo[session_id].description != "-1") {
+			document.getElementById('detailed_description').innerHTML = sessioninfo[session_id].description + "<br />";
+		}
+		if (sessioninfo[session_id].location != "-1") {
+			document.getElementById('detailed_location').innerHTML = sessioninfo[session_id].location + "<br />";
+		}
+		else {
+			document.getElementById('detailed_location').innerHTML = sessioninfo[session_id].metro_name + "<br />";
+		}
+		document.getElementById('detailed_start').innerHTML = sessioninfo[session_id].start_date + " " + sessioninfo[session_id].start_date_time;
+		document.getElementById('detailed_end').innerHTML = sessioninfo[session_id].end_date + " " + sessioninfo[session_id].end_date_time;
+		document.getElementById('detailed_cost').innerHTML = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
+	}
+	</script>
 </head>
 <body>
 
@@ -283,18 +303,123 @@
 						
 						<ul id="info-sessions">
 							<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
-								<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
+								<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>)"><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
 								<div class="location"><?php echo $session['metro_name']; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div></li>
 							<?php endforeach; } ?>
 						</ul>
 					</div>
 				</div>
-				<div class="row 25% uniform" style="border:1px solid yellow">
+
+				<div class="row 0% uniform" style="border:1px solid yellow;clear:both;">
 					<div class="12u">
-						test
+						Left side does not drag down if right side is long.
 					</div>
 				</div>
+
+			<paper-action-dialog backdrop id="session-dialog" transition="paper-dialog-transition-bottom" style="display:none;">
+				<style>
+					#signin-content {
+						overflow: hidden;
+						background: #fff;
+					}
+
+					#signin-content h1 {
+						margin: 0 0 0;
+						font-size: 2.2em;
+						color: #666;
+					}
+
+					#signin-content h2 {
+						font-weight:300;
+					}
+					
+					#signin-content h3 {
+						font-weight: 300;
+						font-size: 1.4em;
+					}
+
+					#signin-content h4 {
+						color:#666;
+						font-weight: 400;
+						font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+					}
+
+					#signin-content h5 {
+						color:#666;
+						margin-left: 0.2em;
+						font-weight: 400;
+						font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+					}
+
+					#signin-content .recommended {
+						font-size: 0.7em;
+						font-weight: 600;
+						color: #4ca166;
+					}
+					
+					#signin-content .benefits {
+						list-style: none;
+						font-weight: 400;
+						font-size: 0.85em;
+						color: #666;
+					}
+
+					#signin-content .header {
+						font-size:1.5em;
+						font-family: 'Lato', 'Open Sans', Helvetica, Arial, Sans Serif;
+						font-weight: 300;
+					}
+
+					.fine-print {
+						padding-top: 10px;
+						text-align:center;
+						font-size: 13px;
+						color: #aaaaaa;
+					}
+				</style>
+
+				<div id="signin-content"><span class="header"><?php echo $course_name; ?></span>
+					<div>
+						<div class="12u" style="width:450px;border-top:1px solid #d7d7d7;margin-top:20px;">
+							<p><h4>Session Information</h4></p>
+						</div>
+						<div class="12u" style="font-size:0.8em;">
+							<p>
+								<strong><span id="detailed_session_type"></span></strong>: <span id="detailed_start"></span> to <span id="detailed_end"></span><br />
+								<span id="detailed_description"></span>
+								<span id="detailed_location"></span>
+								<span id="detailed_cost"></span>
+						</div>
+						<div class="12u" style="border-top:1px solid #d7d7d7;">
+							<p><h4>Provider Information</h4></p>
+						</div>
+						<div class="12u" style="font-size:0.8em;">
+							<p>
+								<strong><?php echo $vendor_name; ?></strong><br />
+								<a href=""><?php echo $vendor_website_url; ?></a><br />
+								<?php echo $vendor_contact_email; ?>
+								<?php if($vendor_contact_number != "-1") echo "<br />" . $vendor_contact_number; ?>
+							</p>
+						</div>
+						<div class="12u" style="border-top:1px solid #d7d7d7;">
+							<p><h4>Register</h4></p>
+						</div>
+						<div class="12u" style="font-size:0.8em;">
+							<p>
+								<strong><?php echo $vendor_name; ?></strong><br />
+								<a href=""><?php echo $vendor_website_url; ?></a><br />
+								<?php echo $vendor_contact_email; ?>
+								<?php if($vendor_contact_number != "-1") echo "<br />" . $vendor_contact_number; ?>
+							</p>
+						</div>
+
+					</div>
+				</div>
+				<paper-button dismissive>Cancel</paper-button>
+				<paper-button affirmative autofocus>Register</paper-button>
+			</paper-action-dialog>
+
+
 			</div>
 		</div>
-		
 </section>
