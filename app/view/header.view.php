@@ -2,7 +2,11 @@
 		<script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
 		<link href="../../bower_components/paper-button/paper-button.html" rel="import">
 		<link href="../../bower_components/paper-dialog/paper-action-dialog.html" rel="import">
+		<link href="../../bower_components/paper-dialog/paper-dialog-base.html" rel="import">
+		<link href="../../bower_components/polymer/polymer.html" rel="import">
+		<link href="../../bower_components/paper-shadow/paper-shadow.html" rel="import">
 		<link href="../../bower_components/paper-slider/paper-slider.html" rel="import">
+		
 		
 <style>
 	#main-section {
