@@ -250,7 +250,7 @@
 	}
 	</script>
 </head>
-<body unresolved>
+<body>
 
 	<header>
 		<?php include 'header.view.php' ?>
