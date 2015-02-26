@@ -150,7 +150,11 @@
 		font-weight:400;
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
 	}
-	
+	#map-canvas {
+        width: 500px;
+        height: 400px;
+      }
+
 	#query-summary-bar {
 		background: rgba(0, 0, 0, 0.5);
 		padding: 25px;
@@ -226,7 +230,9 @@
 	<?php endforeach; ?>
 	function showSession(session_id) {
 		document.getElementById('session-dialog').toggle();
-		document.getElementById('detailed_session_type').innerHTML = sessioninfo[session_id].session_type;
+		if (sessioninfo[session_id].session_type != "-1") {
+			document.getElementById('detailed_session_type').innerHTML = "<strong>" + sessioninfo[session_id].session_type +"</strong>: ";
+		}
 		if (sessioninfo[session_id].description != "-1") {
 			document.getElementById('detailed_description').innerHTML = sessioninfo[session_id].description + "<br />";
 		}
@@ -385,7 +391,7 @@
 						</div>
 						<div class="12u" style="font-size:0.8em;">
 							<p>
-								<strong><span id="detailed_session_type"></span></strong>: <span id="detailed_start"></span> to <span id="detailed_end"></span><br />
+								<span id="detailed_session_type"></span><span id="detailed_start"></span> to <span id="detailed_end"></span><br />
 								<span id="detailed_description"></span>
 								<span id="detailed_location"></span>
 								<span id="detailed_cost"></span>
@@ -396,8 +402,8 @@
 						<div class="12u" style="font-size:0.8em;">
 							<p>
 								<strong><?php echo $vendor_name; ?></strong><br />
-								<a href=""><?php echo $vendor_website_url; ?></a><br />
-								<?php echo $vendor_contact_email; ?>
+								<a href=""><?php echo $vendor_website_url; ?></a>
+								<?php if($vendor_contact_email != "-1") echo "<br />" . $vendor_contact_email; ?>
 								<?php if($vendor_contact_number != "-1") echo "<br />" . $vendor_contact_number; ?>
 							</p>
 						</div>
