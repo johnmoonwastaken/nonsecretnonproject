@@ -111,6 +111,7 @@
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
 		list-style: none;
 		padding:0;
+		border-right: 5px solid #4ca166;
 	}
 
 	#info-sessions li {
@@ -303,9 +304,9 @@
 							<!-- <a href="#">Read More ></a> --></h4></p>
 							<div id="ratings-section">
 							
-								<div class="row 25% uniform" style="float:right;margin: 0px 15px 0px 0px;">
+								<div class="row 25% uniform" style="float:right;margin: 0px 15px 10px 0px;">
 									<div class="12u">
-										<button unresolved type="submit" class="form-submit" onClick="document.getElementById('review-dialog').toggle();">Write a Review</button>
+										<button type="submit" class="form-submit" onClick="document.getElementById('review-dialog').toggle();">Write a Review</button>
 									</div>
 								</div>
 <!--
@@ -322,7 +323,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="3u" style="padding:0;" id="col2">
+					<div class="3u" id="col2">
 					
 						<div id="vendor-image">
 							<img src="images/vendors/<?php if ($course['branding_url'] == '-1' || $course['branding_url'] == "") { echo 'trainingful-branding-140.gif'; } else echo $course['branding_url']; ?>" alt="ESI International" class="company-logo">
