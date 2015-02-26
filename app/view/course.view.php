@@ -220,7 +220,7 @@
 	</script>
 	<script>
 	window.addEventListener('polymer-ready', function() {
-	        document.querySelector('#session-dialog').classList.add('hidden');
+	        document.getElementById('session-dialog').classList.add('hidden');
 	      });
 	
 	var sessioninfo = [];
