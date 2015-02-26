@@ -226,7 +226,6 @@
 	<?php endforeach; ?>
 
 	function showSession(session_id) {
-		document.getElementById('session-dialog').toggle();
 		if (sessioninfo[session_id].session_type != "-1") {
 			document.getElementById('detailed_session_type').innerHTML = "" + sessioninfo[session_id].session_type +": ";
 		}
@@ -247,6 +246,7 @@
 		document.getElementById('detailed_start').innerHTML = sessioninfo[session_id].start_date + " " + sessioninfo[session_id].start_date_time;
 		document.getElementById('detailed_end').innerHTML = sessioninfo[session_id].end_date + " " + sessioninfo[session_id].end_date_time;
 		document.getElementById('detailed_cost').innerHTML = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
+		document.getElementById('session-dialog').toggle();
 	}
 	</script>
 </head>
@@ -386,7 +386,7 @@
 					}
 				</style>
 
-				<div id="signin-content"><span class="header"><?php echo $course_name; ?></span>
+				<div id="signin-content" style="max-width:450px;"><span class="header"><?php echo $course_name; ?></span>
 					<div>
 						<div class="12u" style="width:450px;border-top:1px solid #d7d7d7;margin-top:20px;">
 							<p><h4>Session Information</h4></p>
