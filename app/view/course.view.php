@@ -1,11 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<?php include 'favicon.php' ?>
+<?php include 'header_required.php' ?>
 	<title>trainingful</title>
-		
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="import" href="../../bower_components/ajax-form/ajax-form.html">
+
+	<link rel="import" href="../../bower_components/elements/session-action-dialog.html">
 
 	<style>
 	
@@ -253,12 +252,12 @@
 	});
 	</script>
 	<script>
+	
 	window.addEventListener('polymer-ready', function(e) {
-		console.log("polymer ready");
-		document.getElementById('loading-sessions').style.display = "none";
-		document.getElementById('display-sessions').style.display = "inline";
+		console.log('polymer-ready');
+		//document.getElementById('loading-sessions').style.display = "none";
+		//document.getElementById('display-sessions').style.display = "inline";
 	});
-
 
 	var sessioninfo = [];
 
@@ -267,6 +266,7 @@
 	<?php endforeach; ?>
 
 	function showSession(session_id) {
+		/*
 		if (sessioninfo[session_id].session_type != "-1") {
 			document.getElementById('detailed_session_type').innerHTML = "" + sessioninfo[session_id].session_type +": ";
 		}
@@ -288,19 +288,16 @@
 		document.getElementById('detailed_end').innerHTML = sessioninfo[session_id].end_date;
 		document.getElementById('start_end_time').innerHTML = sessioninfo[session_id].start_date_time + "-" + sessioninfo[session_id].end_date_time;
 		document.getElementById('detailed_cost').innerHTML = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
-		document.getElementById('session-dialog').toggle();
-	}
-	function submitRegister() {
-		//window.alert(document.getElementById('register_form').innerHTML);
+		*/
+		document.querySelector('#sad').toggle();
+		//document.getElementById('sad').toggle();
 	}
 	</script>
 </head>
 <body>
 
 	<header>
-		<?php include 'header.view.php' ?>
-		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<?php include 'header.view.php' ?>
 	</header>
 	
 	<section id="main-section">1
@@ -361,9 +358,9 @@
 						<ul id="info-sessions">
 							<div style="padding:10px 0 10px 10px;border-bottom: 5px solid #4ca166;">
 								<span class="icon triangle-down"></span> <strong>Register & Session Information</strong>
-							</div>
-							<li id="loading-sessions">Loading course sessions... <img src="../../images/polymer-loader.gif" /></li>
-							<span id="display-sessions" style="display:none;">
+							</div><!--
+							<li id="loading-sessions">Loading course sessions... <img src="../../images/polymer-loader.gif" /></li> -->
+							<!--<span id="display-sessions" style="display:none;">--><span id="display-sessions">
 								<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
 									<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);"><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
 									<div class="location"><?php echo $session['metro_name']; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
@@ -378,134 +375,12 @@
 					</div>
 				</div>
 
-			<paper-action-dialog backdrop id="session-dialog" transition="paper-dialog-transition-bottom" style="display:none;" unresolved>
-				<style>
-					#signin-content {
-						overflow: hidden;
-						background: #fff;
-					}
-
-					#signin-content h1 {
-						margin: 0 0 0;
-						font-size: 2.2em;
-						color: #666;
-					}
-
-					#signin-content h2 {
-						font-weight:300;
-					}
-					
-					#signin-content h3 {
-						font-weight: 300;
-						font-size: 1.4em;
-					}
-
-					#signin-content h4 {
-						color:#666;
-						font-weight: 400;
-						font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
-					}
-
-					#signin-content h5 {
-						color:#666;
-						margin-left: 0.2em;
-						font-weight: 400;
-						font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
-					}
-
-					#signin-content .recommended {
-						font-size: 0.7em;
-						font-weight: 600;
-						color: #4ca166;
-					}
-					
-					#signin-content .benefits {
-						list-style: none;
-						font-weight: 400;
-						font-size: 0.85em;
-						color: #666;
-					}
-
-					#signin-content .header {
-						font-size:1.5em;
-						font-family: 'Lato', 'Open Sans', Helvetica, Arial, Sans Serif;
-						font-weight: 300;
-					}
-
-					.fine-print {
-						padding-top: 10px;
-						text-align:center;
-						font-size: 13px;
-						color: #aaaaaa;
-					}
-
-					.register_input {
-						font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
-						font-size:1em;
-						width:200px;
-						color: #555555;
-						padding: 9px 8px 9px 8px;
-					}
-
-				</style>
-
-				<div id="signin-content" style="max-width:450px;"><span class="header"><?php echo $course_name; ?></span>
-					<div>
-						<div style="width:450px;border-top:1px solid #d7d7d7;margin-top:20px;">
-							<p><h4>Session Information</h4></p>
-						</div>
-						<div style="font-size:0.8em;">
-							<p>
-								<span id="detailed_session_type"></span><strong><span id="detailed_start"></span></strong> to <strong><span id="detailed_end"></span> (<span id="start_end_time"></span>)</strong><br />
-								<span id="detailed_description"></span>
-								<span id="detailed_location"></span>
-								<span id="detailed_cost"></span> (plus applicable taxes)
-						</div>
-						<div style="border-top:1px solid #d7d7d7;">
-							<p><h4>Provider Information</h4></p>
-						</div>
-						<div style="font-size:0.8em;">
-							<p>
-								<strong><?php echo $vendor_name; ?></strong><br />
-								<a href="http://<?php echo $vendor_website_url; ?>" target="_blank"><?php echo $vendor_website_url; ?></a>
-								<?php if($vendor_contact_email != "-1") echo "<br />" . $vendor_contact_email; ?>
-								<?php if($vendor_contact_number != "-1") echo "<br />" . $vendor_contact_number; ?>
-							</p>
-						</div>
-						<div style="border-top:1px solid #d7d7d7;">
-							<p><h4>Register</h4></p>
-						</div>
-						<form is="ajax-form" action="register_session" method="post" id="register_form">
-							<div>
-								<div style="float:left;margin-right:10px;">
-									<input type="text" id="register-first-name" name="first_name" placeholder="First Name" class="register_input" />
-								</div>
-								<div>
-									<input type="text" id="register-last-name" name="last_name" placeholder="Last Name" class="register_input" />
-								</div>
-							</div>
-							<div style="margin-top:10px;">
-								<div style="float:left;margin-right:10px;">
-									<input type="email" id="register-email" name="email" placeholder="E-mail Address" class="register_input" />
-								</div>
-								<div>
-									<input type="text" id="register-phone" name="phone" placeholder="Phone: 1-999-999-9999" class="register_input" />
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
+				<session-action-dialog id="sad" backdrop id="session-dialog" transition="paper-dialog-transition-bottom" style="display:none;" heading="Course Name">
+				<!--
 				<paper-button dismissive>Cancel</paper-button>
-				<paper-button affirmative autofocus id="submitRegister" onclick="submitRegister();">Register</paper-button>
-
-				<script>
-   					//document.getElementById('submitRegister').addEventListener('click', function() {
-      				//document.getElementById('register_form').submit(); 
-   				//});
-				</script>
-			</paper-action-dialog>
-
-
+				<paper-button affirmative autofocus>Register</paper-button>
+			-->
+				</session-action-dialog>
 			</div>
 		</div>
 </section>
