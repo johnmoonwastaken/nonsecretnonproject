@@ -1,7 +1,6 @@
 <link href="../polymer/polymer.html" rel="import">
 <link href="../paper-shadow/paper-shadow.html" rel="import">
 <link rel="import" href="../../bower_components/ajax-form/ajax-form.html">
-
 <link href="paper-dialog-base.html" rel="import">
 
 <polymer-element name="session-action-dialog" extends="paper-dialog-base" role="dialog" layout vertical>
@@ -83,14 +82,13 @@
 	</div>
 	<div id="session-info-content" class="info-content">
 		<p>
-			<span id="detailed_session_type">{{classtype}}</span>
-			<strong><span id="detailed_start">{{startdate}}</span></strong> to <strong><span id="detailed_end">{{startdate}}</span> 
+			<span id="detailed_session_type">{{classroom}}</span>
+			<span id="detailed_start">{{dates}}</span> 
 			<span id="start_end_time">{{startendtime}}</span></strong></p>
-		<p>
+
 			<span id="detailed_description">{{description}}</span>
 			<span id="detailed_location">{{location}}</span>
-			<span id="detailed_cost">{{cost}}</span> (plus applicable taxes)
-		</p>
+			<p><span id="detailed_cost">{{cost}}</span> (plus applicable taxes)</p>
 	</div>
 	<div class="info-header" id="provider-info-header">
 		<p><h4>Provider Information</h4></p>
@@ -98,10 +96,10 @@
 
 	<div class="info-content">
 		<p>
-			<strong><span id="vendor_name">{{vendor_name}}</span></strong><br />
-			<a href="http://{{vendor_url}}" target="_blank">{{vendor_url}}</a>
-			<br />{{vendor_contact_email}}
-			<br />{{vendor_contact_number}}
+			<strong><span id="vendor_name">{{vendorname}}</span></strong><br />
+			<a href="http://{{vendor_url}}" target="_blank">{{vendorurl}}</a>
+			<br />{{vendoremail}}
+			<br />{{vendorcontact}}
 		</p>
 	</div>
 
@@ -143,18 +141,16 @@
 <script>
 
   Polymer({
-
-  	classtype: "Classroom:",
-  	startdate: "Mon Feb 1, 2014",
-  	enddate: "Mon Feb 1, 2014",
-  	startendtime: "(8:00 - 16:00)",
-  	description: "This course is being offered.",
-  	location: "888 W. Georgia St, Vancouver, BC",
-  	cost: "$1200.00 CAD",
-  	vendor_name: "National Project Management Inc.",
-  	vendor_url: "npm.com",
-  	vendor_contact_email: "some@where.com",
-  	vendor_contact_number: "1-800-900-000",
+  	classroom: "",
+  	dates: "",
+  	startendtime: "",
+  	description: "",
+  	location: "",
+  	cost: "",
+  	vendorname: "",
+  	vendorurl: "",
+  	vendoremail: "",
+  	vendorcontact: "",
     publish: {
       closeSelector: '[affirmative],[dismissive]'
     },

@@ -341,14 +341,22 @@
 									<li>
 										<?php if($parentCategories['type'] != $lastType) { $lastType = $parentCategories['type']; echo '<div style="margin-bottom:15px;"><h2>'.$parentCategories['type'].'</h2></div>';} ?>
 										<div>
-											<div id="parent<?php echo $parentCategories['category_id']; ?>"><h5><?php echo $parentCategories['category_name']; ?></h5></div>
+											<div id="p<?php echo $parentCategories['category_id']; ?>"><h5><?php echo $parentCategories['category_name']; ?></h5></div>
 											<div class="row" style="font-size:0.7em;">
 												<?php
 												$total_columns = 3;
+												$sub_categoryList[0] = array();
+												$sub_categoryList[1] = array();
+												$sub_categoryList[2] = array();
 												// We check to make sure we have an array of $functions (this is to avoid unnecessary warnings)
 												if (isset($parentCategories['sub_categories']) && is_array($parentCategories['sub_categories']) && count($parentCategories['sub_categories']) > 0) {
 													// Divide the array of $functions into three (one for each column)
-													$sub_categoryList = array_chunk($parentCategories['sub_categories'], count($parentCategories['sub_categories']) % $total_columns == 0 ? count($parentCategories['sub_categories']) / $total_columns : count($parentCategories['sub_categories']) / $total_columns + 1);
+													//$sub_categoryList = array_chunk($parentCategories['sub_categories'], count($parentCategories['sub_categories']) % $total_columns == 0 ? count($parentCategories['sub_categories']) / $total_columns : count($parentCategories['sub_categories']) / $total_columns + 1);
+													$column_counter = 0;
+													foreach ($parentCategories['sub_categories'] as $subs) {
+														array_push($sub_categoryList[$column_counter],$subs);
+														$column_counter = ($column_counter+1) % $total_columns;
+													}
 												} else {
 													$sub_categoryList = array();
 												}				

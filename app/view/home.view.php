@@ -1,16 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<?php include 'favicon.php' ?>
+	<?php include 'header_required.php' ?>
 
 	<title>trainingful</title>
 
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
-	
-	<!--<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">-->
-	<link rel="stylesheet" href="css/style.css">
-	
 	<style>
 	header {
 		height: 505px;
@@ -186,13 +180,21 @@
 				<div class="row">
 					<?php
 					$total_columns = 3;
+					$functionslist[0] = array();
+					$functionslist[1] = array();
+					$functionslist[2] = array();
 					// We check to make sure we have an array of $functions (this is to avoid unnecessary warnings)
 					if (isset($functions) && is_array($functions) && count($functions) > 0) {
 						// Divide the array of $functions into three (one for each column)
-						$functionslist = array_chunk($functions, count($functions) % $total_columns == 0 ? count($functions) / $total_columns : count($functions) / $total_columns + 1);
+						//$functionslist = array_chunk($functions, count($functions) % $total_columns == 0 ? count($functions) / $total_columns : count($functions) / $total_columns + 1);
+						$column_counter = 0;
+						foreach ($functions as $function) {
+							array_push($functionslist[$column_counter],$function);
+							$column_counter = ($column_counter+1) % $total_columns;
+						}
 					} else {
 						$functionslist = array();
-					}				
+					}
 					?>
 					<ul class="4u category-list">
 					<?php if (is_array($functionslist[0])) { foreach($functionslist[0] as $function): ?>
@@ -218,10 +220,17 @@
 				<div class="row">
 					<?php
 					$total_columns = 3;
+					$industrieslist[0] = array();
+					$industrieslist[1] = array();
+					$industrieslist[2] = array();
 					// We check to make sure we have an array of $functions (this is to avoid unnecessary warnings)
 					if (isset($industries) && is_array($industries) && count($industries) > 0) {
 						// Divide the array of $functions into three (one for each column)
-						$industrieslist = array_chunk($industries, count($industries) % $total_columns == 0 ? count($industries) / $total_columns : count($industries) / $total_columns + 1);
+						$column_counter = 0;
+						foreach ($industries as $industry) {
+							array_push($industrieslist[$column_counter],$industry);
+							$column_counter = ($column_counter+1) % $total_columns;
+						}
 					} else {
 						$industrieslist = array();
 					}
