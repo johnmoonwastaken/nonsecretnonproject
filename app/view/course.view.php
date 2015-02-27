@@ -362,7 +362,7 @@
 							<div style="padding:10px 0 10px 10px;border-bottom: 5px solid #4ca166;">
 								<span class="icon triangle-down"></span> <strong>Register & Session Information</strong>
 							</div>
-							<li id="loading-sessions">Loading sessions...</li>
+							<li id="loading-sessions">Loading course sessions... <img src="../../images/polymer-loader.gif" /></li>
 							<span id="display-sessions" style="display:none;">
 								<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
 									<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);"><span class="icon calendar"></span> <span class="dates"><?php echo date("M j, Y", strtotime($session['start_date'])); ?> - <?php echo date("M j, Y", strtotime($session['end_date'])); ?></span>
