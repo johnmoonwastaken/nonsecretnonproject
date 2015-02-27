@@ -75,9 +75,11 @@ foreach ($get_results as $temp) {
 	}
 	//$sessionList[$session_count]['location'] = nl2br($temp['location']);
 	$sessionList[$session_count]['location'] = preg_replace( "/\r\n/", "<br />", $temp['location']);
+	$sessionList[$session_count]['location'] = preg_replace( "/\r|\n/", "<br />", $sessionList[$session_count]['location']);
 	$sessionList[$session_count]['metro_name'] = $temp['metro_name'];
 	$sessionList[$session_count]['currency'] = $temp['currency'];
-	$sessionList[$session_count]['description'] = preg_replace( "/\r|\n/", "<br />", $temp['description']);
+	$sessionList[$session_count]['description'] = preg_replace( "/\r\n/", "<br />", $temp['description']);
+	$sessionList[$session_count]['description'] = preg_replace( "/\r|\n/", "<br />", $sessionList[$session_count]['description']);
 	$sessionList[$session_count]['session_type'] = $temp['session_type'];
 	if ($currency == "USD" || "CAD" || "HKD" || "SGD") {
 		$sessionList[$session_count]['cost'] = "$" . number_format((float)$temp['cost'],2,'.','');
