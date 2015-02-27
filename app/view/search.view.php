@@ -315,10 +315,10 @@
 					</div>
 					<div class="9u">
 						<ul id="type-switcher">
-							<li class="active"><span class="tick"></span><a href="#">All Training</a></li>
-							<!--
-							<li><span class="tick"></span><a href="#">Courses</a></li>
-							<li><span class="tick"></span><a href="#">Conferences</a></li>
+							<!--<li class="active"><span class="tick"></span><a href="#">All Training</a></li>-->
+							
+							<li class="active"><span class="tick"></span><a href="#">Courses</a></li>
+							<!--<li><span class="tick"></span><a href="#">Conferences</a></li>
 							-->
 						</ul>
 						

@@ -3,12 +3,10 @@
 <head>
 	<?php include 'favicon.php' ?>
 	<title>trainingful</title>
-	
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
-	
+		
 	<link rel="stylesheet" href="css/style.css">
-	
+	<link rel="import" href="../../bower_components/ajax-form/ajax-form.html">
+
 	<style>
 	
 	.wrapper {
@@ -255,6 +253,12 @@
 	});
 	</script>
 	<script>
+	window.addEventListener('polymer-ready', function(e) {
+		console.log("polymer ready");
+		document.getElementById('info-sessions').style.display = "inline";
+	});
+
+
 	var sessioninfo = [];
 
 	<?php foreach($sessionList as $session): ?>
@@ -279,10 +283,14 @@
 		else {
 			document.getElementById('detailed_location').innerHTML = "";
 		}
-		document.getElementById('detailed_start').innerHTML = sessioninfo[session_id].start_date + " " + sessioninfo[session_id].start_date_time;
-		document.getElementById('detailed_end').innerHTML = sessioninfo[session_id].end_date + " " + sessioninfo[session_id].end_date_time;
+		document.getElementById('detailed_start').innerHTML = sessioninfo[session_id].start_date;
+		document.getElementById('detailed_end').innerHTML = sessioninfo[session_id].end_date;
+		document.getElementById('start_end_time').innerHTML = sessioninfo[session_id].start_date_time + "-" + sessioninfo[session_id].end_date_time;
 		document.getElementById('detailed_cost').innerHTML = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
 		document.getElementById('session-dialog').toggle();
+	}
+	function submitRegister() {
+		//window.alert(document.getElementById('register_form').innerHTML);
 	}
 	</script>
 </head>
@@ -290,6 +298,8 @@
 
 	<header>
 		<?php include 'header.view.php' ?>
+		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
 	</header>
 	
 	<section id="main-section">1
@@ -347,7 +357,7 @@
 							PMP, Project Management</li>
 						</ul>
 						
-						<ul id="info-sessions">
+						<ul id="info-sessions" style="display:none;">
 							<div style="padding:10px 0 10px 10px;border-bottom: 5px solid #4ca166;">
 								<span class="icon triangle-down"></span> <strong>Register & Session Information</strong>
 							</div>
@@ -424,47 +434,71 @@
 						font-size: 13px;
 						color: #aaaaaa;
 					}
+
+					.register_input {
+						font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+						font-size:1em;
+						width:200px;
+						color: #555555;
+						padding: 9px 8px 9px 8px;
+					}
+
 				</style>
 
 				<div id="signin-content" style="max-width:450px;"><span class="header"><?php echo $course_name; ?></span>
 					<div>
-						<div class="12u" style="width:450px;border-top:1px solid #d7d7d7;margin-top:20px;">
+						<div style="width:450px;border-top:1px solid #d7d7d7;margin-top:20px;">
 							<p><h4>Session Information</h4></p>
 						</div>
-						<div class="12u" style="font-size:0.8em;">
+						<div style="font-size:0.8em;">
 							<p>
-								<span id="detailed_session_type"></span><strong><span id="detailed_start"></span></strong> to <strong><span id="detailed_end"></span></strong><br />
+								<span id="detailed_session_type"></span><strong><span id="detailed_start"></span></strong> to <strong><span id="detailed_end"></span> (<span id="start_end_time"></span>)</strong><br />
 								<span id="detailed_description"></span>
 								<span id="detailed_location"></span>
-								<span id="detailed_cost"></span>
+								<span id="detailed_cost"></span> (plus applicable taxes)
 						</div>
-						<div class="12u" style="border-top:1px solid #d7d7d7;">
+						<div style="border-top:1px solid #d7d7d7;">
 							<p><h4>Provider Information</h4></p>
 						</div>
-						<div class="12u" style="font-size:0.8em;">
+						<div style="font-size:0.8em;">
 							<p>
 								<strong><?php echo $vendor_name; ?></strong><br />
-								<a href=""><?php echo $vendor_website_url; ?></a>
+								<a href="http://<?php echo $vendor_website_url; ?>" target="_blank"><?php echo $vendor_website_url; ?></a>
 								<?php if($vendor_contact_email != "-1") echo "<br />" . $vendor_contact_email; ?>
 								<?php if($vendor_contact_number != "-1") echo "<br />" . $vendor_contact_number; ?>
 							</p>
 						</div>
-						<div class="12u" style="border-top:1px solid #d7d7d7;">
+						<div style="border-top:1px solid #d7d7d7;">
 							<p><h4>Register</h4></p>
 						</div>
-						<div class="12u" style="font-size:0.8em;">
-							<p>
-								<strong><?php echo $vendor_name; ?></strong><br />
-								<a href=""><?php echo $vendor_website_url; ?></a><br />
-								<?php echo $vendor_contact_email; ?>
-								<?php if($vendor_contact_number != "-1") echo "<br />" . $vendor_contact_number; ?>
-							</p>
-						</div>
-
+						<form is="ajax-form" action="register_session" method="post" id="register_form">
+							<div>
+								<div style="float:left;margin-right:10px;">
+									<input type="text" id="register-first-name" name="first_name" placeholder="First Name" class="register_input" />
+								</div>
+								<div>
+									<input type="text" id="register-last-name" name="last_name" placeholder="Last Name" class="register_input" />
+								</div>
+							</div>
+							<div style="margin-top:10px;">
+								<div style="float:left;margin-right:10px;">
+									<input type="email" id="register-email" name="email" placeholder="E-mail Address" class="register_input" />
+								</div>
+								<div>
+									<input type="text" id="register-phone" name="phone" placeholder="Phone: 1-999-999-9999" class="register_input" />
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 				<paper-button dismissive>Cancel</paper-button>
-				<paper-button affirmative autofocus>Register</paper-button>
+				<paper-button affirmative autofocus id="submitRegister" onclick="submitRegister();">Register</paper-button>
+
+				<script>
+   					//document.getElementById('submitRegister').addEventListener('click', function() {
+      				//document.getElementById('register_form').submit(); 
+   				//});
+				</script>
 			</paper-action-dialog>
 
 

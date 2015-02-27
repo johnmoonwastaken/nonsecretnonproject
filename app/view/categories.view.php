@@ -309,10 +309,10 @@
 					</div>
 					<div class="9u">
 						<ul id="type-switcher">
-							<li class="active"><span class="tick"></span><a href="#">All Training</a></li>
-							<!--
-							<li><span class="tick"></span><a href="#">Courses</a></li>
-							<li><span class="tick"></span><a href="#">Conferences</a></li>
+							<!--<li class="active"><span class="tick"></span><a href="#">All Training</a></li>-->
+							
+							<li class="active"><span class="tick"></span><a href="#">Courses</a></li>
+							<!--<li><span class="tick"></span><a href="#">Conferences</a></li>
 							-->
 						</ul>
 						
@@ -341,7 +341,7 @@
 									<li>
 										<?php if($parentCategories['type'] != $lastType) { $lastType = $parentCategories['type']; echo '<div style="margin-bottom:15px;"><h2>'.$parentCategories['type'].'</h2></div>';} ?>
 										<div>
-											<div><h5><?php echo $parentCategories['category_name']; ?></h5></div>
+											<div id="parent<?php echo $parentCategories['category_id']; ?>"><h5><?php echo $parentCategories['category_name']; ?></h5></div>
 											<div class="row" style="font-size:0.7em;">
 												<?php
 												$total_columns = 3;

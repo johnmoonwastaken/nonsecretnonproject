@@ -196,19 +196,19 @@
 					?>
 					<ul class="4u category-list">
 					<?php if (is_array($functionslist[0])) { foreach($functionslist[0] as $function): ?>
-						<li><a href="categories"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
+						<li><a href="categories#p<?php echo $function['id']; ?>"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
 					<?php endforeach; }?>
 					</ul>
 					
 					<ul class="4u category-list">
 					<?php if (is_array($functionslist[1])) { foreach($functionslist[1] as $function): ?>
-						<li><a href="categories"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
+						<li><a href="categories#p<?php echo $function['id']; ?>"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
 					<?php endforeach; }?>
 					</ul>
 					
 					<ul class="4u category-list">
 					<?php if (is_array($functionslist[2])) { foreach($functionslist[2] as $function): ?>
-						<li><a href="categories"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
+						<li><a href="categories#p<?php echo $function['id']; ?>"><?php echo $function['name']; ?> <span style="font-weight:bold">(<?php echo $function['course_count']; ?>)</span></a></li>
 					<?php endforeach; }?>
 					</ul>
 				</div>
@@ -228,19 +228,19 @@
 					?>
 					<ul class="4u category-list">
 					<?php if (is_array($industrieslist[0])) { foreach($industrieslist[0] as $industries): ?>
-						<li><a href="#"><?php echo $industries['name']; ?> <span style="font-weight:bold">(<?php echo $industries['course_count']; ?>)</span></a></li>
+						<li><a href="categories#p<?php echo $industries['id']; ?>"><?php echo $industries['name']; ?> <span style="font-weight:bold">(<?php echo $industries['course_count']; ?>)</span></a></li>
 					<?php endforeach; }?>
 					</ul>
 
 					<ul class="4u category-list">
 					<?php if (is_array($industrieslist[1])) { foreach($industrieslist[1] as $industries): ?>
-						<li><a href="#"><?php echo $industries['name']; ?> <span style="font-weight:bold">(<?php echo $industries['course_count']; ?>)</span></a></li>
+						<li><a href="categories#p<?php echo $industries['id']; ?>"><?php echo $industries['name']; ?> <span style="font-weight:bold">(<?php echo $industries['course_count']; ?>)</span></a></li>
 					<?php endforeach; }?>
 					</ul>
 
 					<ul class="4u category-list">
 					<?php if (is_array($industrieslist[2])) { foreach($industrieslist[2] as $industries): ?>
-						<li><a href="#"><?php echo $industries['name']; ?> <span style="font-weight:bold">(<?php echo $industries['course_count']; ?>)</span></a></li>
+						<li><a href="categories#p<?php echo $industries['id']; ?>"><?php echo $industries['name']; ?> <span style="font-weight:bold">(<?php echo $industries['course_count']; ?>)</span></a></li>
 					<?php endforeach; }?>
 					</ul>
 				</div>
