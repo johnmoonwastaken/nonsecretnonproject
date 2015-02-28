@@ -5,6 +5,7 @@
 	<title>trainingful</title>
 
 	<link rel="import" href="../../bower_components/elements/session-action-dialog.html">
+	<link rel="import" href="../../bower_components/elements/review-action-dialog.html">
 
 	<style>
 	
@@ -291,13 +292,15 @@
 			document.querySelector('#sad').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong>";
 		}
 
-		document.querySelector('#sad').startendtime = "<strong>(" + sessioninfo[session_id].start_date_time + " - " + sessioninfo[session_id].end_date_time + ")</strong>";
+		if (sessioninfo[session_id].start_date_time != "" && sessioninfo[session_id].end_date_time != "") {
+			document.querySelector('#sad').startendtime = "<strong>(" + sessioninfo[session_id].start_date_time + " - " + sessioninfo[session_id].end_date_time + ")</strong>";
+			}
 		document.querySelector('#sad').cost = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
 		
 		document.querySelector('#sad').vendorname = "<?php echo $vendor_name; ?>";
-		document.querySelector('#sad').vendorurl = "<?php if ($vendor_website_url != '-1') { echo '<a href=\"http://'.$vendor_website_url.'\" target=\"_blank\">'.$vendor_website_url.'</a>'; } ?>";
-		document.querySelector('#sad').vendoremail = "<?php if ($vendor_contact_email != '-1') { echo '<br />'.$vendor_contact_email; } ?>";
-		document.querySelector('#sad').vendorcontact = "<?php if ($vendor_contact_number != '-1') { echo '<br />'.$vendor_contact_number; } ?>";
+		document.querySelector('#sad').vendorurl = "<?php if ($vendor_website_url != '-1' && $vendor_website_url != '') { echo '<a href=\"http://'.$vendor_website_url.'\" target=\"_blank\">'.$vendor_website_url.'</a>'; } ?>";
+		document.querySelector('#sad').vendoremail = "<?php if ($vendor_contact_email != '-1' && $vendor_contact_email != '') { echo '<br />'.$vendor_contact_email; } ?>";
+		document.querySelector('#sad').vendorcontact = "<?php if ($vendor_contact_number != '-1' && $vendor_contact_number != '') { echo '<br />'.$vendor_contact_number; } ?>";
 		document.querySelector('#sad').toggle();
 
 	}
@@ -331,7 +334,7 @@
 							
 								<div class="row 25% uniform" style="float:right;margin: 0px 15px 10px 0px;">
 									<div class="12u">
-										<button type="submit" class="form-submit" onClick="document.getElementById('review-dialog').toggle();">Write a Review</button>
+										<button type="submit" class="form-submit" onClick="document.querySelector('#rad').toggle();">Write a Review</button>
 									</div>
 								</div>
 <!--
@@ -357,12 +360,15 @@
 							<strong><?php echo $vendor_name; ?></strong>
 						</div>
 						<ul id="info-tags">
+						<!--
+
 							<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
 							30 PDU towards PMP </li>
 							<li><span class="icon price-tag"></span> <strong>Filed and Tagged</strong><br />
 							PMP, Project Management</li>
+						-->
 						</ul>
-						
+
 						<ul id="info-sessions">
 							<div style="padding:10px 0 10px 10px;border-bottom: 5px solid #4ca166;">
 								<span class="icon triangle-down"></span> <strong>Register & Session Information</strong>
@@ -372,7 +378,7 @@
 								<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
 									<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);">
 										<div><span class="icon calendar"></span> <span class="dates"><?php { echo date("M j, Y", strtotime($session['start_date'])); if ($session['start_date'] != $session['end_date']) { echo " - ".date("M j, Y", strtotime($session['end_date']));} } ?></span></div>
-									<div class="location"><?php echo $session['metro_name']; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
+									<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
 									<!-- <img src="../../images/lower-triangle.png" style="margin: 0px 0 -5px 234px;" /> -->
 									<div class="folded-corner"></div>
 								</li>
@@ -383,8 +389,9 @@
 					</div>
 					</div>
 				</div>
-
 				<session-action-dialog id="sad" backdrop id="session-dialog" transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
+				<review-action-dialog id="rad" backdrop id="review-dialog" transition="paper-dialog-transition-bottom" ?></review-action-dialog>
+
 			</div>
 		</div>
 </section>
