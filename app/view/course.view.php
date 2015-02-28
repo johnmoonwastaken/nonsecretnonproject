@@ -266,7 +266,6 @@
 	<?php endforeach; ?>
 
 	function showSession(session_id) {
-
 		if (sessioninfo[session_id].session_type != "-1") {
 			document.querySelector('#sad').classroom = sessioninfo[session_id].session_type +": ";
 		}
@@ -292,15 +291,15 @@
 			document.querySelector('#sad').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong>";
 		}
 
-		document.querySelector('#sad').startendtime = "(" + sessioninfo[session_id].start_date_time + "-" + sessioninfo[session_id].end_date_time + ")";
+		document.querySelector('#sad').startendtime = "<strong>(" + sessioninfo[session_id].start_date_time + " - " + sessioninfo[session_id].end_date_time + ")</strong>";
 		document.querySelector('#sad').cost = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
 		
-		document.querySelector('#sad').vendorname = "<?php echo $vendor_name ?>";
-		document.querySelector('#sad').vendorurl = "<?php echo $vendor_url ?>";
-		document.querySelector('#sad').vendoremail = "<?php echo $vendor_email ?>";
-		document.querySelector('#sad').vendorcontact = "<?php echo $vendor_contact ?>";
-
+		document.querySelector('#sad').vendorname = "<?php echo $vendor_name; ?>";
+		document.querySelector('#sad').vendorurl = "<?php if ($vendor_website_url != '-1') { echo '<a href=\"http://'.$vendor_website_url.'\" target=\"_blank\">'.$vendor_website_url.'</a>'; } ?>";
+		document.querySelector('#sad').vendoremail = "<?php if ($vendor_contact_email != '-1') { echo '<br />'.$vendor_contact_email; } ?>";
+		document.querySelector('#sad').vendorcontact = "<?php if ($vendor_contact_number != '-1') { echo '<br />'.$vendor_contact_number; } ?>";
 		document.querySelector('#sad').toggle();
+
 	}
 	</script>
 </head>
@@ -310,9 +309,8 @@
 <?php include 'header.view.php' ?>
 	</header>
 	
-	<section id="main-section">1
+	<section id="main-section">
 		<div class="container" id="main-container">
-		
 			<div id="query-summary-bar" class="container">
 				<?php if ($start !=""): ?>
 					<p><strong><a href="search?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Back to Results</a></strong> | In <strong><?php echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong></p>
@@ -386,12 +384,7 @@
 					</div>
 				</div>
 
-				<session-action-dialog id="sad" backdrop id="session-dialog" transition="paper-dialog-transition-bottom" style="display:none;" heading="<?php echo $course_name ?>">
-				<!--
-				<paper-button dismissive>Cancel</paper-button>
-				<paper-button affirmative autofocus>Register</paper-button>
-			-->
-				</session-action-dialog>
+				<session-action-dialog id="sad" backdrop id="session-dialog" transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
 			</div>
 		</div>
 </section>
