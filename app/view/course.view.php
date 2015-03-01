@@ -243,15 +243,7 @@
 		-webkit-transform: rotate(360deg);
 	}
 	</style>
-	
-	<script src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-layers.min.js"></script>
-	<script>
-	skel.init({
-		containers: '990px'
-	});
-	</script>
+
 	<script>
 	
 	window.addEventListener('polymer-ready', function(e) {

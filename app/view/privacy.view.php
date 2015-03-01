@@ -1,24 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<?php include 'favicon.php' ?>
+<?php include 'header_required.php' ?>
+
 	<title>trainingful: the privacy policy</title>
-	
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+
 	<link href="http://fonts.googleapis.com/css?family=Pacifico:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-		
-	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/static-style.css">
-	
-	<script src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-layers.min.js"></script>
-	<script>
-	skel.init({
-		containers: '990px'
-	});
-	</script>
+
 </head>
 <body>
 
@@ -33,7 +22,7 @@
 				<p><h1>the privacy policy</h1></p>
 			</div>
 			<div id="static-content">
-						<p><h4>trainingful (the Service) is owned and operated by trainingful, inc. ( we/us) and is committed to protecting the privacy of our users (you). We aim to provide you a secure online experience and to ensure that any information you submit to us is private and used/disclosed only for the purposes and in the means described below.</h4></p>
+						<p><h4>Trainingful (the Service) is owned and operated by trainingful, inc. ( we/us) and is committed to protecting the privacy of our users (you). We aim to provide you a secure online experience and to ensure that any information you submit to us is private and used/disclosed only for the purposes and in the means described below.</h4></p>
 						<p><h3>We’re here so you can find reviews and information on courses and conferences</h3></p>
 						<p><h4>The Service is an online training course search and rating website and will require professionals seeking training (“professionals”) and training providers (“providers”) to submit various information in order to conduct and optimize the training course search and rating process. All information about professionals is submitted exclusively on a voluntary basis. Some provider and course information may be collected from publicly available data on the internet.</h4></p>
 						<p><h3>We won’t tell anyone else you registered with us unless you let us</h3></p>

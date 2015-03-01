@@ -1,14 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<?php include 'favicon.php' ?>
+	<?php include 'header_required.php' ?>
 	<title>trainingful</title>
-	
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
-	
-	<link rel="stylesheet" href="css/style.css">
-	
+		
 	<style>
 	#main-section {
 		background: #f8f8f8;
@@ -280,14 +275,6 @@
 
 	</style>
 	
-	<script src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-layers.min.js"></script>
-	<script>
-	skel.init({
-		containers: '990px'
-	});
-	</script>
 </head>
 <body>
 

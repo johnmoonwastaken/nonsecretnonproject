@@ -1,23 +1,12 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<?php include 'header_required.php' ?>
 	<title>trainingful: sign up</title>
 	
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
 	<link href="http://fonts.googleapis.com/css?family=Pacifico:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 		
-	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/signup.css">
-
-	<script src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-layers.min.js"></script>
-	<script>
-	skel.init({
-		containers: '990px'
-	});
-	</script>
 </head>
 <body>
 
@@ -28,7 +17,7 @@
 	<section id="main-section">
 		<div class="container" id="main-container">
 			<div id="signup-content">
-				<p><h1>Sign Up for Trainingful</h1></p>
+				<p><h1><span style="font-family: Pacifico;">Sign up for trainingful</span></h1></p>
 				
 				<div class="row 25% uniform" style="margin-top:20px;">
 					<div class="7u" style="border-right:1px solid #d7d7d7;">

@@ -26,5 +26,14 @@
 	<script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
 	<link href="../../bower_components/paper-button/paper-button.html" rel="import">
 	<link href="../../bower_components/paper-dialog/paper-action-dialog.html" rel="import">
-	
+
 	<link href="../../bower_components/paper-slider/paper-slider.html" rel="import">
+	
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script>
+	skel.init({
+		containers: '990px'
+	});
+	</script>
