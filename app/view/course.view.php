@@ -293,6 +293,10 @@
 		document.querySelector('#sad').vendorurl = "<?php if ($vendor_website_url != '-1' && $vendor_website_url != '') { echo '<a href=\"http://'.$vendor_website_url.'\" target=\"_blank\">'.$vendor_website_url.'</a>'; } ?>";
 		document.querySelector('#sad').vendoremail = "<?php if ($vendor_contact_email != '-1' && $vendor_contact_email != '') { echo '<br />'.$vendor_contact_email; } ?>";
 		document.querySelector('#sad').vendorcontact = "<?php if ($vendor_contact_number != '-1' && $vendor_contact_number != '') { echo '<br />'.$vendor_contact_number; } ?>";
+		
+		document.querySelector('#sad').sessionid = session_id;
+		document.querySelector('#sad').ipaddress = "<?php echo $_SERVER['REMOTE_ADDR'] ?>";
+
 		document.querySelector('#sad').toggle();
 
 	}
@@ -346,7 +350,7 @@
 					<div class="3u" id="col2">
 					
 						<div id="vendor-image">
-							<img src="images/vendors/<?php if ($course['branding_url'] == '-1' || $course['branding_url'] == "") { echo 'trainingful-branding-140.gif'; } else echo $course['branding_url']; ?>" alt="ESI International" class="company-logo">
+							<img src="images/vendors/<?php if ($branding_url == '-1' || $branding_url == "") { echo 'trainingful-branding-140.gif'; } else echo $branding_url; ?>" class="company-logo">
 						</div>
 						<div id="vendor-name">
 							<strong><?php echo $vendor_name; ?></strong>

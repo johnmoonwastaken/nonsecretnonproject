@@ -125,6 +125,9 @@
 				<input type="text" id="register-phone" name="phone" placeholder="Phone: 1-999-999-9999" class="register_input">
 			</div>
 		</div>
+		<input type="hidden" id="session_id" name="session_id" value="{{sessionid}}">
+		<input type="hidden" id="ip_address" name="ip_address" value="{{ipaddress}}">
+		<input type="hidden" id="action_time" name="action_time" value="{{actiontime}}">
 	</form>
 
     <content select=":not([affirmative]):not([dismissive])"></content>
@@ -152,10 +155,14 @@
   	vendorurl: "",
   	vendoremail: "",
   	vendorcontact: "",
+  	sessionid: "",
+  	ipaddress: "",
+  	actiontime: Date.now(),
     publish: {
       closeSelector: '[affirmative],[dismissive]'
     },
     submitForm: function() {
+    	this.$.register_form.actiontime = Date.now();
     	this.$.register_form.submit();
     	this.close();
     },
