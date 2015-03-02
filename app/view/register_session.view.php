@@ -12,6 +12,8 @@
 	$get_results = $GLOBALS['_db']->prepare($add_sql);
 	$get_results->execute(array($email,$first_name,$last_name,$phone,$session,$ip_address));
 
-	echo $add_sql;
+	$to = "john@trainingful.com";
+	$subject = "New Registration";
+	mail($to, $subject, $add_sql);
 
 ?>

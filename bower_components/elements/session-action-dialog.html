@@ -2,6 +2,7 @@
 <link href="../paper-shadow/paper-shadow.html" rel="import">
 <link rel="import" href="../ajax-form/ajax-form.html">
 <link href="paper-dialog-base.html" rel="import">
+<link href="paper-action-dialog.html" rel="import">
 <link rel="import" href="../juicy-html/juicy-html.html">
 
 <polymer-element name="session-action-dialog" extends="paper-dialog-base" role="dialog" layout vertical>
@@ -111,15 +112,15 @@
 	<form id="register_form" is="ajax-form" action="/register_session" method="post">
 		<div>
 			<div class="input-left">
-				<input type="text" id="register-first-name" name="first_name" placeholder="First Name" class="register_input">
+				<input type="text" id="register-first-name" name="first_name" placeholder="First Name" class="register_input" required>
 			</div>
 			<div>
-				<input type="text" id="register-last-name" name="last_name" placeholder="Last Name" class="register_input">
+				<input type="text" id="register-last-name" name="last_name" placeholder="Last Name" class="register_input" required>
 			</div>
 		</div>
 		<div class="input-row">
 			<div class="input-left">
-				<input type="email" id="register-email" name="email" placeholder="E-mail Address" class="register_input">
+				<input type="email" id="register-email" name="email" placeholder="E-mail Address" class="register_input" required>
 			</div>
 			<div>
 				<input type="text" id="register-phone" name="phone" placeholder="Phone: 1-999-999-9999" class="register_input">
@@ -140,6 +141,7 @@
     <paper-button dismissive on-tap="{{cancelForm}}">Cancel</paper-button>
     <paper-button affirmative hover on-tap="{{submitForm}}">Register</paper-button>
   </div>
+
 </template>
 
 <script>
@@ -163,8 +165,32 @@
     },
     submitForm: function() {
     	this.$.register_form.actiontime = Date.now();
-    	this.$.register_form.submit();
-    	this.close();
+    	this.$.register_form.first_name.style.border = "";
+    	this.$.register_form.last_name.style.border = "";
+    	this.$.register_form.email.style.border = "";
+    	this.$.register_form.phone.style.border = "";
+    	if (this.$.register_form.first_name.value == "") {
+    		this.$.register_form.first_name.focus();
+    		this.$.register_form.first_name.style.border = "2px solid #ff8484";
+    	}
+    	else if (this.$.register_form.last_name.value == "") {
+    		this.$.register_form.last_name.focus();
+    		this.$.register_form.last_name.style.border = "2px solid #ff8484";
+    	}
+    	else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.$.register_form.email.value) == false) {
+    		this.$.register_form.email.focus();
+    		this.$.register_form.email.style.border = "2px solid #ff8484";
+    	}
+    	else if (this.$.register_form.phone.value == "") {
+    		this.$.register_form.phone.focus();
+    		this.$.register_form.phone.style.border = "2px solid #ff8484";
+    	}
+    	else {
+    		this.$.register_form.submit();
+    		this.close();
+    		location.replace("www.yahoo.com");
+    		//document.querySelector('#register-sent').toggle();
+    	}
     },
     cancelForm: function() {
     	this.close();

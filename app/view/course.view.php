@@ -298,7 +298,6 @@
 		document.querySelector('#sad').ipaddress = "<?php echo $_SERVER['REMOTE_ADDR'] ?>";
 
 		document.querySelector('#sad').toggle();
-
 	}
 	</script>
 </head>
@@ -385,8 +384,8 @@
 					</div>
 					</div>
 				</div>
-				<session-action-dialog id="sad" backdrop id="session-dialog" transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
-				<review-action-dialog id="rad" backdrop id="review-dialog" transition="paper-dialog-transition-bottom" ?></review-action-dialog>
+				<session-action-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
+				<review-action-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></review-action-dialog>
 
 			</div>
 		</div>
