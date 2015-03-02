@@ -138,8 +138,13 @@
     <content select="[dismissive]"></content>
     <div flex></div>
     <content select="[affirmative]"></content>
-    <paper-button dismissive on-tap="{{cancelForm}}">Cancel</paper-button>
-    <paper-button affirmative hover on-tap="{{submitForm}}">Register</paper-button>
+    <div id="close_button" style="display:none;">
+    	<paper-button dismissive on-tap="{{cancelForm}}">Close</paper-button>
+    </div>
+    <div id="register_buttons">
+    	<paper-button dismissive on-tap="{{cancelForm}}">Cancel</paper-button>
+    	<paper-button affirmative hover on-tap="{{submitForm}}">Register</paper-button>
+    </div>
   </div>
 
 </template>
@@ -187,9 +192,9 @@
     	}
     	else {
     		this.$.register_form.submit();
-    		this.close();
-    		location.replace("www.yahoo.com");
-    		//document.querySelector('#register-sent').toggle();
+    		this.$.scroller.innerHTML = "<h1>Thank you for registering</h1><p style='margin-top:40px;'>A confirmation e-mail has been sent to your mailbox. A member of Trainingful staff will be in contact with you shortly.</p>";
+    		this.$.register_buttons.style.display = "none";
+    		this.$.close_button.style.display = "inline";
     	}
     },
     cancelForm: function() {
