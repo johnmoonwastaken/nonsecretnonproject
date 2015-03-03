@@ -1,11 +1,12 @@
 <?php
 
 $courseList = array();
+
 if ($_GET['category']) {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
 				course_session.start_date, course_session.end_date, course_session.location, course_session.metro_name, course_session.cost, course_session.currency,
-				vendor.vendor_name, vendor.branding_url
+				vendor.vendor_name, vendor.branding_url, vendor.verified
 		FROM course
 		LEFT JOIN course_session
 		ON course.course_id = course_session.course_id
@@ -14,7 +15,7 @@ if ($_GET['category']) {
 		LEFT JOIN categories
 		ON course.category_id = categories.category_id
 		WHERE course.category_id = ? and course_session.active = 1 and course_session.start_date > ?
-		ORDER BY course_id, start_date, course.click_count";
+		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($_GET['category'], date('Y-m-d')));
 }
@@ -22,7 +23,7 @@ else {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
 				course_session.start_date, course_session.end_date, course_session.location, course_session.metro_name, course_session.cost, course_session.currency,
-				vendor.vendor_name, vendor.branding_url
+				vendor.vendor_name, vendor.branding_url, vendor.verified
 		FROM course
 		LEFT JOIN course_session
 		ON course.course_id = course_session.course_id
@@ -30,14 +31,18 @@ else {
 		ON course.vendor_id = vendor.vendor_id
 		WHERE course_name LIKE ? and course_session.active = 1 and course_session.start_date >= ? and course_session.end_date <= ? 
 			and (course_session.location LIKE ? OR course_session.metro_name LIKE ?)
-		ORDER BY course_id, start_date, course.click_count";
+		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 
 	$search_location = $_GET['location'];
+	if ($_GET['page'] == "") {
+		$page = 1;
+	}
+	else $page = $_GET['page'];
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	if ($_GET['location'] == "Everywhere" || $_GET['location'] == "everywhere") {
 		$search_location = '';
 	}
-	$get_results->execute(array("%".$_GET["keywords"]."%",$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
+	$get_results->execute(array("%".$_GET["keywords"]."%",$offset,$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
 
 	$save_search_sql = "
 		INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name) VALUES (?, ?, ?, ?, ?)";
@@ -51,6 +56,7 @@ foreach ($get_results as $temp) {
 	$course_id = $temp['course_id'];
 	$vendor_id = $temp['vendor_id'];
 	$vendor_name = $temp['vendor_name'];
+	$verified = $temp['verified'];
 	$course_name = $temp['course_name'];
 	$course_description = $temp['course_description'];
 	$branding_url = $temp['branding_url'];
@@ -69,6 +75,7 @@ foreach ($get_results as $temp) {
 		$courseList[$course_count]['course_id'] = $course_id;
 		$courseList[$course_count]['vendor_id'] = $vendor_id;
 		$courseList[$course_count]['vendor_name'] = $vendor_name;
+		$courseList[$course_count]['verified'] = $verified;
 		$courseList[$course_count]['course_name'] = $course_name;
 		$courseList[$course_count]['course_description'] = $course_description;
 		$courseList[$course_count]['branding_url'] = $branding_url;
@@ -88,11 +95,11 @@ foreach ($get_results as $temp) {
 }
 
 if ($_GET['category']) {
-	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count+1,
+	$templateFields = array('courseList' => $courseList, 'totalResults' => $total_courses,
 		'category_id' => $_GET['category_id']);
 }
 else {
-	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count+1,
+	$templateFields = array('courseList' => $courseList, 'totalResults' => $total_courses,
 		'keywords' => $_GET['keywords'], 'start' => $_GET['start'], 'end' => $_GET['end'], 'location' => $_GET['location']);
 }
 displayTemplate('search', $templateFields);

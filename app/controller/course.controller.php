@@ -15,6 +15,9 @@ $get_results = $GLOBALS['_db']->prepare($search_sql);
 $get_results->execute(array($_GET["id"]));
 $courseInfo = array();
 
+$click_count_sql = "UPDATE course SET click_count = click_count + 1 WHERE course_id = ?";
+$query = $GLOBALS['_db']->prepare($click_count_sql);
+$query->execute(array($_GET["id"]));
 
 $course_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $course_name = $course_result['course_name'];
