@@ -57,7 +57,7 @@
 		background: #489961;
 		height: 60px;
 		line-height: 60px;
-		font-size: 1.1em;
+		font-size: 0.8em;
 	}
 	
 	#type-switcher {
@@ -298,7 +298,17 @@
 			<div id="search-control-bar" class="container">
 				<div class="row">
 					<div class="3u">
-						<h4 id="results-counter"><!--Filter--> Showing <?php echo $totalResults; ?> results:</h4>
+					<?php  	$page = 1;
+						$shown = 20;
+						if ($_GET['page'] != "") {
+							$page = $_GET['page'];
+						}
+						$upto = $page * $shown;
+						if ($upto > $totalResults)
+						{
+							$upto = $totalResults;
+						} ?>
+						<h4 id="results-counter"><!--Filter--> Showing <?php echo ($page -1) * $shown + 1; ?>-<?php echo $upto; ?> of <?php echo $totalResults; ?> results</h4>
 					</div>
 					<div class="9u">
 						<ul id="type-switcher">
@@ -328,19 +338,8 @@
 						</ul>
 					</div>
 					<div class="9u">
-						<?php if (is_array($courseList) and $totalResults > 0) { 
-								$page = 1;
-								$shown = 20;
-								if ($_GET['page'] != "") {
-									$page = $_GET['page'];
-								}
-								$upto = $page * $shown;
-								if ($upto > $totalResults)
-								{
-									$upto = $totalResults;
-								} ?>
 						<ul id="results-list">
-								<?php for($i = ($page - 1) * $shown; $i < $upto; ++$i): ?>
+								<?php if (is_array($courseList) and $totalResults > 0) { for($i = ($page - 1) * $shown; $i < $upto; ++$i): ?>
 							<li><!--
 								<div class="result-rating">
 									<span class="rating s4" title="4 stars"></span>
