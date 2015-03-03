@@ -42,7 +42,7 @@ else {
 	if ($_GET['location'] == "Everywhere" || $_GET['location'] == "everywhere") {
 		$search_location = '';
 	}
-	$get_results->execute(array("%".$_GET["keywords"]."%",$offset,$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
+	$get_results->execute(array("%".$_GET["keywords"]."%",$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
 
 	$save_search_sql = "
 		INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name) VALUES (?, ?, ?, ?, ?)";
@@ -52,6 +52,7 @@ else {
 $course_count = -1;
 $session_count = 0;
 $last_course_id = 0;
+
 foreach ($get_results as $temp) {
 	$course_id = $temp['course_id'];
 	$vendor_id = $temp['vendor_id'];
@@ -95,11 +96,11 @@ foreach ($get_results as $temp) {
 }
 
 if ($_GET['category']) {
-	$templateFields = array('courseList' => $courseList, 'totalResults' => $total_courses,
+	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count + 1,
 		'category_id' => $_GET['category_id']);
 }
 else {
-	$templateFields = array('courseList' => $courseList, 'totalResults' => $total_courses,
+	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count + 1,
 		'keywords' => $_GET['keywords'], 'start' => $_GET['start'], 'end' => $_GET['end'], 'location' => $_GET['location']);
 }
 displayTemplate('search', $templateFields);

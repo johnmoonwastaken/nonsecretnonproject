@@ -12,8 +12,11 @@
 	$get_results = $GLOBALS['_db']->prepare($add_sql);
 	$get_results->execute(array($email,$first_name,$last_name,$phone,$session,$ip_address));
 
+	$mail_message = "E-mail: " . $email . "\nFirst Name: " . $first_name . "\nLast Name: " . $last_name . "\nPhone: " 
+		. $phone . "\nSession ID: " . $session . "\nTime: " . $action_time;
+
 	$to = "john@trainingful.com";
 	$subject = "New Registration";
-	mail($to, $subject, $add_sql);
+	mail($to, $subject, $mail_message);
 
 ?>

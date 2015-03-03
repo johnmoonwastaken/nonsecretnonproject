@@ -328,20 +328,31 @@
 						</ul>
 					</div>
 					<div class="9u">
+						<?php if (is_array($courseList) and $totalResults > 0) { 
+								$page = 1;
+								$shown = 20;
+								if ($_GET['page'] != "") {
+									$page = $_GET['page'];
+								}
+								$upto = $page * $shown;
+								if ($upto > $totalResults)
+								{
+									$upto = $totalResults;
+								} ?>
 						<ul id="results-list">
-							<?php if (is_array($courseList) and $totalResults > 0) { foreach($courseList as $course): ?>
+								<?php for($i = ($page - 1) * $shown; $i < $upto; ++$i): ?>
 							<li><!--
 								<div class="result-rating">
 									<span class="rating s4" title="4 stars"></span>
 								</div>
 							-->
-								<h2><a href="course?id=<?php echo $course['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>"><?php echo $course['course_name']; ?></a></h2>
-								<p><strong><?php echo $course['vendor_name']; ?>:</strong> <?php $pos=mb_strpos($course['course_description'], ' ', 190); echo mb_substr($course['course_description'],0,$pos) . '...';?></p>
-								<img src="images/vendors/<?php if ($course['branding_url'] == '-1' || $course['branding_url'] == "") { echo 'trainingful-branding-70.gif'; } else echo $course['branding_url']; ?>" alt="<?php echo $course['vendor_name']; ?>" class="company-logo">
+								<h2><a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>"><?php echo $courseList[$i]['course_name']; ?></a></h2>
+								<p><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> <?php $pos=mb_strpos($courseList[$i]['course_description'], ' ', 190); echo mb_substr($courseList[$i]['course_description'],0,$pos) . '...';?></p>
+								<img src="images/vendors/<?php if ($courseList[$i]['branding_url'] == '-1' || $courseList[$i]['branding_url'] == "") { echo 'trainingful-branding-70.gif'; } else echo $courseList[$i]['branding_url']; ?>" alt="<?php echo $courseList[$i]['vendor_name']; ?>" class="company-logo">
 								<ul class="sessions-list">
-									<?php foreach($course['sessionList'] as $session): ?>
+									<?php foreach($courseList[$i]['sessionList'] as $session): ?>
 									<li>
-										<a href="course?id=<?php echo $course['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>&session=<?php echo $session['session_id']; ?>">
+										<a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>&session=<?php echo $session['session_id']; ?>">
 											<div class="chevron-container">
 												<span class="icon chevron-right"></span>
 											</div>
@@ -357,8 +368,30 @@
 									<?php endforeach; ?>
 								</ul>
 							</li>
-							<?php endforeach; } else echo "<li>Sorry, no results available, please try another search.</li>";?>
+							<?php endfor; } else echo "<li>Sorry, no results available, please try another search.</li>";?>
 						</ul>
+						<div class="row">
+							<div class="6u">&nbsp;
+								<?php 
+									if ($page > 1) { 
+										if ($_GET['category'] != "") {
+											echo '<a href="search?category=' . $_GET['category'] . '&page=' . ($page-1) . '">< Previous Page </a>';
+										}
+										else echo '<a href="search?keywords=' . $keywords . '&start=' . $start . '&end=' . $end . '&location=' . $location . '&page=' . ($page-1) . '">< Previous Page</a>'; 
+									} ?>
+							</div>
+							<div class="6u" style="text-align:right;">
+								<?php
+									if ($totalResults > $upto) { 
+										if ($_GET['category'] != "") {
+											echo '<a href="search?category=' . $_GET['category'] . '&page=' . ($page+1) . '">Next Page > </a>';
+										}
+										else echo '<a href="search?keywords=' . $keywords . '&start=' . $start . '&end=' . $end . '&location=' . $location . '&page=' . ($page+1) . '">Next Page > </a>'; 
+									} ?>
+								&nbsp;
+							</div>
+						</div>
+						
 							<!--
 							<li>
 								<div class="result-rating">
