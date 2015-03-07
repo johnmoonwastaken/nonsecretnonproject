@@ -326,12 +326,13 @@
 							<p><h4><?php echo $course_description; ?>
 							<!-- <a href="#">Read More ></a> --></h4></p>
 							<div id="ratings-section">
-							
+							<!--
 								<div class="row 25% uniform" style="float:right;margin: 0px 15px 10px 0px;">
 									<div class="12u">
 										<button type="submit" class="form-submit" onClick="document.querySelector('#rad').toggle();">Write a Review</button>
 									</div>
 								</div>
+								-->
 <!--
 								<p><h2 style="margin-top:30px;">15 reviews from our community</h2></p>
 
