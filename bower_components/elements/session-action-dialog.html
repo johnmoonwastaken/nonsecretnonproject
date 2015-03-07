@@ -110,20 +110,20 @@
 	</div>
 
 	<form id="register_form" is="ajax-form" action="/register_session" method="post">
-		<div>
+		<div id="rf_row1">
 			<div class="input-left">
-				<input type="text" id="register-first-name" name="first_name" placeholder="First Name" class="register_input" required>
+				<input type="text" id="first_name" name="first_name" placeholder="First Name" class="register_input" required>
 			</div>
 			<div>
-				<input type="text" id="register-last-name" name="last_name" placeholder="Last Name" class="register_input" required>
+				<input type="text" id="last_name" name="last_name" placeholder="Last Name" class="register_input" required>
 			</div>
 		</div>
 		<div class="input-row">
 			<div class="input-left">
-				<input type="email" id="register-email" name="email" placeholder="E-mail Address" class="register_input" required>
+				<input type="email" id="email" name="email" placeholder="E-mail Address" class="register_input" required>
 			</div>
 			<div>
-				<input type="text" id="register-phone" name="phone" placeholder="Phone: 1-999-999-9999" class="register_input">
+				<input type="text" id="phone" name="phone" placeholder="Phone: 1-999-999-9999" class="register_input">
 			</div>
 		</div>
 		<input type="hidden" id="session_id" name="session_id" value="{{sessionid}}">
@@ -170,7 +170,34 @@
     },
     submitForm: function() {
     	this.$.register_form.actiontime = Date.now();
+    	document.getElementById('first_name').style.border = "";
+    	document.getElementById('last_name').style.border = "";
+    	document.getElementById('email').style.border = "";
+    	document.getElementById('phone').style.border = "";
+    	if (document.getElementById('first_name').value == "") {
+    		document.getElementById('first_name').focus();
+    		document.getElementById('first_name').style.border = "2px solid #ff8484";
+    	}
+    	else if (document.getElementById('last_name').value == "") {
+    		document.getElementById('last_name').focus();
+    		document.getElementById('last_name').style.border = "2px solid #ff8484";
+    	}
+    	else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById('email').value) == false) {
+    		document.getElementById('email').focus();
+    		document.getElementById('email').style.border = "2px solid #ff8484";
+    	}
+    	else if (document.getElementById('phone').value == "") {
+    		document.getElementById('phone').focus();
+    		document.getElementById('phone').style.border = "2px solid #ff8484";
+    	}
+    	else {
+    		this.$.register_form.submit();
+    		this.$.scroller.innerHTML = "<h1>Thank you for registering</h1><p style='margin-top:40px;'>A confirmation e-mail has been sent to your mailbox. A member of Trainingful staff will be in contact with you shortly.</p>";
+    		this.$.register_buttons.style.display = "none";
+    		this.$.close_button.style.display = "inline";
+    	}
 
+		/*
     	this.$.register_form.first_name.style.border = "";
     	this.$.register_form.last_name.style.border = "";
     	this.$.register_form.email.style.border = "";
@@ -197,6 +224,7 @@
     		this.$.register_buttons.style.display = "none";
     		this.$.close_button.style.display = "inline";
     	}
+    	*/
     },
     cancelForm: function() {
     	this.close();

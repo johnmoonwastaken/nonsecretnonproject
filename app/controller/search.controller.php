@@ -42,6 +42,7 @@ else {
 	if ($_GET['location'] == "Everywhere" || $_GET['location'] == "everywhere") {
 		$search_location = '';
 	}
+
 	$get_results->execute(array("%".$_GET["keywords"]."%",$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
 
 	$save_search_sql = "
