@@ -171,7 +171,6 @@
     submitForm: function() {
     	this.$.register_form.actiontime = Date.now();
       var firstNameDom = this.$.register_form.first_name;
-      window.alert(firstNameDom);
       if (typeof firstNameDom === "undefined") {
         var firstNameDom = document.getElementById('first_name');
       }
