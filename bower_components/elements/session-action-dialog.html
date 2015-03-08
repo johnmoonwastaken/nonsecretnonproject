@@ -170,25 +170,41 @@
     },
     submitForm: function() {
     	this.$.register_form.actiontime = Date.now();
-    	document.getElementById('first_name').style.border = "";
-    	document.getElementById('last_name').style.border = "";
-    	document.getElementById('email').style.border = "";
-    	document.getElementById('phone').style.border = "";
-    	if (document.getElementById('first_name').value == "") {
-    		document.getElementById('first_name').focus();
-    		document.getElementById('first_name').style.border = "2px solid #ff8484";
+      var firstNameDom = this.$.register_form.first_name;
+      if (typeof firstNameDom === "undefined") {
+        var firstNameDom = document.getElementById('first_name');
+      }
+      var lastNameDom = this.$.register_form.last_name;
+      if (typeof lastNameDom === "undefined") {
+        var lastNameDom = document.getElementById('last_name');
+      }
+      var emailDom = this.$.register_form.email;
+      if (typeof emailDom === "undefined") {
+        var emailDom = document.getElementById('email');
+      }
+      var phoneDom = this.$.register_form.phone;
+      if (typeof phoneDom === "undefined") {
+        var phoneDom = document.getElementById('phone');
+      }
+    	firstNameDom.style.border = "";
+    	lastNameDom.style.border = "";
+    	emailDom.style.border = "";
+    	phoneDom.style.border = "";
+    	if (firstNameDom.value == "") {
+    		firstNameDom.focus();
+    		firstNameDom.style.border = "2px solid #ff8484";
     	}
-    	else if (document.getElementById('last_name').value == "") {
-    		document.getElementById('last_name').focus();
-    		document.getElementById('last_name').style.border = "2px solid #ff8484";
+    	else if (lastNameDom.value == "") {
+    		lastNameDom.focus();
+    		lastNameDom.style.border = "2px solid #ff8484";
     	}
-    	else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById('email').value) == false) {
-    		document.getElementById('email').focus();
-    		document.getElementById('email').style.border = "2px solid #ff8484";
+    	else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailDom.value) == false) {
+    		emailDom.focus();
+    		emailDom.style.border = "2px solid #ff8484";
     	}
-    	else if (document.getElementById('phone').value == "") {
-    		document.getElementById('phone').focus();
-    		document.getElementById('phone').style.border = "2px solid #ff8484";
+    	else if (phoneDom.value == "") {
+    		phoneDom.focus();
+    		phoneDom.style.border = "2px solid #ff8484";
     	}
     	else {
     		this.$.register_form.submit();
