@@ -31,8 +31,8 @@
       overflow: auto;
       box-sizing: border-box;
       padding: 24px 24px 0 24px;
-      max-width: 500px;
-      width: 500px;
+      max-width: 525px;
+      width: 525px;
 	  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
     }
 
@@ -171,6 +171,7 @@
     submitForm: function() {
     	this.$.register_form.actiontime = Date.now();
       var firstNameDom = this.$.register_form.first_name;
+      window.alert(firstNameDom);
       if (typeof firstNameDom === "undefined") {
         var firstNameDom = document.getElementById('first_name');
       }
