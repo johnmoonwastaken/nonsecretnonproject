@@ -178,7 +178,12 @@
 		max-height: 70px;
 		max-width: 70px;
 	}
-	
+	.form-date {
+		width:80px;
+	}
+	.inputbox {
+		margin-top:10px;
+	}
 	.sessions-list {
 		list-style: none;
 		margin: 0 70px 0 80px;
@@ -260,6 +265,16 @@
 		font-size: 2em;
 		line-height: 34px;
 	}
+
+	.smaller-button {
+		margin-top: 10px;
+		margin-left: 45px;
+		margin-bottom: 10px;
+		height: 30px;
+		width: 120px;
+		padding: 5px 10px 5px 10px;
+		font-size: 1em;
+	}
 	
 	#results-list .more-sessions {
 		margin: 3px 0 0 80px;
@@ -276,6 +291,14 @@
 	}
 	</style>
 	
+	<!-- DATE RANGE PICKER -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="all" href="../../bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../bower_components/moment/moment.js"></script>
+	<script type="text/javascript" src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<!-- END DATE RANGE PICKER -->
+
 </head>
 <body>
 
@@ -326,16 +349,57 @@
 			<div id="results-container">
 				<div class="row">
 					<div class="3u">
+						<form id="filterbox" action="search" method="get">
 						<ul id="filters-accordion">
-							<!--
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Name contains</a>
+								<div class="inputbox">
+									<input type="text" id="searchbox-keywords" name="keywords" placeholder="" class="form-text" <?php if ($_GET['keywords']) { echo 'value='.$_GET['keywords']; } ?>>
+								</div>
 							</li>
+							<!--
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Vendor</a>
 							</li>
-						-->
+							-->
+							<li>
+								<a href="#"><span class="icon triangle-down"></span>Date</a>
+								<div class="inputbox">
+									<input type="text" id="searchbox-start" name="start" placeholder="Start date" class="form-text form-date" <?php if ($_GET['start']) { echo 'value='.$_GET['start']; } ?>> to
+									<script type="text/javascript">
+						               $(document).ready(function() {
+					    	              $('#searchbox-start').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
+					        	            console.log(start.toISOString(), end.toISOString(), label);
+					            	      });
+						               });
+				    	           	</script>
+									<input type="text" id="searchbox-end" name="end" placeholder="End date" class="form-text form-date" <?php if ($_GET['end']) { echo 'value='.$_GET['end']; } ?>>
+									<script type="text/javascript">
+						               $(document).ready(function() {
+					    	              $('#searchbox-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
+					        	            console.log(start.toISOString(), end.toISOString(), label);
+					            	      });
+						               });
+				    	           	</script>
+								</div>
+							</li>
+							<!--
+							<li>
+								<a href="#"><span class="icon triangle-down"></span>Price</a>
+							</li>
+							-->
+							<li>
+								<a href="#"><span class="icon triangle-down"></span>Location</a>
+								<div class="inputbox">
+									<select id="searchbox-location" name="location" placeholder="Location">
+										<option value="Vancouver">Vancouver</option>
+										<option value="Everywhere" <?php if ($_GET['location'] == "Everywhere") echo 'selected'; ?>>Everywhere</option>
+									</select>
+								</div>
+							</li>
 						</ul>
+						<button type="submit" class="form-submit smaller-button">Filter Results</button>
+						</form>
 					</div>
 					<div class="9u">
 						<ul id="results-list">
