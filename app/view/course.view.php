@@ -302,8 +302,8 @@
 		document.querySelector('#sad').ipaddress = "<?php echo $_SERVER['REMOTE_ADDR'] ?>";
 
 		document.querySelector('#sad').toggle();
-		//document.querySelector('#sad').gmap = '<google-map disableDefaultUI showCenterMarker zoom="15" id="gmap"></google-map>';
 		if (sessioninfo[session_id].location_oneline != "-1" && sessioninfo[session_id].location_oneline != "") {
+			window.alert(sessioninfo[session_id].location_oneline);
 			document.querySelector('#sad').gmap = '<iframe width="470" height="150" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&q='+sessioninfo[session_id].location_oneline+'"></iframe>';
 		}
 	}
