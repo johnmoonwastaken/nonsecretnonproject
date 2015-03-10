@@ -14,9 +14,16 @@
   <style>
   google-map {
   	height: 150px;
-  	width: 450px;
+  	width: 480px;
     }
-  
+  a {
+    text-decoration: none;
+    color: #5a7db2;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
   :host {
     background: #fff;
     color: rgba(0, 0, 0, 0.87);
@@ -55,7 +62,8 @@
 		margin-right:10px;
 	}
 	.input-right {
-		float:left;
+    padding-top: 1px;
+		text-align: right;
 	}
 	.input-row {
 		margin-top:10px;
@@ -74,6 +82,7 @@
     box-sizing: border-box;
     padding: 24px 24px 0 24px;
     width: 525px;
+    height: 635px;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
   }
 
@@ -99,10 +108,27 @@
 			<span id="detailed_description"><template is="juicy-html" content="{{ description }}"></template></span>
 
 			<template is="juicy-html" content="{{ gmap }}"></template>
-			<span id="detailed_location"><template is="juicy-html" content="{{ location }}"></template></span>
 
-			<p><span id="detailed_cost">{{cost}}</span> (plus applicable taxes)</p>
+      <div class="input-row">
+        <div class="input-left">
+          <p>
+            <template is="juicy-html" content="{{ location }}"></template>
+            <span id="detailed_cost">{{cost}}</span> (plus applicable taxes)
+          </p>
+        </div>
+        <div class="input-right">
+          <p>
+            <strong><span id="vendor_name">{{vendorname}}</span></strong><br />
+            <template is="juicy-html" content="{{ vendorurl }}"></template>
+            <template is="juicy-html" content="{{ vendoremail }}"></template>
+            <template is="juicy-html" content="{{ vendorcontact }}"></template>
+          </p>
+        </div>
+      </div>
+      <div style="clear:both"></div>
+			
 	</div>
+  <!--
 	<div class="info-header" id="provider-info-header">
 		<p><h4>Provider Information</h4></p>
 	</div>
@@ -115,6 +141,7 @@
 			<template is="juicy-html" content="{{ vendorcontact }}"></template>
 		</p>
 	</div>
+-->
 
 	<div class="info-header">
 		<p><h4>Register</h4></p>
