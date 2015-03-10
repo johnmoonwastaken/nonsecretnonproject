@@ -368,6 +368,7 @@
 				<div class="row">
 					<div class="3u">
 						<form id="filterbox" action="search" method="get">
+							<?php if ($_GET['category'] != '') { echo '<input type="hidden" name="category" value="' . $_GET['category'] . '">'; } ?>
 						<ul id="filters-accordion">
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Name contains</a>
@@ -383,7 +384,7 @@
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Date</a>
 								<div class="inputbox">
-									<input type="text" id="searchbox-start" name="start" placeholder="Start date" class="form-text form-date" <?php if ($_GET['start']) { echo 'value='.$_GET['start']; } ?>> to
+									<input type="text" id="searchbox-start" name="start" class="form-text form-date" <?php if ($_GET['start']) { echo 'value='.$_GET['start']; } ?>> to
 									<script type="text/javascript">
 						               $(document).ready(function() {
 					    	              $('#searchbox-start').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
@@ -391,7 +392,7 @@
 					            	      });
 						               });
 				    	           	</script>
-									<input type="text" id="searchbox-end" name="end" placeholder="End date" class="form-text form-date" <?php if ($_GET['end']) { echo 'value='.$_GET['end']; } ?>>
+									<input type="text" id="searchbox-end" name="end" class="form-text form-date" <?php if ($_GET['end']) { echo 'value='.$_GET['end']; } ?>>
 									<script type="text/javascript">
 						               $(document).ready(function() {
 					    	              $('#searchbox-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
