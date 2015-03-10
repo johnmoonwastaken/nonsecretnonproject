@@ -5,22 +5,30 @@
 <link href="paper-action-dialog.html" rel="import">
 <link rel="import" href="../juicy-html/juicy-html.html">
 
+<script src="../polymer-platform/platform.js"></script>
+<link rel="import" href="../google-map/google-map.html">
+
 <polymer-element name="session-action-dialog" extends="paper-dialog-base" role="dialog" layout vertical>
 
 <template>
 
   <style>
-    :host {
-      background: #fff;
-      color: rgba(0, 0, 0, 0.87);
-      margin: 52px;
-      overflow: visible !important;
-    }
+  google-map {
+    display: block;
+    height: 100%;
+  }
+  
+  :host {
+    background: #fff;
+    color: rgba(0, 0, 0, 0.87);
+    margin: 52px;
+    overflow: visible !important;
+  }
 
-    h1 {
-      font-size: 1.5em;
-      font-weight: 300;
-    }
+  h1 {
+    font-size: 1.5em;
+    font-weight: 300;
+  }
 
 	h4 {
 		color:#666;
@@ -84,6 +92,7 @@
 	</div>
 	<div id="session-info-content" class="info-content">
 		<p>
+      <google-map latitude="37.779" longitude="-122.3892" zoom="13"></google-map>
 			<span id="detailed_session_type">{{classroom}}</span>
 			<span id="detailed_start"><template is="juicy-html" content="{{ dates }}"></template></span> 
 			<span id="start_end_time"><template is="juicy-html" content="{{ startendtime }}"></template></span></strong></p>
