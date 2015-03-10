@@ -252,6 +252,10 @@
 		document.getElementById('display-sessions').style.display = "inline";
 	});
 
+	window.addEventListener('core-overlay-open-completed', function(e) {
+		console.log('opened');
+	});
+
 	var sessioninfo = [];
 
 	<?php foreach($sessionList as $session): ?>
@@ -332,8 +336,7 @@
 										<button type="submit" class="form-submit" onClick="document.querySelector('#rad').toggle();">Write a Review</button>
 									</div>
 								</div>
-								-->
-<!--
+								
 								<p><h2 style="margin-top:30px;">15 reviews from our community</h2></p>
 
 <div class="wrapper"><div id="rating-percent">100<span style="font-size:0.5em;">%</span><div id="average-rating">Average Rating</div></div>
