@@ -179,10 +179,28 @@
 		max-width: 70px;
 	}
 	.form-date {
-		width:80px;
+		width:82px;
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+	.form-name {
+		width:185px;
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+	.form-price {
+		width:73px;
+		padding-left: 4px;
+		padding-right: 4px;
 	}
 	.inputbox {
 		margin-top:10px;
+	}
+	.pricebox {
+		margin-left: 15px;
+		font-size: 0.9em;
+		margin-bottom:10px;
+		color: #555;
 	}
 	.sessions-list {
 		list-style: none;
@@ -354,7 +372,7 @@
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Name contains</a>
 								<div class="inputbox">
-									<input type="text" id="searchbox-keywords" name="keywords" placeholder="" class="form-text" <?php if ($_GET['keywords']) { echo 'value='.$_GET['keywords']; } ?>>
+									<input type="text" id="searchbox-keywords" name="keywords" placeholder="" class="form-text form-name" <?php if ($_GET['keywords']) { echo 'value='.$_GET['keywords']; } ?>>
 								</div>
 							</li>
 							<!--
@@ -383,11 +401,13 @@
 				    	           	</script>
 								</div>
 							</li>
-							<!--
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Price</a>
 							</li>
-							-->
+								<div class="pricebox">
+									$<input type="text" id="min-price" name="min" class="form-text form-price" <?php if ($_GET['min'] == '') { echo 'value="0"'; } else echo 'value="' . $_GET['min'] . '"'; ?>> to 
+									$<input type="text" id="max-price" name="max" class="form-text form-price" <?php if ($_GET['max'] == '-1') { echo 'value=""'; } else echo 'value="' . $_GET['max'] . '"';?>>
+								</div>
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Location</a>
 								<div class="inputbox">

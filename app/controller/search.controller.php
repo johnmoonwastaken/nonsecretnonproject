@@ -2,6 +2,14 @@
 
 $courseList = array();
 
+if ($_GET['min'] != "") {
+	$min_sql = " and course_session.cost >= " . $_GET['min'];
+}
+if ($_GET['max'] != "") {
+	$max_sql = " and course_session.cost <= " . $_GET['max'];
+}
+
+
 if ($_GET['category']) {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
@@ -14,7 +22,7 @@ if ($_GET['category']) {
 		ON course.vendor_id = vendor.vendor_id
 		LEFT JOIN categories
 		ON course.category_id = categories.category_id
-		WHERE course.category_id = ? and course_session.active = 1 and course_session.start_date > ?
+		WHERE course.category_id = ? and course_session.active = 1 and course_session.start_date > ?" . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($_GET['category'], date('Y-m-d')));
@@ -30,7 +38,7 @@ else {
 		LEFT JOIN vendor
 		ON course.vendor_id = vendor.vendor_id
 		WHERE course_name LIKE ? and course_session.active = 1 and course_session.start_date >= ? and course_session.end_date <= ? 
-			and (course_session.location LIKE ? OR course_session.metro_name LIKE ?)
+			and (course_session.location LIKE ? OR course_session.metro_name LIKE ?)" . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 
 	$search_location = $_GET['location'];
