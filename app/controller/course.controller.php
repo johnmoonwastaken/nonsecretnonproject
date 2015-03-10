@@ -76,13 +76,13 @@ foreach ($get_results as $temp) {
 	else {
 		$sessionList[$session_count]['end_date_time'] = "";
 	}
-	//$sessionList[$session_count]['location'] = nl2br($temp['location']);
 	$sessionList[$session_count]['location'] = preg_replace( "/\r\n|\r|\n/", "<br />", $temp['location']);
-	//$sessionList[$session_count]['location'] = preg_replace( "/\r|\n/", "<br />", $sessionList[$session_count]['location']);
+	$location_temp = preg_replace( "/, /", ",", $temp['location']);
+	$location_temp = preg_replace( "/\r\n|\r|\n/", ",", $location_temp);
+	$sessionList[$session_count]['location_oneline'] = preg_replace( "/ /", "+", $location_temp);
 	$sessionList[$session_count]['metro_name'] = $temp['metro_name'];
 	$sessionList[$session_count]['currency'] = $temp['currency'];
 	$sessionList[$session_count]['description'] = preg_replace( "/\r\n|\r|\n/", "<br />", $temp['description']);
-	//$sessionList[$session_count]['description'] = preg_replace( "/\r|\n/", "<br />", $sessionList[$session_count]['description']);
 	$sessionList[$session_count]['session_type'] = $temp['session_type'];
 	if ($currency == "USD" || "CAD" || "HKD" || "SGD") {
 		$sessionList[$session_count]['cost'] = "$" . number_format((float)$temp['cost'],2,'.','');

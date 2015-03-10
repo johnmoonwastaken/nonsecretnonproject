@@ -259,7 +259,7 @@
 	var sessioninfo = [];
 
 	<?php foreach($sessionList as $session): ?>
-	sessioninfo[<?php echo $session['session_id']; ?>] = {session_type: "<?php echo $session['session_type']; ?>", start_date: "<?php echo $session['start_date_formatted']; ?>", start_date_time: "<?php echo $session['start_date_time']; ?>", end_date: "<?php echo $session['end_date_formatted']; ?>", end_date_time: "<?php echo $session['end_date_time']; ?>", metro_name: "<?php echo $session['metro_name']; ?>", location: "<?php echo $session['location']; ?>", cost: "<?php echo $session['cost']; ?>", currency: "<?php echo $session['currency']; ?>", description: "<?php echo $session['description']; ?>"};
+	sessioninfo[<?php echo $session['session_id']; ?>] = {session_type: "<?php echo $session['session_type']; ?>", start_date: "<?php echo $session['start_date_formatted']; ?>", start_date_time: "<?php echo $session['start_date_time']; ?>", end_date: "<?php echo $session['end_date_formatted']; ?>", end_date_time: "<?php echo $session['end_date_time']; ?>", metro_name: "<?php echo $session['metro_name']; ?>", location: "<?php echo $session['location']; ?>", location_oneline: "<?php echo $session['location_oneline']; ?>", cost: "<?php echo $session['cost']; ?>", currency: "<?php echo $session['currency']; ?>", description: "<?php echo $session['description']; ?>"};
 	<?php endforeach; ?>
 
 	function showSession(session_id) {
@@ -302,9 +302,10 @@
 		document.querySelector('#sad').ipaddress = "<?php echo $_SERVER['REMOTE_ADDR'] ?>";
 
 		document.querySelector('#sad').toggle();
-		document.querySelector('#sad').gmap = '<google-map disableDefaultUI showCenterMarker zoom="15" id="gmap"></google-map>';
-		google.maps.event.trigger(map, "resize");
-
+		//document.querySelector('#sad').gmap = '<google-map disableDefaultUI showCenterMarker zoom="15" id="gmap"></google-map>';
+		if (sessioninfo[session_id].location_oneline != "-1" && sessioninfo[session_id].location_oneline != "") {
+			document.querySelector('#sad').gmap = '<iframe width="470" height="150" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&q='+sessioninfo[session_id].location_oneline+'"></iframe>';
+		}
 	}
 	</script>
 </head>
