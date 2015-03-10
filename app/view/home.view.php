@@ -106,7 +106,6 @@
 					<script type="text/javascript">
 	               $(document).ready(function() {
     	              $('#searchbox-start').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
-        	            console.log(start.toISOString(), end.toISOString(), label);
             	      });
 	               });
     	           </script>
@@ -150,7 +149,6 @@
 					<script type="text/javascript">
     	           $(document).ready(function() {
         	          $('#searchbox-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
-            	        console.log(start.toISOString(), end.toISOString(), label);
                 	  });
 	               });
     	           </script>

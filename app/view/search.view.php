@@ -288,7 +288,7 @@
 		margin-top: 10px;
 		margin-left: 45px;
 		margin-bottom: 10px;
-		height: 30px;
+		height: 35px;
 		width: 120px;
 		padding: 5px 10px 5px 10px;
 		font-size: 1em;
@@ -388,7 +388,6 @@
 									<script type="text/javascript">
 						               $(document).ready(function() {
 					    	              $('#searchbox-start').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
-					        	            console.log(start.toISOString(), end.toISOString(), label);
 					            	      });
 						               });
 				    	           	</script>
@@ -396,7 +395,6 @@
 									<script type="text/javascript">
 						               $(document).ready(function() {
 					    	              $('#searchbox-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
-					        	            console.log(start.toISOString(), end.toISOString(), label);
 					            	      });
 						               });
 				    	           	</script>

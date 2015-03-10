@@ -302,6 +302,9 @@
 		document.querySelector('#sad').ipaddress = "<?php echo $_SERVER['REMOTE_ADDR'] ?>";
 
 		document.querySelector('#sad').toggle();
+		document.querySelector('#sad').gmap = '<google-map disableDefaultUI showCenterMarker zoom="15" id="gmap"></google-map>';
+		google.maps.event.trigger(map, "resize");
+
 	}
 	</script>
 </head>
