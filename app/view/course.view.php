@@ -303,7 +303,6 @@
 
 		document.querySelector('#sad').toggle();
 		if (sessioninfo[session_id].location_oneline != "-1" && sessioninfo[session_id].location_oneline != "" && sessioninfo[session_id].location_oneline != "+") {
-			window.alert(sessioninfo[session_id].location_oneline);
 			document.querySelector('#sad').gmap = '<iframe width="470" height="150" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&q='+sessioninfo[session_id].location_oneline+'"></iframe>';
 		}
 	}
