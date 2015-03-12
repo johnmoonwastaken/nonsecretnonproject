@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $configuration_sql = 'SELECT * FROM `configuration` WHERE type LIKE "linkedin%" ORDER BY type asc';
 $get_results = $GLOBALS['_db']->prepare($configuration_sql);
 $get_results->execute(array());
@@ -43,7 +45,7 @@ if($_GET['state'] == $state) {
 			$expires_in = $access_json['expires_in'];
 
 			// Set cookie with authentication token
-			setcookie("trainingful_linkedin", $access_token, time() + $expires_in - 86400, "/");
+			setcookie("trainingful_oauth", $access_token, time() + $expires_in - 86400, "/");
 			/*
 			if(!isset($_COOKIE["trainingful_linkedin"])) {
 			    //echo "Cookie named '" . "trainingful_linkedin" . "' is not set!";
@@ -75,7 +77,7 @@ if($_GET['state'] == $state) {
 				'method' => 'GET',
 				'header' => 'Authorization: Bearer ' . $access_token,
 				'content' => ''));
-			$url = 'https://api.linkedin.com/v1/people/~';
+			$url = 'https://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,location,industry,picture-url,public-profile-url)';
 			$context = stream_context_create($opts);
 			$result = @file_get_contents($url, false, $context);
 			if ($result == false) {
@@ -90,17 +92,32 @@ if($_GET['state'] == $state) {
 				$first_name = $array['first-name'];
 				$last_name = $array['last-name'];
 				$headline = $array['headline'];
-				$linkedin_url = $array['site-standard-profile-request']['url'];
-
-				$user_sql = 'INSERT IGNORE INTO user_data
-					SET linkedin_id = ?
-					, first_name = ?
-					, last_name = ?
-					, headline = ?
-					, linkedin_url = ?
-					, linkedin_token = ?';
+				$country = $array['location']['name'];
+				$industry = $array['industry'];
+				$picture_url = $array['picture-url'];
+				$linkedin_url = $array['public-profile-url'];
+				$user_sql = 'INSERT INTO user_data (oauth_type, oauth_id, first_name, last_name, headline, linkedin_url, country, industry, picture_url, linkedin_token)
+					VALUES (?,?,?,?,?,?,?,?,?,?)
+					ON DUPLICATE KEY UPDATE 
+					first_name = ?,
+					last_name = ?,
+					headline = ?, 
+					linkedin_url = ?,
+					country = ?, 
+					industry = ?, 
+					picture_url = ?, 
+					linkedin_token = ?,
+					last_login = CURRENT_TIMESTAMP';
+				echo $_SESSION['lastpage'];
 				$get_results = $GLOBALS['_db']->prepare($user_sql);
-				$get_results->execute(array($linkedin_id,$first_name,$last_name,$headline,$linkedin_url,$access_token));
+				$get_results->execute(array("linkedin",$linkedin_id,$first_name,$last_name,$headline,$linkedin_url,$country, $industry, $picture_url,$access_token,$first_name,$last_name,$headline,$linkedin_url,$country, $industry, $picture_url,$access_token));
+				echo $_SESSION['lastpage'];
+
+				if ($_SESSION['lastpage'] == "/signup") {
+					header('Location: /');
+					exit;
+				}
+				else header('Location: ' . $_SESSION['lastpage']);
 			}
 		}
 	}

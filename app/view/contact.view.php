@@ -1,3 +1,4 @@
+<?php include 'session_settings.php' ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -115,6 +116,7 @@
 		
 			<div id="static-document" class="container">
 				<p><h1>the contact info</h1></p>
+				<?php echo $_SESSION['lastpage']; ?>
 			</div>
 			<div id="contact-content">
 				<p><h4>

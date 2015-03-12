@@ -1,3 +1,4 @@
+<?php include 'session_settings.php' ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -18,7 +19,6 @@
 		<div class="container" id="main-container">
 			<div id="signup-content">
 				<p><h1><span style="font-family: Pacifico;">Sign up for trainingful</span></h1></p>
-				
 				<div class="row 25% uniform" style="margin-top:20px;">
 					<div class="7u" style="border-right:1px solid #d7d7d7;">
 						<p><h3>Use your LinkedIn account <span class="recommended">(Recommended)</span></h3></p>
