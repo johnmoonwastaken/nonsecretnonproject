@@ -27,7 +27,14 @@
 							<li>LinkedIn ratings are given <strong>5x</strong> more weight than ratings from standard users
 							<li>Exclusive designation as a verified professional within Trainingful community
 						</ul>
-						<button type="submit" class="button-linkedin"><div class="icon linkedin linkedin-button-icon"></div><div class="sign-up-linkedin">Sign Up with LinkedIn</div></button>
+						<form action="https://www.linkedin.com/uas/oauth2/authorization" method="get">
+							<input type="hidden" name="response_type" value="code">
+							<input type="hidden" name="client_id" value="77qce5ray9yre9">
+							<input type="hidden" name="redirect_uri" value="http://localhost/auth_linkedin_redirect">
+							<input type="hidden" name="state" value="b357iFQaj8">
+							<input type="hidden" name="scope" value="r_basicprofile">
+							<button type="submit" class="button-linkedin"><div class="icon linkedin linkedin-button-icon"></div><div class="sign-up-linkedin">Sign Up with LinkedIn</div></button>
+						</form>
 
 					</div>
 					<div class="5u" style="padding-left:40px;">
