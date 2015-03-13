@@ -50,13 +50,12 @@ $_SESSION['state'] = $state;
 						<p><button type="submit" class="button-other other-facebook"><div class="icon facebook other-button-icon"></div><div class="sign-up-other">Sign Up with Facebook</div></button></p>
 						<p>
 							<form action="https://accounts.google.com/o/oauth2/auth" method="get">
-							<input type="hidden" name="scope" value="https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login">
+							<input type="hidden" name="scope" value="https://www.googleapis.com/auth/plus.login">
 							<input type="hidden" name="state" value="<?php echo $_SESSION['state']; ?>">
 							<input type="hidden" name="redirect_uri" value="http://localhost/auth_google_redirect">
 							<input type="hidden" name="response_type" value="code">
 							<input type="hidden" name="client_id" value="<?php echo $google_client_id; ?>">
-							<input type="hidden" name="access_type" value="offline">
-														
+							<input type="hidden" name="access_type" value="offline">														
 							<button type="submit" class="button-other other-google"><div class="icon google other-button-icon"></div><div class="sign-up-other">Sign Up with Google</div></button>
 							</form>
 						</p>

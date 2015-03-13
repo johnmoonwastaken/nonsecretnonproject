@@ -1,7 +1,7 @@
 <?php
 
-require_once 'google-api-php-client/src/Google_Client.php';
-require_once 'google-api-php-client/src/contrib/Google_PlusService.php';
+require_once '../../bower_components/google-api-php-client/src/Google_Client.php';
+require_once '../../bower_components/google-api-php-client/src/contrib/Google_PlusService.php';
 
 session_start();
 
@@ -10,12 +10,23 @@ if (isset($_GET['state']) && $_SESSION['state'] != $_GET['state']) {
   exit;
 }
 
+$google_sql = "SELECT * FROM `configuration` WHERE `type` IN ('google_api_key','google_client_id','google_secret_key')";
+$get_results = $GLOBALS['_db']->prepare($google_sql);
+$get_results->execute(array());
+
+$results = $get_results->fetch(PDO::FETCH_ASSOC);
+$google_api_key = $results['value'];
+$results = $get_results->fetch(PDO::FETCH_ASSOC);
+$google_client_id = $results['value'];
+$results = $get_results->fetch(PDO::FETCH_ASSOC);
+$google_secret_key = $results['value'];
+
 $client = new Google_Client();
-$client->setApplicationName('Google+ server-side flow');
-$client->setClientId('YOUR_CLIENT_ID');
-$client->setClientSecret('YOUR_CLIENT_SECRET');
-$client->setRedirectUri('http://localhost:8080/oauth2callback');
-$client->setDeveloperKey('YOUR_SIMPLE_API_KEY');
+$client->setApplicationName('Trainingful');
+$client->setClientId($google_client_id);
+$client->setClientSecret($google_secret_key);
+$client->setRedirectUri('http://localhost/auth_google_redirect');
+$client->setDeveloperKey($google_api_key);
 $plus = new Google_PlusService($client);
 
 if (isset($_GET['code'])) {
@@ -25,10 +36,7 @@ if (isset($_GET['code'])) {
   $jsonTokens = $client->getAccessToken();
   $_SESSION['token'] = $jsonTokens;
 
-  // Store the tokens or otherwise handle the behavior now that you have
-  // successfully connected the user and exchanged the code for tokens. You
-  // will likely redirect to a different location in your app at thsi point.
-  $redirect = 'http://example.com/myaccount';
+  $redirect = '/';
   header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 }
 
