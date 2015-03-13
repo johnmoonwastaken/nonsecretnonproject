@@ -1,0 +1,17 @@
+{
+  "name": "core-image",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "homepage": "https://github.com/Polymer/core-image",
+  "_release": "de2867905f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "de2867905f81cec0b88df443c30ac9131c60617c"
+  },
+  "_source": "git://github.com/Polymer/core-image.git",
+  "_target": "master",
+  "_originalSource": "Polymer/core-image"
+}

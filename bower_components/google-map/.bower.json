@@ -38,8 +38,7 @@
     "tag": "0.4.2",
     "commit": "cbe9fa6bab57930b59cbbdd9017ea8a92f02a875"
   },
-  "_source": "git://github.com/GoogleWebComponents/google-map.git",
-  "_target": "~0.4.2",
-  "_originalSource": "GoogleWebComponents/google-map",
-  "_direct": true
+  "_source": "git://github.com/PolymerLabs/google-map.git",
+  "_target": "*",
+  "_originalSource": "PolymerLabs/google-map"
 }
