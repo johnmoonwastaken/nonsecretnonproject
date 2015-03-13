@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../bower_components/google-api-php-client/src/Google_Client.php';
+require_once '../../bower_components/google-api-php-client/src/Google/Client.php';
 require_once '../../bower_components/google-api-php-client/src/contrib/Google_PlusService.php';
 
 session_start();
