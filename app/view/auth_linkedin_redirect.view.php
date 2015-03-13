@@ -9,8 +9,7 @@ $configuration_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $api_key = $configuration_result['value'];
 $configuration_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $secret_key = $configuration_result['value'];
-$configuration_result = $get_results->fetch(PDO::FETCH_ASSOC);
-$state = $configuration_result['value'];
+$state = $_SESSION['state'];
 
 if($_GET['state'] == $state) {
 	if ($_GET['error'] == "access_denied") {

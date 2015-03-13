@@ -1,4 +1,12 @@
 <?php include 'session_settings.php' ?>
+<?php
+$characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+$state = '';
+ for ($i = 0; $i < 16; $i++) {
+      $state .= $characters[rand(0, strlen($characters) - 1)];
+ }
+$_SESSION['state'] = $state;
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -29,9 +37,9 @@
 						</ul>
 						<form action="https://www.linkedin.com/uas/oauth2/authorization" method="get">
 							<input type="hidden" name="response_type" value="code">
-							<input type="hidden" name="client_id" value="77qce5ray9yre9">
+							<input type="hidden" name="client_id" value="<?php echo $linkedin_api_key; ?>">
 							<input type="hidden" name="redirect_uri" value="http://localhost/auth_linkedin_redirect">
-							<input type="hidden" name="state" value="b357iFQaj8">
+							<input type="hidden" name="state" value="<?php echo $_SESSION['state']; ?>">
 							<input type="hidden" name="scope" value="r_basicprofile">
 							<button type="submit" class="button-linkedin"><div class="icon linkedin linkedin-button-icon"></div><div class="sign-up-linkedin">Sign Up with LinkedIn</div></button>
 						</form>
@@ -40,7 +48,18 @@
 					<div class="5u" style="padding-left:40px;">
 						<p><h3>Or use your favourite social network</h2></p>
 						<p><button type="submit" class="button-other other-facebook"><div class="icon facebook other-button-icon"></div><div class="sign-up-other">Sign Up with Facebook</div></button></p>
-						<p><button type="submit" class="button-other other-google"><div class="icon google other-button-icon"></div><div class="sign-up-other">Sign Up with Google</div></button></p>
+						<p>
+							<form action="https://accounts.google.com/o/oauth2/auth" method="get">
+							<input type="hidden" name="scope" value="https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login">
+							<input type="hidden" name="state" value="<?php echo $_SESSION['state']; ?>">
+							<input type="hidden" name="redirect_uri" value="http://localhost/auth_google_redirect">
+							<input type="hidden" name="response_type" value="code">
+							<input type="hidden" name="client_id" value="<?php echo $google_client_id; ?>">
+							<input type="hidden" name="access_type" value="offline">
+														
+							<button type="submit" class="button-other other-google"><div class="icon google other-button-icon"></div><div class="sign-up-other">Sign Up with Google</div></button>
+							</form>
+						</p>
 						<p><button type="submit" class="button-other other-twitter"><div class="icon twitter other-button-icon"></div><div class="sign-up-other">Sign Up with Twitter</div></button></p>
 					</div>
 				</div>
