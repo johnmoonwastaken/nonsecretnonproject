@@ -33,7 +33,7 @@
 				<li><a href="#" onClick="document.getElementById('review-dialog').toggle();">Write a Review</a></li>
 				-->
 				<?php if(!isset($_COOKIE['trainingful_oauth'])): ?>
-				<li><a href="signup">Providers</a></li>
+				<li><a href="signin">Providers</a></li>
 				<?php else: ?>
 				<li><a href="signout">Sign Out</a></li>
 				<?php endif ?>

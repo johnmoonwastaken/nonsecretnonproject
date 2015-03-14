@@ -65,6 +65,7 @@
 		font-weight: 400;
 		font-size: 0.85em;
 		color: #666;
+		padding-right: 10px;
 	}
 
 	#signup-content .benefits li:before {

@@ -35,7 +35,7 @@ if($_GET['state'] == $state) {
 		$context = stream_context_create($opts);
 		$result = @file_get_contents($url, false, $context);
 		if ($result == false) {
-			header("Location: signup");
+			header("Location: signin");
 			die();
 		}
 		else {
@@ -43,8 +43,6 @@ if($_GET['state'] == $state) {
 			$access_token = $access_json['access_token'];
 			$expires_in = $access_json['expires_in'];
 
-			// Set cookie with authentication token
-			setcookie("trainingful_oauth", $access_token, time() + $expires_in - 86400, "/");
 			/*
 			if(!isset($_COOKIE["trainingful_linkedin"])) {
 			    //echo "Cookie named '" . "trainingful_linkedin" . "' is not set!";
@@ -95,7 +93,19 @@ if($_GET['state'] == $state) {
 				$industry = $array['industry'];
 				$picture_url = $array['picture-url'];
 				$linkedin_url = $array['public-profile-url'];
-				$user_sql = 'INSERT INTO user_data (oauth_type, oauth_id, first_name, last_name, headline, linkedin_url, country, industry, picture_url, linkedin_token)
+				$_SESSION['first_name'] = $first_name;
+				$check_sql = "SELECT registration_complete FROM user_data WHERE oauth_type = 'linkedin' and oauth_id = ?";
+
+				// Checks whether the user already exists in database
+				$get_results = $GLOBALS['_db']->prepare($check_sql);
+				$get_results->execute(array($linkedin_id));
+				$result_count = $get_results->rowCount();
+				if ($result_count > 0) {
+					$result = $get_results->fetch(PDO::FETCH_ASSOC);
+					$registration_complete = $result['registration_complete'];
+				}
+
+				$user_sql = 'INSERT INTO user_data (oauth_type, oauth_id, first_name, last_name, headline, linkedin_url, country, industry, picture_url, oauth_token)
 					VALUES (?,?,?,?,?,?,?,?,?,?)
 					ON DUPLICATE KEY UPDATE 
 					first_name = ?,
@@ -105,18 +115,31 @@ if($_GET['state'] == $state) {
 					country = ?, 
 					industry = ?, 
 					picture_url = ?, 
-					linkedin_token = ?,
+					oauth_token = ?,
 					last_login = CURRENT_TIMESTAMP';
-				echo $_SESSION['lastpage'];
 				$get_results = $GLOBALS['_db']->prepare($user_sql);
 				$get_results->execute(array("linkedin",$linkedin_id,$first_name,$last_name,$headline,$linkedin_url,$country, $industry, $picture_url,$access_token,$first_name,$last_name,$headline,$linkedin_url,$country, $industry, $picture_url,$access_token));
-				echo $_SESSION['lastpage'];
 
-				if ($_SESSION['lastpage'] == "/signup") {
+				if ($result_count == 0 || !$registration_complete) {
+					$_SESSION['access_token'] = $access_token;
+					$_SESSION['expires_in'] = $expires_in;
+					header('Location: /signup');
+					exit;
+				}
+				elseif ($_SESSION['lastpage'] == "/signin") {
+					// Set cookie with authentication setcookie
+					setcookie("trainingful_oauth", $access_token, time() + $expires_in - 86400, "/");
+
 					header('Location: /');
 					exit;
 				}
-				else header('Location: ' . $_SESSION['lastpage']);
+				else {
+					// Set cookie with authentication setcookie
+					setcookie("trainingful_oauth", $access_token, time() + $expires_in - 86400, "/");
+
+					header('Location: ' . $_SESSION['lastpage']);
+				}
+
 			}
 		}
 	}
