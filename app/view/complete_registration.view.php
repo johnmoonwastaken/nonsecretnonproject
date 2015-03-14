@@ -32,6 +32,7 @@ $expires_in = $_SESSION['expires_in'];
 
 setcookie("trainingful_oauth", $access_token, time() + $expires_in - 86400, "/");
 
+// IF IT IS A VENDOR, GO TO A DIFFERENT PAGE
 header("Location: /");
 die();
 

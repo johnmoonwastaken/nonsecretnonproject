@@ -93,7 +93,6 @@ if($_GET['state'] == $state) {
 				$industry = $array['industry'];
 				$picture_url = $array['picture-url'];
 				$linkedin_url = $array['public-profile-url'];
-				$_SESSION['first_name'] = $first_name;
 				$check_sql = "SELECT registration_complete FROM user_data WHERE oauth_type = 'linkedin' and oauth_id = ?";
 
 				// Checks whether the user already exists in database
@@ -119,6 +118,9 @@ if($_GET['state'] == $state) {
 					last_login = CURRENT_TIMESTAMP';
 				$get_results = $GLOBALS['_db']->prepare($user_sql);
 				$get_results->execute(array("linkedin",$linkedin_id,$first_name,$last_name,$headline,$linkedin_url,$country, $industry, $picture_url,$access_token,$first_name,$last_name,$headline,$linkedin_url,$country, $industry, $picture_url,$access_token));
+
+				$_SESSION['first_name'] = $first_name;
+				$_SESSION['last_name'] = $last_name;
 
 				if ($result_count == 0 || !$registration_complete) {
 					$_SESSION['access_token'] = $access_token;
