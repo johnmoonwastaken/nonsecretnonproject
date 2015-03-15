@@ -1,0 +1,528 @@
+<?php include 'session_settings.php' ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<?php include 'header_required.php' ?>
+	<title>trainingful</title>
+	
+	<style>
+	#main-section {
+		background: #f8f8f8;
+		position: relative;
+		padding-bottom: 40px;
+	}
+	
+	#query-summary-bar {
+		height: 120px;
+		background: rgba(0, 0, 0, 0.5);
+		padding: 25px 25px 0 25px;
+		color: #fff;
+		position: absolute;
+		top: -180px;
+	}
+	
+	#query-summary-bar h1 {
+		margin: 0 0 0.05em;
+		color: #fff;
+		font-weight: 400;
+		font-size: 2.2em;
+	}
+	
+	#query-summary-bar p {
+		margin: 0;
+		font-weight: 300;
+	}
+	
+	#query-summary-bar a {
+		color: #fff;
+		text-decoration: underline;
+	}
+	
+	#query-summary-bar a:hover {
+		text-decoration: none;
+	}
+	
+	#search-control-bar {
+		height: 60px;
+		background: #4ca166;
+		color: #fff;
+		position: absolute;
+		top: -60px;
+	}
+	
+	#results-counter {
+		display: block;
+		margin: 0;
+		padding-left: 20px;
+		font-weight: 400;
+		background: #489961;
+		height: 60px;
+		line-height: 60px;
+		font-size: 0.8em;
+	}
+	
+	#type-switcher {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#type-switcher li {
+		float: left;
+		margin-left: 35px;
+		position: relative;
+	}
+	
+	#type-switcher li:first-child {
+		margin-left: 0;
+	}
+	
+	#type-switcher li a {
+		line-height: 60px;
+		color: #fff;
+		font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+		font-size: 1.1em;
+	}
+	
+	#type-switcher .tick {
+		background: url('images/sprites.png') no-repeat 0 0;
+		margin: 0 auto;
+		width: 11px;
+		height: 6px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: none;
+	}
+	
+	#type-switcher li.active .tick {
+		display: block;
+	}
+	
+	#results-container {
+		background: #fff;
+	}
+	
+	#filters-accordion {
+		list-style: none;
+		width: 100%;
+		margin: 0;
+		padding: 5px 0 0;
+		/*border-right: 1px solid #d7d7d7;*/
+	}
+	
+	#filters-accordion li {
+		padding: 10px 5px;
+		margin: 0 10px;
+		color: #585858;
+		font-size: 0.85em;
+		border-top: 1px solid #d7d7d7;
+	}
+	
+	#filters-accordion li:first-child {
+		border-top: 0;
+	}
+	
+	#filters-accordion > li > a {
+		color: #585858;
+	}
+	
+	#filters-accordion > li > a:hover {
+		text-decoration: none;
+	}
+	
+	#filters-accordion > li > a > .icon {
+		margin-right: 3px;
+	}
+	
+	#results-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#results-list > li {
+		overflow: hidden;
+		padding: 30px 0 0;
+		border-top: 1px solid #d7d7d7;
+		margin: 30px 30px 30px 0;
+	}
+	
+	#results-list > li:first-child {
+		padding: 0;
+		border-top: none;
+	}
+	
+	#results-list .result-rating {
+		margin-top: 5px;
+		float: right;
+	}
+	
+	#results-list h2 {
+		margin: 0 0 0.1em;
+	}
+	
+	#results-list p {
+		margin: 0.3em 0 0.8em;
+		font-size: 0.85em;
+		font-weight: 300;
+		color: #969696;
+	}
+	
+	#results-list p strong {
+		color: #656565;
+	}
+	
+	#results-list .company-logo {
+		float: left;
+		max-height: 70px;
+		max-width: 70px;
+	}
+	.form-date {
+		width:82px;
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+	.form-name {
+		width:185px;
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+	.form-price {
+		width:73px;
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+	.inputbox {
+		margin-top:10px;
+	}
+	.pricebox {
+		margin-left: 15px;
+		font-size: 0.9em;
+		margin-bottom:10px;
+		color: #555;
+	}
+	.sessions-list {
+		list-style: none;
+		margin: 0 70px 0 80px;
+		padding: 0;
+	}
+	
+	.sessions-list li {
+		margin: 0 0 1px 0;
+		padding: 0 0 0 15px;
+		background: #f2f2f2;
+	}
+	
+	.sessions-list li > a {
+		display: block;
+		height: 33px;
+		overflow: hidden;
+	}
+	
+	.sessions-list li > a:hover {
+		text-decoration: none;
+	}
+	
+	.sessions-list h4 {
+		color: #515151;
+		font-weight: 400;
+		margin: 0;
+		line-height: 1em;
+		font-size: 0.8em;
+	}
+	
+	.sessions-list small {
+		font-weight: 300;
+	}
+	
+	.sessions-list .icon.calendar {
+		float: left;
+		color: #afafaf;
+		margin-top: 15px;
+	}
+	
+	.sessions-list .session-dates {
+		margin: 3px 0 0 23px;
+	}
+	
+	.sessions-list .session-location {
+		color: #969696;
+		margin: 0 0 0 23px;
+		display: block;
+		line-height: 1.5em;
+	}
+	
+	.sessions-list .session-price-container {
+		margin: 3px 15px 0 0;
+		float: right;
+		text-align: right;
+		color: #969696;
+	}
+	
+	.sessions-list .session-price-container h4 {
+		color: #515151;
+		line-height: 0.8em;
+		font-size: 0.8em;
+	}
+	
+	.sessions-list .session-price-container small {
+		line-height: 1.5em;
+	}
+	
+	.sessions-list .chevron-container {
+		float: right;
+		text-align: center;
+		height: 63px;
+		width: 46px;
+		background: #f6c66b;
+	}
+	
+	.sessions-list .icon.chevron-right {
+		color: #fff;
+		font-size: 2em;
+		line-height: 34px;
+	}
+
+	.smaller-button {
+		margin-top: 10px;
+		margin-left: 45px;
+		margin-bottom: 10px;
+		height: 35px;
+		width: 120px;
+		padding: 5px 10px 5px 10px;
+		font-size: 1em;
+	}
+	
+	#results-list .more-sessions {
+		margin: 3px 0 0 80px;
+		color: #969696;
+		display: block;
+	}
+	
+	#results-list .more-sessions a {
+		color: #969696;
+	}
+	
+	#results-list .more-sessions .icon {
+		font-size: 1.6em;
+	}
+	</style>
+	
+	<!-- DATE RANGE PICKER -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="all" href="../../bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../bower_components/moment/moment.js"></script>
+	<script type="text/javascript" src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<!-- END DATE RANGE PICKER -->
+
+</head>
+<body>
+
+	<header>
+		<?php include 'header.view.php' ?>
+	</header>
+	
+	<section id="main-section">
+		<div class="container">
+		
+			<div id="query-summary-bar" class="container">
+				<?php if ($_GET['start']): ?>
+				<h1>Training about "<?php echo $keywords; ?>"</h1>
+				<p>In <strong><?php if (empty($location)) { $location = "Everywhere"; echo "Everywhere"; } else echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
+				<?php else: ?>
+					<h1>Explore Categories</h1>
+				<?php endif; ?>
+			</div>
+			
+			<div id="search-control-bar" class="container">
+				<div class="row">
+					<div class="3u">
+					<?php  	$page = 1;
+						$shown = 20;
+						if ($_GET['page'] != "") {
+							$page = $_GET['page'];
+						}
+						$upto = $page * $shown;
+						if ($upto > $totalResults)
+						{
+							$upto = $totalResults;
+						} ?>
+						<h4 id="results-counter"><!--Filter--> Showing <?php echo ($page -1) * $shown + 1; ?>-<?php echo $upto; ?> of <?php echo $totalResults; ?> results</h4>
+					</div>
+					<div class="9u">
+						<ul id="type-switcher">
+							<!--<li class="active"><span class="tick"></span><a href="#">All Training</a></li>-->
+							
+							<li class="active"><span class="tick"></span><a href="#">Courses</a></li>
+							<!--<li><span class="tick"></span><a href="#">Conferences</a></li>
+							-->
+						</ul>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div id="results-container">
+				<div class="row">
+					<div class="3u">
+						<form id="filterbox" action="search" method="get">
+							<?php if ($_GET['category'] != '') { echo '<input type="hidden" name="category" value="' . $_GET['category'] . '">'; } ?>
+						<ul id="filters-accordion">
+							<li>
+								<a href="#"><span class="icon triangle-down"></span>Name contains</a>
+								<div class="inputbox">
+									<input type="text" id="searchbox-keywords" name="keywords" placeholder="" class="form-text form-name" <?php if ($_GET['keywords']) { echo 'value='.$_GET['keywords']; } ?>>
+								</div>
+							</li>
+							<!--
+							<li>
+								<a href="#"><span class="icon triangle-down"></span>Vendor</a>
+							</li>
+							-->
+							<li>
+								<a href="#"><span class="icon triangle-down"></span>Date</a>
+								<div class="inputbox">
+									<input type="text" id="searchbox-start" name="start" class="form-text form-date" <?php if ($_GET['start']) { echo 'value='.$_GET['start']; } ?>> to
+									<script type="text/javascript">
+						               $(document).ready(function() {
+					    	              $('#searchbox-start').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
+					            	      });
+						               });
+				    	           	</script>
+									<input type="text" id="searchbox-end" name="end" class="form-text form-date" <?php if ($_GET['end']) { echo 'value='.$_GET['end']; } ?>>
+									<script type="text/javascript">
+						               $(document).ready(function() {
+					    	              $('#searchbox-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
+					            	      });
+						               });
+				    	           	</script>
+								</div>
+							</li>
+							<li>
+								<a href="#"><span class="icon triangle-down"></span>Price</a>
+							</li>
+								<div class="pricebox">
+									$<input type="text" id="min-price" name="min" class="form-text form-price" <?php if ($_GET['min'] == '') { echo 'value="0"'; } else echo 'value="' . $_GET['min'] . '"'; ?>> to 
+									$<input type="text" id="max-price" name="max" class="form-text form-price" <?php if ($_GET['max'] == '-1') { echo 'value=""'; } else echo 'value="' . $_GET['max'] . '"';?>>
+								</div>
+							<li>
+								<a href="#"><span class="icon triangle-down"></span>Location</a>
+								<div class="inputbox">
+									<select id="searchbox-location" name="location" placeholder="Location">
+										<option value="Vancouver">Vancouver</option>
+										<option value="Everywhere" <?php if ($_GET['location'] == "Everywhere") echo 'selected'; ?>>Everywhere</option>
+									</select>
+								</div>
+							</li>
+						</ul>
+						<button type="submit" class="form-submit smaller-button">Filter Results</button>
+						</form>
+					</div>
+					<div class="9u">
+						<ul id="results-list">
+								<?php if (is_array($courseList) and $totalResults > 0) { for($i = ($page - 1) * $shown; $i < $upto; ++$i): ?>
+							<li><!--
+								<div class="result-rating">
+									<span class="rating s4" title="4 stars"></span>
+								</div>
+							-->
+								<h2><a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>"><?php echo $courseList[$i]['course_name']; ?></a></h2>
+								<p><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> <?php $pos=mb_strpos($courseList[$i]['course_description'], ' ', 190); echo mb_substr($courseList[$i]['course_description'],0,$pos) . '...';?></p>
+								<img src="images/vendors/<?php if ($courseList[$i]['branding_url'] == '-1' || $courseList[$i]['branding_url'] == "") { echo 'trainingful-branding-70.gif'; } else echo $courseList[$i]['branding_url']; ?>" alt="<?php echo $courseList[$i]['vendor_name']; ?>" class="company-logo">
+								<ul class="sessions-list">
+									<?php foreach($courseList[$i]['sessionList'] as $session): ?>
+									<li>
+										<a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>&session=<?php echo $session['session_id']; ?>">
+											<div class="chevron-container">
+												<span class="icon chevron-right"></span>
+											</div>
+											<span class="icon calendar"></span>
+											<div class="session-price-container">
+												<h4><?php echo $session['cost']; ?></h4>
+												<small><?php echo $session['currency']; ?></small>
+											</div>
+											<h4 class="session-dates"><?php { echo date("M j, Y", strtotime($session['start_date'])); if ($session['start_date'] != $session['end_date']) { echo " - ".date("M j, Y", strtotime($session['end_date']));} } ?></h4>
+											<small class="session-location"><?php if ($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></small>
+										</a>
+									</li>
+									<?php endforeach; ?>
+								</ul>
+							</li>
+							<?php endfor; } else echo "<li>Sorry, no results available, please try another search.</li>";?>
+						</ul>
+						<div class="row">
+							<div class="6u">&nbsp;
+								<?php 
+									if ($page > 1) { 
+										if ($_GET['category'] != "") {
+											echo '<a href="search?category=' . $_GET['category'] . '&page=' . ($page-1) . '">< Previous Page </a>';
+										}
+										else echo '<a href="search?keywords=' . $keywords . '&start=' . $start . '&end=' . $end . '&location=' . $location . '&page=' . ($page-1) . '">< Previous Page</a>'; 
+									} ?>
+							</div>
+							<div class="6u" style="text-align:right;">
+								<?php
+									if ($totalResults > $upto) { 
+										if ($_GET['category'] != "") {
+											echo '<a href="search?category=' . $_GET['category'] . '&page=' . ($page+1) . '">Next Page > </a>';
+										}
+										else echo '<a href="search?keywords=' . $keywords . '&start=' . $start . '&end=' . $end . '&location=' . $location . '&page=' . ($page+1) . '">Next Page > </a>'; 
+									} ?>
+								&nbsp;
+							</div>
+						</div>
+						
+							<!--
+							<li>
+								<div class="result-rating">
+									<span class="rating s4" title="4 stars"></span>
+								</div>
+								<h2><a href="#">PMP Exam Power Prep</a></h2>
+								<p><strong>ESI International:</strong> Immerse yourself in ESI's PMP Exam Power Prep and you'll be well on your way to passing PMI's PMP certification</p>
+								<img src="images/samples/esi-international.png" alt="ESI International" class="company-logo">
+								<ul class="sessions-list">
+									<li>
+										<a href="#">
+											<div class="chevron-container">
+												<span class="icon chevron-right"></span>
+											</div>
+											<span class="icon calendar"></span>
+											<div class="session-price-container">
+												<h4>$2495.00</h4>
+												<small>CAD</small>
+											</div>
+											<h4 class="session-dates">Oct 6, 2014 - Oct 10, 2014</h4>
+											<small class="session-location">Vancouver, BC</small>
+										</a>
+									</li>
+							
+									<li>
+										<a href="#">
+											<div class="chevron-container">
+												<span class="icon chevron-right"></span>
+											</div>
+											<span class="icon calendar"></span>
+											<div class="session-price-container">
+												<h4>$2495.00</h4>
+												<small>CAD</small>
+											</div>
+											<h4 class="session-dates">Oct 6, 2014 - Oct 10, 2014</h4>
+											<small class="session-location">Vancouver, BC</small>
+										</a>
+									</li>
+
+								</ul>
+								<small class="more-sessions"><a href="#">4 more sessions <span class="icon triangle-down"></span></a></small>
+							</li>
+						-->
+					</div>
+				</div>
+			</div>
+		
+		</div>
+		
+		
+	</section>

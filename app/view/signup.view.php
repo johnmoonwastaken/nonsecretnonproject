@@ -31,9 +31,9 @@
 						<p><h3>A couple more questions...</h3></p>
 						<form id="complete_registration" action="complete_registration" method="get">
 						<p>May we confirm your e-mail address?</p>
-						<input type="email" id="email" name="email" placeholder="abc@xyz.com" class="form-text">
+						<input type="email" id="email" name="email" placeholder="abc@xyz.com" class="form-text" required>
 						<p>Can we have your phone number if issues arise?</p>
-						<input type="text" id="phone" name="phone" placeholder="1-###-###-####" class="form-text">
+						<input type="text" id="phone" name="phone" placeholder="1-###-###-####" class="form-text" required>
 						<p>Invitation Code (optional):</p>
 						<input type="text" id="invitation" name="invitation" placeholder="optional" class="form-text">
 						<p><button type="submit" class="form-submit">Complete Registration</button></p>
