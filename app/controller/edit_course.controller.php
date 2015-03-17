@@ -1,23 +1,26 @@
 <?php
 include 'session_settings.php';
+if ($_SESSION['vendor_id'] == "") {
+	header('Location: /signin');
+	exit;
+}
 $search_sql = "
 	SELECT course.vendor_id, course.course_name, course.course_description, course.avg_rating, 
-		categories.category_name, categories.parent_category_id, 
-		vendor.vendor_name, vendor.branding_url, vendor.contact_email, vendor.website_url, vendor.contact_number
+		categories.category_name, categories.parent_category_id
 	FROM course
 	LEFT JOIN categories
 	ON course.category_id = categories.category_id
-	LEFT JOIN vendor
-	ON course.vendor_id = vendor.vendor_id
-	WHERE course.course_id = ?";
+	WHERE course.course_id = ? and course.vendor_id = ?";
 
 $get_results = $GLOBALS['_db']->prepare($search_sql);
-$get_results->execute(array($_GET["id"]));
-$courseInfo = array();
+$get_results->execute(array($_GET["id"], $_SESSION['vendor_id']));
 
-$click_count_sql = "UPDATE course SET click_count = click_count + 1 WHERE course_id = ?";
-$query = $GLOBALS['_db']->prepare($click_count_sql);
-$query->execute(array($_GET["id"]));
+if ($get_results->rowCount() == 0) {
+	header('Location: /manage_vendor');
+	exit;
+}
+
+$courseInfo = array();
 
 $course_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $course_name = $course_result['course_name'];

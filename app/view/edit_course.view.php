@@ -5,10 +5,8 @@
 	<title>trainingful</title>
 
 	<link rel="import" href="../../bower_components/elements/session-action-dialog.html">
-	<link rel="import" href="../../bower_components/elements/review-action-dialog.html">
 
 	<style>
-	
 	.wrapper {
     	position:relative;
 	    margin:30px;
@@ -252,10 +250,6 @@
 		document.getElementById('display-sessions').style.display = "inline";
 	});
 
-	window.addEventListener('core-overlay-open-completed', function(e) {
-		console.log('opened');
-	});
-
 	var sessioninfo = [];
 
 	<?php foreach($sessionList as $session): ?>
@@ -317,9 +311,7 @@
 	<section id="main-section">
 		<div class="container" id="main-container">
 			<div id="query-summary-bar" class="container">
-				<?php if ($start !=""): ?>
-					<p><strong><a href="search?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Back to Results</a></strong> | In <strong><?php echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong></p>
-				<?php endif; ?>
+				<h1>Edit Course Details</h1>
 			</div>
 			<div id="main-content">
 				<div class="row 25% uniform">
@@ -333,23 +325,6 @@
 							<p><h4><?php echo $course_description; ?>
 							<!-- <a href="#">Read More ></a> --></h4></p>
 							<div id="ratings-section">
-							<!--
-								<div class="row 25% uniform" style="float:right;margin: 0px 15px 10px 0px;">
-									<div class="12u">
-										<button type="submit" class="form-submit" onClick="document.querySelector('#rad').toggle();">Write a Review</button>
-									</div>
-								</div>
-								
-								<p><h2 style="margin-top:30px;">15 reviews from our community</h2></p>
-
-<div class="wrapper"><div id="rating-percent">100<span style="font-size:0.5em;">%</span><div id="average-rating">Average Rating</div></div>
-    <div class="arc arc_start"></div>
-    <div class="arc arc_end"></div>
-</div>
-								
-								<p>This is test content.</p>
-								<p>This is test content.</p>
-							-->
 							</div>
 						</div>
 					</div>
@@ -392,8 +367,6 @@
 					</div>
 				</div>
 				<session-action-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
-				<review-action-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></review-action-dialog>
-
 			</div>
 		</div>
 </section>
