@@ -1,5 +1,5 @@
 <?php
-
+include 'session_settings.php';
 $search_sql = "
 	SELECT course.vendor_id, course.course_name, course.course_description, course.avg_rating, 
 		categories.category_name, categories.parent_category_id, 

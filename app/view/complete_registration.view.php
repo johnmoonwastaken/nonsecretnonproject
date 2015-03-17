@@ -43,6 +43,8 @@ $expires_in = $_SESSION['expires_in'];
 
 setcookie("trainingful_oauth", $access_token, time() + $expires_in - 86400, "/");
 
+$_SESSION['vendor_id'] = $vendor_id;
+
 // IF IT IS A VENDOR, GO TO A DIFFERENT PAGE
 if ($vendor_id != -1) {
 	header("Location: manage_vendor");

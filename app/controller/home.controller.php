@@ -1,5 +1,5 @@
 <?php
-
+include 'session_settings.php';
 $functionsCategories = array();
 $search_sql = "
 	SELECT p.category_id, p.category_name, COUNT(course.course_id) AS course_count 

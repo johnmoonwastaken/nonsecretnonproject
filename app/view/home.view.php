@@ -1,4 +1,3 @@
-<?php include 'session_settings.php' ?>
 <!DOCTYPE HTML>
 <html>
 <head>

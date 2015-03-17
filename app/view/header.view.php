@@ -34,7 +34,7 @@
 				-->
 				<?php if(!isset($_COOKIE['trainingful_oauth'])): ?>
 				<li><a href="signin">Register / Sign In</a></li>
-				<?php else: ?>
+				<?php elseif (isset($_SESSION['vendor'])): ?>
 				<li><a href="#"><?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?></a></li>
 				<li><a href="signout">Sign Out</a></li>
 				<?php endif ?>

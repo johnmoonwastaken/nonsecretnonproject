@@ -93,7 +93,7 @@ if($_GET['state'] == $state) {
 				$industry = $array['industry'];
 				$picture_url = $array['picture-url'];
 				$linkedin_url = $array['public-profile-url'];
-				$check_sql = "SELECT registration_complete FROM user_data WHERE oauth_type = 'linkedin' and oauth_id = ?";
+				$check_sql = "SELECT registration_complete, vendor_id FROM user_data WHERE oauth_type = 'linkedin' and oauth_id = ?";
 
 				// Checks whether the user already exists in database
 				$get_results = $GLOBALS['_db']->prepare($check_sql);
@@ -102,6 +102,7 @@ if($_GET['state'] == $state) {
 				if ($result_count > 0) {
 					$result = $get_results->fetch(PDO::FETCH_ASSOC);
 					$registration_complete = $result['registration_complete'];
+					$_SESSION['vendor_id'] = $result['vendor_id'];
 				}
 
 				$user_sql = 'INSERT INTO user_data (oauth_type, oauth_id, first_name, last_name, headline, linkedin_url, country, industry, picture_url, oauth_token)
@@ -131,15 +132,21 @@ if($_GET['state'] == $state) {
 				elseif ($_SESSION['lastpage'] == "/signin") {
 					// Set cookie with authentication setcookie
 					setcookie("trainingful_oauth", $access_token, time() + $expires_in - 86400, "/");
-
-					header('Location: /');
-					exit;
+					if ($_SESSION['vendor_id'] > 0) {
+						header('Location: /manage_vendor');
+						exit;
+					}
+					else {
+						header('Location: /');
+						exit;
+					}
 				}
 				else {
 					// Set cookie with authentication setcookie
 					setcookie("trainingful_oauth", $access_token, time() + $expires_in - 86400, "/");
-
+					/*
 					header('Location: ' . $_SESSION['lastpage']);
+					*/
 				}
 
 			}

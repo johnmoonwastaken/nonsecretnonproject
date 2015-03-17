@@ -1,5 +1,5 @@
 <?php
-
+include 'session_settings.php';
 $parentCategoriesList = array();
 $subCategoriesList = array();
 
