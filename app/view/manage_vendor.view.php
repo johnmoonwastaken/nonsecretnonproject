@@ -108,7 +108,6 @@
 		width: 100%;
 		margin: 0;
 		padding: 5px 0 0;
-		/*border-right: 1px solid #d7d7d7;*/
 	}
 	
 	#filters-accordion li {

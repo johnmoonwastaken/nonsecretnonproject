@@ -76,6 +76,11 @@
 		border-bottom: 1px solid #d7d7d7;
 	}
 
+	#content-section > h1 {
+		padding: 0;
+		margin: 0;
+	}
+
 	#info-bar {
 		list-style: none;
 		width: 100%;
@@ -231,6 +236,55 @@
 		color: #999;
 	}
 
+	.cancel-button {
+		background-color: #666;
+	}
+
+	.category_box {
+		color: #444;
+		font-size: 0.8em;
+	}
+
+	.edit-course-input {
+		padding: 0;
+		margin: 0;
+		font-size: 0.9em;
+		color: #666;
+		font-weight: 400;
+		width: 49em;
+	}
+
+	.edit-course-name {
+		font-size: 2.2em;
+		width: 15em;
+		color: #444;
+		padding-left:5px;
+	}
+
+	.edit-course-short {
+		padding: 0;
+		margin: 0;
+		font-size: 0.9em;
+		color: #666;
+		font-weight: 400;
+		width: 5em;
+	}
+
+	.edit-course-text {
+		padding: 0;
+		margin: 0;
+		font-size: 0.9em;
+		color: #666;
+		font-weight: 400;
+		padding-left:5px;
+	}
+
+	.explanation {
+		color: #000;
+		font-size: 0.8em;
+		padding-top:10px;
+	}
+
 	.folded-corner {
 		width: 0;
 		height: 0;
@@ -248,6 +302,29 @@
 		console.log('polymer-ready');
 		document.getElementById('loading-sessions').style.display = "none";
 		document.getElementById('display-sessions').style.display = "inline";
+	});
+
+	<?php 
+		echo "var category_dropdown = [];";
+		foreach ($categoryList as $category) {
+			$sub_options = "";
+			foreach ($category['subcategories'] as $subcategory) {
+				$sub_options .= "<option value='" . $subcategory['category_id'] . "'";
+				if ($subcategory['category_name'] == "General") {
+					$sub_options .= " selected";
+				}
+				$sub_options .= ">" . $subcategory['category_name'] . "</option>";
+			}
+			$sub_options = "\"" . $sub_options . "\"";
+			echo "category_dropdown[" . $category['category_id'] . "] = " . $sub_options . ";";
+		}
+	?>
+
+	$(document).ready(function() {
+		$('#primary_box').on('change', function(){
+			$('#secondary_box').find('option').remove();
+			$('#secondary_box').append(category_dropdown[$('#primary_box').val()]);
+		});
 	});
 
 	var sessioninfo = [];
@@ -312,6 +389,7 @@
 		<div class="container" id="main-container">
 			<div id="query-summary-bar" class="container">
 				<h1>Edit Course Details</h1>
+				<a href="/manage_vendor"><small>(<strong>Back to courses</strong>)</small></a>
 			</div>
 			<div id="main-content">
 				<div class="row 25% uniform">
@@ -319,13 +397,65 @@
 					<div id="container1">
 					<div class="9u" id="col1">
 						<div id="content-section">
-							<h1><?php echo $course_name; ?>
-							<!-- &nbsp;&nbsp;<span class="rating s4" title="4 stars"></span> --></h1>
-							<p style="margin-top:-1.3em;"><span><h5><?php if ($parent_category_name == "") { echo $category_name; } else { echo $parent_category_name." - ".$category_name; }?></h5></span></p>
-							<p><h4><?php echo $course_description; ?>
-							<!-- <a href="#">Read More ></a> --></h4></p>
-							<div id="ratings-section">
+							<form id="save_course" action="save_course" method="post">
+							<h2>Core Information</h2>
+							<div class="explanation">Course Name*</div>
+							<input type="text" id="course_name" name="course_name" placeholder="Course Name" class="edit-course-name" value="<?php echo $course_name; ?>" maxlength="255" required></h1>
+							
+							<div class="explanation">Category*</div>
+
+							<div class="row">
+								<div class="6u">
+									<select class="category_box" id="primary_box">
+									<?php foreach ($categoryList as $category): ?>
+										<option value="<?php echo $category['category_id']; ?>" <?php if ($category['category_id'] == $parent_category_id) { echo 'selected'; } ?>><?php echo $category['type'] . ": " . $category['category_name']; ?></option>
+									<?php endforeach ?>
+									</select>
+								</div>
+								<div class="6u">
+									<select class="category_box" id="secondary_box" style="max-width:320px;" name="category" form="save_course">
+									<?php foreach ($categoryList[$parent_category_id]['subcategories'] as $category): ?>
+										<option value="<?php echo $category['category_id']; ?>" <?php if ($category['category_id'] == $category_id) { echo 'selected'; } ?>><?php echo $category['category_name']; ?></option>
+									<?php endforeach ?>
+									</select>
+								</div>
 							</div>
+
+							<p style="margin-top:-1.3em;"><span><h5><?php if ($parent_category_name == "") { echo $category_name; } else { echo $parent_category_name." - ".$category_name; }?></h5></span></p>
+
+							<div class="explanation">Course Length*</div>
+							<input type="number" id="course_length" name="course_length" placeholder="# Days" class="edit-course-short" value="<?php echo $course_length; ?>"> days
+
+							<div class="explanation">Course Description / Outline*</div>
+							<textarea id="course_description" name="course_description" placeholder="Description of the course" class="edit-course-text" rows="15" cols="85" required><?php echo $course_description_unformatted; ?></textarea>
+
+							<h2>Optional Information</h2>
+							<div class="explanation">Benefits / Learning Outcomes (optional)</div>
+							<textarea id="course_benefits" name="course_benefits" placeholder="OPTIONAL: Expect benefits or what students will learn" class="edit-course-text" rows="3" cols="85"><?php echo $course_benefits; ?></textarea>
+
+							<div class="explanation">Prerequisites (optional)</div>
+							<textarea id="course_prereqs" name="course_prereqs" placeholder="OPTIONAL: Knowledge required or level of course" class="edit-course-text" rows="3" cols="85"><?php echo $course_prereqs; ?></textarea>
+
+							<div class="explanation">Target Audience (optional)</div>
+							<textarea id="course_audience" name="course_audience" placeholder="OPTIONAL: Target audience or who should take this" class="edit-course-text" rows="3" cols="85"><?php echo $course_audience; ?></textarea>
+
+							<div class="explanation">Course URL (optional)</div>
+							<input type="text" id="course_url" name="course_url" placeholder="Direct URL to Course Info on Your Website" class="edit-course-input" value="<?php echo $course_url; ?>" maxlength="255">
+
+							<div class="explanation">Credits / Designations (optional, 60 chars max)</div>
+							<textarea id="course_designation" name="course_designation" placeholder="OPTIONAL: Upon successfully completing this course, a student will receive these credits or this designation. If the designation requires an exam, the exam fee must be included in the course fee. Example: 30 PDUs or PMP" class="edit-course-text" rows="5" cols="40" maxlength="60"><?php echo $course_designation; ?></textarea>
+							<div style="clear:all;"></div>
+
+							<input type="hidden" value="<?php echo $_SESSION['vendor_id']?>" name="vendor_id">
+							<input type="hidden" value="<?php echo $course_id ?>" name="course_id">
+
+							<div class="row 25% uniform" style="float:right;margin: 0px 0px 10px 0px;">
+								<div class="12u">
+									<button type="button" class="form-submit cancel-button" onClick="parent.location='manage_vendor'">Cancel</button>
+									<button type="submit" class="form-submit">Save Changes</button>
+								</div>
+							</div>
+							</form>
 						</div>
 					</div>
 					<div class="3u" id="col2">

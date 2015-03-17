@@ -35,7 +35,7 @@
 						<p>Can we have your phone number if issues arise?</p>
 						<input type="text" id="phone" name="phone" placeholder="1-###-###-####" class="form-text" required>
 						<p>Invitation Code (optional):</p>
-						<input type="text" id="invitation" name="invitation" placeholder="optional" class="form-text">
+						<input type="text" id="invitation" name="invitation" placeholder="optional" class="form-text" maxlength="8">
 						<p><button type="submit" class="form-submit">Complete Registration</button></p>
 						</form>
 
