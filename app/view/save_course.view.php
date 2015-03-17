@@ -2,6 +2,7 @@
 
 session_start();
 
+$course_id = $_POST['course_id'];
 $course_name = $_POST['course_name'];
 $category = $_POST['category'];
 $length = $_POST['course_length'];
@@ -12,9 +13,10 @@ $audience = $_POST['course_audience'];
 $url = $_POST['course_url'];
 $designation = $_POST['course_designation'];
 $vendor_id = $_POST['vendor_id'];
-$course_id = $_POST['course_id'];
+$video_url = $_POST['video_url'];
 
-if (isset($course_id)) {
+
+if ($course_id != "") {
 	$course_sql = 'UPDATE course SET
 		category_id = ?,
 		course_name = ?,
@@ -24,17 +26,17 @@ if (isset($course_id)) {
 		benefits = ?,
 		prereqs = ?,
 		audience = ?,
-		designation = ?
+		designation = ?,
+		video_url = ?
 		WHERE course_id = ?';
 	$get_results = $GLOBALS['_db']->prepare($course_sql);
-	$get_results->execute(array($category, $course_name, $description, $length, $url, $benefits, $prereqs, $audience, $designation, $course_id));
-
+	$get_results->execute(array($category, $course_name, $description, $length, $url, $benefits, $prereqs, $audience, $designation, $video_url, $course_id));
 }
 else {
-	$course_sql = 'INSERT INTO course (vendor_id, category_id, course_name, course_description, days_length, course_url, benefits, prereqs, audience, designation)
-	VALUES (?,?,?,?,?,?,?,?,?,?)';
+	$course_sql = 'INSERT INTO course (vendor_id, category_id, course_name, course_description, days_length, course_url, benefits, prereqs, audience, designation, video_url)
+	VALUES (?,?,?,?,?,?,?,?,?,?,?)';
 	$get_results = $GLOBALS['_db']->prepare($course_sql);
-	$get_results->execute(array($vendor_id, $category, $course_name, $description, $length, $url, $benefits, $prereqs, $audience, $designation));
+	$get_results->execute(array($vendor_id, $category, $course_name, $description, $length, $url, $benefits, $prereqs, $audience, $designation, $video_url));
 }
 
 header('Location: /manage_vendor');

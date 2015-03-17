@@ -259,11 +259,16 @@
 					<div class="3u">
 						<ul id="filters-accordion">
 							<li>Profile</li>
-							<li class="selected">Edit Courses</li>
-							<li>Edit Conferences</li>
+							<li class="selected">Courses</li>
+							<li>Conferences</li>
 						</ul>
 					</div>
 					<div class="9u">
+							<div class="row 25% uniform" style="float:right;margin: 0px 10px 10px 0px;">
+								<div class="12u">
+									<button type="button" class="form-submit" onClick="parent.location='edit_course'">Add Course</button>
+								</div>
+							</div>
 						<ul id="edit-course-list">
 							<li>
 								<div class="row" style="font-size:0.8em;padding-left:0;text-align:center">
@@ -294,7 +299,7 @@
 									</li>
 								</a>
 								
-							<?php endfor; } else echo "<li>Sorry, no results available, please try another search.</li>";?>
+							<?php endfor; } else echo "<li>Get listed now: Add Course, then add your course Sessions.</li>";?>
 						</ul>
 						<div class="row">
 							<div class="6u">&nbsp;
@@ -317,50 +322,6 @@
 								&nbsp;
 							</div>
 						</div>
-						
-							<!--
-							<li>
-								<div class="result-rating">
-									<span class="rating s4" title="4 stars"></span>
-								</div>
-								<h2><a href="#">PMP Exam Power Prep</a></h2>
-								<p><strong>ESI International:</strong> Immerse yourself in ESI's PMP Exam Power Prep and you'll be well on your way to passing PMI's PMP certification</p>
-								<img src="images/samples/esi-international.png" alt="ESI International" class="company-logo">
-								<ul class="sessions-list">
-									<li>
-										<a href="#">
-											<div class="chevron-container">
-												<span class="icon chevron-right"></span>
-											</div>
-											<span class="icon calendar"></span>
-											<div class="session-price-container">
-												<h4>$2495.00</h4>
-												<small>CAD</small>
-											</div>
-											<h4 class="session-dates">Oct 6, 2014 - Oct 10, 2014</h4>
-											<small class="session-location">Vancouver, BC</small>
-										</a>
-									</li>
-							
-									<li>
-										<a href="#">
-											<div class="chevron-container">
-												<span class="icon chevron-right"></span>
-											</div>
-											<span class="icon calendar"></span>
-											<div class="session-price-container">
-												<h4>$2495.00</h4>
-												<small>CAD</small>
-											</div>
-											<h4 class="session-dates">Oct 6, 2014 - Oct 10, 2014</h4>
-											<small class="session-location">Vancouver, BC</small>
-										</a>
-									</li>
-
-								</ul>
-								<small class="more-sessions"><a href="#">4 more sessions <span class="icon triangle-down"></span></a></small>
-							</li>
-						-->
 					</div>
 				</div>
 			</div>

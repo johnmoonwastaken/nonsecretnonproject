@@ -2,7 +2,8 @@
 include 'session_settings.php';
 $search_sql = "
 	SELECT course.vendor_id, course.course_name, course.course_description, course.avg_rating, 
-		categories.category_name, categories.parent_category_id, 
+		categories.category_name, categories.parent_category_id, course.benefits, course.prereqs,
+		course.designation, course.video_url, course.audience,
 		vendor.vendor_name, vendor.branding_url, vendor.contact_email, vendor.website_url, vendor.contact_number
 	FROM course
 	LEFT JOIN categories
@@ -23,6 +24,11 @@ $course_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $course_name = $course_result['course_name'];
 $course_description = nl2br($course_result['course_description']);
 $course_avg_rating = $course_result['course_rating'];
+$benefits = $course_result['benefits'];
+$prereqs = $course_result['prereqs'];
+$designation = $course_result['designation'];
+$audience = $course_result['audience'];
+$video_url = $course_result['video_url'];
 $vendor_name = $course_result['vendor_name'];
 $vendor_contact_email = $course_result['contact_email'];
 $vendor_website_url = $course_result['website_url'];
@@ -96,7 +102,8 @@ foreach ($get_results as $temp) {
 $templateFields = array('course_name' => $course_name, 'course_description' =>  $course_description, 
 	'course_rating' => $course_rating, 'vendor_name' => $vendor_name, 'branding_url' => $branding_url, 'sessionList' => $sessionList, 
 	'vendor_contact_number' => $vendor_contact_number, 'vendor_contact_email' => $vendor_contact_email, 'vendor_website_url' => $vendor_website_url,
-	'category_name' => $category_name, 'parent_category_name' => $parent_category_name, 
+	'category_name' => $category_name, 'parent_category_name' => $parent_category_name, 'video_url' => $video_url,
+	'benefits' => $benefits, 'prereqs' => $prereqs, 'audience' => $audience,
 	'course_id' => $_GET['id'], 'keywords' => $_GET['keywords'], 'start' => $_GET['start'], 'end' => $_GET['end'], 'location' => $_GET['location']);
 
 displayTemplate('course', $templateFields);
