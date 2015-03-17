@@ -39,7 +39,7 @@ else {
 	$get_results->execute(array($vendor_id, $category, $course_name, $description, $length, $url, $benefits, $prereqs, $audience, $designation, $video_url));
 }
 
-header('Location: /manage_vendor');
+header('Location: /manage_courses');
 exit;
 
 ?>

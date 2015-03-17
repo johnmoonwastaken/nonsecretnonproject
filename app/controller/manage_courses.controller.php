@@ -35,5 +35,5 @@ foreach ($get_results as $temp) {
 
 $templateFields = array('courseList' => $courseList, 'totalResults' => $totalResults);
 
-displayTemplate('manage_vendor', $templateFields);
+displayTemplate('manage_courses', $templateFields);
 displayTemplate('footer');

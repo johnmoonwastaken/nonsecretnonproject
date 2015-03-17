@@ -391,7 +391,7 @@
 		<div class="container" id="main-container">
 			<div id="query-summary-bar" class="container">
 				<h1>Edit Course Details</h1>
-				<a href="/manage_vendor"><small>(<strong>Back to courses</strong>)</small></a>
+				<a href="/manage_courses"><small>(<strong>Back to courses</strong>)</small></a>
 			</div>
 			<div id="main-content">
 				<div class="row 25% uniform">
@@ -461,7 +461,7 @@
 
 							<div class="row 25% uniform" style="float:right;margin: 0px 0px 10px 0px;">
 								<div class="12u">
-									<button type="button" class="form-submit cancel-button" onClick="parent.location='manage_vendor'">Cancel</button>
+									<button type="button" class="form-submit cancel-button" onClick="parent.location='manage_courses'">Cancel</button>
 									<button type="submit" class="form-submit">Save Changes</button>
 								</div>
 							</div>

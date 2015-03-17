@@ -133,7 +133,7 @@ if($_GET['state'] == $state) {
 					// Set cookie with authentication setcookie
 					setcookie("trainingful_oauth", $access_token, time() + $expires_in - 86400, "/");
 					if ($_SESSION['vendor_id'] > 0) {
-						header('Location: /manage_vendor');
+						header('Location: /manage_courses');
 						exit;
 					}
 					else {

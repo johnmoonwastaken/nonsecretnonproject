@@ -38,7 +38,7 @@ if (isset($_GET['id'])) {
 	$get_results->execute(array($_GET["id"], $_SESSION['vendor_id']));
 
 	if ($get_results->rowCount() == 0) {
-		header('Location: /manage_vendor');
+		header('Location: /manage_courses');
 		exit;
 	}
 

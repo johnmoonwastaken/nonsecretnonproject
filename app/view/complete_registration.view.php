@@ -47,7 +47,7 @@ $_SESSION['vendor_id'] = $vendor_id;
 
 // IF IT IS A VENDOR, GO TO A DIFFERENT PAGE
 if ($vendor_id != -1) {
-	header("Location: manage_vendor");
+	header("Location: manage_courses");
 	die();
 }
 else {
