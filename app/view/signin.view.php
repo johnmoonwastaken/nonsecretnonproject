@@ -37,7 +37,7 @@ $_SESSION['state'] = $state;
 						<form action="https://www.linkedin.com/uas/oauth2/authorization" method="get">
 							<input type="hidden" name="response_type" value="code">
 							<input type="hidden" name="client_id" value="<?php echo $linkedin_api_key; ?>">
-							<input type="hidden" name="redirect_uri" value="http://localhost/auth_linkedin_redirect">
+							<input type="hidden" name="redirect_uri" value="<?php echo $GLOBALS['_serverpath']; ?>/auth_linkedin_redirect">
 							<input type="hidden" name="state" value="<?php echo $_SESSION['state']; ?>">
 							<input type="hidden" name="scope" value="r_basicprofile">
 							<button type="submit" class="button-linkedin"><div class="icon linkedin linkedin-button-icon"></div><div class="sign-up-linkedin">Log in with LinkedIn</div></button>
