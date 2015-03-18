@@ -14,7 +14,7 @@ $redirect_uri = $GLOBALS['_serverpath'] . '/auth_linkedin_redirect';
 
 if($_GET['state'] == $state) {
 	if ($_GET['error'] == "access_denied") {
-		header("Location: signup");
+		header("Location: signin");
 		die();
 	}
 	elseif ($_GET['code'] != '') {

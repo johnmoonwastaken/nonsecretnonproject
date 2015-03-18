@@ -1,4 +1,4 @@
 <?php
 session_start();
-$_SESSION['lastpage'] = $_SERVER['REQUEST_URI']
+$_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
 ?>
