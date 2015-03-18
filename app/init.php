@@ -15,3 +15,5 @@ $_config = initConfig();
 
 // Set up DB connection
 $_db = initDB();
+
+$_serverpath = $GLOBALS['_config']['serverpath'];

@@ -10,6 +10,7 @@ $api_key = $configuration_result['value'];
 $configuration_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $secret_key = $configuration_result['value'];
 $state = $_SESSION['state'];
+$redirect_uri = $GLOBALS['_serverpath'] . '/auth_linkedin_redirect';
 
 if($_GET['state'] == $state) {
 	if ($_GET['error'] == "access_denied") {
@@ -20,7 +21,7 @@ if($_GET['state'] == $state) {
 		$data = array(
 			'grant_type' => 'authorization_code',
 			'code' => $_GET['code'],
-			'redirect_uri' => 'http://localhost/auth_linkedin_redirect',
+			'redirect_uri' => $redirect_uri,
 			'client_id' => $api_key,
 			'client_secret' => $secret_key
 			);

@@ -25,7 +25,7 @@ $client = new Google_Client();
 $client->setApplicationName('Trainingful');
 $client->setClientId($google_client_id);
 $client->setClientSecret($google_secret_key);
-$client->setRedirectUri('http://localhost/auth_google_redirect');
+$client->setRedirectUri($GLOBALS['_serverpath'].'/auth_google_redirect');
 $client->setDeveloperKey($google_api_key);
 $plus = new Google_PlusService($client);
 

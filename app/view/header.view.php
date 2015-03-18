@@ -32,7 +32,7 @@
 				<!--
 				<li><a href="#" onClick="document.getElementById('review-dialog').toggle();">Write a Review</a></li>
 				-->
-				<?php if(!isset($_COOKIE['trainingful_oauth'])): ?>
+				<?php if(!isset($_COOKIE['trainingful_oauth']) && $_SERVER['REQUEST_URI'] != "/signin"): ?>
 				<li><a href="signin">Register / Sign In</a></li>
 				<?php elseif ($_SERVER['REQUEST_URI'] != "/signin"): ?>
 				<li><a href="<?php if ($_SESSION['vendor_id'] > 0) { echo 'manage_courses';} else { echo 'edit_profile';} ?>"><strong><?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?></strong></a></li>
