@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
 <?php include 'header_required.php' ?>
 	<title>trainingful: edit courses</title>
 	
@@ -211,7 +212,21 @@
 		line-height: 2.8em;
 	}
 	</style>
-	
+	<script>
+	window.addEventListener('polymer-ready', function(e) {
+		console.log('polymer-ready');
+		var toast_action = <?php echo "\"" . $_GET['return'] . "\""; ?>;
+		if (toast_action == "saved") {
+			document.querySelector('#toast-saved').show()
+			}
+		else if (toast_action == "added") {
+			document.querySelector('#toast-added').show()			
+		}
+		else if (toast_action == "cancel") {
+			document.querySelector('#toast-discarded').show()			
+		}
+	});
+	</script>
 </head>
 <body>
 
@@ -325,8 +340,8 @@
 					</div>
 				</div>
 			</div>
-		
 		</div>
-		
-		
+		<paper-toast id="toast-saved" text="You course changes have been saved."></paper-toast>
+		<paper-toast id="toast-added" text="New course created. Remember to add sessions to make it active."></paper-toast>
+		<paper-toast id="toast-discarded" text="You course changes have been discarded."></paper-toast>		
 	</section>
