@@ -39,7 +39,13 @@ else {
 	$get_results->execute(array($vendor_id, $category, $course_name, $description, $length, $url, $benefits, $prereqs, $audience, $designation, $video_url));
 }
 
-header('Location: /manage_courses');
-exit;
+if ($course_id == "") {
+	header('Location: /manage_courses?return=added');
+	exit;
+}
+else {
+	header('Location: /manage_courses?return=saved');
+	exit;	
+}
 
 ?>

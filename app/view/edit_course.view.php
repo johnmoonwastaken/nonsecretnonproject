@@ -461,7 +461,7 @@
 
 							<div class="row 25% uniform" style="float:right;margin: 0px 0px 10px 0px;">
 								<div class="12u">
-									<button type="button" class="form-submit cancel-button" onClick="parent.location='manage_courses'">Cancel</button>
+									<button type="button" class="form-submit cancel-button" onClick="parent.location='manage_courses?return=cancel'">Cancel</button>
 									<button type="submit" class="form-submit">Save Changes</button>
 								</div>
 							</div>
