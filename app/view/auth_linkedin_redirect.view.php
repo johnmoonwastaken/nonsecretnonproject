@@ -123,10 +123,10 @@ if($_GET['state'] == $state) {
 
 				$_SESSION['first_name'] = $first_name;
 				$_SESSION['last_name'] = $last_name;
+				$_SESSION['access_token'] = $access_token;
+				$_SESSION['expires_in'] = $expires_in;
 
 				if ($result_count == 0 || !$registration_complete) {
-					$_SESSION['access_token'] = $access_token;
-					$_SESSION['expires_in'] = $expires_in;
 					header('Location: /signup');
 					exit;
 				}

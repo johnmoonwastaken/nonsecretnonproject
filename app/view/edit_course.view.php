@@ -252,6 +252,7 @@
 		color: #666;
 		font-weight: 400;
 		width: 49em;
+		max-width: 700px;
 	}
 
 	.edit-course-name {
@@ -277,6 +278,7 @@
 		color: #666;
 		font-weight: 400;
 		padding-left:5px;
+		max-width: 700px;
 	}
 
 	.explanation {
