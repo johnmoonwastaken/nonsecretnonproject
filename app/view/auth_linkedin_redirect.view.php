@@ -21,7 +21,8 @@ function curl_get_contents_header($url, $header)
   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
   curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array($header));
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array('x-li-format: json', $header));
+  //curl_setopt($ch, CURLOPT_HTTPHEADER, array($header));
   $data = curl_exec($ch);
   curl_close($ch);
   return $data;
@@ -63,16 +64,6 @@ if($_GET['state'] == $state) {
 			$access_json = json_decode($result, true);
 			$access_token = $access_json['access_token'];
 			$expires_in = $access_json['expires_in'];
-
-			/*
-			$opts = array('http' => array(
-				'method' => 'GET',
-				'header' => 'Authorization: Bearer ' . $access_token,
-				'content' => ''));
-			$url = 'https://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,location,industry,picture-url,public-profile-url)';
-			$context = stream_context_create($opts);
-			$result = @file_get_contents($url, false, $context);
-			*/
 			$c_header = 'Authorization: Bearer ' . $access_token;
 			$url = 'https://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,location,industry,picture-url,public-profile-url)';
 			$result = curl_get_contents_header($url, $c_header);
@@ -81,17 +72,19 @@ if($_GET['state'] == $state) {
 				die();
 			}
 			else {
-				$xml = simplexml_load_string($result);
-				$json = json_encode($xml);
-				$array = json_decode($json,TRUE);
+				$array = json_decode($result,TRUE);
+				if (isset($array[errorCode])) {
+					header("Location: signin");
+					die();
+				}
 				$linkedin_id = $array['id'];
-				$first_name = $array['first-name'];
-				$last_name = $array['last-name'];
+				$first_name = $array['firstName'];
+				$last_name = $array['lastName'];
 				$headline = $array['headline'];
 				$country = $array['location']['name'];
 				$industry = $array['industry'];
-				$picture_url = $array['picture-url'];
-				$linkedin_url = $array['public-profile-url'];
+				$picture_url = $array['pictureUrl'];
+				$linkedin_url = $array['publicProfileUrl'];
 				$check_sql = "SELECT registration_complete, vendor_id FROM user_data WHERE oauth_type = 'linkedin' and oauth_id = ?";
 
 				// Checks whether the user already exists in database
