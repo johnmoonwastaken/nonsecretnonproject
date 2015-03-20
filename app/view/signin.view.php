@@ -9,12 +9,21 @@ $_SESSION['state'] = $state;
 <!DOCTYPE HTML>
 <html>
 <head>
+	<link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
 <?php include 'header_required.php' ?>
-	<title>trainingful: sign up</title>
+	<title>trainingful: sign in</title>
 	
 	<link href="http://fonts.googleapis.com/css?family=Pacifico:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-		
 	<link rel="stylesheet" href="css/signup.css">
+	<script>
+	window.addEventListener('polymer-ready', function(e) {
+		console.log('polymer-ready');
+		var toast_action = <?php echo "\"" . $_GET['return'] . "\""; ?>;
+		if (toast_action == "cancelled") {
+			document.querySelector('#toast-cancelled').show()
+			}
+	});
+	</script>
 </head>
 <body>
 
@@ -39,14 +48,22 @@ $_SESSION['state'] = $state;
 							<input type="hidden" name="client_id" value="<?php echo $linkedin_api_key; ?>">
 							<input type="hidden" name="redirect_uri" value="<?php echo $GLOBALS['_serverpath']; ?>/auth_linkedin_redirect">
 							<input type="hidden" name="state" value="<?php echo $_SESSION['state']; ?>">
-							<input type="hidden" name="scope" value="r_basicprofile">
+							<input type="hidden" name="scope" value="r_basicprofile,r_emailaddress">
 							<button type="submit" class="button-linkedin"><div class="icon linkedin linkedin-button-icon"></div><div class="sign-up-linkedin">Log in with LinkedIn</div></button>
 						</form>
 
 					</div>
 					<div class="5u" style="padding-left:40px;">
 						<p><h3>Or use your favourite social network</h2></p>
-						<p><button type="submit" class="button-other other-facebook"><div class="icon facebook other-button-icon"></div><div class="sign-up-other">Log in with Facebook</div></button></p>
+						<p>
+							<form action="https://www.facebook.com/dialog/oauth" method="get">
+							<input type="hidden" name="client_id" value="<?php echo $facebook_api_key; ?>">
+							<input type="hidden" name="redirect_uri" value="<?php echo $GLOBALS['_serverpath']; ?>/auth_facebook_redirect">
+							<input type="hidden" name="response_type" value="code">
+							<input type="hidden" name="state" value="<?php echo $_SESSION['state']; ?>">
+							<input type="hidden" name="scope" value="public_profile,email">
+							<button type="submit" class="button-other other-facebook"><div class="icon facebook other-button-icon"></div><div class="sign-up-other">Log in with Facebook</div></button></p>
+							</form>
 						<p>
 							<form action="https://accounts.google.com/o/oauth2/auth" method="get">
 							<input type="hidden" name="scope" value="https://www.googleapis.com/auth/plus.login">
@@ -66,6 +83,6 @@ $_SESSION['state'] = $state;
 					<!--<p>Don't want to use your social network? <strong>Sign up for a standard account.</strong></p>-->
 				</div>
 			</div>
-		
 		</div>
+		<paper-toast id="toast-cancelled" text="Sign in cancelled."></paper-toast>
 	</section>

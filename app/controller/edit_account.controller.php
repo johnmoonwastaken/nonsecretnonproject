@@ -19,6 +19,8 @@ $last_login = $account_result['last_login'];
 $email = $account_result['email'];
 $phone = $account_result['phone'];
 
+//echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
+
 $templateFields = array('user_id' => $user_id, 'metro_id' => $metro_id, 'last_login' => $last_login, 'email' => $email, 'phone' => $phone);
 
 displayTemplate('edit_account', $templateFields);

@@ -1,15 +1,12 @@
 <?php
+session_start();
+$fields_sql = 'SELECT email FROM user_data WHERE oauth_token = ?';
+$get_results = $GLOBALS['_db']->prepare($fields_sql);
+$get_results->execute(array($_SESSION['access_token']));
+$field_result = $get_results->fetch(PDO::FETCH_ASSOC);
+$email = $field_result['email'];
 
-$client_id_sql = "SELECT * FROM `configuration` WHERE `type` IN ('google_client_id','linkedin_api_key')";
-$get_results = $GLOBALS['_db']->prepare($client_id_sql);
-$get_results->execute(array());
-
-$results = $get_results->fetch(PDO::FETCH_ASSOC);
-$google_client_id = $results['value'];
-$results = $get_results->fetch(PDO::FETCH_ASSOC);
-$linkedin_api_key = $results['value'];
-
-$templateFields = array('google_client_id' => $google_client_id, 'linkedin_api_key' => $linkedin_api_key);
+$templateFields = array('email' => $email);
 
 displayTemplate('signup', $templateFields);
 displayTemplate('footer', $templateFields);

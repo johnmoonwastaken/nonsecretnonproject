@@ -31,7 +31,7 @@
 						<p><h3>A couple more questions...</h3></p>
 						<form id="complete_registration" action="complete_registration" method="get">
 						<p>May we confirm your e-mail address?</p>
-						<input type="email" id="email" name="email" placeholder="abc@xyz.com" class="form-text" required>
+						<input type="email" id="email" name="email" placeholder="abc@xyz.com" class="form-text" value="<?php echo $email; ?>" required>
 						<p>Can we have your phone number if issues arise?</p>
 						<input type="text" id="phone" name="phone" placeholder="1-###-###-####" class="form-text" required>
 						<p>Invitation Code (optional):</p>

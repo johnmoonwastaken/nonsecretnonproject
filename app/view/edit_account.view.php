@@ -192,7 +192,7 @@
 	}
 
 	.edit-course-input {
-		padding: 0;
+		padding-left: 5px;
 		margin: 0;
 		font-size: 0.9em;
 		color: #666;
@@ -261,7 +261,7 @@
 						<h2>Profile</h2>
 						<form id="save_account" action="save_account" method="post">
 							<div class="explanation">E-mail</div>
-							<input type="text" id="email" name="email" placeholder="abc@xyz.com" class="edit-course-input" value="<?php echo $email; ?>" maxlength="255">
+							<input type="email" id="email" name="email" placeholder="abc@xyz.com" class="edit-course-input" value="<?php echo $email; ?>" maxlength="255">
 
 							<div class="explanation">Phone Number</div>
 							<input type="text" id="phone" name="phone" placeholder="1-234-567-8900" class="edit-course-input" value="<?php echo $phone; ?>" maxlength="32">
@@ -272,7 +272,6 @@
 									<button type="submit" class="form-submit">Save Changes</button>
 								</div>
 							</div>
-							<div style="clear:all;"></div>
 						</form>
 
 						<h2>Upcoming Courses/Conferences</h2>
@@ -280,11 +279,10 @@
 							<li>No upcoming courses.
 							</li>
 						</ul>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<paper-toast id="toast-saved" text="You account changes have been saved."></paper-toast>
-		<paper-toast id="toast-discarded" text="You account changes have been discarded."></paper-toast>
+		<!-- <paper-toast id="toast-discarded" text="You account changes have been discarded."></paper-toast> -->
 	</section>

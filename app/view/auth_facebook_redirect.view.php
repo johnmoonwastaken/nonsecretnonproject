@@ -14,20 +14,7 @@ function curl_get_contents($url)
   return $data;
 }
 
-function curl_get_contents_header($url, $header)
-{
-  $ch = curl_init($url);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array('x-li-format: json', $header));
-  $data = curl_exec($ch);
-  curl_close($ch);
-  return $data;
-}
-
-$configuration_sql = 'SELECT * FROM `configuration` WHERE type LIKE "linkedin%" ORDER BY type asc';
+$configuration_sql = 'SELECT * FROM `configuration` WHERE type LIKE "facebook%" ORDER BY type asc';
 $get_results = $GLOBALS['_db']->prepare($configuration_sql);
 $get_results->execute(array());
 $configuration_result = $get_results->fetch(PDO::FETCH_ASSOC);
@@ -35,7 +22,8 @@ $api_key = $configuration_result['value'];
 $configuration_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $secret_key = $configuration_result['value'];
 $state = $_SESSION['state'];
-$redirect_uri = $GLOBALS['_serverpath'] . '/auth_linkedin_redirect';
+$redirect_uri = $GLOBALS['_serverpath'] . '/auth_facebook_redirect';
+
 
 if($_GET['state'] == $state) {
 	if ($_GET['error'] == "access_denied") {
@@ -43,8 +31,8 @@ if($_GET['state'] == $state) {
 		die();
 	}
 	elseif ($_GET['code'] != '') {
+		
 		$data = array(
-			'grant_type' => 'authorization_code',
 			'code' => $_GET['code'],
 			'redirect_uri' => $redirect_uri,
 			'client_id' => $api_key,
@@ -53,44 +41,53 @@ if($_GET['state'] == $state) {
 		$postString = http_build_query($data, '', '&');
 		//echo $postString;
 
-		$url = 'https://www.linkedin.com/uas/oauth2/accessToken?' . $postString;
+		$url = 'https://graph.facebook.com/oauth/access_token?' . $postString;
 		$result = curl_get_contents($url);
-		if ($result == false) {
+		$get_array = array();
+		parse_str($result, $get_array);
+		if ($result == false || !isset($get_array['access_token'])) {
 			header("Location: signin?return=cancelled");
 			die();
 		}
 		else {
-			$access_json = json_decode($result, true);
-			$access_token = $access_json['access_token'];
-			$expires_in = $access_json['expires_in'];
-			$c_header = 'Authorization: Bearer ' . $access_token;
-			$url = 'https://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,location,industry,picture-url,public-profile-url,email-address)';
-			$result = curl_get_contents_header($url, $c_header);
+			$get_array = array();
+			parse_str($result, $get_array);
+			$access_token = $get_array['access_token'];
+			$expires_in = $get_array['expires'];
+			$appsecret_proof= hash_hmac('sha256', $access_token, $secret_key);
+
+			$data = array(
+				'access_token' => $access_token,
+				'appsecret_proof' => $appsecret_proof,
+				'fields' => 'id,first_name,last_name,locale,link,email'
+				);
+			$postString = http_build_query($data, '', '&');
+
+			//$c_header = 'Authorization: Bearer ' . $access_token;
+			$url = 'https://graph.facebook.com/me?' . $postString;
+			$result = curl_get_contents($url);
 			if ($result == false) {
 				header("Location: signin?return=cancelled");
 				die();
 			}
 			else {
 				$array = json_decode($result,TRUE);
-				
-				if (isset($array[errorCode])) {
-					header("Location: signin?return=cancelled");
+
+				if (isset($array[error])) {
+					header("Location: signin");
 					die();
 				}
-				$linkedin_id = $array['id'];
-				$first_name = $array['firstName'];
-				$last_name = $array['lastName'];
-				$headline = $array['headline'];
-				$country = $array['location']['name'];
-				$industry = $array['industry'];
-				$email = $array['emailAddress'];
-				$picture_url = $array['pictureUrl'];
-				$linkedin_url = $array['publicProfileUrl'];
-				$check_sql = "SELECT registration_complete, vendor_id FROM user_data WHERE oauth_type = 'linkedin' and oauth_id = ?";
+				$facebook_id = $array['id'];
+				$first_name = $array['first_name'];
+				$last_name = $array['last_name'];
+				$email = $array['email'];
+				$picture_url = 'http://graph.facebook.com/' . $facebook_id . '/picture?type=small';
+				$facebook_url = $array['link'];
+				$check_sql = "SELECT registration_complete, vendor_id FROM user_data WHERE oauth_type = 'facebook' and oauth_id = ?";
 
 				// Checks whether the user already exists in database
 				$get_results = $GLOBALS['_db']->prepare($check_sql);
-				$get_results->execute(array($linkedin_id));
+				$get_results->execute(array($facebook_id));
 				$result_count = $get_results->rowCount();
 				if ($result_count > 0) {
 					$result = $get_results->fetch(PDO::FETCH_ASSOC);
@@ -98,20 +95,16 @@ if($_GET['state'] == $state) {
 					$_SESSION['vendor_id'] = $result['vendor_id'];
 				}
 
-				$user_sql = 'INSERT INTO user_data (oauth_type, oauth_id, email, first_name, last_name, headline, url, country, industry, picture_url, oauth_token, last_login)
-					VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+				$user_sql = 'INSERT INTO user_data (oauth_type, oauth_id, email, first_name, last_name, url, picture_url, oauth_token, last_login)
+					VALUES (?,?,?,?,?,?,?,?,?)
 					ON DUPLICATE KEY UPDATE 
 					first_name = ?,
 					last_name = ?,
-					headline = ?, 
 					url = ?,
-					country = ?, 
-					industry = ?, 
-					picture_url = ?, 
 					oauth_token = ?,
 					last_login = now()';
 				$get_results = $GLOBALS['_db']->prepare($user_sql);
-				$get_results->execute(array("linkedin", $linkedin_id, $email, $first_name, $last_name, $headline, $linkedin_url, $country, $industry, $picture_url, $access_token, "now()", $first_name, $last_name, $headline, $linkedin_url, $country, $industry, $picture_url, $access_token));
+				$get_results->execute(array("facebook",$facebook_id, $email, $first_name, $last_name, $facebook_url, $picture_url, $access_token, "now()", $first_name, $last_name, $facebook_url, $access_token));
 
 				$_SESSION['first_name'] = $first_name;
 				$_SESSION['last_name'] = $last_name;
@@ -147,5 +140,4 @@ else {
 	header("Location: /");
 	die();
 }
-
 ?>
