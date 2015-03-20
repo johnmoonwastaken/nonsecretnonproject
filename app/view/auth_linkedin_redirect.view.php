@@ -2,6 +2,31 @@
 
 session_start();
 
+function curl_get_contents($url)
+{
+  $ch = curl_init($url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+  $data = curl_exec($ch);
+  curl_close($ch);
+  return $data;
+}
+
+function curl_get_contents_header($url, $header)
+{
+  $ch = curl_init($url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array($header));
+  $data = curl_exec($ch);
+  curl_close($ch);
+  return $data;
+}
+
 $configuration_sql = 'SELECT * FROM `configuration` WHERE type LIKE "linkedin%" ORDER BY type asc';
 $get_results = $GLOBALS['_db']->prepare($configuration_sql);
 $get_results->execute(array());
@@ -27,14 +52,9 @@ if($_GET['state'] == $state) {
 			);
 		$postString = http_build_query($data, '', '&');
 		//echo $postString;
-		$opts = array('http' => array(
-			'method' => 'POST',
-			'header' => 'Content-type: application/x-www-form-urlencoded',
-			'content' => $postString,
-			'request_fulluri' => True));
-		$url = 'https://www.linkedin.com/uas/oauth2/accessToken';
-		$context = stream_context_create($opts);
-		$result = @file_get_contents($url, false, $context);
+
+		$url = 'https://www.linkedin.com/uas/oauth2/accessToken?' . $postString;
+		$result = curl_get_contents($url);
 		if ($result == false) {
 			header("Location: signin");
 			die();
@@ -45,32 +65,6 @@ if($_GET['state'] == $state) {
 			$expires_in = $access_json['expires_in'];
 
 			/*
-			if(!isset($_COOKIE["trainingful_linkedin"])) {
-			    //echo "Cookie named '" . "trainingful_linkedin" . "' is not set!";
-			} else {
-			    //echo "Cookie '" . "trainingful_linkedin" . "' is set!<br>";
-			    //echo "Value is: " . $_COOKIE["trainingful_linkedin"];
-			}
-			$data = array(
-				'format' => 'json'
-			);
-			$postString = http_build_query($data, '', '&');
-			$curl = curl_init();
-			curl_setopt_array($curl, array(
-				CURLOPT_RETURNTRANSFER => 1,
-				//CURLOPT_SSL_VERIFYPEER => FALSE,
-				CURLOPT_URL => 'https://api.linkedin.com/v1/people/~',
-				CURLOPT_HEADER => 'Authorization: Bearer ' . $access_token,
-				CURLOPT_POSTFIELDS => array(
-					'format' => 'json'
-					)));
-			$result = curl_exec($curl);
-			if(!$result){
-			    die('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
-			}
-			curl_close($curl);
-			echo $result;
-			*/
 			$opts = array('http' => array(
 				'method' => 'GET',
 				'header' => 'Authorization: Bearer ' . $access_token,
@@ -78,6 +72,10 @@ if($_GET['state'] == $state) {
 			$url = 'https://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,location,industry,picture-url,public-profile-url)';
 			$context = stream_context_create($opts);
 			$result = @file_get_contents($url, false, $context);
+			*/
+			$c_header = 'Authorization: Bearer ' . $access_token;
+			$url = 'https://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,location,industry,picture-url,public-profile-url)';
+			$result = curl_get_contents_header($url, $c_header);
 			if ($result == false) {
 				header("Location: signup");
 				die();
