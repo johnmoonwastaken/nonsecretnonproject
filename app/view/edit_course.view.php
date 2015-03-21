@@ -4,7 +4,7 @@
 <?php include 'header_required.php' ?>
 	<title>trainingful: edit course</title>
 
-	<link rel="import" href="../../bower_components/elements/session-action-dialog.html">
+	<link rel="import" href="../../bower_components/elements/session-edit-dialog.html">
 
 	<style>
 	.wrapper {
@@ -338,48 +338,45 @@
 	<?php endif ?>
 
 	function showSession(session_id) {
+		/*
 		if (sessioninfo[session_id].session_type != "-1") {
-			document.querySelector('#sad').classroom = sessioninfo[session_id].session_type +": ";
+			document.querySelector('#sed').classroom = sessioninfo[session_id].session_type +": ";
 		}
 
 		if (sessioninfo[session_id].description != "-1" && sessioninfo[session_id].description != "") {
-			document.querySelector('#sad').description = "<p>" + sessioninfo[session_id].description + "</p>";
+			document.querySelector('#sed').description = "<p>" + sessioninfo[session_id].description + "</p>";
 		}
 
 		if (sessioninfo[session_id].location != "-1" && sessioninfo[session_id].location != "") {
-			document.querySelector('#sad').location = "<p>" + sessioninfo[session_id].location + "</p>";
+			document.querySelector('#sed').location = "<p>" + sessioninfo[session_id].location + "</p>";
 		}
 		else if (sessioninfo[session_id].metro_name != "-1") {
-			document.querySelector('#sad').location = "<p>" + sessioninfo[session_id].metro_name + "</p>";
+			document.querySelector('#sed').location = "<p>" + sessioninfo[session_id].metro_name + "</p>";
 		}
 		else {
-			document.querySelector('#sad').location = "";
+			document.querySelector('#sed').location = "";
 		}
 
 		if (sessioninfo[session_id].start_date != sessioninfo[session_id].end_date) {
-			document.querySelector('#sad').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong> to <strong>" + sessioninfo[session_id].end_date + "</strong>";
+			document.querySelector('#sed').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong> to <strong>" + sessioninfo[session_id].end_date + "</strong>";
 		}
 		else {
-			document.querySelector('#sad').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong>";
+			document.querySelector('#sed').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong>";
 		}
 
 		if (sessioninfo[session_id].start_date_time != "" && sessioninfo[session_id].end_date_time != "") {
-			document.querySelector('#sad').startendtime = "<strong>(" + sessioninfo[session_id].start_date_time + " - " + sessioninfo[session_id].end_date_time + ")</strong>";
+			document.querySelector('#sed').startendtime = "<strong>(" + sessioninfo[session_id].start_date_time + " - " + sessioninfo[session_id].end_date_time + ")</strong>";
 			}
-		document.querySelector('#sad').cost = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
+		document.querySelector('#sed').cost = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
 		
-		document.querySelector('#sad').vendorname = "<?php echo $vendor_name; ?>";
-		document.querySelector('#sad').vendorurl = "<?php if ($vendor_website_url != '-1' && $vendor_website_url != '') { echo '<a href=\"http://'.$vendor_website_url.'\" target=\"_blank\">'.$vendor_website_url.'</a>'; } ?>";
-		document.querySelector('#sad').vendoremail = "<?php if ($vendor_contact_email != '-1' && $vendor_contact_email != '') { echo '<br />'.$vendor_contact_email; } ?>";
-		document.querySelector('#sad').vendorcontact = "<?php if ($vendor_contact_number != '-1' && $vendor_contact_number != '') { echo '<br />'.$vendor_contact_number; } ?>";
-		
-		document.querySelector('#sad').sessionid = session_id;
-		document.querySelector('#sad').ipaddress = "<?php echo $_SERVER['REMOTE_ADDR'] ?>";
-
-		document.querySelector('#sad').toggle();
+		document.querySelector('#sed').sessionid = session_id;
+		*/
+		document.querySelector('#sed').toggle();
+		/*
 		if (sessioninfo[session_id].location_oneline != "-1" && sessioninfo[session_id].location_oneline != "" && sessioninfo[session_id].location_oneline != "+") {
-			document.querySelector('#sad').gmap = '<iframe width="470" height="150" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&q='+sessioninfo[session_id].location_oneline+'"></iframe>';
+			document.querySelector('#sed').gmap = '<iframe width="470" height="150" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&q='+sessioninfo[session_id].location_oneline+'"></iframe>';
 		}
+		*/
 	}
 	</script>
 </head>
@@ -510,7 +507,7 @@
 					</div>
 					</div>
 				</div>
-				<session-action-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
+				<session-edit-dialog id="sed" backdrop transition="paper-dialog-transition-bottom"></session-edit-dialog>
 			</div>
 		</div>
 </section>

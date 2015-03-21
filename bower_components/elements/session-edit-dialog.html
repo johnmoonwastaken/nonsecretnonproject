@@ -1,0 +1,225 @@
+<link href="../polymer/polymer.html" rel="import">
+<link href="../paper-shadow/paper-shadow.html" rel="import">
+<link rel="import" href="../ajax-form/ajax-form.html">
+<link href="paper-dialog-base.html" rel="import">
+<link href="paper-action-dialog.html" rel="import">
+<link rel="import" href="../juicy-html/juicy-html.html">
+
+<polymer-element name="session-edit-dialog" extends="paper-dialog-base" role="dialog" layout vertical>
+
+<template>
+
+  <style>
+  a {
+    text-decoration: none;
+    color: #5a7db2;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+  :host {
+    background: #fff;
+    color: rgba(0, 0, 0, 0.87);
+    margin: 52px;
+    overflow: visible !important;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+
+	h4 {
+		color:#666;
+		font-weight: 400;
+	}
+
+  #actions {
+    padding: 16px;
+  }
+
+  #session-info-header {
+  	margin-top:20px;
+	}
+
+	.info-content {
+		font-size:0.8em;
+	}
+
+	.info-header {
+		border-top:1px solid #d7d7d7;
+	}
+
+	.input-left {
+		float:left;
+		margin-right:10px;
+	}
+	.input-right {
+    padding-top: 1px;
+		text-align: right;
+	}
+	.input-row {
+		margin-top:10px;
+	}
+
+	.register_input {
+		font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+		font-size:1em;
+		width:200px;
+		color: #555555;
+		padding: 9px 8px 9px 8px;
+	}
+
+  .scroller {
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 24px 24px 0 24px;
+    width: 525px;
+    height: 635px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+  }
+
+  </style>
+
+  <paper-shadow z="3" fit></paper-shadow>
+
+  <!-- need this because the host needs to be overflow: visible -->
+  <div id="scroller" class="scroller" relative flex auto>
+    <h1>Edit Session</h1>
+
+    <form id="register_form" is="ajax-form" action="/register_session" method="post">
+  	<div id="session-info-content" class="info-content">
+
+      <div class="info-header">
+        <p><h4>Session Details</h4></p>
+      </div>
+
+      <select class="session_type" id="session_type_box">
+        <option value="Classroom - Live Instructor">Classroom - Live Instructor</option>
+        <option value="Classroom - Webcast Instructor">Classroom - Webcast Instructor</option>
+        <option value="Online - Webcast Instructor">Online - Webcast Instructor</option>
+        <option value="Online - Self Learning">Online - Self Learning</option>
+      </select>
+
+      <p>
+        <textarea id="session_description" name="session_description" placeholder="Course session notes/remarks" class="edit-course-text" rows="3" cols="45"></textarea>
+      </p>
+
+      <div class="info-header">
+        <p><h4>Location</h4></p>
+      </div>
+
+      <p>
+        <select class="metro" id="metro">
+          <option value="Vancouver">Vancouver</option>
+        </select>
+
+        <input type="text" id="suite" name="suite" placeholder="Suite 218, Knowledge Building" class="register_input">
+        <input type="text" id="street" name="street" placeholder="100 5th Ave West" class="register_input" required>
+        <input type="text" id="city" name="city" placeholder="Vancouver" class="register_input" required>
+      </p>
+
+      <div class="info-header">
+        <p><h4>Cost</h4></p>
+      </div>
+
+      <p>
+        <input type="text" id="cost" name="cost" placeholder="$1000.00" class="register_input" required>
+        <input type="text" id="cost_discount" name="cost_discount" placeholder="$900.00" class="register_input">
+        <select class="currency" id="currency">
+          <option value="CAD">CAD</option>
+          <option value="USD">USD</option>
+        </select>
+      </p>
+
+      <input type="hidden" id="session_id" name="session_id" value="{{sessionid}}">
+      <input type="hidden" id="session_id" name="course_id" value="{{courseid}}">
+    	<template is="juicy-html" content="{{ gmap }}"></template>
+  	</div>
+  	</form>
+
+
+    <content select=":not([affirmative]):not([dismissive])"></content>
+  </div>
+
+  <div id="actions" relative layout horizontal>
+    <content select="[dismissive]"></content>
+    <div flex></div>
+    <content select="[affirmative]"></content>
+    <div id="register_buttons">
+    	<paper-button dismissive on-tap="{{cancelForm}}">Cancel</paper-button>
+    	<paper-button affirmative hover on-tap="{{submitForm}}">Save</paper-button>
+    </div>
+  </div>
+
+</template>
+
+<script>
+
+  Polymer({
+  	//classroom: "",
+  	//dates: "",
+  	//startendtime: "",
+  	//cost: "",
+  	//description: "",
+  	//location: "",
+    //courseid: "",
+  	sessionid: "",
+  	//gmap: "",
+    publish: {
+      closeSelector: '[affirmative],[dismissive]'
+    },
+    submitForm: function() {
+      /*
+    	this.$.register_form.actiontime = Date.now();
+      var firstNameDom = this.$.register_form.first_name;
+      if (typeof firstNameDom === "undefined") {
+        var firstNameDom = document.getElementById('first_name');
+      }
+      var lastNameDom = this.$.register_form.last_name;
+      if (typeof lastNameDom === "undefined") {
+        var lastNameDom = document.getElementById('last_name');
+      }
+      var emailDom = this.$.register_form.email;
+      if (typeof emailDom === "undefined") {
+        var emailDom = document.getElementById('email');
+      }
+      var phoneDom = this.$.register_form.phone;
+      if (typeof phoneDom === "undefined") {
+        var phoneDom = document.getElementById('phone');
+      }
+    	firstNameDom.style.border = "";
+    	lastNameDom.style.border = "";
+    	emailDom.style.border = "";
+    	phoneDom.style.border = "";
+    	if (firstNameDom.value == "") {
+    		firstNameDom.focus();
+    		firstNameDom.style.border = "2px solid #ff8484";
+    	}
+    	else if (lastNameDom.value == "") {
+    		lastNameDom.focus();
+    		lastNameDom.style.border = "2px solid #ff8484";
+    	}
+    	else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailDom.value) == false) {
+    		emailDom.focus();
+    		emailDom.style.border = "2px solid #ff8484";
+    	}
+    	else if (phoneDom.value == "") {
+    		phoneDom.focus();
+    		phoneDom.style.border = "2px solid #ff8484";
+    	}
+    	else {
+    		this.$.register_form.submit();
+	      this.$.scroller.style.display = "none";
+    		this.$.register_buttons.style.display = "none";
+    	}
+      */
+    },
+    cancelForm: function() {
+    	this.close();
+    }
+  });
+</script>
+
+</polymer-element>
