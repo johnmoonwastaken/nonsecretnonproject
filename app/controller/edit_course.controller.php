@@ -68,9 +68,9 @@ if (isset($_GET['id'])) {
 
 	// GETS ALL ASSOCIATED COURSE SESSIONS
 	$search_sql = "
-		SELECT course_session.session_id, course_session.start_date, course_session.end_date, course_session.location, 
+		SELECT course_session.session_id, course_session.start_date, course_session.end_date, course_session.city_name, course_session.suite,
 			course_session.metro_name, course_session.cost, course_session.currency, course_session.start_date_time, course_session.end_date_time,
-			course_session.description, course_session.registration_url, course_session.session_type
+			course_session.description, course_session.registration_url, course_session.session_type, course_session.street_address
 		FROM course_session
 		WHERE course_session.course_id = ? and course_session.active = 1 and course_session.start_date >= ?
 		ORDER BY start_date, metro_name";
@@ -99,10 +99,9 @@ if (isset($_GET['id'])) {
 		else {
 			$sessionList[$session_count]['end_date_time'] = "";
 		}
-		$sessionList[$session_count]['location'] = preg_replace( "/\r\n|\r|\n/", "<br />", $temp['location']);
-		$location_temp = preg_replace( "/, /", ",", $temp['location']);
-		$location_temp = preg_replace( "/\r\n|\r|\n/", ",", $location_temp);
-		$sessionList[$session_count]['location_oneline'] = preg_replace( "/ /", "+", $location_temp);
+		$sessionList[$session_count]['suite'] = $temp['suite'];
+		$sessionList[$session_count]['street_address'] = $temp['street_address'];
+		$sessionList[$session_count]['city_name'] = $temp['city_name'];
 		$sessionList[$session_count]['metro_name'] = $temp['metro_name'];
 		$sessionList[$session_count]['currency'] = $temp['currency'];
 		$sessionList[$session_count]['description'] = preg_replace( "/\r\n|\r|\n/", "<br />", $temp['description']);

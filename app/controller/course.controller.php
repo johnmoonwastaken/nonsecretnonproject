@@ -51,7 +51,7 @@ if ($parent_category_id != -1) {
 }
 
 $search_sql = "
-	SELECT course_session.session_id, course_session.start_date, course_session.end_date, course_session.location, 
+	SELECT course_session.session_id, course_session.start_date, course_session.end_date, course_session.suite, course_session.street_address, course_session.city_name,
 		course_session.metro_name, course_session.cost, course_session.currency, course_session.start_date_time, course_session.end_date_time,
 		course_session.description, course_session.registration_url, course_session.session_type
 	FROM course_session
@@ -82,10 +82,9 @@ foreach ($get_results as $temp) {
 	else {
 		$sessionList[$session_count]['end_date_time'] = "";
 	}
-	$sessionList[$session_count]['location'] = preg_replace( "/\r\n|\r|\n/", "<br />", $temp['location']);
-	$location_temp = preg_replace( "/, /", ",", $temp['location']);
-	$location_temp = preg_replace( "/\r\n|\r|\n/", ",", $location_temp);
-	$sessionList[$session_count]['location_oneline'] = preg_replace( "/ /", "+", $location_temp);
+	$sessionList[$session_count]['suite'] = $temp['suite'];
+	$sessionList[$session_count]['street_address'] = $temp['street_address'];
+	$sessionList[$session_count]['city_name'] = $temp['city_name'];
 	$sessionList[$session_count]['metro_name'] = $temp['metro_name'];
 	$sessionList[$session_count]['currency'] = $temp['currency'];
 	$sessionList[$session_count]['description'] = preg_replace( "/\r\n|\r|\n/", "<br />", $temp['description']);
@@ -103,8 +102,8 @@ $templateFields = array('course_name' => $course_name, 'course_description' =>  
 	'course_rating' => $course_rating, 'vendor_name' => $vendor_name, 'branding_url' => $branding_url, 'sessionList' => $sessionList, 
 	'vendor_contact_number' => $vendor_contact_number, 'vendor_contact_email' => $vendor_contact_email, 'vendor_website_url' => $vendor_website_url,
 	'category_name' => $category_name, 'parent_category_name' => $parent_category_name, 'video_url' => $video_url,
-	'benefits' => $benefits, 'prereqs' => $prereqs, 'audience' => $audience,
-	'course_id' => $_GET['id'], 'keywords' => $_GET['keywords'], 'start' => $_GET['start'], 'end' => $_GET['end'], 'location' => $_GET['location']);
+	'benefits' => $benefits, 'prereqs' => $prereqs, 'audience' => $audience, 'suite' => $_GET['suite'], 'street_address' => $_GET['street_address'],
+	'city_name' => $_GET['city_name'], 'course_id' => $_GET['id'], 'keywords' => $_GET['keywords'], 'start' => $_GET['start'], 'end' => $_GET['end']);
 
 displayTemplate('course', $templateFields);
 displayTemplate('footer');

@@ -14,7 +14,7 @@ $url = $_POST['course_url'];
 $designation = $_POST['course_designation'];
 $vendor_id = $_POST['vendor_id'];
 $video_url = $_POST['video_url'];
-
+if ($video_url == "") $video_url == "NULL";
 
 if ($course_id != "") {
 	$course_sql = 'UPDATE course SET

@@ -13,7 +13,7 @@ if ($_GET['max'] != "") {
 if ($_GET['category']) {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
-				course_session.start_date, course_session.end_date, course_session.location, course_session.metro_name, course_session.cost, course_session.currency,
+				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
 				vendor.vendor_name, vendor.branding_url, vendor.verified
 		FROM course
 		LEFT JOIN course_session
@@ -30,7 +30,7 @@ if ($_GET['category']) {
 else {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
-				course_session.start_date, course_session.end_date, course_session.location, course_session.metro_name, course_session.cost, course_session.currency,
+				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
 				vendor.vendor_name, vendor.branding_url, vendor.verified
 		FROM course
 		LEFT JOIN course_session
@@ -38,7 +38,7 @@ else {
 		LEFT JOIN vendor
 		ON course.vendor_id = vendor.vendor_id
 		WHERE course_name LIKE ? and course_session.active = 1 and course_session.start_date >= ? and course_session.end_date <= ? 
-			and (course_session.location LIKE ? OR course_session.metro_name LIKE ?)" . $min_sql . $max_sql . "
+			and (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?)" . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 
 	$search_location = $_GET['location'];
@@ -74,7 +74,7 @@ foreach ($get_results as $temp) {
 	$session_id = $temp['session_id'];
 	$start_date = $temp['start_date'];
 	$end_date = $temp['end_date'];
-	$session_location = $temp['location'];
+	$session_location = $temp['city_name'];
 	$metro_name = $temp['metro_name'];
 	$cost = $temp['cost'];
 	$currency = $temp['currency'];

@@ -259,7 +259,7 @@
 	var sessioninfo = [];
 
 	<?php foreach($sessionList as $session): ?>
-	sessioninfo[<?php echo $session['session_id']; ?>] = {session_type: "<?php echo $session['session_type']; ?>", start_date: "<?php echo $session['start_date_formatted']; ?>", start_date_time: "<?php echo $session['start_date_time']; ?>", end_date: "<?php echo $session['end_date_formatted']; ?>", end_date_time: "<?php echo $session['end_date_time']; ?>", metro_name: "<?php echo $session['metro_name']; ?>", location: "<?php echo $session['location']; ?>", location_oneline: "<?php echo $session['location_oneline']; ?>", cost: "<?php echo $session['cost']; ?>", currency: "<?php echo $session['currency']; ?>", description: "<?php echo $session['description']; ?>"};
+	sessioninfo[<?php echo $session['session_id']; ?>] = {session_type: "<?php echo $session['session_type']; ?>", start_date: "<?php echo $session['start_date_formatted']; ?>", start_date_time: "<?php echo $session['start_date_time']; ?>", end_date: "<?php echo $session['end_date_formatted']; ?>", end_date_time: "<?php echo $session['end_date_time']; ?>", metro_name: "<?php echo $session['metro_name']; ?>", city_name: "<?php echo $session['city_name']; ?>", suite: "<?php echo $session['suite']; ?>", street_address: "<?php echo $session['street_address']; ?>", cost: "<?php echo $session['cost']; ?>", currency: "<?php echo $session['currency']; ?>", description: "<?php echo $session['description']; ?>"};
 	<?php endforeach; ?>
 
 	function showSession(session_id) {
@@ -271,15 +271,24 @@
 			document.querySelector('#sad').description = "<p>" + sessioninfo[session_id].description + "</p>";
 		}
 
-		if (sessioninfo[session_id].location != "-1" && sessioninfo[session_id].location != "") {
-			document.querySelector('#sad').location = "<p>" + sessioninfo[session_id].location + "</p>";
-		}
-		else if (sessioninfo[session_id].metro_name != "-1") {
-			document.querySelector('#sad').location = "<p>" + sessioninfo[session_id].metro_name + "</p>";
+		var location_string = "<p>";
+		if (sessioninfo[session_id].city_name != "-1" && sessioninfo[session_id].city_name != "") {
+			var location_oneline = "";
+			if (sessioninfo[session_id].suite != "-1" && sessioninfo[session_id].suite != "") {
+				location_string = location_string + sessioninfo[session_id].suite + "<br />";
+			}
+			if (sessioninfo[session_id].street_address != "-1" && sessioninfo[session_id].street_address != "") {
+				location_string = location_string + sessioninfo[session_id].street_address + "<br />";
+				location_oneline = sessioninfo[session_id].street_address + ", ";
+			}
+			location_string = location_string + sessioninfo[session_id].city_name + "</p>";
+			location_oneline = location_oneline + sessioninfo[session_id].city_name;
+			document.querySelector('#sad').gmap = '<iframe width="470" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&zoom=15&q='+location_oneline+'"></iframe>';
 		}
 		else {
-			document.querySelector('#sad').location = "";
+			location_string = location_string + sessioninfo[session_id].metro_name + "</p>";
 		}
+		document.querySelector('#sad').location = location_string;
 
 		if (sessioninfo[session_id].start_date != sessioninfo[session_id].end_date) {
 			document.querySelector('#sad').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong> to <strong>" + sessioninfo[session_id].end_date + "</strong>";
@@ -302,9 +311,6 @@
 		document.querySelector('#sad').ipaddress = "<?php echo $_SERVER['REMOTE_ADDR'] ?>";
 
 		document.querySelector('#sad').toggle();
-		if (sessioninfo[session_id].location_oneline != "-1" && sessioninfo[session_id].location_oneline != "" && sessioninfo[session_id].location_oneline != "+") {
-			document.querySelector('#sad').gmap = '<iframe width="470" height="150" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&q='+sessioninfo[session_id].location_oneline+'"></iframe>';
-		}
 	}
 	</script>
 </head>
@@ -331,7 +337,7 @@
 							<!-- &nbsp;&nbsp;<span class="rating s4" title="4 stars"></span> --></h1>
 							<p style="margin-top:-1.3em;"><span><h5><?php if ($parent_category_name == "") { echo $category_name; } else { echo $parent_category_name." - ".$category_name; }?></h5></span></p>
 
-							<?php if(isset($video_url)): ?>
+							<?php if(isset($video_url) && $video_url != ""): ?>
 							<iframe width="640" height="362" src="<?php echo $video_url ?>"></iframe>
 							<?php endif ?>
 
