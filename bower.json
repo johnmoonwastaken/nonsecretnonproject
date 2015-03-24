@@ -25,6 +25,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#~0.5.4",
     "core-elements": "Polymer/core-elements#master",
-    "google-map": "PolymerLabs/google-map"
+    "google-map": "PolymerLabs/google-map",
+    "polymer-date-picker": "~0.0.11"
   }
 }
