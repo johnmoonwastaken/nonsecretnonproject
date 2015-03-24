@@ -54,7 +54,7 @@ $_SESSION['state'] = $state;
 
 					</div>
 					<div class="5u" style="padding-left:40px;">
-						<p><h3>Or use your favourite social network</h2></p>
+						<p><h3>Or use your favourite social network</h3></p>
 						<p>
 							<form action="https://www.facebook.com/dialog/oauth" method="get">
 							<input type="hidden" name="client_id" value="<?php echo $facebook_api_key; ?>">
