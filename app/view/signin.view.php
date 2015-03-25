@@ -64,6 +64,7 @@ $_SESSION['state'] = $state;
 							<input type="hidden" name="scope" value="public_profile,email">
 							<button type="submit" class="button-other other-facebook"><div class="icon facebook other-button-icon"></div><div class="sign-up-other">Log in with Facebook</div></button></p>
 							</form>
+							<!--
 						<p>
 							<form action="https://accounts.google.com/o/oauth2/auth" method="get">
 							<input type="hidden" name="scope" value="https://www.googleapis.com/auth/plus.login">
@@ -76,6 +77,7 @@ $_SESSION['state'] = $state;
 							</form>
 						</p>
 						<p><button type="submit" class="button-other other-twitter"><div class="icon twitter other-button-icon"></div><div class="sign-up-other">Log in with Twitter</div></button></p>
+					-->
 					</div>
 				</div>
 				<div id="other-options">
