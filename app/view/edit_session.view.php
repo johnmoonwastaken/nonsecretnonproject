@@ -363,17 +363,17 @@
 							<h2>Session Information</h2>
 
 							<div class="explanation">Session Type*</div>
-							<select name="session_type" id="session-type-box" class="select-box">
+							<select name="session_type" id="session-type-box" class="select-box" onchange="if(this.value == 'Online - Self Learning') { document.getElementById('dates').style.display = 'hidden'; }">
 					        	<option value="Classroom - Live Instructor"<?php if($session_type == "Classroom - Live Instructor") echo " selected"; ?>>Classroom - Live Instructor</option>
 						        <option value="Classroom - Webcast Instructor"<?php if($session_type == "Classroom - Webcast Instructor") echo " selected"; ?>>Classroom - Webcast Instructor</option>
 						        <option value="Online - Webcast Instructor"<?php if($session_type == "Online - Webcast Instructor") echo " selected"; ?>>Online - Webcast Instructor</option>
-						        <option value="Online - Self Learning"<?php if($session_type == "Online - Self Learning") echo " selected"; ?> onchange="window.alert('hi')">Online - Self Learning</option>
+						        <option value="Online - Self Learning"<?php if($session_type == "Online - Self Learning") echo " selected"; ?>>Online - Self Learning</option>
 						    </select>
 
 						    <div id="dates">
 								<div class="input-row">
 									<div class="input-left">
-										<div class="explanation">Start and End Date*</div>
+										<div class="explanation">Start and End Date</div>
 									</div>
 									<div class="input-left25">
 										<div class="explanation">Start Time (optional)</div>

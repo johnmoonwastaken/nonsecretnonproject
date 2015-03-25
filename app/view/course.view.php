@@ -356,6 +356,22 @@
 
 							<p><h4><?php echo $course_description; ?>
 							<!-- <a href="#">Read More ></a> --></h4></p>
+
+							<?php if($audience):?>
+							<h3>Audience</h3>
+							<p><h4><?php echo $audience; ?>
+							<?php endif ?>
+
+							<?php if($prereqs):?>
+							<h3>Pre-Requisites</h3>
+							<p><h4><?php echo $prereqs; ?>
+							<?php endif ?>
+
+							<?php if($benefits):?>
+							<h3>Benefits</h3>
+							<p><h4><?php echo $benefits; ?>
+							<?php endif ?>
+
 							<div id="ratings-section">
 							<!--
 								<div class="row 25% uniform" style="float:right;margin: 0px 15px 10px 0px;">
