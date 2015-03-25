@@ -254,6 +254,7 @@
 		border-top: none;
 		border-right: none;
 		border-left: none;
+		border-bottom: 2px solid #ddd;
 	}
 
 	.form-text {
@@ -287,12 +288,14 @@
 		border-top: none;
 		border-right: none;
 		border-left: none;
+		border-bottom: 2px solid #ddd;
 	}
 
 	.select-box {
 		border-left:none;
 		border-top:none;
 		border-right:none;
+		border-bottom: 2px solid #ddd;
 	}
 	</style>
 
@@ -579,7 +582,7 @@
 							<?php if(isset($_GET['id'])): ?>
 								<span id="display-sessions">
 									<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
-										<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);">
+										<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="window.location.href='edit_session?id=<?php echo $_GET['id'] ?>&session_id=<?php echo $session['session_id'] ?>'">
 											<div><span class="icon calendar"></span> <span class="dates"><?php { echo date("M j, Y", strtotime($session['start_date'])); if ($session['start_date'] != $session['end_date']) { echo " - ".date("M j, Y", strtotime($session['end_date']));} } ?></span></div>
 										<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
 										<!-- <img src="../../images/lower-triangle.png" style="margin: 0px 0 -5px 234px;" /> -->

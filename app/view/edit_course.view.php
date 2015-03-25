@@ -242,6 +242,7 @@
 		border-top: none;
 		border-left: none;
 		border-right: none;
+		border-bottom: 2px solid #ddd;
 	}
 
 	.edit-course-input {
@@ -255,6 +256,7 @@
 		border-top: none;
 		border-left: none;
 		border-right: none;
+		border-bottom: 2px solid #ddd;
 	}
 
 	.edit-course-name {
@@ -274,6 +276,7 @@
 		border-top: none;
 		border-left: none;
 		border-right: none;
+		border-bottom: 2px solid #ddd;
 	}
 
 	.edit-course-text {
