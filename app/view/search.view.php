@@ -443,7 +443,17 @@
 												<h4><?php echo $session['cost']; ?></h4>
 												<small><?php echo $session['currency']; ?></small>
 											</div>
-											<h4 class="session-dates"><?php { echo date("M j, Y", strtotime($session['start_date'])); if ($session['start_date'] != $session['end_date']) { echo " - ".date("M j, Y", strtotime($session['end_date']));} } ?></h4>
+											<h4 class="session-dates"><?php { 
+											if ($session['session_type'] == "Online - Self Learning") {
+												echo "Online";
+											}
+											else {
+												echo date("M j, Y", strtotime($session['start_date'])); 
+												if ($session['start_date'] != $session['end_date']) { 
+													echo " - ".date("M j, Y", strtotime($session['end_date']));
+												} 
+											}
+										} ?></h4>
 											<small class="session-location"><?php if ($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></small>
 										</a>
 									</li>

@@ -247,13 +247,13 @@
 	<script>
 	
 	window.addEventListener('polymer-ready', function(e) {
-		console.log('polymer-ready');
+		//console.log('polymer-ready');
 		document.getElementById('loading-sessions').style.display = "none";
 		document.getElementById('display-sessions').style.display = "inline";
 	});
 
 	window.addEventListener('core-overlay-open-completed', function(e) {
-		console.log('opened');
+		//console.log('opened');
 	});
 
 	var sessioninfo = [];
@@ -282,35 +282,37 @@
 			document.querySelector('#sad').description = "<p>" + sessioninfo[session_id].description + "</p>";
 		}
 
-		var location_string = "<p>";
-		if (sessioninfo[session_id].city_name != "-1" && sessioninfo[session_id].city_name != "") {
-			var location_oneline = "";
-			if (sessioninfo[session_id].suite != "-1" && sessioninfo[session_id].suite != "") {
-				location_string = location_string + sessioninfo[session_id].suite + "<br />";
+		if (sessioninfo[session_id].session_type != "Online - Self Learning") {
+			if (sessioninfo[session_id].start_date != sessioninfo[session_id].end_date) {
+				document.querySelector('#sad').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong> to <strong>" + sessioninfo[session_id].end_date + "</strong>";
 			}
-			if (sessioninfo[session_id].street_address != "-1" && sessioninfo[session_id].street_address != "") {
-				location_string = location_string + sessioninfo[session_id].street_address + "<br />";
-				location_oneline = sessioninfo[session_id].street_address + ", ";
+			else {
+				document.querySelector('#sad').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong>";
 			}
-			location_string = location_string + sessioninfo[session_id].city_name + "</p>";
-			location_oneline = location_oneline + sessioninfo[session_id].city_name;
-			document.querySelector('#sad').gmap = '<iframe width="470" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&zoom=15&q='+location_oneline+'"></iframe>';
-		}
-		else {
-			location_string = location_string + sessioninfo[session_id].metro_name + "</p>";
-		}
-		document.querySelector('#sad').location = location_string;
-
-		if (sessioninfo[session_id].start_date != sessioninfo[session_id].end_date) {
-			document.querySelector('#sad').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong> to <strong>" + sessioninfo[session_id].end_date + "</strong>";
-		}
-		else {
-			document.querySelector('#sad').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong>";
-		}
-
-		if (sessioninfo[session_id].start_date_time != "" && sessioninfo[session_id].end_date_time != "") {
+			if (sessioninfo[session_id].start_date_time != "" && sessioninfo[session_id].end_date_time != "") {
 			document.querySelector('#sad').startendtime = "<strong>(" + sessioninfo[session_id].start_date_time + " - " + sessioninfo[session_id].end_date_time + ")</strong>";
 			}
+
+			var location_string = "<p>";
+			if (sessioninfo[session_id].city_name != "-1" && sessioninfo[session_id].city_name != "") {
+				var location_oneline = "";
+				if (sessioninfo[session_id].suite != "-1" && sessioninfo[session_id].suite != "") {
+					location_string = location_string + sessioninfo[session_id].suite + "<br />";
+				}
+				if (sessioninfo[session_id].street_address != "-1" && sessioninfo[session_id].street_address != "") {
+					location_string = location_string + sessioninfo[session_id].street_address + "<br />";
+					location_oneline = sessioninfo[session_id].street_address + ", ";
+				}
+				location_string = location_string + sessioninfo[session_id].city_name + "</p>";
+				location_oneline = location_oneline + sessioninfo[session_id].city_name;
+				document.querySelector('#sad').gmap = '<iframe width="470" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&zoom=15&q='+location_oneline+'"></iframe>';
+			}
+			else {
+				location_string = location_string + sessioninfo[session_id].metro_name + "</p>";
+			}
+			document.querySelector('#sad').location = location_string;
+		}
+
 		document.querySelector('#sad').cost = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
 		
 		document.querySelector('#sad').vendorname = "<?php echo $vendor_name; ?>";
@@ -401,7 +403,17 @@
 							<span id="display-sessions" style="display:none;">
 								<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
 									<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);">
-										<div><span class="icon calendar"></span> <span class="dates"><?php { echo date("M j, Y", strtotime($session['start_date'])); if ($session['start_date'] != $session['end_date']) { echo " - ".date("M j, Y", strtotime($session['end_date']));} } ?></span></div>
+										<div><span class="icon calendar"></span> <span class="dates"><?php { 
+											if ($session['session_type'] == "Online - Self Learning") {
+												echo "Online";
+											}
+											else {
+												echo date("M j, Y", strtotime($session['start_date'])); 
+												if ($session['start_date'] != $session['end_date']) { 
+													echo " - ".date("M j, Y", strtotime($session['end_date']));
+												} 
+											}
+										} ?></span></div>
 									<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
 									<!-- <img src="../../images/lower-triangle.png" style="margin: 0px 0 -5px 234px;" /> -->
 									<div class="folded-corner"></div>

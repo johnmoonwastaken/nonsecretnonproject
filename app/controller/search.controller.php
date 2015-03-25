@@ -14,7 +14,7 @@ if ($_GET['category']) {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
 				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
-				vendor.vendor_name, vendor.branding_url, vendor.verified
+				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type
 		FROM course
 		LEFT JOIN course_session
 		ON course.course_id = course_session.course_id
@@ -22,7 +22,7 @@ if ($_GET['category']) {
 		ON course.vendor_id = vendor.vendor_id
 		LEFT JOIN categories
 		ON course.category_id = categories.category_id
-		WHERE course.category_id = ? and course_session.active = 1 and course_session.start_date > ?" . $min_sql . $max_sql . "
+		WHERE course.category_id = ? and course_session.active = 1 and (course_session.start_date > ?  OR course_session.session_type = 'Online - Self Learning') " . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($_GET['category'], date('Y-m-d')));
@@ -31,13 +31,13 @@ else {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
 				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
-				vendor.vendor_name, vendor.branding_url, vendor.verified
+				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type
 		FROM course
 		LEFT JOIN course_session
 		ON course.course_id = course_session.course_id
 		LEFT JOIN vendor
 		ON course.vendor_id = vendor.vendor_id
-		WHERE course_name LIKE ? and course_session.active = 1 and course_session.start_date >= ? and course_session.end_date <= ? 
+		WHERE course_name LIKE ? and course_session.active = 1 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type = 'Online - Self Learning')
 			and (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?)" . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 
@@ -72,6 +72,7 @@ foreach ($get_results as $temp) {
 	$branding_url = $temp['branding_url'];
 	$avg_rating = $temp['avg_rating'];
 	$session_id = $temp['session_id'];
+	$session_type = $temp['session_type'];
 	$start_date = $temp['start_date'];
 	$end_date = $temp['end_date'];
 	$session_location = $temp['city_name'];
@@ -93,6 +94,7 @@ foreach ($get_results as $temp) {
 		$session_count = 0;
 	}
 	$courseList[$course_count]['sessionList'][$session_count]['session_id'] = $session_id;
+	$courseList[$course_count]['sessionList'][$session_count]['session_type'] = $session_type;
 	$courseList[$course_count]['sessionList'][$session_count]['start_date'] = $start_date;
 	$courseList[$course_count]['sessionList'][$session_count]['end_date'] = $end_date;
 	$courseList[$course_count]['sessionList'][$session_count]['location'] = $session_location;

@@ -11,9 +11,9 @@ if (isset($_GET['id'])) {
 		SELECT course_session.session_id, course_session.start_date, course_session.end_date,
 			course_session.metro_name, course_session.cost, course_session.currency, course_session.session_type
 		FROM course_session
-		WHERE course_session.course_id = ? and course_session.active = 1 and course_session.start_date >= ?
+		WHERE course_session.course_id = ? and course_session.active = 1 and (course_session.start_date >= ? OR course_session.session_type = 'Online - Self Learning')
 		ORDER BY start_date, metro_name";
-
+ 
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($_GET["id"], date("Y-m-d")));
 

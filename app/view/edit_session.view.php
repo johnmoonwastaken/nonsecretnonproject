@@ -367,110 +367,112 @@
 					        	<option value="Classroom - Live Instructor"<?php if($session_type == "Classroom - Live Instructor") echo " selected"; ?>>Classroom - Live Instructor</option>
 						        <option value="Classroom - Webcast Instructor"<?php if($session_type == "Classroom - Webcast Instructor") echo " selected"; ?>>Classroom - Webcast Instructor</option>
 						        <option value="Online - Webcast Instructor"<?php if($session_type == "Online - Webcast Instructor") echo " selected"; ?>>Online - Webcast Instructor</option>
-						        <option value="Online - Self Learning"<?php if($session_type == "Online - Self Learning") echo " selected"; ?>>Online - Self Learning</option>
+						        <option value="Online - Self Learning"<?php if($session_type == "Online - Self Learning") echo " selected"; ?> onchange="window.alert('hi')">Online - Self Learning</option>
 						    </select>
 
-							<div class="input-row">
-								<div class="input-left">
-									<div class="explanation">Start and End Date*</div>
-								</div>
-								<div class="input-left25">
-									<div class="explanation">Start Time (optional)</div>
-								</div>
-								<div>
-									<div class="explanation">End Time (optional)</div>
-								</div>
-							</div>
-							<div class="input-row">
-								<div class="input-left">
-									<div class="inputbox">
-										<input type="text" id="searchbox-start" name="start" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if(isset($start_date)) { echo 'value='.$start_date; } ?> required> to
-										<script type="text/javascript">
-							               $(document).ready(function() {
-						    	              $('#searchbox-start').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
-						            	      });
-							               });
-					    	           	</script>
-										<input type="text" id="searchbox-end" name="end" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if(isset($end_date)) { echo 'value='.$end_date; } ?> required>
-										<script type="text/javascript">
-							               $(document).ready(function() {
-						    	              $('#searchbox-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
-						            	      });
-							               });
-					    	           	</script>
+						    <div id="dates">
+								<div class="input-row">
+									<div class="input-left">
+										<div class="explanation">Start and End Date*</div>
+									</div>
+									<div class="input-left25">
+										<div class="explanation">Start Time (optional)</div>
+									</div>
+									<div>
+										<div class="explanation">End Time (optional)</div>
 									</div>
 								</div>
-								<div class="input-left25">
-									<select name="start_hour" id="session-start-hour-box" class="select-box">
-										<option></option>
-							            <option value="00" <?php if($start_hour == "00") echo "selected"; ?>>00</option>
-							            <option value="01" <?php if($start_hour == "01") echo "selected"; ?>>01</option>
-							            <option value="02" <?php if($start_hour == "02") echo "selected"; ?>>02</option>
-							            <option value="03" <?php if($start_hour == "03") echo "selected"; ?>>03</option>
-							            <option value="04" <?php if($start_hour == "04") echo "selected"; ?>>04</option>
-							            <option value="05" <?php if($start_hour == "05") echo "selected"; ?>>05</option>
-							            <option value="06" <?php if($start_hour == "06") echo "selected"; ?>>06</option>
-							            <option value="07" <?php if($start_hour == "07") echo "selected"; ?>>07</option>
-							            <option value="08" <?php if($start_hour == "08") echo "selected"; ?>>08</option>
-							            <option value="09" <?php if($start_hour == "09") echo "selected"; ?>>09</option>
-							            <option value="10" <?php if($start_hour == "10") echo "selected"; ?>>10</option>
-							            <option value="11" <?php if($start_hour == "11") echo "selected"; ?>>11</option>
-							            <option value="12" <?php if($start_hour == "12") echo "selected"; ?>>12</option>
-							            <option value="13" <?php if($start_hour == "13") echo "selected"; ?>>13</option>
-							            <option value="14" <?php if($start_hour == "14") echo "selected"; ?>>14</option>
-							            <option value="15" <?php if($start_hour == "15") echo "selected"; ?>>15</option>
-							            <option value="16" <?php if($start_hour == "16") echo "selected"; ?>>16</option>
-							            <option value="17" <?php if($start_hour == "17") echo "selected"; ?>>17</option>
-							            <option value="18" <?php if($start_hour == "18") echo "selected"; ?>>18</option>
-							            <option value="19" <?php if($start_hour == "19") echo "selected"; ?>>19</option>
-							            <option value="20" <?php if($start_hour == "20") echo "selected"; ?>>20</option>
-							            <option value="21" <?php if($start_hour == "21") echo "selected"; ?>>21</option>
-							            <option value="22" <?php if($start_hour == "22") echo "selected"; ?>>22</option>
-							            <option value="23" <?php if($start_hour == "23") echo "selected"; ?>>23</option>
-						            </select> :
-						            <select name="start_minute" id="session-start-minute-box" class="select-box">
-						            	<option></option>
-							            <option value="00" <?php if($start_minute == "00") echo "selected"; ?>>00</option>
-							            <option value="15" <?php if($start_minute == "15") echo "selected"; ?>>15</option>
-							            <option value="30" <?php if($start_minute == "30") echo "selected"; ?>>30</option>
-							            <option value="45" <?php if($start_minute == "45") echo "selected"; ?>>45</option>
-						            </select>
-								</div>
-								<div>
-									<select name="end_hour" id="session-end-hour-box" class="select-box">
-										<option></option>
-							            <option value="00" <?php if($end_hour == "00") echo "selected"; ?>>00</option>
-							            <option value="01" <?php if($end_hour == "01") echo "selected"; ?>>01</option>
-							            <option value="02" <?php if($end_hour == "02") echo "selected"; ?>>02</option>
-							            <option value="03" <?php if($end_hour == "03") echo "selected"; ?>>03</option>
-							            <option value="04" <?php if($end_hour == "04") echo "selected"; ?>>04</option>
-							            <option value="05" <?php if($end_hour == "05") echo "selected"; ?>>05</option>
-							            <option value="06" <?php if($end_hour == "06") echo "selected"; ?>>06</option>
-							            <option value="07" <?php if($end_hour == "07") echo "selected"; ?>>07</option>
-							            <option value="08" <?php if($end_hour == "08") echo "selected"; ?>>08</option>
-							            <option value="09" <?php if($end_hour == "09") echo "selected"; ?>>09</option>
-							            <option value="10" <?php if($end_hour == "10") echo "selected"; ?>>10</option>
-							            <option value="11" <?php if($end_hour == "11") echo "selected"; ?>>11</option>
-							            <option value="12" <?php if($end_hour == "12") echo "selected"; ?>>12</option>
-							            <option value="13" <?php if($end_hour == "13") echo "selected"; ?>>13</option>
-							            <option value="14" <?php if($end_hour == "14") echo "selected"; ?>>14</option>
-							            <option value="15" <?php if($end_hour == "15") echo "selected"; ?>>15</option>
-							            <option value="16" <?php if($end_hour == "16") echo "selected"; ?>>16</option>
-							            <option value="17" <?php if($end_hour == "17") echo "selected"; ?>>17</option>
-							            <option value="18" <?php if($end_hour == "18") echo "selected"; ?>>18</option>
-							            <option value="19" <?php if($end_hour == "19") echo "selected"; ?>>19</option>
-							            <option value="20" <?php if($end_hour == "20") echo "selected"; ?>>20</option>
-							            <option value="21" <?php if($end_hour == "21") echo "selected"; ?>>21</option>
-							            <option value="22" <?php if($end_hour == "22") echo "selected"; ?>>22</option>
-							            <option value="23" <?php if($end_hour == "23") echo "selected"; ?>>23</option>
-						            </select>:
-						            <select name="end_minute" id="session-end-minute-box" class="select-box">
-							            <option></option>
-							            <option value="00" <?php if($end_minute == "00") echo "selected"; ?>>00</option>
-							            <option value="15" <?php if($end_minute == "15") echo "selected"; ?>>15</option>
-							            <option value="30" <?php if($end_minute == "30") echo "selected"; ?>>30</option>
-							            <option value="45" <?php if($end_minute == "45") echo "selected"; ?>>45</option>
-						            </select>
+								<div class="input-row">
+									<div class="input-left">
+										<div class="inputbox">
+											<input type="text" id="searchbox-start" name="start" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if(isset($start_date)) { echo 'value='.$start_date; } ?>> to
+											<script type="text/javascript">
+								               $(document).ready(function() {
+							    	              $('#searchbox-start').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
+							            	      });
+								               });
+						    	           	</script>
+											<input type="text" id="searchbox-end" name="end" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if(isset($end_date)) { echo 'value='.$end_date; } ?>>
+											<script type="text/javascript">
+								               $(document).ready(function() {
+							    	              $('#searchbox-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
+							            	      });
+								               });
+						    	           	</script>
+										</div>
+									</div>
+									<div class="input-left25">
+										<select name="start_hour" id="session-start-hour-box" class="select-box">
+											<option></option>
+								            <option value="00" <?php if($start_hour == "00") echo "selected"; ?>>00</option>
+								            <option value="01" <?php if($start_hour == "01") echo "selected"; ?>>01</option>
+								            <option value="02" <?php if($start_hour == "02") echo "selected"; ?>>02</option>
+								            <option value="03" <?php if($start_hour == "03") echo "selected"; ?>>03</option>
+								            <option value="04" <?php if($start_hour == "04") echo "selected"; ?>>04</option>
+								            <option value="05" <?php if($start_hour == "05") echo "selected"; ?>>05</option>
+								            <option value="06" <?php if($start_hour == "06") echo "selected"; ?>>06</option>
+								            <option value="07" <?php if($start_hour == "07") echo "selected"; ?>>07</option>
+								            <option value="08" <?php if($start_hour == "08") echo "selected"; ?>>08</option>
+								            <option value="09" <?php if($start_hour == "09") echo "selected"; ?>>09</option>
+								            <option value="10" <?php if($start_hour == "10") echo "selected"; ?>>10</option>
+								            <option value="11" <?php if($start_hour == "11") echo "selected"; ?>>11</option>
+								            <option value="12" <?php if($start_hour == "12") echo "selected"; ?>>12</option>
+								            <option value="13" <?php if($start_hour == "13") echo "selected"; ?>>13</option>
+								            <option value="14" <?php if($start_hour == "14") echo "selected"; ?>>14</option>
+								            <option value="15" <?php if($start_hour == "15") echo "selected"; ?>>15</option>
+								            <option value="16" <?php if($start_hour == "16") echo "selected"; ?>>16</option>
+								            <option value="17" <?php if($start_hour == "17") echo "selected"; ?>>17</option>
+								            <option value="18" <?php if($start_hour == "18") echo "selected"; ?>>18</option>
+								            <option value="19" <?php if($start_hour == "19") echo "selected"; ?>>19</option>
+								            <option value="20" <?php if($start_hour == "20") echo "selected"; ?>>20</option>
+								            <option value="21" <?php if($start_hour == "21") echo "selected"; ?>>21</option>
+								            <option value="22" <?php if($start_hour == "22") echo "selected"; ?>>22</option>
+								            <option value="23" <?php if($start_hour == "23") echo "selected"; ?>>23</option>
+							            </select> :
+							            <select name="start_minute" id="session-start-minute-box" class="select-box">
+							            	<option></option>
+								            <option value="00" <?php if($start_minute == "00") echo "selected"; ?>>00</option>
+								            <option value="15" <?php if($start_minute == "15") echo "selected"; ?>>15</option>
+								            <option value="30" <?php if($start_minute == "30") echo "selected"; ?>>30</option>
+								            <option value="45" <?php if($start_minute == "45") echo "selected"; ?>>45</option>
+							            </select>
+									</div>
+									<div>
+										<select name="end_hour" id="session-end-hour-box" class="select-box">
+											<option></option>
+								            <option value="00" <?php if($end_hour == "00") echo "selected"; ?>>00</option>
+								            <option value="01" <?php if($end_hour == "01") echo "selected"; ?>>01</option>
+								            <option value="02" <?php if($end_hour == "02") echo "selected"; ?>>02</option>
+								            <option value="03" <?php if($end_hour == "03") echo "selected"; ?>>03</option>
+								            <option value="04" <?php if($end_hour == "04") echo "selected"; ?>>04</option>
+								            <option value="05" <?php if($end_hour == "05") echo "selected"; ?>>05</option>
+								            <option value="06" <?php if($end_hour == "06") echo "selected"; ?>>06</option>
+								            <option value="07" <?php if($end_hour == "07") echo "selected"; ?>>07</option>
+								            <option value="08" <?php if($end_hour == "08") echo "selected"; ?>>08</option>
+								            <option value="09" <?php if($end_hour == "09") echo "selected"; ?>>09</option>
+								            <option value="10" <?php if($end_hour == "10") echo "selected"; ?>>10</option>
+								            <option value="11" <?php if($end_hour == "11") echo "selected"; ?>>11</option>
+								            <option value="12" <?php if($end_hour == "12") echo "selected"; ?>>12</option>
+								            <option value="13" <?php if($end_hour == "13") echo "selected"; ?>>13</option>
+								            <option value="14" <?php if($end_hour == "14") echo "selected"; ?>>14</option>
+								            <option value="15" <?php if($end_hour == "15") echo "selected"; ?>>15</option>
+								            <option value="16" <?php if($end_hour == "16") echo "selected"; ?>>16</option>
+								            <option value="17" <?php if($end_hour == "17") echo "selected"; ?>>17</option>
+								            <option value="18" <?php if($end_hour == "18") echo "selected"; ?>>18</option>
+								            <option value="19" <?php if($end_hour == "19") echo "selected"; ?>>19</option>
+								            <option value="20" <?php if($end_hour == "20") echo "selected"; ?>>20</option>
+								            <option value="21" <?php if($end_hour == "21") echo "selected"; ?>>21</option>
+								            <option value="22" <?php if($end_hour == "22") echo "selected"; ?>>22</option>
+								            <option value="23" <?php if($end_hour == "23") echo "selected"; ?>>23</option>
+							            </select>:
+							            <select name="end_minute" id="session-end-minute-box" class="select-box">
+								            <option></option>
+								            <option value="00" <?php if($end_minute == "00") echo "selected"; ?>>00</option>
+								            <option value="15" <?php if($end_minute == "15") echo "selected"; ?>>15</option>
+								            <option value="30" <?php if($end_minute == "30") echo "selected"; ?>>30</option>
+								            <option value="45" <?php if($end_minute == "45") echo "selected"; ?>>45</option>
+							            </select>
+									</div>
 								</div>
 							</div>
 							
@@ -584,7 +586,17 @@
 								<span id="display-sessions">
 									<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
 										<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="window.location.href='edit_session?id=<?php echo $_GET['id'] ?>&session_id=<?php echo $session['session_id'] ?>'">
-											<div><span class="icon calendar"></span> <span class="dates"><?php { echo date("M j, Y", strtotime($session['start_date'])); if ($session['start_date'] != $session['end_date']) { echo " - ".date("M j, Y", strtotime($session['end_date']));} } ?></span></div>
+											<div><span class="icon calendar"></span> <span class="dates"><?php { 
+											if ($session['session_type'] == "Online - Self Learning") {
+												echo "Online";
+											}
+											else {
+												echo date("M j, Y", strtotime($session['start_date'])); 
+												if ($session['start_date'] != $session['end_date']) { 
+													echo " - ".date("M j, Y", strtotime($session['end_date']));
+												} 
+											}
+										} ?></span></div>
 										<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
 										<!-- <img src="../../images/lower-triangle.png" style="margin: 0px 0 -5px 234px;" /> -->
 										<div class="folded-corner"></div>

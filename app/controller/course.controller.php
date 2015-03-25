@@ -55,11 +55,12 @@ $search_sql = "
 		course_session.metro_name, course_session.cost, course_session.currency, course_session.start_date_time, course_session.end_date_time,
 		course_session.description, course_session.registration_url, course_session.session_type
 	FROM course_session
-	WHERE course_session.course_id = ? and course_session.active = 1 and course_session.start_date >= ?
+	WHERE (course_session.course_id = ? and course_session.active = 1 and course_session.start_date >= ? and course_session.session_type != 'Online - Self Learning')
+		OR (course_session.course_id = ? and course_session.active = 1 and course_session.session_type = 'Online - Self Learning')
 	ORDER BY start_date, metro_name";
 
 $get_results = $GLOBALS['_db']->prepare($search_sql);
-$get_results->execute(array($_GET["id"], date("Y-m-d")));
+$get_results->execute(array($_GET["id"], date("Y-m-d"), $_GET["id"]));
 
 
 $sessionList = array();
