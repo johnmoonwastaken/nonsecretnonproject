@@ -1,10 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
 <?php include 'header_required.php' ?>
 	<title>trainingful: edit course</title>
-
-	<link rel="import" href="../../bower_components/elements/session-edit-dialog.html">
 
 	<style>
 	.wrapper {
@@ -32,14 +31,11 @@
 	    transform: rotate(45deg); /* to 30 degrees (clockwise) */
 	}
 
-	#average-rating {
-		color:#aaa;
-		font-size:0.18em;
-		font-weight:400;
-		margin-left:12px;
-		margin-top:-5px;
+	#add_session {
+		margin-top: 5px;
+		text-align: center;
 	}
-	
+
 	#container2 {
 		clear:left;
 		float:left;
@@ -243,6 +239,9 @@
 	.category_box {
 		color: #444;
 		font-size: 0.8em;
+		border-top: none;
+		border-left: none;
+		border-right: none;
 	}
 
 	.edit-course-input {
@@ -253,6 +252,9 @@
 		font-weight: 400;
 		width: 49em;
 		max-width: 700px;
+		border-top: none;
+		border-left: none;
+		border-right: none;
 	}
 
 	.edit-course-name {
@@ -269,6 +271,9 @@
 		color: #666;
 		font-weight: 400;
 		width: 5em;
+		border-top: none;
+		border-left: none;
+		border-right: none;
 	}
 
 	.edit-course-text {
@@ -285,6 +290,7 @@
 		color: #000;
 		font-size: 0.8em;
 		padding-top:10px;
+		margin-bottom: 5px;
 	}
 
 	.folded-corner {
@@ -299,11 +305,24 @@
 	</style>
 
 	<script>
-	
+
 	window.addEventListener('polymer-ready', function(e) {
-		console.log('polymer-ready');
+		//console.log('polymer-ready');
 		document.getElementById('loading-sessions').style.display = "none";
 		document.getElementById('display-sessions').style.display = "inline";
+		var toast_action = <?php echo "\"" . $_GET['return'] . "\""; ?>;
+		if (toast_action == "saved") {
+			document.querySelector('#toast').text = "You session changes have been saved.";
+			document.querySelector('#toast').show()
+			}
+		else if (toast_action == "added") {
+			document.querySelector('#toast').text = "New session created.";
+			document.querySelector('#toast').show()
+		}
+		else if (toast_action == "cancel") {
+			document.querySelector('#toast').text = "You session changes have been discarded.";
+			document.querySelector('#toast').show()
+		}
 	});
 
 	<?php 
@@ -336,48 +355,6 @@
 	sessioninfo[<?php echo $session['session_id']; ?>] = {session_type: "<?php echo $session['session_type']; ?>", start_date: "<?php echo $session['start_date_formatted']; ?>", start_date_time: "<?php echo $session['start_date_time']; ?>", end_date: "<?php echo $session['end_date_formatted']; ?>", end_date_time: "<?php echo $session['end_date_time']; ?>", metro_name: "<?php echo $session['metro_name']; ?>", location: "<?php echo $session['location']; ?>", location_oneline: "<?php echo $session['location_oneline']; ?>", cost: "<?php echo $session['cost']; ?>", currency: "<?php echo $session['currency']; ?>", description: "<?php echo $session['description']; ?>"};
 	<?php endforeach; ?>
 	<?php endif ?>
-
-	function showSession(session_id) {
-		/*
-		if (sessioninfo[session_id].session_type != "-1") {
-			document.querySelector('#sed').classroom = sessioninfo[session_id].session_type +": ";
-		}
-
-		if (sessioninfo[session_id].description != "-1" && sessioninfo[session_id].description != "") {
-			document.querySelector('#sed').description = "<p>" + sessioninfo[session_id].description + "</p>";
-		}
-
-		if (sessioninfo[session_id].location != "-1" && sessioninfo[session_id].location != "") {
-			document.querySelector('#sed').location = "<p>" + sessioninfo[session_id].location + "</p>";
-		}
-		else if (sessioninfo[session_id].metro_name != "-1") {
-			document.querySelector('#sed').location = "<p>" + sessioninfo[session_id].metro_name + "</p>";
-		}
-		else {
-			document.querySelector('#sed').location = "";
-		}
-
-		if (sessioninfo[session_id].start_date != sessioninfo[session_id].end_date) {
-			document.querySelector('#sed').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong> to <strong>" + sessioninfo[session_id].end_date + "</strong>";
-		}
-		else {
-			document.querySelector('#sed').dates = "<strong>" + sessioninfo[session_id].start_date + "</strong>";
-		}
-
-		if (sessioninfo[session_id].start_date_time != "" && sessioninfo[session_id].end_date_time != "") {
-			document.querySelector('#sed').startendtime = "<strong>(" + sessioninfo[session_id].start_date_time + " - " + sessioninfo[session_id].end_date_time + ")</strong>";
-			}
-		document.querySelector('#sed').cost = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
-		
-		document.querySelector('#sed').sessionid = session_id;
-		*/
-		document.querySelector('#sed').toggle();
-		/*
-		if (sessioninfo[session_id].location_oneline != "-1" && sessioninfo[session_id].location_oneline != "" && sessioninfo[session_id].location_oneline != "+") {
-			document.querySelector('#sed').gmap = '<iframe width="470" height="150" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&q='+sessioninfo[session_id].location_oneline+'"></iframe>';
-		}
-		*/
-	}
 	</script>
 </head>
 <body>
@@ -468,13 +445,7 @@
 						</div>
 					</div>
 					<div class="3u" id="col2">
-					
-						<div id="vendor-image">
-							<img src="images/vendors/<?php if ($branding_url == '-1' || $branding_url == "") { echo 'trainingful-branding-140.gif'; } else echo $branding_url; ?>" class="company-logo">
-						</div>
-						<div id="vendor-name">
-							<strong><?php echo $vendor_name; ?></strong>
-						</div>
+
 						<ul id="info-tags">
 						<!--
 
@@ -483,17 +454,22 @@
 							<li><span class="icon price-tag"></span> <strong>Filed and Tagged</strong><br />
 							PMP, Project Management</li>
 						-->
+						<li><h2><?php echo $course_name ?></h2></li>
 						</ul>
 
 						<ul id="info-sessions">
+							<form id="add_session" action="edit_session" method="get">
+								<input type="hidden" value="<?php echo $course_id ?>" name="id">
+								<button type="submit" class="form-submit">Add Session</button>
+							</form>
 							<div style="padding:10px 0 10px 10px;border-bottom: 5px solid #4ca166;">
-								<span class="icon triangle-down"></span> <strong>Sessions</strong>
+								<span class="icon triangle-down"></span> <strong>Edit Sessions</strong>
 							</div>
 							<?php if(isset($_GET['id'])): ?>
 								<li id="loading-sessions">Loading course sessions... <img src="../../images/polymer-loader.gif" /></li>
 								<span id="display-sessions" style="display:none;">
 									<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
-										<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);">
+										<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="window.location.href='edit_session?id=<?php echo $_GET['id'] ?>&session_id=<?php echo $session['session_id'] ?>'">
 											<div><span class="icon calendar"></span> <span class="dates"><?php { echo date("M j, Y", strtotime($session['start_date'])); if ($session['start_date'] != $session['end_date']) { echo " - ".date("M j, Y", strtotime($session['end_date']));} } ?></span></div>
 										<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
 										<!-- <img src="../../images/lower-triangle.png" style="margin: 0px 0 -5px 234px;" /> -->
@@ -507,7 +483,7 @@
 					</div>
 					</div>
 				</div>
-				<session-edit-dialog id="sed" backdrop transition="paper-dialog-transition-bottom"></session-edit-dialog>
 			</div>
 		</div>
+		<paper-toast id="toast" text=""></paper-toast>
 </section>

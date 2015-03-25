@@ -259,7 +259,18 @@
 	var sessioninfo = [];
 
 	<?php foreach($sessionList as $session): ?>
-	sessioninfo[<?php echo $session['session_id']; ?>] = {session_type: "<?php echo $session['session_type']; ?>", start_date: "<?php echo $session['start_date_formatted']; ?>", start_date_time: "<?php echo $session['start_date_time']; ?>", end_date: "<?php echo $session['end_date_formatted']; ?>", end_date_time: "<?php echo $session['end_date_time']; ?>", metro_name: "<?php echo $session['metro_name']; ?>", city_name: "<?php echo $session['city_name']; ?>", suite: "<?php echo $session['suite']; ?>", street_address: "<?php echo $session['street_address']; ?>", cost: "<?php echo $session['cost']; ?>", currency: "<?php echo $session['currency']; ?>", description: "<?php echo $session['description']; ?>"};
+	sessioninfo[<?php echo $session['session_id']; ?>] = {session_type: "<?php echo $session['session_type']; ?>", 
+	start_date: "<?php echo $session['start_date_formatted']; ?>", 
+	start_date_time: "<?php echo $session['start_date_time']; ?>", 
+	end_date: "<?php echo $session['end_date_formatted']; ?>", 
+	end_date_time: "<?php echo $session['end_date_time']; ?>", 
+	metro_name: "<?php echo $session['metro_name']; ?>", 
+	city_name: "<?php echo $session['city_name']; ?>", 
+	suite: "<?php echo $session['suite']; ?>", 
+	street_address: "<?php echo $session['street_address']; ?>", 
+	cost: "<?php echo $session['cost']; ?>", 
+	currency: "<?php echo $session['currency']; ?>", 
+	description: "<?php echo $session['description']; ?>"};
 	<?php endforeach; ?>
 
 	function showSession(session_id) {

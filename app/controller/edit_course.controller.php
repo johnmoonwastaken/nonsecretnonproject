@@ -68,9 +68,8 @@ if (isset($_GET['id'])) {
 
 	// GETS ALL ASSOCIATED COURSE SESSIONS
 	$search_sql = "
-		SELECT course_session.session_id, course_session.start_date, course_session.end_date, course_session.city_name, course_session.suite,
-			course_session.metro_name, course_session.cost, course_session.currency, course_session.start_date_time, course_session.end_date_time,
-			course_session.description, course_session.registration_url, course_session.session_type, course_session.street_address
+		SELECT course_session.session_id, course_session.start_date, course_session.end_date,
+			course_session.metro_name, course_session.cost, course_session.currency, course_session.session_type
 		FROM course_session
 		WHERE course_session.course_id = ? and course_session.active = 1 and course_session.start_date >= ?
 		ORDER BY start_date, metro_name";
@@ -85,26 +84,10 @@ if (isset($_GET['id'])) {
 		$sessionList[$session_count]['session_id'] = $temp['session_id'];
 		$sessionList[$session_count]['start_date'] = $temp['start_date'];
 		$sessionList[$session_count]['start_date_formatted'] = date("D, M j, Y", strtotime($temp['start_date']));
-		if ($temp['start_date_time'] > 0) {
-			$sessionList[$session_count]['start_date_time'] = date("G:i", strtotime($temp['start_date_time']));
-		}
-		else {
-			$sessionList[$session_count]['start_date_time'] = "";
-		}
 		$sessionList[$session_count]['end_date'] = $temp['end_date'];
 		$sessionList[$session_count]['end_date_formatted'] = date("D, M j, Y", strtotime($temp['end_date']));
-		if ($temp['end_date_time'] > 0) {
-			$sessionList[$session_count]['end_date_time'] = date("G:i", strtotime($temp['end_date_time']));
-		}
-		else {
-			$sessionList[$session_count]['end_date_time'] = "";
-		}
-		$sessionList[$session_count]['suite'] = $temp['suite'];
-		$sessionList[$session_count]['street_address'] = $temp['street_address'];
-		$sessionList[$session_count]['city_name'] = $temp['city_name'];
 		$sessionList[$session_count]['metro_name'] = $temp['metro_name'];
 		$sessionList[$session_count]['currency'] = $temp['currency'];
-		$sessionList[$session_count]['description'] = preg_replace( "/\r\n|\r|\n/", "<br />", $temp['description']);
 		$sessionList[$session_count]['session_type'] = $temp['session_type'];
 		if ($currency == "USD" || "CAD" || "HKD" || "SGD") {
 			$sessionList[$session_count]['cost'] = "$" . number_format((float)$temp['cost'],2,'.','');

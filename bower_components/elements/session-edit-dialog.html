@@ -74,6 +74,14 @@
     padding: 2px 8px 2px 8px;
   }
 
+  .time-input {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+    font-size: 1.3em;
+    width: 65px;
+    color: #555555;
+    padding: 2px 8px 2px 8px;
+  }
+
   .year-input {
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
     font-size: 1.3em;
@@ -164,8 +172,8 @@
       <p>
       <div class="inputbox">
         <div class="explanation">Start and End Date*</div>
-        <input type="number" step="1" min="1" max="31" placeholder="dd" class="date-input">
-        <select name="session-type" id="session-type-box" class="month-input">
+        <input name="start_day" type="number" step="1" min="1" max="31" placeholder="dd" class="date-input">
+        <select name="start_month" id="session-type-box" class="month-input">
           <option value="1">Jan</option>
           <option value="2">Feb</option>
           <option value="3">Mar</option>
@@ -179,9 +187,9 @@
           <option value="11">Nov</option>
           <option value="12">Dec</option>
         </select>
-        <input type="number" step="1" min="2015" max="2020" placeholder="yyyy" class="year-input"> to
-         <input type="number" step="1" min="1" max="31" placeholder="dd" class="date-input">
-        <select name="session-type" id="session-type-box" class="month-input">
+        <input name="start_year" type="number" step="1" min="2015" max="2020" placeholder="yyyy" class="year-input"> to
+         <input name="end_day" type="number" step="1" min="1" max="31" placeholder="dd" class="date-input">
+        <select name="end_month" id="session-type-box" class="month-input">
           <option value="1">Jan</option>
           <option value="2">Feb</option>
           <option value="3">Mar</option>
@@ -195,12 +203,10 @@
           <option value="11">Nov</option>
           <option value="12">Dec</option>
         </select>
-        <input type="number" step="1" min="2015" max="2020" placeholder="yyyy" class="year-input">
+        <input name="end_year" type="number" step="1" min="2015" max="2020" placeholder="yyyy" class="year-input">
       </div>
       </p>
 
-      <p>
-      <div id="location-info-content" class="info-content">
         <div class="input-row">
           <div class="input-left">
             <div class="explanation">Start Time (optional)</div>
@@ -211,17 +217,17 @@
         </div>
         <div class="input-row">
           <div class="input-left">
-            <select name="session-type" id="session-type-box" class="date-input">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
+            <select name="session-type" id="session-type-box" class="time-input">
+              <option value="00">00</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
               <option value="10">10</option>
               <option value="11">11</option>
               <option value="12">12</option>
@@ -236,8 +242,8 @@
               <option value="21">21</option>
               <option value="22">22</option>
               <option value="23">23</option>
-            </select>:
-            <select name="session-type" id="session-type-box" class="date-input">
+            </select> :
+            <select name="session-type" id="session-type-box" class="time-input">
               <option value="00">00</option>
               <option value="15">15</option>
               <option value="30">30</option>
@@ -245,17 +251,17 @@
             </select>
           </div>
           <div>
-            <select name="session-type" id="session-type-box" class="date-input">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
+            <select name="session-type" id="session-type-box" class="time-input">
+              <option value="00">00</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
               <option value="10">10</option>
               <option value="11">11</option>
               <option value="12">12</option>
@@ -271,7 +277,7 @@
               <option value="22">22</option>
               <option value="23">23</option>
             </select>:
-            <select name="session-type" id="session-type-box" class="date-input">
+            <select name="session-type" id="session-type-box" class="time-input">
               <option value="00">00</option>
               <option value="15">15</option>
               <option value="30">30</option>
@@ -279,8 +285,6 @@
             </select>
           </div>
         </div>
-      </div>
-    </p>
 
       <p>
         <div class="explanation">Notes/Remarks (optional)</div>

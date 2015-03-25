@@ -214,16 +214,19 @@
 	</style>
 	<script>
 	window.addEventListener('polymer-ready', function(e) {
-		console.log('polymer-ready');
+		//console.log('polymer-ready');
 		var toast_action = <?php echo "\"" . $_GET['return'] . "\""; ?>;
 		if (toast_action == "saved") {
-			document.querySelector('#toast-saved').show()
+			document.querySelector('#toast').text = "You course changes have been saved.";
+			document.querySelector('#toast').show()
 			}
 		else if (toast_action == "added") {
-			document.querySelector('#toast-added').show()			
+			document.querySelector('#toast').text = "New course created. Remember to add sessions to make it active.";
+			document.querySelector('#toast').show()
 		}
 		else if (toast_action == "cancel") {
-			document.querySelector('#toast-discarded').show()			
+			document.querySelector('#toast').text = "You course changes have been discarded.";
+			document.querySelector('#toast').show()
 		}
 	});
 	</script>
@@ -339,7 +342,5 @@
 				</div>
 			</div>
 		</div>
-		<paper-toast id="toast-saved" text="You course changes have been saved."></paper-toast>
-		<paper-toast id="toast-added" text="New course created. Remember to add sessions to make it active."></paper-toast>
-		<paper-toast id="toast-discarded" text="You course changes have been discarded."></paper-toast>		
+		<paper-toast id="toast" text=""></paper-toast>
 	</section>
