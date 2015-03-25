@@ -17,10 +17,11 @@ $_SESSION['state'] = $state;
 	<link rel="stylesheet" href="css/signup.css">
 	<script>
 	window.addEventListener('polymer-ready', function(e) {
-		console.log('polymer-ready');
+		//console.log('polymer-ready');
 		var toast_action = <?php echo "\"" . $_GET['return'] . "\""; ?>;
 		if (toast_action == "cancelled") {
-			document.querySelector('#toast-cancelled').show()
+			document.querySelector('#toast').text = "Sign in cancelled.";
+			document.querySelector('#toast').show()
 			}
 	});
 	</script>
@@ -86,5 +87,5 @@ $_SESSION['state'] = $state;
 				</div>
 			</div>
 		</div>
-		<paper-toast id="toast-cancelled" text="Sign in cancelled."></paper-toast>
+		<paper-toast id="toast" text=""></paper-toast>
 	</section>
