@@ -1,5 +1,5 @@
 							<?php 
-							if ($_SERVER['REQUEST_URI'] == '/edit_account') { 
+							if (strpos($_SERVER['REQUEST_URI'],'/edit_account') !== FALSE) { 
 									echo '<li class="selected">'. $_SESSION['first_name'] . ' ' . $_SESSION['last_name'] .'</li>'; 
 								}
 								else {
@@ -7,7 +7,7 @@
 								}
 							if ($_SESSION['vendor_id'] != "-1") {
 								
-								if ($_SERVER['REQUEST_URI'] == '/edit_provider') { 
+								if (strpos($_SERVER['REQUEST_URI'],'/edit_provider') !== FALSE) { 
 									echo '<li class="selected">Provider Profile</li>'; 
 								}
 								else {
@@ -15,19 +15,19 @@
 								}
 								
 
-								if ($_SERVER['REQUEST_URI'] == '/manage_courses') { 
-									echo '<li class="selected">Courses</li>'; 
+								if (strpos($_SERVER['REQUEST_URI'],'/manage_courses') !== FALSE) { 
+									echo '<li class="selected">Manage Courses</li>'; 
 								}
 								else {
-									echo '<li><a href="manage_courses">Courses</a></li>';
+									echo '<li><a href="manage_courses">Manage Courses</a></li>';
 								}
 
 								/*
 								if ($_SERVER['REQUEST_URI'] == '/manage_conferences') { 
-									echo '<li class="selected">Conferences</li>'; 
+									echo '<li class="selected">Manage Conferences</li>'; 
 								}
 								else {
-									echo '<li><a href="manage_conferences">Conferences</a></li>';
+									echo '<li><a href="manage_conferences">Manage Conferences</a></li>';
 								}
 								*/
 							}

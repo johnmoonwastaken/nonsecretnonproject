@@ -104,41 +104,6 @@
 		background: #fff;
 	}
 	
-	#filters-accordion {
-		list-style: none;
-		width: 100%;
-		margin: 0;
-		padding: 5px 0 0;
-	}
-	
-	#filters-accordion li {
-		padding: 10px 5px;
-		margin: 0 10px;
-		color: #585858;
-		font-size: 0.85em;
-		border-top: 1px solid #d7d7d7;
-	}
-	
-	#filters-accordion li:first-child {
-		border-top: 0;
-	}
-
-	#filters-accordion li.selected {
-		background-color: #eee;
-	}
-
-	#filters-accordion > li > a {
-		color: #585858;
-	}
-	
-	#filters-accordion > li > a:hover {
-		text-decoration: none;
-	}
-	
-	#filters-accordion > li > a > .icon {
-		margin-right: 3px;
-	}
-	
 	#edit-course-list {
 		list-style: none;
 		margin: 0;
@@ -191,6 +156,41 @@
 		font-size: 1.6em;
 	}
 
+	#filters-accordion {
+		list-style: none;
+		width: 100%;
+		margin: 0;
+		padding: 5px 0 0;
+	}
+	
+	#filters-accordion li {
+		padding: 10px 5px;
+		margin: 0 10px;
+		color: #585858;
+		font-size: 0.85em;
+		border-top: 1px solid #d7d7d7;
+	}
+	
+	#filters-accordion li:first-child {
+		border-top: 0;
+	}
+
+	#filters-accordion li.selected {
+		background-color: #eee;
+	}
+
+	#filters-accordion > li > a {
+		color: #585858;
+	}
+	
+	#filters-accordion > li > a:hover {
+		text-decoration: none;
+	}
+	
+	#filters-accordion > li > a > .icon {
+		margin-right: 3px;
+	}
+
 	.edit-course-input {
 		padding-left: 5px;
 		margin: 0;
@@ -199,12 +199,17 @@
 		font-weight: 400;
 		width: 49em;
 		max-width: 700px;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: 2px solid #ddd;
 	}
 
 	.explanation {
 		color: #000;
 		font-size: 0.8em;
 		padding-top:10px;
+		padding-bottom: 5px;
 	}
 	</style>
 	<script>
@@ -212,10 +217,12 @@
 		console.log('polymer-ready');
 		var toast_action = <?php echo "\"" . $_GET['return'] . "\""; ?>;
 		if (toast_action == "saved") {
-			document.querySelector('#toast-saved').show()
+			document.querySelector('#toast').text = "Your account changes have been saved.";
+			document.querySelector('#toast').show()
 			}
 		else if (toast_action == "cancel") {
-			document.querySelector('#toast-discarded').show()			
+			document.querySelector('#toast').text = "Your account changes have been discarded.";
+			document.querySelector('#toast').show()
 		}
 	});
 	</script>
@@ -260,11 +267,11 @@
 					<div class="9u">
 						<h2>Profile</h2>
 						<form id="save_account" action="save_account" method="post">
-							<div class="explanation">E-mail</div>
-							<input type="email" id="email" name="email" placeholder="abc@xyz.com" class="edit-course-input" value="<?php echo $email; ?>" maxlength="255">
+							<div class="explanation">E-mail*</div>
+							<input type="email" id="email" name="email" placeholder="e.g. abc@xyz.com" class="edit-course-input" value="<?php echo $email; ?>" maxlength="255" required>
 
-							<div class="explanation">Phone Number</div>
-							<input type="text" id="phone" name="phone" placeholder="1-234-567-8900" class="edit-course-input" value="<?php echo $phone; ?>" maxlength="32">
+							<div class="explanation">Phone Number*</div>
+							<input type="text" id="phone" name="phone" placeholder="e.g. 1-234-567-8900" class="edit-course-input" value="<?php echo $phone; ?>" maxlength="32" required>
 
 
 							<div class="row 25% uniform" style="text-align:right;margin: 0px 32px 10px 0px;">
@@ -283,6 +290,5 @@
 				</div>
 			</div>
 		</div>
-		<paper-toast id="toast-saved" text="You account changes have been saved."></paper-toast>
-		<!-- <paper-toast id="toast-discarded" text="You account changes have been discarded."></paper-toast> -->
+		<paper-toast id="toast" text=""></paper-toast>
 	</section>

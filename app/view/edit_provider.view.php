@@ -3,7 +3,7 @@
 <head>
 <link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
 <?php include 'header_required.php' ?>
-	<title>trainingful: edit courses</title>
+	<title>trainingful: provider account</title>
 	
 	<style>
 	#main-section {
@@ -191,41 +191,42 @@
 		font-size: 1.6em;
 	}
 
-	.smaller-button {
-		margin-top: 10px;
-		margin-left: 45px;
-		margin-bottom: 10px;
-		height: 35px;
-		width: 120px;
-		padding: 5px 10px 5px 10px;
-		font-size: 1em;
+	.edit-course-input {
+		padding-left: 5px;
+		margin: 0;
+		font-size: 0.9em;
+		color: #666;
+		font-weight: 400;
+		width: 49em;
+		max-width: 700px;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: 2px solid #ddd;
 	}
-	
-	.course-row {
-		border-right:1px dotted #d7d7d7;
+
+	.explanation {
+		color: #000;
+		font-size: 0.8em;
+		padding-top: 10px;
+		padding-bottom: 5px;
 	}
-	.unpadded {
-		padding-left:0;
-		text-align: center;
-	}
-	.double-height {
-		line-height: 2.8em;
+
+	.textbox {
+		padding: 0px 3px 0px 3px;
+		color: #444;
 	}
 	</style>
 	<script>
 	window.addEventListener('polymer-ready', function(e) {
-		//console.log('polymer-ready');
+		console.log('polymer-ready');
 		var toast_action = <?php echo "\"" . $_GET['return'] . "\""; ?>;
 		if (toast_action == "saved") {
-			document.querySelector('#toast').text = "Your course changes have been saved.";
+			document.querySelector('#toast').text = "Your account changes have been saved.";
 			document.querySelector('#toast').show()
 			}
-		else if (toast_action == "added") {
-			document.querySelector('#toast').text = "New course created. Remember to add sessions to make it active.";
-			document.querySelector('#toast').show()
-		}
 		else if (toast_action == "cancel") {
-			document.querySelector('#toast').text = "Your course changes have been discarded.";
+			document.querySelector('#toast').text = "Your account changes have been discarded.";
 			document.querySelector('#toast').show()
 		}
 	});
@@ -241,28 +242,17 @@
 		<div class="container">
 		
 			<div id="query-summary-bar" class="container">
-				<h1>Edit Courses</h1>
+				<h1>Provider Account</h1>
 			</div>
 			
 			<div id="search-control-bar" class="container">
 				<div class="row">
 					<div class="3u">
-					<?php  	$page = 1;
-						$shown = 50;
-						if ($_GET['page'] != "") {
-							$page = $_GET['page'];
-						}
-						$upto = $page * $shown;
-						if ($upto > $totalResults)
-						{
-							$upto = $totalResults;
-						} ?>
-						<h4 id="results-counter"><!--Filter--> Showing <?php echo ($page -1) * $shown + 1; ?>-<?php echo $upto; ?> of <?php echo $totalResults; ?> results</h4>
+						<h4 id="results-counter"><?php echo $vendor_name ?></h4>
 					</div>
 					<div class="9u">
 						<ul id="type-switcher">
-							<!--<li class="active"><span class="tick"></span><a href="#">All Training</a></li>-->
-							
+							<!--<li class="active"><span class="tick"></span><a href="#">All Training</a></li>-->							
 							<li class="active"><span class="tick"></span><a href="#">Courses</a></li>
 							<!--<li><span class="tick"></span><a href="#">Conferences</a></li>
 							-->
@@ -280,64 +270,31 @@
 						</ul>
 					</div>
 					<div class="9u">
-							<div class="row 25% uniform" style="float:right;margin: 0px 10px 10px 0px;">
+						<h2>Provider Profile</h2>
+						<form id="save_account" action="save_provider" method="post">
+							<div class="explanation">Provider Name*</div>
+							<input type="text" id="name" name="vendor_name" placeholder="Name" class="edit-course-input" value="<?php echo $vendor_name; ?>" maxlength="255" required>
+
+							<div class="explanation">E-mail*</div>
+							<input type="email" id="email" name="contact_email" placeholder="abc@xyz.com" class="edit-course-input" value="<?php echo $contact_email; ?>" maxlength="255" required>
+
+							<div class="explanation">Phone Number*</div>
+							<input type="text" id="phone" name="contact_number" placeholder="1-234-567-8900" class="edit-course-input" value="<?php echo $contact_number; ?>" maxlength="32" required>
+
+							<div class="explanation">Website (optional)</div>
+							<input type="text" id="url" name="website_url" placeholder="Name" class="edit-course-input" value="<?php echo $website_url; ?>" maxlength="255">
+
+							<div class="explanation">Description (optional)</div>
+							<textarea id="description" name="description" placeholder="Session notes/remarks" rows="6" cols="85" class="textbox"><?php echo $description ?></textarea>
+
+							<div class="explanation">Mailing Address (optional)</div>
+							<textarea id="mailing-address" name="mailing_address" placeholder="Session notes/remarks" rows="4" cols="35" class="textbox"><?php echo $mailing_address ?></textarea>
+							<div class="row 25% uniform" style="text-align:right;margin: 0px 32px 10px 0px;">
 								<div class="12u">
-									<button type="button" class="form-submit" onClick="parent.location='edit_course'">Add Course</button>
+									<button type="submit" class="form-submit">Save Changes</button>
 								</div>
 							</div>
-						<ul id="edit-course-list">
-							<li>
-								<div class="row" style="font-size:0.8em;padding-left:0;text-align:center">
-									<div class="10u course-row double-height">Course Name</div>
-									<div class="1u course-row unpadded">Active Sessions</div>
-									<div class="1u unpadded double-height">Edit</div>
-								</div>
-							</li>
-							<?php if (is_array($courseList) and $totalResults > 0) { for($i = ($page - 1) * $shown; $i < $upto; ++$i): ?>
-							<!--
-								<div class="result-rating">
-									<span class="rating s4" title="4 stars"></span>
-								</div>
-							-->
-								<a href="edit_course?id=<?php echo $courseList[$i]['course_id'] ?>">
-									<li>
-										<div class="row">
-											<div class="10u course-row">
-												<?php echo $courseList[$i]['course_name'] ?>
-											</div>
-											<div class="1u course-row unpadded">
-												<?php echo $courseList[$i]['active_sessions'] ?>
-											</div>
-											<div class="1u unpadded">
-												<span class="icon chevron-right"></span>
-											</div>
-										</div>
-									</li>
-								</a>
-								
-							<?php endfor; } else echo "<li>Get listed now: Add Course, then add your course Sessions.</li>";?>
-						</ul>
-						<div class="row">
-							<div class="6u">&nbsp;
-								<?php 
-									if ($page > 1) { 
-										if ($_GET['category'] != "") {
-											echo '<a href="search?category=' . $_GET['category'] . '&page=' . ($page-1) . '">< Previous Page </a>';
-										}
-										else echo '<a href="search?keywords=' . $keywords . '&start=' . $start . '&end=' . $end . '&location=' . $location . '&page=' . ($page-1) . '">< Previous Page</a>'; 
-									} ?>
-							</div>
-							<div class="6u" style="text-align:right;">
-								<?php
-									if ($totalResults > $upto) { 
-										if ($_GET['category'] != "") {
-											echo '<a href="search?category=' . $_GET['category'] . '&page=' . ($page+1) . '">Next Page > </a>';
-										}
-										else echo '<a href="search?keywords=' . $keywords . '&start=' . $start . '&end=' . $end . '&location=' . $location . '&page=' . ($page+1) . '">Next Page > </a>'; 
-									} ?>
-								&nbsp;
-							</div>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>

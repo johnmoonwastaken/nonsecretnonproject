@@ -319,7 +319,7 @@
 		document.getElementById('display-sessions').style.display = "inline";
 		var toast_action = <?php echo "\"" . $_GET['return'] . "\""; ?>;
 		if (toast_action == "saved") {
-			document.querySelector('#toast').text = "You session changes have been saved.";
+			document.querySelector('#toast').text = "Your session changes have been saved.";
 			document.querySelector('#toast').show()
 			}
 		else if (toast_action == "added") {
@@ -327,7 +327,7 @@
 			document.querySelector('#toast').show()
 		}
 		else if (toast_action == "cancel") {
-			document.querySelector('#toast').text = "You session changes have been discarded.";
+			document.querySelector('#toast').text = "Your session changes have been discarded.";
 			document.querySelector('#toast').show()
 		}
 	});
