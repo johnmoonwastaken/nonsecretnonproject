@@ -204,18 +204,20 @@
 		border-right: none;
 		border-bottom: 2px solid #ddd;
 	}
-
+	.description {
+		max-width: 700px;
+	}
 	.explanation {
 		color: #000;
 		font-size: 0.8em;
 		padding-top: 10px;
 		padding-bottom: 5px;
 	}
-
 	.textbox {
 		padding: 0px 3px 0px 3px;
 		color: #444;
 	}
+
 	</style>
 	<script>
 	window.addEventListener('polymer-ready', function(e) {
@@ -285,7 +287,7 @@
 							<input type="text" id="url" name="website_url" placeholder="Name" class="edit-course-input" value="<?php echo $website_url; ?>" maxlength="255">
 
 							<div class="explanation">Description (optional)</div>
-							<textarea id="description" name="description" placeholder="Session notes/remarks" rows="6" cols="85" class="textbox"><?php echo $description ?></textarea>
+							<textarea id="description" name="description" placeholder="Session notes/remarks" rows="6" cols="85" class="textbox description"><?php echo $description ?></textarea>
 
 							<div class="explanation">Mailing Address (optional)</div>
 							<textarea id="mailing-address" name="mailing_address" placeholder="Session notes/remarks" rows="4" cols="35" class="textbox"><?php echo $mailing_address ?></textarea>

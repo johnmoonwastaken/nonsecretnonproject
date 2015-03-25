@@ -230,6 +230,7 @@
 		border-top: none;
 		border-right: none;
 		border-left: none;
+		border-bottom: 2px solid #ddd;
 	}
 
 	.explanation {
