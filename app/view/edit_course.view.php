@@ -3,7 +3,7 @@
 <head>
 <link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
 <?php include 'header_required.php' ?>
-	<title>trainingful: edit course</title>
+	<title>trainingful: <?php if($_GET['id'] == "") { echo "add"; } else { echo "edit"; } ?> course</title>
 
 	<style>
 	.wrapper {
@@ -302,6 +302,10 @@
 		margin:0 0 -1px 234px;
 		-webkit-transform: rotate(360deg);
 	}
+
+	.preview {
+		margin-top: 10px;
+	}
 	</style>
 
 	<script>
@@ -348,6 +352,16 @@
 		});
 	});
 
+	function updateVideo() {
+		var vu = document.getElementById('video_url').value;
+		if (vu) {
+			document.getElementById('video_preview').innerHTML = '<iframe width="640" height="362" src="'+vu+'"></iframe>';
+		}
+		else {
+			document.getElementById('video-preview').innerHTML = '';
+		}
+	}
+
 	var sessioninfo = [];
 
 	<?php if(isset($_GET['id'])): ?>
@@ -366,7 +380,7 @@
 	<section id="main-section">
 		<div class="container" id="main-container">
 			<div id="query-summary-bar" class="container">
-				<h1>Edit Course Details</h1>
+				<h1><?php if($_GET['id'] == "") { echo "Add Course"; } else { echo "Edit Course Details"; } ?></h1>
 				<a href="/manage_courses"><small>(<strong>Back to courses</strong>)</small></a>
 			</div>
 			<div id="main-content">
@@ -426,7 +440,9 @@
 
 							<h2>Media and Links</h2>
 							<div class="explanation">Video URL (optional, e.g. https://www.youtube.com/embed/XYZ123XYZ123)</div>
-							<input type="text" id="video_url" name="video_url" placeholder="Embed URL of video or direct URL to video file" class="edit-course-input" value="<?php echo $course_video_url; ?>" maxlength="255">
+							<input type="text" id="video_url" name="video_url" placeholder="Embed URL of video or direct URL to video file" class="edit-course-input" value="<?php echo $course_video_url; ?>" maxlength="255" onchange="updateVideo();">
+
+							<div class="preview" id="video_preview"></div>
 
 							<div class="explanation">Course URL (optional)</div>
 							<input type="text" id="course_url" name="course_url" placeholder="Direct URL to Course Info on Your Website" class="edit-course-input" value="<?php echo $course_url; ?>" maxlength="255">
@@ -445,7 +461,7 @@
 						</div>
 					</div>
 					<div class="3u" id="col2">
-
+						<?php if($_GET['id'] != ""): ?>
 						<ul id="info-tags">
 						<!--
 
@@ -458,6 +474,7 @@
 						</ul>
 
 						<ul id="info-sessions">
+							
 							<form id="add_session" action="edit_session" method="get">
 								<input type="hidden" value="<?php echo $course_id ?>" name="id">
 								<button type="submit" class="form-submit">Add Session</button>
@@ -465,6 +482,7 @@
 							<div style="padding:10px 0 10px 10px;border-bottom: 5px solid #4ca166;">
 								<span class="icon triangle-down"></span> <strong>Edit Sessions</strong>
 							</div>
+
 							<?php if(isset($_GET['id'])): ?>
 								<li id="loading-sessions">Loading course sessions... <img src="../../images/polymer-loader.gif" /></li>
 								<span id="display-sessions" style="display:none;">
@@ -480,6 +498,7 @@
 							<?php endif ?>
 						</ul>
 					</div>
+					<?php endif ?>
 					</div>
 					</div>
 				</div>
