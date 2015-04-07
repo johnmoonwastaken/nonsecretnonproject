@@ -269,7 +269,8 @@
 	suite: "<?php echo $session['suite']; ?>", 
 	street_address: "<?php echo $session['street_address']; ?>", 
 	cost: "<?php echo $session['cost']; ?>", 
-	currency: "<?php echo $session['currency']; ?>", 
+	currency: "<?php echo $session['currency']; ?>",
+	registration_url: "<?php echo $session['registration_url']; ?>",
 	description: "<?php echo $session['description']; ?>"};
 	<?php endforeach; ?>
 
@@ -311,6 +312,13 @@
 				location_string = location_string + sessioninfo[session_id].metro_name + "</p>";
 			}
 			document.querySelector('#sad').location = location_string;
+		}
+
+		if (sessioninfo[session_id].registration_url != "-1" && sessioninfo[session_id].registration_url != "") {
+			document.querySelector('#sad').courseurl = "<img src='/images/extlink.png' height='10' width='10' style='margin-right:5px;'><a href='/external_redirect?url="+sessioninfo[session_id].registration_url+"&session_id="+session_id+"' target='_blank'>External Website</a>";
+		}
+		else {
+			document.querySelector('#sad').courseurl = "<img src='/images/extlink.png' height='10' width='10' style='margin-right:5px;'><a href='/external_redirect?url="+"<?php echo $course_url; ?>"+"&session_id="+session_id+"' target='_blank'>External Website</a>";
 		}
 
 		document.querySelector('#sad').cost = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;

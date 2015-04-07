@@ -3,7 +3,7 @@ include 'session_settings.php';
 $search_sql = "
 	SELECT course.vendor_id, course.course_name, course.course_description, course.avg_rating, 
 		categories.category_name, categories.parent_category_id, course.benefits, course.prereqs,
-		course.designation, course.video_url, course.audience,
+		course.designation, course.video_url, course.audience, course.course_url, course.registration_url, 
 		vendor.vendor_name, vendor.branding_url, vendor.contact_email, vendor.website_url, vendor.contact_number
 	FROM course
 	LEFT JOIN categories
@@ -24,6 +24,12 @@ $course_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $course_name = $course_result['course_name'];
 $course_description = nl2br($course_result['course_description']);
 $course_avg_rating = $course_result['course_rating'];
+if (isset($course_result['course_registration_url']) && $course_result['course_registration_url'] != "-1") {
+	$course_url = $course_result['course_registration_url'];
+}
+else {
+	$course_url = $course_result['course_url'];
+}
 $benefits = $course_result['benefits'];
 $prereqs = $course_result['prereqs'];
 $designation = $course_result['designation'];
@@ -88,6 +94,7 @@ foreach ($get_results as $temp) {
 	$sessionList[$session_count]['city_name'] = $temp['city_name'];
 	$sessionList[$session_count]['metro_name'] = $temp['metro_name'];
 	$sessionList[$session_count]['currency'] = $temp['currency'];
+	$sessionList[$session_count]['registration_url'] = $temp['registration_url'];
 	$sessionList[$session_count]['description'] = preg_replace( "/\r\n|\r|\n/", "<br />", $temp['description']);
 	$sessionList[$session_count]['session_type'] = $temp['session_type'];
 	if ($currency == "USD" || "CAD" || "HKD" || "SGD") {
@@ -99,7 +106,7 @@ foreach ($get_results as $temp) {
 	$session_count++;
 }
 
-$templateFields = array('course_name' => $course_name, 'course_description' =>  $course_description, 
+$templateFields = array('course_name' => $course_name, 'course_description' =>  $course_description, 'course_url' => $course_url,
 	'course_rating' => $course_rating, 'vendor_name' => $vendor_name, 'branding_url' => $branding_url, 'sessionList' => $sessionList, 
 	'vendor_contact_number' => $vendor_contact_number, 'vendor_contact_email' => $vendor_contact_email, 'vendor_website_url' => $vendor_website_url,
 	'category_name' => $category_name, 'parent_category_name' => $parent_category_name, 'video_url' => $video_url,

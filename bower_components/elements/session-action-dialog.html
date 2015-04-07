@@ -5,8 +5,6 @@
 <link href="paper-action-dialog.html" rel="import">
 <link rel="import" href="../juicy-html/juicy-html.html">
 
-<!-- <link rel="import" href="../google-map/google-map.html"> -->
-
 <polymer-element name="session-action-dialog" extends="paper-dialog-base" role="dialog" layout vertical>
 
 <template>
@@ -126,9 +124,11 @@
 			
 	</div>
 	<div class="info-header">
-		<p><h4>Register</h4></p>
+		<h4>Register</h4>
 	</div>
+    <span style="font-size:0.8em;"><template is="juicy-html" content="{{ courseurl }}"></template></span>
 
+  <!--
 	<form id="register_form" is="ajax-form" action="/register_session" method="post">
 		<div id="rf_row1">
 			<div class="input-left">
@@ -150,6 +150,7 @@
 		<input type="hidden" id="ip_address" name="ip_address" value="{{ipaddress}}">
 		<input type="hidden" id="action_time" name="action_time" value="{{actiontime}}">
 	</form>
+  -->
 
     <content select=":not([affirmative]):not([dismissive])"></content>
   </div>
@@ -168,10 +169,13 @@
     <div id="close_button" style="display:none;">
     	<paper-button dismissive on-tap="{{cancelForm}}">Close</paper-button>
     </div>
+    
     <div id="register_buttons">
     	<paper-button dismissive on-tap="{{cancelForm}}">Cancel</paper-button>
+      <!--
     	<paper-button affirmative hover on-tap="{{submitForm}}">Register</paper-button>
-    </div>
+      -->
+    </div>    
   </div>
 
 </template>
@@ -187,6 +191,7 @@
   	location: "",
   	vendorname: "",
   	vendorurl: "",
+    courseurl: "",
   	vendoremail: "",
   	vendorcontact: "",
   	sessionid: "",
