@@ -107,8 +107,19 @@ foreach ($get_results as $temp) {
 }
 
 if ($_GET['category']) {
+	$search_sql = "
+			SELECT p.category_name as primary_name, c.category_name as secondary_name from categories c
+			INNER JOIN categories p
+			ON p.category_id = c.parent_category_id
+			WHERE c.category_id = ?";	
+		$get_results = $GLOBALS['_db']->prepare($search_sql);
+		$get_results->execute(array($_GET['category']));
+		$category_result = $get_results->fetch(PDO::FETCH_ASSOC);
+		$parent_category_name = $category_result['primary_name'];
+		$category_name = $category_result['secondary_name'];
+		
 	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count + 1,
-		'category_id' => $_GET['category_id']);
+		'category_id' => $_GET['category'], 'parent_category_name' => $parent_category_name, 'category_name' => $category_name);
 }
 else {
 	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count + 1,

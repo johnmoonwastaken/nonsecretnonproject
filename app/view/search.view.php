@@ -333,6 +333,7 @@
 				<p>In <strong><?php if (empty($location)) { $location = "Everywhere"; echo "Everywhere"; } else echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
 				<?php else: ?>
 					<h1>Explore Categories</h1>
+					<p>In <strong><?php echo $parent_category_name . " - " . $category_name; ?></strong> <small>(<a href="/categories">Change Category</a>)</small></p>
 				<?php endif; ?>
 			</div>
 			
