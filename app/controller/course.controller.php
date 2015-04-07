@@ -45,6 +45,19 @@ $category_name = $course_result['category_name'];
 $parent_category_id = $course_result['parent_category_id'];
 $parent_category_name = "";
 
+$tags = array();
+$tags_sql = "SELECT tag_name
+	FROM tag
+	LEFT JOIN course_tags
+	ON course_tags.tag_id = tag.tag_id
+	WHERE course_tags.course_id = ?
+	ORDER BY tag_name asc";
+$get_results = $GLOBALS['_db']->prepare($tags_sql);
+$get_results->execute(array($_GET["id"]));
+foreach ($get_results as $temp) {
+	array_push($tags, $temp['tag_name']);
+}
+
 if ($parent_category_id != -1) {
 	$search_sql = "
 		SELECT category_name
@@ -106,7 +119,7 @@ foreach ($get_results as $temp) {
 	$session_count++;
 }
 
-$templateFields = array('course_name' => $course_name, 'course_description' =>  $course_description, 'course_url' => $course_url,
+$templateFields = array('course_name' => $course_name, 'course_description' =>  $course_description, 'course_url' => $course_url, 'tags' => $tags,
 	'course_rating' => $course_rating, 'vendor_name' => $vendor_name, 'branding_url' => $branding_url, 'sessionList' => $sessionList, 
 	'vendor_contact_number' => $vendor_contact_number, 'vendor_contact_email' => $vendor_contact_email, 'vendor_website_url' => $vendor_website_url,
 	'category_name' => $category_name, 'parent_category_name' => $parent_category_name, 'video_url' => $video_url,

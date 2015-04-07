@@ -2,7 +2,7 @@
 <html>
 <head>
 <?php include 'header_required.php' ?>
-	<title>trainingful</title>
+	<title><?php echo $course_name; ?></title>
 
 	<link rel="import" href="../../bower_components/elements/session-action-dialog.html">
 	<link rel="import" href="../../bower_components/elements/review-action-dialog.html">
@@ -414,9 +414,10 @@
 
 							<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
 							30 PDU towards PMP </li>
-							<li><span class="icon price-tag"></span> <strong>Filed and Tagged</strong><br />
-							PMP, Project Management</li>
 						-->
+							<li><span class="icon price-tag"></span> <strong>Filed and Tagged</strong><br />
+							<?php echo implode(", ", $tags); ?>
+							</li>
 						</ul>
 
 						<ul id="info-sessions">
