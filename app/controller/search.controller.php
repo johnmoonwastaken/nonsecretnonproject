@@ -44,7 +44,7 @@ elseif ($_GET['tag']) {
 		WHERE tag.tag_name LIKE ? and course_session.active = 1 and (course_session.start_date > ?  OR course_session.session_type = 'Online - Self Learning') " . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
-	$get_results->execute(array("%".$_GET['tag']."%", date('Y-m-d')));
+	$get_results->execute(array("%".($_GET['tag'])."%", date('Y-m-d')));
 }
 else {
 	$search_sql = "

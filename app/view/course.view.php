@@ -424,7 +424,7 @@
 									if ($count != 0) {
 										echo ", ";
 									}
-									echo "<a href='search?tag=".$tag."'>".$tag."</a>";
+									echo "<a href='search?tag=".urlencode($tag)."'>".$tag."</a>";
 									$count++;
 								}
 							?>
