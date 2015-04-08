@@ -48,7 +48,7 @@ elseif ($_GET['tag']) {
 }
 else {
 	$search_sql = "
-		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
+		SELECT DISTINCT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
 				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
 				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type, (MATCH (course_name) AGAINST (? IN NATURAL LANGUAGE MODE)) as title_relevance,
 				(MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE)) as tag_relevance
@@ -65,6 +65,7 @@ else {
 		or (MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE)))
 		and course_session.active = 1 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type LIKE '%Online%')
 			and (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?)" . $min_sql . $max_sql . "
+		GROUP BY course_session.session_id
 		ORDER BY title_relevance desc, tag_relevance desc, verified, course_name, course_id, start_date, course.click_count";
 
 	$search_location = $_GET['location'];
