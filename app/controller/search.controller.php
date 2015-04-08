@@ -22,7 +22,7 @@ if ($_GET['category']) {
 		ON course.vendor_id = vendor.vendor_id
 		LEFT JOIN categories
 		ON course.category_id = categories.category_id
-		WHERE course.category_id = ? and course_session.active = 1 and (course_session.start_date > ?  OR course_session.session_type = 'Online - Self Learning') " . $min_sql . $max_sql . "
+		WHERE course.category_id = ? and course_session.active = 1 and (course_session.start_date > ?  OR course_session.session_type LIKE '%Online%') " . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($_GET['category'], date('Y-m-d')));
@@ -41,7 +41,7 @@ elseif ($_GET['tag']) {
 		ON course.course_id = course_tags.course_id
 		LEFT JOIN tag
 		ON tag.tag_id = course_tags.tag_id
-		WHERE tag.tag_name LIKE ? and course_session.active = 1 and (course_session.start_date > ?  OR course_session.session_type = 'Online - Self Learning') " . $min_sql . $max_sql . "
+		WHERE tag.tag_name LIKE ? and course_session.active = 1 and (course_session.start_date > ?  OR course_session.session_type LIKE '%Online%') " . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array("%".($_GET['tag'])."%", date('Y-m-d')));
@@ -56,7 +56,11 @@ else {
 		ON course.course_id = course_session.course_id
 		LEFT JOIN vendor
 		ON course.vendor_id = vendor.vendor_id
-		WHERE course_name LIKE ? and course_session.active = 1 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type = 'Online - Self Learning')
+		LEFT JOIN course_tags
+		ON course.course_id = course_tags.course_id
+		LEFT JOIN tag
+		ON tag.tag_id = course_tags.tag_id
+		WHERE (course_name LIKE ? or tag.tag_name LIKE ?) and course_session.active = 1 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type LIKE '%Online%')
 			and (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?)" . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 
@@ -70,7 +74,7 @@ else {
 		$search_location = '';
 	}
 
-	$get_results->execute(array("%".$_GET["keywords"]."%",$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
+	$get_results->execute(array("%".$_GET["keywords"]."%","%".$_GET["keywords"]."%",$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
 
 	$save_search_sql = "
 		INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name) VALUES (?, ?, ?, ?, ?)";
