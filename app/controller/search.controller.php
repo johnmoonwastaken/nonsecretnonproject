@@ -62,7 +62,7 @@ else {
 		LEFT JOIN tag
 		ON tag.tag_id = course_tags.tag_id
 		WHERE (MATCH (course_name) AGAINST (? IN NATURAL LANGUAGE MODE)
-		or MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE))
+		xor MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE))
 		and course_session.active = 1 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type LIKE '%Online%')
 			and (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?)" . $min_sql . $max_sql . "
 		ORDER BY title_relevance desc, tag_relevance desc, verified, course_name, course_id, start_date, course.click_count";
