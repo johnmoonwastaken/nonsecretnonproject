@@ -27,6 +27,25 @@ if ($_GET['category']) {
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($_GET['category'], date('Y-m-d')));
 }
+elseif ($_GET['tag']) {
+	$search_sql = "
+		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
+				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
+				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type
+		FROM course
+		LEFT JOIN course_session
+		ON course.course_id = course_session.course_id
+		LEFT JOIN vendor
+		ON course.vendor_id = vendor.vendor_id
+		LEFT JOIN course_tags
+		ON course.course_id = course_tags.course_id
+		LEFT JOIN tag
+		ON tag.tag_id = course_tags.tag_id
+		WHERE tag.tag_name LIKE ? and course_session.active = 1 and (course_session.start_date > ?  OR course_session.session_type = 'Online - Self Learning') " . $min_sql . $max_sql . "
+		ORDER BY verified, course_name, course_id, start_date, course.click_count";
+	$get_results = $GLOBALS['_db']->prepare($search_sql);
+	$get_results->execute(array("%".$_GET['tag']."%", date('Y-m-d')));
+}
 else {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
@@ -117,7 +136,7 @@ if ($_GET['category']) {
 		$category_result = $get_results->fetch(PDO::FETCH_ASSOC);
 		$parent_category_name = $category_result['primary_name'];
 		$category_name = $category_result['secondary_name'];
-		
+
 	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count + 1,
 		'category_id' => $_GET['category'], 'parent_category_name' => $parent_category_name, 'category_name' => $category_name);
 }

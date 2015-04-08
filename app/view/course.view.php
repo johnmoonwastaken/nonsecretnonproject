@@ -417,8 +417,17 @@
 							<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
 							30 PDU towards PMP </li>
 						-->
-							<li><span class="icon price-tag"></span> <strong>Filed and Tagged</strong><br />
-							<?php echo implode(", ", $tags); ?>
+							<li><span class="icon price-tag"></span> <strong>Tags</strong><br />
+							<?php
+								$count = 0;
+								foreach($tags as $tag) {
+									if ($count != 0) {
+										echo ", ";
+									}
+									echo "<a href='search?tag=".$tag."'>".$tag."</a>";
+									$count++;
+								}
+							?>
 							</li>
 						</ul>
 
