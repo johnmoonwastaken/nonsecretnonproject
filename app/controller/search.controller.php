@@ -50,7 +50,8 @@ else {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
 				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
-				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type
+				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type, (MATCH (course_name) AGAINST (? IN NATURAL LANGUAGE MODE)) as title_relevance,
+				(MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE)) as tag_relevance
 		FROM course
 		LEFT JOIN course_session
 		ON course.course_id = course_session.course_id
@@ -60,9 +61,11 @@ else {
 		ON course.course_id = course_tags.course_id
 		LEFT JOIN tag
 		ON tag.tag_id = course_tags.tag_id
-		WHERE (course_name LIKE ? or tag.tag_name LIKE ?) and course_session.active = 1 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type LIKE '%Online%')
+		WHERE (MATCH (course_name) AGAINST (? IN NATURAL LANGUAGE MODE)
+		or MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE))
+		and course_session.active = 1 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type LIKE '%Online%')
 			and (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?)" . $min_sql . $max_sql . "
-		ORDER BY verified, course_name, course_id, start_date, course.click_count";
+		ORDER BY title_relevance desc, tag_relevance desc, verified, course_name, course_id, start_date, course.click_count";
 
 	$search_location = $_GET['location'];
 	if ($_GET['page'] == "") {
@@ -74,7 +77,7 @@ else {
 		$search_location = '';
 	}
 
-	$get_results->execute(array("%".$_GET["keywords"]."%","%".$_GET["keywords"]."%",$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
+	$get_results->execute(array($_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
 
 	$save_search_sql = "
 		INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name) VALUES (?, ?, ?, ?, ?)";
