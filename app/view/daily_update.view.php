@@ -33,7 +33,7 @@ $get_results->execute();
 echo $update_sql;
 
 // DROPS THE TOP TAG TABLE
-$update_top_tags_sql = "DROP TABLE top_tags;"
+$update_top_tags_sql = "DROP TABLE top_tags";
 $get_results = $GLOBALS['_db']->prepare($update_top_tags_sql);
 $get_results->execute();
 
@@ -41,11 +41,13 @@ $get_results->execute();
 $update_top_tags_sql = "CREATE TABLE top_tags AS SELECT * FROM (SELECT tag_name, count(tag_name) as total from tag
 LEFT JOIN course_tags
 ON course_tags.tag_id = tag.tag_id
-WHERE 1
+LEFT JOIN course
+ON course_tags.course_id = course.course_id
+WHERE course.active_sessions > 0
 GROUP BY tag_name
 ORDER BY total desc
 LIMIT 0,30) as t1
-ORDER BY tag_name;"
+ORDER BY tag_name";
 $get_results = $GLOBALS['_db']->prepare($update_top_tags_sql);
 $get_results->execute();
 
