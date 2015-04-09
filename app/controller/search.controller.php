@@ -22,7 +22,7 @@ if ($_GET['category']) {
 		ON course.vendor_id = vendor.vendor_id
 		LEFT JOIN categories
 		ON course.category_id = categories.category_id
-		WHERE course.category_id = ? and course_session.active = 1 and course.active_sessions > 0 and (course_session.start_date > ?  OR course_session.session_type LIKE '%Online%') " . $min_sql . $max_sql . "
+		WHERE course.category_id = ? and course_session.active = 1 and course.active_sessions > and 0 (course_session.start_date > ?  OR course_session.session_type = 'Online - Self Learning') " . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($_GET['category'], date('Y-m-d')));
@@ -41,7 +41,7 @@ elseif ($_GET['tag']) {
 		ON course.course_id = course_tags.course_id
 		LEFT JOIN tag
 		ON tag.tag_id = course_tags.tag_id
-		WHERE tag.tag_name LIKE ? and course_session.active = 1 and course.active_sessions > 0 and (course_session.start_date > ?  OR course_session.session_type LIKE '%Online%') " . $min_sql . $max_sql . "
+		WHERE tag.tag_name LIKE ? and course_session.active = 1 and course.active_sessions > 0 and (course_session.start_date > ?  OR course_session.session_type = 'Online - Self Learning') " . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array("%".($_GET['tag'])."%", date('Y-m-d')));
@@ -63,7 +63,7 @@ else {
 		ON tag.tag_id = course_tags.tag_id
 		WHERE ((MATCH (course_name) AGAINST (? IN NATURAL LANGUAGE MODE))
 		or (MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE)))
-		and course_session.active = 1 and course.active_sessions > 0 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type LIKE '%Online%')
+		and course_session.active = 1 and course.active_sessions > 0 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type = 'Online - Self Learning')
 			and (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?)" . $min_sql . $max_sql . "
 		GROUP BY course_session.session_id
 		ORDER BY title_relevance desc, tag_relevance desc, verified, course_name, course_id, start_date, course.click_count";
