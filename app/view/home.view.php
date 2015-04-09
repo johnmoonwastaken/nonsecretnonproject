@@ -59,6 +59,11 @@
 	#industries-container {
 		margin-bottom: 40px;
 	}
+
+	#tag-section {
+		background: #f8f8f8;
+		padding: 40px 0;
+	}
 	
 	.category-list {
 		list-style: none;
@@ -89,7 +94,6 @@
 
 </head>
 <body>
-
 	<header>
 		<?php include 'header.view.php' ?>
 
@@ -168,8 +172,21 @@
 		
 		</form>
 	</header>
-	
+
 	<section id="main-section">
+		<div class="container">
+			<h3>Popular Tags</h3>
+			<div id="functions-container" style="text-align: justify;">
+			<?php foreach($tags as $tag) {
+				$tag_name = str_replace(' ', '&nbsp;', $tag['tag_name']);
+				$textsize = intval($tag['total'])/10;
+				if ($textsize < 0.7) { $textsize = 0.7; }
+				elseif ($textsize > 2.0) {$textsize = 2.0; }
+				echo '<a href="search?tag='.urlencode($tag['tag_name']).'" style="font-size:'.$textsize.'em;margin-right:18px;">'.$tag_name."</a> ";
+			}
+			?>
+			</div>
+		</div>
 		<div class="container">
 			<h3>Explore Functions</h3>
 			<div id="functions-container">

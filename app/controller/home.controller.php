@@ -1,5 +1,11 @@
 <?php
 include 'session_settings.php';
+
+$tag_sql = "SELECT * from top_tags";
+$get_results = $GLOBALS['_db']->prepare($tag_sql);
+$get_results->execute(array());
+$tagCloud = $get_results;
+
 $functionsCategories = array();
 $search_sql = "
 	SELECT p.category_id, p.category_name, COUNT(course.course_id) AS course_count 
@@ -48,8 +54,7 @@ $industriesCategories = array();
 			}
 	}
 
-$templateFields = array('functions' => $functionsCategories,
-						'industries' => $industriesCategories);
+$templateFields = array('functions' => $functionsCategories, 'industries' => $industriesCategories, 'tags' => $tagCloud);
 
 displayTemplate('home', $templateFields);
 displayTemplate('footer');
