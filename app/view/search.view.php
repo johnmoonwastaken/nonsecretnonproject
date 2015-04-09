@@ -430,7 +430,17 @@
 								</div>
 							-->
 								<h2><a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>"><?php echo $courseList[$i]['course_name']; ?></a></h2>
-								<p><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> <?php $pos=mb_strpos($courseList[$i]['course_description'], ' ', 190); echo mb_substr($courseList[$i]['course_description'],0,$pos) . '...';?></p>
+								<p><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> 
+								<?php 
+								$max_offset = 190;
+								if (strlen($courseList[$i]['course_description']) < $max_offset) {
+									echo $courseList[$i]['course_description'];
+								}
+								else {
+									$pos=mb_strpos($courseList[$i]['course_description'], ' ', $max_offset); 
+									echo mb_substr($courseList[$i]['course_description'],0,$pos) . '...';
+								}
+								?></p>
 								<img src="images/vendors/<?php if ($courseList[$i]['branding_url'] == '-1' || $courseList[$i]['branding_url'] == "") { echo 'trainingful-branding-70.gif'; } else echo $courseList[$i]['branding_url']; ?>" alt="<?php echo $courseList[$i]['vendor_name']; ?>" class="company-logo">
 								<ul class="sessions-list">
 									<?php foreach($courseList[$i]['sessionList'] as $session): ?>
