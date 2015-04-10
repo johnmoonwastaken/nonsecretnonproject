@@ -30,11 +30,36 @@ if (isset($course_result['course_registration_url']) && $course_result['course_r
 else {
 	$course_url = $course_result['course_url'];
 }
-$benefits = $course_result['benefits'];
-$prereqs = $course_result['prereqs'];
-$designation = $course_result['designation'];
-$audience = $course_result['audience'];
-$video_url = $course_result['video_url'];
+if ($course_result['benefits'] != "-1") {
+	$benefits = $course_result['benefits'];
+}
+else {
+	$benefits = "";
+}
+if ($course_result['prereqs'] != "-1") {
+	$prereqs = $course_result['prereqs'];
+}
+else {
+	$prereqs = "";
+}
+if ($course_result['designation'] != "-1") {
+	$designation = $course_result['designation'];
+}
+else {
+	$designation = "";
+}
+if ($course_result['audience'] != "-1") {
+	$audience = $course_result['audience'];
+}
+else {
+	$audience = "";
+}
+if ($course_result['video_url'] != "-1") {
+	$video_url = $course_result['video_url'];
+}
+else {
+	$video_url = "";
+} 
 $vendor_name = $course_result['vendor_name'];
 $vendor_contact_email = $course_result['contact_email'];
 $vendor_website_url = $course_result['website_url'];

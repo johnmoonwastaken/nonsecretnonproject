@@ -22,7 +22,7 @@ if ($_GET['category']) {
 		ON course.vendor_id = vendor.vendor_id
 		LEFT JOIN categories
 		ON course.category_id = categories.category_id
-		WHERE course.category_id = ? and course_session.active = 1 and course.active_sessions > and 0 (course_session.start_date > ?  OR course_session.session_type = 'Online - Self Learning') " . $min_sql . $max_sql . "
+		WHERE course.category_id = ? and course_session.active = 1 and course.active_sessions > 0 and (course_session.start_date > ? OR course_session.session_type = 'Online - Self Learning') " . $min_sql . $max_sql . "
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($_GET['category'], date('Y-m-d')));
