@@ -60,6 +60,13 @@
 		margin-bottom: 40px;
 	}
 
+	#tags-container {
+		border-bottom: 1px solid #d7d7d7;
+		text-align: justify;
+		padding-bottom: 40px;
+		margin-bottom: 40px;
+	}
+
 	#tag-section {
 		background: #f8f8f8;
 		padding: 40px 0;
@@ -76,6 +83,11 @@
 	
 	.category-list li a {
 		color: #6e6e6e;
+	}
+
+	.tag {
+		margin-right:18px;
+		white-space: nowrap;
 	}
 	</style>
 	
@@ -176,13 +188,13 @@
 	<section id="main-section">
 		<div class="container">
 			<h3>Popular Tags</h3>
-			<div id="functions-container" style="text-align: justify;">
+			<div id="tags-container">
 			<?php foreach($tags as $tag) {
 				$tag_name = str_replace(' ', '&nbsp;', $tag['tag_name']);
 				$textsize = intval($tag['total'])/10;
 				if ($textsize < 0.7) { $textsize = 0.7; }
 				elseif ($textsize > 2.0) {$textsize = 2.0; }
-				echo '<a href="search?tag='.urlencode($tag['tag_name']).'" style="font-size:'.$textsize.'em;margin-right:18px;">'.$tag_name."</a> ";
+				echo '<a href="search?tag='.urlencode($tag['tag_name']).'" style="font-size:'.$textsize.'em;" class="tag">'.$tag_name."</a> ";
 			}
 			?>
 			</div>
