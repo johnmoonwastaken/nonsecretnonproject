@@ -418,10 +418,10 @@
 					<div class="3u" id="col2">
 					
 						<div id="vendor-image">
-							<img src="images/vendors/<?php if ($branding_url == '-1' || $branding_url == "") { echo 'trainingful-branding-140.gif'; } else echo $branding_url; ?>" class="company-logo">
+							<?php echo '<a href="'. $vendor_website_url .'">'; ?><img src="images/vendors/<?php if ($branding_url == '-1' || $branding_url == "") { echo 'trainingful-branding-140.gif'; } else echo $branding_url; ?>" class="company-logo"></a>
 						</div>
 						<div id="vendor-name">
-							<strong><?php echo $vendor_name; ?></strong>
+							<strong><?php echo '<a href="'. $vendor_website_url .'">' . $vendor_name . '</a>'; ?></strong>
 						</div>
 						<ul id="info-tags">
 						<!--
