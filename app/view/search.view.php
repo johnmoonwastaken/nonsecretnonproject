@@ -178,6 +178,9 @@
 		max-height: 70px;
 		max-width: 70px;
 	}
+	.discount {
+		color: #ff7777;
+	}
 	.form-date {
 		width:82px;
 		padding-left: 4px;
@@ -454,7 +457,14 @@
 											</div>
 											<span class="icon calendar"></span>
 											<div class="session-price-container">
-												<h4><?php echo $session['cost']; ?></h4>
+												<h4><?php 
+													if (isset($session['discount_end_date']) && date('Y-m-d') < $session['discount_end_date']) {
+														echo '<span class="discount">'.$session['discount'].'</span>';
+													}
+													else {
+														echo $session['cost'];
+													}
+													?></h4>
 												<small><?php echo $session['currency']; ?></small>
 											</div>
 											<h4 class="session-dates"><?php { 

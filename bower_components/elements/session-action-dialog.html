@@ -108,7 +108,8 @@
         <div class="input-left">
           <p>
             <template is="juicy-html" content="{{ location }}"></template>
-            <span id="detailed_cost">{{cost}}</span> (plus applicable taxes)
+            <div id="detailed_cost">{{discount}}</div>
+            <div id="detailed_cost">{{cost}} (plus applicable taxes)</div>
           </p>
         </div>
         <div class="input-right">
@@ -187,6 +188,7 @@
   	dates: "",
   	startendtime: "",
   	cost: "",
+    discount: "",
   	description: "",
   	location: "",
   	vendorname: "",

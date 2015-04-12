@@ -14,7 +14,7 @@ if ($_GET['category']) {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
 				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
-				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type
+				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type, course_session.discount_cost, course_session.discount_end_date
 		FROM course
 		LEFT JOIN course_session
 		ON course.course_id = course_session.course_id
@@ -31,7 +31,7 @@ elseif ($_GET['tag']) {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
 				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
-				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type
+				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type, course_session.discount_cost, course_session.discount_end_date
 		FROM course
 		LEFT JOIN course_session
 		ON course.course_id = course_session.course_id
@@ -50,7 +50,8 @@ else {
 	$search_sql = "
 		SELECT DISTINCT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
 				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
-				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type, (MATCH (course_name) AGAINST (? IN NATURAL LANGUAGE MODE)) as title_relevance,
+				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type, course_session.discount_cost, course_session.discount_end_date,
+				(MATCH (course_name) AGAINST (? IN NATURAL LANGUAGE MODE)) as title_relevance,
 				(MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE)) as tag_relevance
 		FROM course
 		LEFT JOIN course_session
@@ -100,6 +101,8 @@ foreach ($get_results as $temp) {
 	$avg_rating = $temp['avg_rating'];
 	$session_id = $temp['session_id'];
 	$session_type = $temp['session_type'];
+	$discount = $temp['discount_cost'];
+	$discount_end_date = $temp['discount_end_date'];
 	$start_date = $temp['start_date'];
 	$end_date = $temp['end_date'];
 	$session_location = $temp['city_name'];
@@ -128,8 +131,10 @@ foreach ($get_results as $temp) {
 	$courseList[$course_count]['sessionList'][$session_count]['metro_name'] = $metro_name;
 	if ($currency == "USD" || "CAD" || "HKD" || "SGD") {
 		$courseList[$course_count]['sessionList'][$session_count]['cost'] = "$" . number_format((float)$cost,2,'.','');
+		$courseList[$course_count]['sessionList'][$session_count]['discount'] = "$" . number_format((float)$discount,2,'.','');
 	}
 	$courseList[$course_count]['sessionList'][$session_count]['currency'] = $currency;
+	$courseList[$course_count]['sessionList'][$session_count]['discount_end_date'] = $discount_end_date;
 	$session_count++;
 }
 

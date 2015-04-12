@@ -97,7 +97,7 @@ if ($parent_category_id != -1) {
 $search_sql = "
 	SELECT course_session.session_id, course_session.start_date, course_session.end_date, course_session.suite, course_session.street_address, course_session.city_name,
 		course_session.metro_name, course_session.cost, course_session.currency, course_session.start_date_time, course_session.end_date_time,
-		course_session.description, course_session.registration_url, course_session.session_type
+		course_session.description, course_session.registration_url, course_session.session_type, course_session.discount_cost, course_session.discount_end_date
 	FROM course_session
 	WHERE (course_session.course_id = ? and course_session.active = 1 and course_session.start_date >= ? and course_session.session_type != 'Online - Self Learning')
 		OR (course_session.course_id = ? and course_session.active = 1 and course_session.session_type = 'Online - Self Learning')
@@ -132,14 +132,23 @@ foreach ($get_results as $temp) {
 	$sessionList[$session_count]['city_name'] = $temp['city_name'];
 	$sessionList[$session_count]['metro_name'] = $temp['metro_name'];
 	$sessionList[$session_count]['currency'] = $temp['currency'];
+	$sessionList[$session_count]['discount_end_date'] = $temp['discount_end_date'];
+	if (date('Y-m-d') < $temp['discount_end_date']) {
+		$sessionList[$session_count]['discount_applicable'] = 1;
+	}
+	else {
+		$sessionList[$session_count]['discount_applicable'] = 0;
+	}
 	$sessionList[$session_count]['registration_url'] = $temp['registration_url'];
 	$sessionList[$session_count]['description'] = preg_replace( "/\r\n|\r|\n/", "<br />", $temp['description']);
 	$sessionList[$session_count]['session_type'] = $temp['session_type'];
 	if ($currency == "USD" || "CAD" || "HKD" || "SGD") {
 		$sessionList[$session_count]['cost'] = "$" . number_format((float)$temp['cost'],2,'.','');
+		$sessionList[$session_count]['discount'] = "$" . number_format((float)$temp['discount_cost'],2,'.','');
 	}
 	else  {
 		$sessionList[$session_count]['cost'] = number_format((float)$temp['cost'],2,'.','');
+		$sessionList[$session_count]['discount'] = number_format((float)$temp['discount_cost'],2,'.','');
 	}
 	$session_count++;
 }

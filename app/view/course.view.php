@@ -232,7 +232,9 @@
 		text-align: center;
 		color: #999;
 	}
-
+	.discount {
+		color: #ff7777;
+	}
 	.folded-corner {
 		width: 0;
 		height: 0;
@@ -270,6 +272,9 @@
 	street_address: "<?php echo $session['street_address']; ?>", 
 	cost: "<?php echo $session['cost']; ?>", 
 	currency: "<?php echo $session['currency']; ?>",
+	discount: "<?php echo $session['discount']; ?>",
+	discount_applicable: "<?php echo $session['discount_applicable']; ?>",
+	discount_end_date: "<?php echo $session['discount_end_date']; ?>",
 	registration_url: "<?php echo $session['registration_url']; ?>",
 	description: "<?php echo $session['description']; ?>"};
 	<?php endforeach; ?>
@@ -321,7 +326,14 @@
 			document.querySelector('#sad').courseurl = "<img src='/images/extlink.png' height='10' width='10' style='margin-right:5px;'><a href='/external_redirect?url="+"<?php echo $course_url; ?>"+"&session_id="+session_id+"' target='_blank'>External Website</a>";
 		}
 
-		document.querySelector('#sad').cost = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
+		if (sessioninfo[session_id].discount_applicable == "1") {
+			document.querySelector('#sad').discount = "Discount: " + sessioninfo[session_id].discount + " " + sessioninfo[session_id].currency 
+			+ " (until " + sessioninfo[session_id].discount_end_date + ")";
+			document.querySelector('#sad').cost = "Regular price: " + sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
+		}
+		else {
+			document.querySelector('#sad').cost = sessioninfo[session_id].cost + " " + sessioninfo[session_id].currency;
+		}
 		
 		document.querySelector('#sad').vendorname = "<?php echo $vendor_name; ?>";
 		document.querySelector('#sad').vendorurl = "<?php if ($vendor_website_url != '-1' && $vendor_website_url != '') { echo '<a href=\"http://'.$vendor_website_url.'\" target=\"_blank\">'.$vendor_website_url.'</a>'; } ?>";
@@ -450,7 +462,13 @@
 												} 
 											}
 										} ?></span></div>
-									<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
+									<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php 
+									if (isset($session['discount_end_date']) && date('Y-m-d') < $session['discount_end_date']) {
+														echo '<span class="discount">'.$session['discount'].'</span>';
+													}
+													else {
+														echo $session['cost'];
+													} ?> <?php echo $session['currency']; ?></div>
 									<!-- <img src="../../images/lower-triangle.png" style="margin: 0px 0 -5px 234px;" /> -->
 									<div class="folded-corner"></div>
 								</li>
