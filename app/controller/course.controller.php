@@ -31,13 +31,13 @@ else {
 	$course_url = $course_result['course_url'];
 }
 if ($course_result['benefits'] != "-1") {
-	$benefits = $course_result['benefits'];
+	$benefits = nl2br($course_result['benefits']);
 }
 else {
 	$benefits = "";
 }
 if ($course_result['prereqs'] != "-1") {
-	$prereqs = $course_result['prereqs'];
+	$prereqs = nl2br($course_result['prereqs']);
 }
 else {
 	$prereqs = "";
@@ -49,7 +49,7 @@ else {
 	$designation = "";
 }
 if ($course_result['audience'] != "-1") {
-	$audience = $course_result['audience'];
+	$audience = nl2br($course_result['audience']);
 }
 else {
 	$audience = "";
