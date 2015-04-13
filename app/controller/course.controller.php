@@ -43,7 +43,7 @@ else {
 	$prereqs = "";
 }
 if ($course_result['designation'] != "-1") {
-	$designation = $course_result['designation'];
+	$designation = nl2br($course_result['designation']);
 }
 else {
 	$designation = "";
@@ -156,7 +156,7 @@ foreach ($get_results as $temp) {
 $templateFields = array('course_name' => $course_name, 'course_description' =>  $course_description, 'course_url' => $course_url, 'tags' => $tags,
 	'course_rating' => $course_rating, 'vendor_name' => $vendor_name, 'branding_url' => $branding_url, 'sessionList' => $sessionList, 
 	'vendor_contact_number' => $vendor_contact_number, 'vendor_contact_email' => $vendor_contact_email, 'vendor_website_url' => $vendor_website_url,
-	'category_name' => $category_name, 'parent_category_name' => $parent_category_name, 'video_url' => $video_url,
+	'category_name' => $category_name, 'parent_category_name' => $parent_category_name, 'video_url' => $video_url, 'designation' => $designation,
 	'benefits' => $benefits, 'prereqs' => $prereqs, 'audience' => $audience, 'suite' => $_GET['suite'], 'street_address' => $_GET['street_address'],
 	'city_name' => $_GET['city_name'], 'course_id' => $_GET['id'], 'keywords' => $_GET['keywords'], 'start' => $_GET['start'], 'end' => $_GET['end']);
 

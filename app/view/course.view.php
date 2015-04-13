@@ -424,11 +424,11 @@
 							<strong><?php echo '<a href="'. $vendor_website_url .'">' . $vendor_name . '</a>'; ?></strong>
 						</div>
 						<ul id="info-tags">
-						<!--
-
+						
+							<?php if ($designation != "" && $designation != "-1"): ?>
 							<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
-							30 PDU towards PMP </li>
-						-->
+							<?php echo $designation ?></li>
+							<?php endif ?>
 							<li><span class="icon price-tag"></span> <strong>Tags</strong><br />
 							<?php
 								$count = 0;
