@@ -93,7 +93,7 @@ $last_course_id = 0;
 foreach ($get_results as $temp) {
 	$course_id = $temp['course_id'];
 	$vendor_id = $temp['vendor_id'];
-	$vendor_name = $temp['vendor_name'];
+	$vendor_name = trim($temp['vendor_name']);
 	$verified = $temp['verified'];
 	$course_name = $temp['course_name'];
 	$course_description = $temp['course_description'];

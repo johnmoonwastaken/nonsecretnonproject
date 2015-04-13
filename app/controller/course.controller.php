@@ -60,7 +60,7 @@ if ($course_result['video_url'] != "-1") {
 else {
 	$video_url = "";
 } 
-$vendor_name = $course_result['vendor_name'];
+$vendor_name = trim($course_result['vendor_name']);
 $vendor_contact_email = $course_result['contact_email'];
 $vendor_website_url = $course_result['website_url'];
 $vendor_contact_number = $course_result['contact_number'];
