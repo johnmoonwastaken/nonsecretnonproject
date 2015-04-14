@@ -2,6 +2,7 @@
 <html>
 <head>
 	<?php include 'header_required.php' ?>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<title>Trainingful: Find courses in Vancouver</title>
 	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
 	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online course, review, reviews, training providers, course">
@@ -17,7 +18,7 @@
 		font-size: 2.5em;
 		font-weight: 400;
 		width: 783px;
-		margin: 105px auto 5px;
+		margin: 85px auto 5px;
 	}
 	
 	#searchbox {
@@ -73,7 +74,17 @@
 		background: #f8f8f8;
 		padding: 40px 0;
 	}
-	
+
+	#trainingful-guarantee {
+		border: 2px dotted rgba(0,0,0,0.5);
+		border-radius: 10px;
+		padding: 6px 20px 6px 20px;
+		margin: 15px 25px 0px 25px;
+		font-family: "Pacifico";
+		font-size: 1em;
+		color: rgba(0,0,0,0.85);
+	}
+
 	.category-list {
 		list-style: none;
 		padding: 0;
@@ -85,6 +96,13 @@
 	
 	.category-list li a {
 		color: #6e6e6e;
+	}
+
+	.description {
+		font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+		font-weight: 600;
+		color: #5b5b5b;
+		font-size: 0.9em;
 	}
 
 	.tag {
@@ -183,9 +201,15 @@
 					<button type="submit" class="form-submit" style="margin-left:260px">Search Training</button>
 				</div>
 			</div>
-		
+			<div class="row 25% uniform">
+				<div id="trainingful-guarantee">
+					the trainingful guarantee: <span class="description">If you can't find the course you're looking for, we'll personally find it for you.</span>
+				</div>
+			</div>
 		</form>
 	</header>
+
+
 
 	<section id="main-section">
 		<div class="container">
@@ -193,7 +217,7 @@
 			<div id="tags-container">
 			<?php foreach($tags as $tag) {
 				$tag_name = str_replace(' ', '&nbsp;', $tag['tag_name']);
-				$textsize = 0.7 + round((intval($tag['total'])-$tag_min)*1.3/($tag_max-$tag_min),1);
+				$textsize = 0.7 + round((intval($tag['total'])-$tag_min)*0.8/($tag_max-$tag_min),1);
 				echo '<a href="search?tag='.urlencode($tag['tag_name']).'" style="font-size:'.$textsize.'em;" class="tag">'.$tag_name."</a> ";
 			}
 			?>

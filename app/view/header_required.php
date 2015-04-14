@@ -27,7 +27,7 @@
 	<link href="../../bower_components/paper-button/paper-button.html" rel="import">
 	<link href="../../bower_components/paper-dialog/paper-action-dialog.html" rel="import">
 
-	<link href="../../bower_components/paper-slider/paper-slider.html" rel="import">
+	<!--<link href="../../bower_components/paper-slider/paper-slider.html" rel="import">-->
 	
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/skel.min.js"></script>

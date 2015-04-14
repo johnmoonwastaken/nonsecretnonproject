@@ -44,7 +44,7 @@
 			</ul>
 			<a href="/" id="header-logo"><img src="images/header-logo.png" alt="Trainingful"></a>
 		</div>
-
+<!--
 		<paper-action-dialog backdrop id="si-dialog" transition="paper-dialog-transition-bottom" style="display:none;">
 			<style>
 				#signin-content {
@@ -264,7 +264,7 @@
 					</div>
 					<div class="right-side-buttons">
 						<p><h4>Or sign in with your email:</h4></p>
-						<!--needs a box to enter email address and a box to enter password -->
+						needs a box to enter email address and a box to enter password
 					</div>
 				</div>
 				<div id="other-options" class="clear">
@@ -273,3 +273,5 @@
 			</div>
 			<paper-button dismissive>Cancel</paper-button>
 		</paper-action-dialog>
+
+	-->

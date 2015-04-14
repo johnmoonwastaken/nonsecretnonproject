@@ -2,6 +2,7 @@
 <html>
 <head>
 <?php include 'header_required.php' ?>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<title>Trainingful: <?php 
 	if ($_GET['tag']) { 
 		echo "courses about " . $_GET['tag'];
@@ -321,6 +322,47 @@
 	#results-list .more-sessions .icon {
 		font-size: 1.6em;
 	}
+
+	#trainingful-guarantee {
+		border: 2px dotted rgba(0,0,0,0.5);
+		border-radius: 10px;
+		padding: 6px 20px 6px 20px;
+		margin: 15px 165px 15px 165px;
+		width: 350px;
+	}
+
+	.description {
+		font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+		font-weight: 600;
+		color: #5b5b5b;
+		font-size: 0.9em;
+		text-align: center;
+	}
+
+	.guarantee {
+		text-align: center;
+		font-family: "Pacifico";
+		font-size: 1.3em;
+		color: rgba(0,0,0,0.85);
+		margin-bottom: 10px;
+	}
+
+	#guarantee-form {
+		margin-top: 15px;
+		font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+		color: rgba(0,0,0,0.85);
+	}
+
+	.guarantee-form-title {
+		margin-top: 10px;
+		font-size:0.9em;
+	}
+
+	.form-guarantee-input {
+		width:285px;
+		padding-left: 4px;
+		padding-right: 4px;
+	}
 	</style>
 	
 	<!-- DATE RANGE PICKER -->
@@ -518,50 +560,25 @@
 								&nbsp;
 							</div>
 						</div>
-						
-							<!--
-							<li>
-								<div class="result-rating">
-									<span class="rating s4" title="4 stars"></span>
-								</div>
-								<h2><a href="#">PMP Exam Power Prep</a></h2>
-								<p><strong>ESI International:</strong> Immerse yourself in ESI's PMP Exam Power Prep and you'll be well on your way to passing PMI's PMP certification</p>
-								<img src="images/samples/esi-international.png" alt="ESI International" class="company-logo">
-								<ul class="sessions-list">
-									<li>
-										<a href="#">
-											<div class="chevron-container">
-												<span class="icon chevron-right"></span>
-											</div>
-											<span class="icon calendar"></span>
-											<div class="session-price-container">
-												<h4>$2495.00</h4>
-												<small>CAD</small>
-											</div>
-											<h4 class="session-dates">Oct 6, 2014 - Oct 10, 2014</h4>
-											<small class="session-location">Vancouver, BC</small>
-										</a>
-									</li>
-							
-									<li>
-										<a href="#">
-											<div class="chevron-container">
-												<span class="icon chevron-right"></span>
-											</div>
-											<span class="icon calendar"></span>
-											<div class="session-price-container">
-												<h4>$2495.00</h4>
-												<small>CAD</small>
-											</div>
-											<h4 class="session-dates">Oct 6, 2014 - Oct 10, 2014</h4>
-											<small class="session-location">Vancouver, BC</small>
-										</a>
-									</li>
-
-								</ul>
-								<small class="more-sessions"><a href="#">4 more sessions <span class="icon triangle-down"></span></a></small>
-							</li>
-						-->
+						<div class="row 25% uniform">
+							<div id="trainingful-guarantee">
+								<div class="guarantee">the trainingful guarantee</div>
+								<div class="description">Did you find the courses you were looking for? If not, we'll personally help find it for you.</div>
+								<form id="guarantee-box" action="guarantee" method="post">
+									<div id="guarantee-form">
+										<div class="guarantee-form-title">Name</div>
+										<input type="text" id="guarantee-box-name" name="name" placeholder="Name" class="form-text form-guarantee-input">
+										<div class="guarantee-form-title">E-mail</div>
+										<input type="text" id="guarantee-box-email" name="email" placeholder="abc@xyz.com" class="form-text form-guarantee-input">
+										<div class="guarantee-form-title">What were you looking for?</div>
+										<textarea class="form-text form-guarantee-input" rows="2" name="comments" placeholder="Type of course, location, date range, etc."></textarea>
+										<input type="hidden" name="ip_address" value="<?php echo $_SERVER['REMOTE_ADDR'] ?>">
+										<input type="hidden" name="query_string" value="<?php echo $_SERVER['QUERY_STRING'] ?>">
+									</div>
+									<button type="submit" class="form-submit smaller-button" style="margin-left:90px">Let us help!</button>
+								</form>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
