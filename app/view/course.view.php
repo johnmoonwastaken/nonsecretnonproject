@@ -3,6 +3,9 @@
 <head>
 <?php include 'header_required.php' ?>
 	<title><?php echo $course_name; ?></title>
+	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
+	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
+	<meta name="Description" content="The fastest and easiest way to search for professional courses with thousands of course sessions. Find the course you're looking for, guaranteed.">
 
 	<link rel="import" href="../../bower_components/elements/session-action-dialog.html">
 	<link rel="import" href="../../bower_components/elements/review-action-dialog.html">
