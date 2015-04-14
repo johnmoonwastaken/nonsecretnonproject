@@ -6,7 +6,7 @@
 	$ip_address = $_REQUEST['ip_address'];
 	$query_string = $_REQUEST['query_string'];
 
-	$add_sql = "INSERT INTO guarantee (email, name, comments, ip_address, query_string, time) VALUES (?,?,?,?,now());";
+	$add_sql = "INSERT INTO guarantee (email, name, comments, ip_address, query_string, time) VALUES (?,?,?,?,?,now());";
 	$get_results = $GLOBALS['_db']->prepare($add_sql);
 	$get_results->execute(array($email,$name,$comments,$ip_address,$query_string));
 
