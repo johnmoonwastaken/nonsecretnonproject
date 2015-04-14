@@ -4,7 +4,7 @@
 	<?php include 'header_required.php' ?>
 	<title>Trainingful: Find courses in Vancouver</title>
 	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
-	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
+	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online course, review, reviews, training providers, course">
 	<meta name="Description" content="The fastest and easiest way to search for professional courses with thousands of course sessions. Find the course you're looking for, guaranteed.">
 
 	<style>
@@ -189,7 +189,7 @@
 
 	<section id="main-section">
 		<div class="container">
-			<h3>Popular Tags</h3>
+			<h3>Popular Course Tags</h3>
 			<div id="tags-container">
 			<?php foreach($tags as $tag) {
 				$tag_name = str_replace(' ', '&nbsp;', $tag['tag_name']);
@@ -202,7 +202,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<h3>Explore Functions</h3>
+			<h3>Explore Courses by Function</h3>
 			<div id="functions-container">
 				<div class="row">
 					<?php
@@ -242,7 +242,7 @@
 					</ul>
 				</div>
 			</div>
-			<h3>Explore Industries</h3>
+			<h3>Explore Courses by Industry</h3>
 			<div id="industries-container">
 				<div class="row">
 					<?php
