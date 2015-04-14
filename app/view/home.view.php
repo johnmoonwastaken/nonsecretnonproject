@@ -193,9 +193,7 @@
 			<div id="tags-container">
 			<?php foreach($tags as $tag) {
 				$tag_name = str_replace(' ', '&nbsp;', $tag['tag_name']);
-				$textsize = intval($tag['total'])/10;
-				if ($textsize < 0.7) { $textsize = 0.7; }
-				elseif ($textsize > 2.0) {$textsize = 2.0; }
+				$textsize = 0.7 + round((intval($tag['total'])-$tag_min)*1.3/($tag_max-$tag_min),1);
 				echo '<a href="search?tag='.urlencode($tag['tag_name']).'" style="font-size:'.$textsize.'em;" class="tag">'.$tag_name."</a> ";
 			}
 			?>

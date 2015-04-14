@@ -6,6 +6,13 @@ $get_results = $GLOBALS['_db']->prepare($tag_sql);
 $get_results->execute(array());
 $tagCloud = $get_results;
 
+$tag_sql = "SELECT MAX(total) as max, MIN(total) as min from top_tags";
+$get_results = $GLOBALS['_db']->prepare($tag_sql);
+$get_results->execute(array());
+$course_result = $get_results->fetch(PDO::FETCH_ASSOC);
+$tag_max = intval($course_result['max']);
+$tag_min = intval($course_result['min']);
+
 $functionsCategories = array();
 $search_sql = "
 	SELECT p.category_id, p.category_name, COUNT(course.course_id) AS course_count 
@@ -54,7 +61,8 @@ $industriesCategories = array();
 			}
 	}
 
-$templateFields = array('functions' => $functionsCategories, 'industries' => $industriesCategories, 'tags' => $tagCloud);
+$templateFields = array('functions' => $functionsCategories, 'industries' => $industriesCategories, 'tags' => $tagCloud,
+	'tag_max' => $tag_max, 'tag_min' => $tag_min);
 
 displayTemplate('home', $templateFields);
 displayTemplate('footer');
