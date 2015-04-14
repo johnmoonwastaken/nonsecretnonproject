@@ -5,7 +5,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<title>Trainingful: <?php 
 	if ($_GET['tag']) { 
-		echo "courses and training about " . $_GET['tag'];
+		echo $_GET['tag'] . " courses and training";
 	}
 	elseif ($_GET['category']) { 
 		echo $parent_category_name . " - " . $category_name . " courses and training";
