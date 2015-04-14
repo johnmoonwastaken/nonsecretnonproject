@@ -5,13 +5,13 @@
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<title>Trainingful: <?php 
 	if ($_GET['tag']) { 
-		echo "courses about " . $_GET['tag'];
+		echo "courses and training about " . $_GET['tag'];
 	}
 	elseif ($_GET['category']) { 
-		echo $_GET['category'] . " courses";
+		echo $parent_category_name . " - " . $category_name . " courses and training";
 	}
 	else {
-		echo $keywords . " courses in " . $location;
+		echo $keywords . " courses and training in " . $location;
 	} ?></title>
 	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
 	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
