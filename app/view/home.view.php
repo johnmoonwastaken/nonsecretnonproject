@@ -64,14 +64,13 @@
 	}
 
 	#tags-container {
-		border-bottom: 1px solid #d7d7d7;
 		text-align: justify;
 		padding-bottom: 40px;
-		margin-bottom: 40px;
+		margin-bottom: 0px;
 	}
 
 	#tag-section {
-		background: #f8f8f8;
+		background: #fff;
 		padding: 40px 0;
 	}
 
@@ -109,12 +108,28 @@
 		margin-right:18px;
 		white-space: nowrap;
 	}
+
+
 	</style>
 	
 	<script src="js/skel.min.js"></script>
+	<script src="js/countUp.min.js"></script>
 	<script>
 	skel.init({
 		containers: '990px'
+	});
+
+	$( document ).ready(function() {
+		var options = {
+		  useEasing : true, 
+		  useGrouping : true, 
+		  separator : ',', 
+		  decimal : '.', 
+		  prefix : '', 
+		  suffix : '' 
+		};
+		var demo = new countUp("myTargetElement", 0, 726, -1, 2.0, options);
+		demo.start();
 	});
 	</script>
 
@@ -209,11 +224,11 @@
 		</form>
 	</header>
 
-
-
-	<section id="main-section">
+	<section id="tag-section">
+		<h1 style="text-align:center;font-size:3em;padding-left:100px;padding-right:100px;"><span id="myTargetElement"></span> course sessions in Vancouver to further your career</h1>
+		<!--<h1 style="text-align:center">+ our trainingful guarantee to help you find courses you're looking for.</h1>-->
+		<h2 style="text-align:center">Our most popular course tags:</h2>
 		<div class="container">
-			<h3>Popular Course Tags</h3>
 			<div id="tags-container">
 			<?php foreach($tags as $tag) {
 				$tag_name = str_replace(' ', '&nbsp;', $tag['tag_name']);
@@ -223,6 +238,9 @@
 			?>
 			</div>
 		</div>
+	</section>
+
+	<section id="main-section">
 		<div class="container">
 			<h3>Explore Courses by Function</h3>
 			<div id="functions-container">
