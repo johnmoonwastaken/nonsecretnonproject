@@ -335,7 +335,7 @@
 		font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
 		font-weight: 600;
 		color: #5b5b5b;
-		font-size: 0.9em;
+		font-size: 0.8em;
 		text-align: center;
 	}
 
@@ -345,6 +345,11 @@
 		font-size: 1.3em;
 		color: rgba(0,0,0,0.85);
 		margin-bottom: 10px;
+	}
+
+	.no-results {
+		font-family: "Pacifico", 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+		font-size: 1.0em;
 	}
 
 	#guarantee-form {
@@ -537,7 +542,7 @@
 									<?php endforeach; ?>
 								</ul>
 							</li>
-							<?php endfor; } else echo "<li>Sorry, no results available, please try another search.</li>";?>
+							<?php endfor; } else echo "<li class='no-results'>Sorry, no results available. Please try another search.</li>";?>
 						</ul>
 						<div class="row">
 							<div class="6u">&nbsp;

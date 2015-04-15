@@ -51,4 +51,8 @@ ORDER BY tag_name";
 $get_results = $GLOBALS['_db']->prepare($update_top_tags_sql);
 $get_results->execute();
 
+$metrics_sql = "INSERT IGNORE INTO daily_metrics(metric_name, metric_value) values ('total_sessions', (SELECT count(*) as acs FROM course_session where active = 1 and metro_name = 'Vancouver' and start_date > ?))";
+$get_results = $GLOBALS['_db']->prepare($metrics_sql);
+$get_results->execute(array(date('Y-m-d')));
+
 ?>

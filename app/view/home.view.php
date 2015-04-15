@@ -128,7 +128,7 @@
 		  prefix : '', 
 		  suffix : '' 
 		};
-		var demo = new countUp("myTargetElement", 0, 726, -1, 2.0, options);
+		var demo = new countUp("myTargetElement", 0, <?php echo $total_sessions ?>, -1, 2.0, options);
 		demo.start();
 	});
 	</script>

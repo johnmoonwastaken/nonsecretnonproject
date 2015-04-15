@@ -13,6 +13,12 @@ $course_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $tag_max = intval($course_result['max']);
 $tag_min = intval($course_result['min']);
 
+$metrics_sql = "SELECT metric_value FROM daily_metrics WHERE metric_name = 'total_sessions'";
+$get_results = $GLOBALS['_db']->prepare($metrics_sql);
+$get_results->execute(array());
+$metrics_result = $get_results->fetch(PDO::FETCH_ASSOC);
+$total_sessions = intval($metrics_result['metric_value']);
+
 $functionsCategories = array();
 $search_sql = "
 	SELECT p.category_id, p.category_name, COUNT(course.course_id) AS course_count 
@@ -62,7 +68,7 @@ $industriesCategories = array();
 	}
 
 $templateFields = array('functions' => $functionsCategories, 'industries' => $industriesCategories, 'tags' => $tagCloud,
-	'tag_max' => $tag_max, 'tag_min' => $tag_min);
+	'tag_max' => $tag_max, 'tag_min' => $tag_min, 'total_sessions' => $total_sessions);
 
 displayTemplate('home', $templateFields);
 displayTemplate('footer');
