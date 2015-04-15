@@ -78,7 +78,7 @@
 		border: 2px dotted rgba(0,0,0,0.5);
 		border-radius: 10px;
 		padding: 6px 20px 6px 20px;
-		margin: 15px 25px 0px 25px;
+		margin: 15px 50px 0px 50px;
 		font-family: "Pacifico";
 		font-size: 1em;
 		color: rgba(0,0,0,0.85);
@@ -101,7 +101,7 @@
 		font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
 		font-weight: 600;
 		color: #5b5b5b;
-		font-size: 0.9em;
+		font-size: 0.8em;
 	}
 
 	.tag {
