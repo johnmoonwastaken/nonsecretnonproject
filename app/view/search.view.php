@@ -438,7 +438,7 @@
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Name contains</a>
 								<div class="inputbox">
-									<input type="text" id="searchbox-keywords" name="keywords" placeholder="" class="form-text form-name" <?php if ($_GET['keywords']) { echo 'value='.$_GET['keywords']; } ?>>
+									<input type="text" id="searchbox-keywords" name="keywords" placeholder="" class="form-text form-name" <?php if ($_GET['keywords']) { echo 'value="'.$_GET['keywords'].'"'; } ?>>
 								</div>
 							</li>
 							<!--
@@ -479,6 +479,9 @@
 										<option value="Vancouver">Vancouver</option>
 										<option value="Everywhere" <?php if ($_GET['location'] == "Everywhere") echo 'selected'; ?>>Everywhere</option>
 									</select>
+								</div>
+								<div class="row 0% uniform" style="margin-top:5px;">
+									<input type="checkbox" name="include_online" <?php if ($_GET['include_online'] == on) echo "checked"; ?> style="width:15px;height:15px;vertical-align:bottom;margin-bottom:2px;display:inline;"><span style="font-size:0.9em;margin-left:5px;">Include online courses</span>
 								</div>
 							</li>
 						</ul>

@@ -205,15 +205,21 @@
     	           </script>
 				<div class="6u">
 					<!--<input type="text" id="searchbox-location" name="location" placeholder="Location" class="form-text"  <?php // if ($_GET['location']) { echo 'value='.$_GET['location']; } else echo 'value="Vancouver"'; ?>>-->
-					<select id="searchbox-location" name="location" placeholder="Location" style="font-size:1.3em;height:51px;padding:9px 9px 10px 9px;border: 1px solid #aaa;border-radius:0;color: #555555;width:366px;">
+					<select id="searchbox-location" name="location" placeholder="Location" style="font-size:1.3em;height:51px;padding:9px 9px 10px 9px;border: 1px solid #aaa;border-radius:0;color: #555555;width:365px;">
 						<option value="Vancouver">Vancouver</option>
 						<option value="Everywhere" <?php if ($_GET['location'] == "Everywhere") echo 'selected'; ?>>Everywhere</option>
 					</select>
 				</div>
 			</div>
 			<div class="row 25% uniform">
-				<div class="12u">
-					<button type="submit" class="form-submit" style="margin-left:260px">Search Training</button>
+				<div class="3u">
+					&nbsp;
+				</div>
+				<div class="6u">
+					<button type="submit" class="form-submit" style="margin-left:60px">Search Training</button>
+				</div>
+				<div class="3u">
+					<input type="checkbox" name="include_online" checked style="width:15px;height:15px;vertical-align:bottom;margin-bottom:2px;display:inline;"><span style="font-size:0.9em">Include online courses</span>
 				</div>
 			</div>
 			<div class="row 25% uniform">

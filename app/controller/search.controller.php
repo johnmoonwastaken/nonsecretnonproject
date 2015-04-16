@@ -15,6 +15,10 @@ if ($_GET['min'] or $_GET['max']) {
 	}
 }
 
+if ($_GET['include_online'] == "on") {
+	$include_online = "OR course_session.metro_name = 'Online'";
+}
+
 if ($_GET['category']) {
 	$search_sql = "
 		SELECT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
@@ -69,9 +73,10 @@ else {
 		LEFT JOIN tag
 		ON tag.tag_id = course_tags.tag_id
 		WHERE ((MATCH (course_name) AGAINST (? IN NATURAL LANGUAGE MODE))
-		or (MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE)))
-		and course_session.active = 1 and course.active_sessions > 0 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type = 'Online - Self Learning')
-			and (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?)
+		OR (MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE)))
+		AND course_session.active = 1 and course.active_sessions > 0 
+		AND ((course_session.start_date >= ? AND course_session.end_date <= ? AND (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?))
+			" . $include_online . ")
 		GROUP BY course_session.session_id" . $min_max_sql . "
 		ORDER BY title_relevance desc, tag_relevance desc, verified, course_name, course_id, start_date, course.click_count";
 
