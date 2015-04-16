@@ -414,7 +414,7 @@
 						{
 							$upto = $totalResults;
 						} ?>
-						<h4 id="results-counter"><!--Filter--> Showing <?php echo ($page -1) * $shown + 1; ?>-<?php echo $upto; ?> of <?php echo $totalResults; ?> results</h4>
+						<h4 id="results-counter"><!--Filter--> <?php if ($upto > 1) {echo "Showing " . (($page -1) * $shown + 1) . "-" . $upto . " of " . $totalResults . " results"; } else { echo "No results found"; } ?></h4>
 					</div>
 					<div class="9u">
 						<ul id="type-switcher">
