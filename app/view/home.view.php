@@ -219,7 +219,7 @@
 					<button type="submit" class="form-submit" style="margin-left:60px">Search Training</button>
 				</div>
 				<div class="3u">
-					<input type="checkbox" name="include_online" checked style="width:15px;height:15px;vertical-align:bottom;margin-bottom:2px;display:inline;"><span style="font-size:0.9em">Include online courses</span>
+					<input type="checkbox" name="include_online" checked style="width:15px;height:15px;vertical-align:bottom;margin-bottom:2px;display:inline;"><span style="font-size:0.9em;margin-left:5px;">Include online courses</span>
 				</div>
 			</div>
 			<div class="row 25% uniform">
