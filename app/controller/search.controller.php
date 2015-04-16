@@ -2,13 +2,18 @@
 include 'session_settings.php';
 $courseList = array();
 
-if ($_GET['min'] != "") {
-	$min_sql = " and course_session.cost >= " . $_GET['min'];
+if ($_GET['min'] or $_GET['max']) {
+	$min_max_sql = " HAVING ";
+	if ($_GET['min']) {
+		$min_max_sql = $min_max_sql ." cost_min >= " . $_GET['min'];
+		if ($_GET['max']) {
+			$min_max_sql = $min_max_sql ." and cost_min <= " . $_GET['max'];
+		}
+	}
+	else {
+		$min_max_sql = $min_max_sql ." cost_min <= " . $_GET['max'];
+	}
 }
-if ($_GET['max'] != "") {
-	$max_sql = " and course_session.cost <= " . $_GET['max'];
-}
-
 
 if ($_GET['category']) {
 	$search_sql = "
@@ -51,6 +56,7 @@ else {
 		SELECT DISTINCT course.course_id, course.vendor_id, course.course_name, course.course_description, course.avg_rating, course_session.session_id,
 				course_session.start_date, course_session.end_date, course_session.city_name, course_session.metro_name, course_session.cost, course_session.currency,
 				vendor.vendor_name, vendor.branding_url, vendor.verified, course_session.session_type, course_session.discount_cost, course_session.discount_end_date,
+				IF(discount_end_date >= ?, discount_cost, cost) as cost_min,
 				(MATCH (course_name) AGAINST (? IN NATURAL LANGUAGE MODE)) as title_relevance,
 				(MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE)) as tag_relevance
 		FROM course
@@ -65,8 +71,8 @@ else {
 		WHERE ((MATCH (course_name) AGAINST (? IN NATURAL LANGUAGE MODE))
 		or (MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE)))
 		and course_session.active = 1 and course.active_sessions > 0 and ((course_session.start_date >= ? and course_session.end_date <= ?)  OR course_session.session_type = 'Online - Self Learning')
-			and (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?)" . $min_sql . $max_sql . "
-		GROUP BY course_session.session_id
+			and (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?)
+		GROUP BY course_session.session_id" . $min_max_sql . "
 		ORDER BY title_relevance desc, tag_relevance desc, verified, course_name, course_id, start_date, course.click_count";
 
 	$search_location = $_GET['location'];
@@ -79,7 +85,7 @@ else {
 		$search_location = '';
 	}
 
-	$get_results->execute(array($_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
+	$get_results->execute(array(date("Y-m-d"),$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
 
 	$save_search_sql = "
 		INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name) VALUES (?, ?, ?, ?, ?)";
