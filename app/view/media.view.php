@@ -21,13 +21,15 @@
 		<div class="container" id="main-container">
 		
 			<div id="static-document" class="container">
-				<p><h1>Media</h1></p>
+				<p><h1>media</h1></p>
 			</div>
 			<div id="static-content">
-						<p>Trainingful was created to serve the training needs of Vancouver's professionals. With over 1000 course sessions in our catalogue (and counting), we have one of the largest databases of professional development training in the Lower Mainland. 
+				<p>
+					<h4>Trainingful was created to serve the training needs of Vancouver's professionals. With over 1000 course sessions in our catalogue (and counting), we have one of the largest databases of professional development training in the Lower Mainland. 
 						<br /><br />
-						<p>If you are a member of the media and would like to speak to us, please contact <a href="mailto:john@trainingful.com">John Moon</a>. We will respond to media requests within 48 hours.
+						If you are a member of the media and would like to speak to us, please contact <a href="mailto:john@trainingful.com">John Moon</a>. We will respond to media requests within 48 hours.
+					</h4>
+				</p>
 			</div>
-		
 		</div>		
 	</section>

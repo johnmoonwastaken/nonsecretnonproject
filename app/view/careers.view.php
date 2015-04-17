@@ -2,7 +2,7 @@
 <html>
 <head>
 	<?php include 'header_required.php' ?>
-	<title>Trainingful: Careers</title>
+	<title>Trainingful: careers</title>
 	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
 	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
 	<meta name="Description" content="The fastest and easiest way to search for professional courses with thousands of course sessions. Find the course you're looking for, guaranteed.">
@@ -21,14 +21,17 @@
 		<div class="container" id="main-container">
 		
 			<div id="static-document" class="container">
-				<p><h1>Careers</h1></p>
+				<p><h1>careers</h1></p>
 			</div>
 			<div id="static-content">
-						<p>We at Trainingful want incredibly talented people (like you!) to join us in bringing exciting training opportunities to professionals and businesses in the Lower Mainland. As a service for professionals, Trainingful requires a broad range of technical and business skills. 
+				<p>
+					<h4>We at Trainingful want incredibly talented people (like you!) to join us in connecting professionals and businesses with exciting training opportunities. As a service for professionals, Trainingful requires a broad range of technical and business skills. 
 						<br></br>
 						We believe in results and productivity in a collaborative setting. We value innovation, creativity and diversity. 
 						<br></br>
 						Interested? Have any questions? Send us an <a href="mailto:careers@trainingful.com">email</a> and let's start talking!
+					</h4>
+				</p>
 			</div>
 		
 		</div>		

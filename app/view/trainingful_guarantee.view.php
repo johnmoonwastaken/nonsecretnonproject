@@ -40,7 +40,6 @@
 						But if you still can't find the course you're looking for, simply fill out "the trainingful guarantee" form at the search results page and <b>we will get back to you within 48 hours.</b>
 						<br /><br />
 						It's that easy. 
-.						<br /><br />
 				</h4></p>
 			</div>
 		</div>
