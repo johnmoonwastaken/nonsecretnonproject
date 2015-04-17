@@ -231,7 +231,7 @@
 	</header>
 
 	<section id="tag-section">
-		<h1 style="text-align:center;font-size:3em;padding-left:100px;padding-right:100px;"><span id="myTargetElement"></span> course sessions in Vancouver to further your career</h1>
+		<h1 style="text-align:center;font-size:3em;padding-left:100px;padding-right:100px;"><span id="myTargetElement">700</span> course sessions in Vancouver to further your career</h1>
 		<!--<h1 style="text-align:center">+ our trainingful guarantee to help you find courses you're looking for.</h1>-->
 		<h2 style="text-align:center">Our most popular course tags:</h2>
 		<div class="container">
