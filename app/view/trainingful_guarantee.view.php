@@ -35,8 +35,13 @@
 				<p><h1>the trainingful guarantee</h1></p>
 			</div>
 			<div id="static-content">
-						<p><h4>Trainingful is here to help you find the courses you need for your career.<br /><br />
-If you cannot find the course you're looking for on our search engine, fill out the trainingful guarantee form and we'll do searches, talk to our vendors and contact you back.</h4></p>
+						<p><h4>Trainingful is dedicated to helping you find the courses you need for your professional and career development. Try our search engine first; we are always expanding our database of training providers and courses!
+						<br /><br />
+						But if you still can't find the course you're looking for, simply fill out "the trainingful guarantee" form at the search results page and <b>we will get back to you within 48 hours.</b>
+						<br /><br />
+						It's that easy. 
+.						<br /><br />
+				</h4></p>
 			</div>
 		</div>
 		
