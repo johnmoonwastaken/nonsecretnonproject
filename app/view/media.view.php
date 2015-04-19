@@ -27,8 +27,7 @@
 				<p>
 					<h4>Trainingful was created to serve the training needs of Vancouver's professionals. With over 1000 course sessions in our catalogue (and counting), we have one of the largest databases of professional development training in the Lower Mainland. 
 						<br /><br />
-						If you are a member of the media and would like to speak to us, please contact <a href="mailto:john@trainingful.com">John Moon</a>. We will respond to media requests within 48 hours.
-					</h4>
+						If you are a member of the media and would like to speak to us, please contact <a href="mailto:john@trainingful.com">John Moon</a>.
 				</p>
 			</div>
 		</div>		
