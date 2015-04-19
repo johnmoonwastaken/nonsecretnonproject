@@ -314,7 +314,7 @@
 				}
 				location_string = location_string + sessioninfo[session_id].city_name + "</p>";
 				location_oneline = location_oneline + sessioninfo[session_id].city_name;
-				document.querySelector('#sad').gmap = '<iframe width="470" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAApnbg7k6_nPB_ofttls3VdKLl2v5Red4&zoom=15&q='+location_oneline+'"></iframe>';
+				document.querySelector('#sad').gmap = '<iframe width="470" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBZuowUYP1cfjqsi6VjI3Jj5ygHGFtpgeI&zoom=15&q='+location_oneline+'"></iframe>';
 			}
 			else {
 				location_string = location_string + sessioninfo[session_id].metro_name + "</p>";
@@ -339,7 +339,7 @@
 		}
 		
 		document.querySelector('#sad').vendorname = "<?php echo $vendor_name; ?>";
-		document.querySelector('#sad').vendorurl = "<?php if ($vendor_website_url != '-1' && $vendor_website_url != '') { echo '<a href=\"http://'.$vendor_website_url.'\" target=\"_blank\">'.$vendor_website_url.'</a>'; } ?>";
+		document.querySelector('#sad').vendorurl = "<?php if ($vendor_website_url != '-1' && $vendor_website_url != '') { echo '<a href=\"'.$vendor_website_url.'\" target=\"_blank\">'.$vendor_website_url.'</a>'; } ?>";
 		document.querySelector('#sad').vendoremail = "<?php if ($vendor_contact_email != '-1' && $vendor_contact_email != '') { echo '<br />'.$vendor_contact_email; } ?>";
 		document.querySelector('#sad').vendorcontact = "<?php if ($vendor_contact_number != '-1' && $vendor_contact_number != '') { echo '<br />'.$vendor_contact_number; } ?>";
 		
