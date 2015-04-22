@@ -438,7 +438,7 @@
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Name contains</a>
 								<div class="inputbox">
-									<input type="text" id="searchbox-keywords" name="keywords" placeholder="" class="form-text form-name" <?php if ($_GET['keywords']) { echo 'value="'.$_GET['keywords'].'"'; } ?>>
+									<input type="text" id="searchbox-keywords" name="keywords" placeholder="" required class="form-text form-name" <?php if ($_GET['keywords']) { echo 'value="'.$_GET['keywords'].'"'; } ?>>
 								</div>
 							</li>
 							<!--

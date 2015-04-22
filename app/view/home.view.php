@@ -148,7 +148,7 @@
 		<form id="searchbox" action="search" method="get">
 			<div class="row">
 				<div class="12u">
-					<input type="text" id="searchbox-keywords" name="keywords" placeholder="Search course names or course tags" class="form-text" <?php if ($_GET['keywords']) { echo 'value='.$_GET['keywords']; } ?>>
+					<input type="text" id="searchbox-keywords" name="keywords" placeholder="Search course names or course tags" required class="form-text" <?php if ($_GET['keywords']) { echo 'value='.$_GET['keywords']; } ?>>
 				</div>
 			</div>
 			<div class="row 25% uniform">
