@@ -14,9 +14,13 @@ if ($_GET['min'] or $_GET['max']) {
 		$min_max_sql = $min_max_sql ." cost_min <= " . $_GET['max'];
 	}
 }
-
+	
 if ($_GET['include_online'] == "on") {
-	$include_online = "OR course_session.metro_name = 'Online'";
+	$include_online_sql = "OR course_session.metro_name = 'Online'";
+	$include_online_bool = true;
+}
+else {
+	$include_online_bool = false;
 }
 
 if ($_GET['category']) {
@@ -76,7 +80,7 @@ else {
 		OR (MATCH (tag_name) AGAINST (? IN NATURAL LANGUAGE MODE)))
 		AND course_session.active = 1 and course.active_sessions > 0 
 		AND ((course_session.start_date >= ? AND course_session.end_date <= ? AND (course_session.city_name LIKE ? OR course_session.metro_name LIKE ?))
-			" . $include_online . ")
+			" . $include_online_sql . ")
 		GROUP BY course_session.session_id" . $min_max_sql . "
 		ORDER BY title_relevance desc, tag_relevance desc, verified, course_name, course_id, start_date, course.click_count";
 
@@ -93,9 +97,9 @@ else {
 	$get_results->execute(array(date("Y-m-d"),$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
 
 	$save_search_sql = "
-		INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name) VALUES (?, ?, ?, ?, ?)";
+		INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name, include_online) VALUES (?, ?, ?, ?, ?, ?)";
 	$query = $GLOBALS['_db']->prepare($save_search_sql);
-	$query->execute(array($_GET["keywords"],$_SERVER['REMOTE_ADDR'],$_GET["start"],$_GET["end"],$search_location));
+	$query->execute(array($_GET["keywords"],$_SERVER['REMOTE_ADDR'],$_GET["start"],$_GET["end"],$search_location,$include_online_bool));
 }
 $course_count = -1;
 $session_count = 0;
