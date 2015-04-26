@@ -37,3 +37,4 @@
 		containers: '990px'
 	});
 	</script>
+	<?php include_once("analyticstracking.php") ?>
