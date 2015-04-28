@@ -206,8 +206,8 @@
 				<div class="6u">
 					<!--<input type="text" id="searchbox-location" name="location" placeholder="Location" class="form-text"  <?php // if ($_GET['location']) { echo 'value='.$_GET['location']; } else echo 'value="Vancouver"'; ?>>-->
 					<select id="searchbox-location" name="location" placeholder="Location" style="font-size:1.3em;height:51px;padding:9px 9px 10px 9px;border: 1px solid #aaa;border-radius:0;color: #555555;width:365px;">
-						<option value="Vancouver">Vancouver</option>
-						<option value="Everywhere" <?php if ($_GET['location'] == "Everywhere") echo 'selected'; ?>>Everywhere</option>
+						<option value="Everywhere">Everywhere</option>
+						<option value="Vancouver" <?php if ($_GET['location'] == "Vancouver") echo 'selected'; ?>>Canada - Vancouver</option>
 					</select>
 				</div>
 			</div>
