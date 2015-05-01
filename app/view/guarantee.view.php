@@ -12,7 +12,7 @@
 
 	$mail_message = "E-mail: " . $email . "\nName: " . $name . "\nComments: " . $comments . "\nQuery String: " . $query_string;
 
-	$to = "john@trainingful.com";
+	$to = "support@trainingful.com";
 	$subject = "The Trainingful Guarantee";
 	mail($to, $subject, $mail_message);
 
