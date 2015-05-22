@@ -3,7 +3,7 @@
 <head>
 	<?php include 'header_required.php' ?>
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<title>Trainingful: Find courses in Vancouver</title>
+	<title>Trainingful: Find courses in US and Canada</title>
 	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
 	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online course, review, reviews, training providers, course">
 	<meta name="Description" content="The fastest and easiest way to search for professional courses with thousands of course sessions. Find the course you're looking for, guaranteed.">
@@ -207,7 +207,11 @@
 					<!--<input type="text" id="searchbox-location" name="location" placeholder="Location" class="form-text"  <?php // if ($_GET['location']) { echo 'value='.$_GET['location']; } else echo 'value="Vancouver"'; ?>>-->
 					<select id="searchbox-location" name="location" placeholder="Location" style="font-size:1.3em;height:51px;padding:9px 9px 10px 9px;border: 1px solid #aaa;border-radius:0;color: #555555;width:365px;">
 						<option value="Everywhere">Everywhere</option>
+						<option value="Toronto" <?php if ($_GET['location'] == "Toronto") echo 'selected'; ?>>Canada - Toronto</option>
 						<option value="Vancouver" <?php if ($_GET['location'] == "Vancouver") echo 'selected'; ?>>Canada - Vancouver</option>
+						<option value="New York" <?php if ($_GET['location'] == "New York") echo 'selected'; ?>>United States - New York</option>
+						<option value="Seattle" <?php if ($_GET['location'] == "Seattle") echo 'selected'; ?>>United States - Seattle</option>
+						<option value="Washington DC" <?php if ($_GET['location'] == "Washington DC") echo 'selected'; ?>>United States - Washington DC</option>
 					</select>
 				</div>
 			</div>
@@ -231,7 +235,7 @@
 	</header>
 
 	<section id="tag-section">
-		<h1 style="text-align:center;font-size:3em;padding-left:100px;padding-right:100px;"><span id="myTargetElement">700</span> course sessions in Vancouver to further your career</h1>
+		<h1 style="text-align:center;font-size:3em;padding-left:100px;padding-right:100px;"><span id="myTargetElement">2000</span> course sessions in US & Canada to further your career</h1>
 		<!--<h1 style="text-align:center">+ our trainingful guarantee to help you find courses you're looking for.</h1>-->
 		<h2 style="text-align:center">Our most popular course tags:</h2>
 		<div class="container">

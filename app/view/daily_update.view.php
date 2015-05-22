@@ -5,6 +5,11 @@ $clear_update_sql = "UPDATE course SET active_sessions=0 WHERE 1";
 $get_results = $GLOBALS['_db']->prepare($clear_update_sql);
 $get_results->execute();
 
+// SETS OLD SESSIONS TO INACTIVE
+$batch_update_sql = "UPDATE course_session SET active = 0 where start_date < ?";
+$get_results = $GLOBALS['_db']->prepare($batch_update_sql);
+$get_results->execute(array(date('Y-m-d')));
+
 // FINDS ACTIVE SESSIONS
 $batch_update_sql = "SELECT course_id, COUNT(course_id) AS course_count 
 	FROM course_session 
@@ -52,7 +57,7 @@ $get_results = $GLOBALS['_db']->prepare($update_top_tags_sql);
 $get_results->execute();
 
 $metrics_sql = "UPDATE daily_metrics 
-	SET metric_value = (SELECT count(*) as acs FROM course_session where active = 1 and metro_name = 'Vancouver' and start_date > ?) 
+	SET metric_value = (SELECT count(*) as acs FROM course_session where active = 1 and start_date > ?) 
 	WHERE metric_name = 'total_sessions'";
 $get_results = $GLOBALS['_db']->prepare($metrics_sql);
 $get_results->execute(array(date('Y-m-d')));
