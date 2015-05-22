@@ -552,7 +552,10 @@
 								<?php 
 									if ($page > 1) { 
 										if ($_GET['category'] != "") {
-											echo '<a href="search?category=' . $_GET['category'] . '&page=' . ($page-1) . '">< Previous Page </a>';
+											echo '<a href="search?category=' . $_GET['category'] . '&page=' . ($page-1) . '">< Previous Page</a>';
+										}
+										else if ($_GET['tag'] != "") {
+											echo '<a href="search?tag=' . $_GET['tag'] . '&page=' . ($page-1) . '">< Previous Page</a>';
 										}
 										else echo '<a href="search?keywords=' . $keywords . '&start=' . $start . '&end=' . $end . '&location=' . $location . '&page=' . ($page-1) . '">< Previous Page</a>'; 
 									} ?>
@@ -562,6 +565,9 @@
 									if ($totalResults > $upto) { 
 										if ($_GET['category'] != "") {
 											echo '<a href="search?category=' . $_GET['category'] . '&page=' . ($page+1) . '">Next Page > </a>';
+										}
+										else if ($_GET['tag'] != "") {
+											echo '<a href="search?tag=' . $_GET['tag'] . '&page=' . ($page+1) . '">Next Page > </a>';
 										}
 										else echo '<a href="search?keywords=' . $keywords . '&start=' . $start . '&end=' . $end . '&location=' . $location . '&page=' . ($page+1) . '">Next Page > </a>'; 
 									} ?>

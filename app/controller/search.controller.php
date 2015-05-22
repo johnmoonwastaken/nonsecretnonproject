@@ -20,6 +20,7 @@ if ($_GET['include_online'] == "on") {
 	$include_online_bool = true;
 }
 else {
+	$include_online_sql = "AND course_session.metro_name != 'Online'";
 	$include_online_bool = false;
 }
 
