@@ -496,7 +496,14 @@
 									<span class="rating s4" title="4 stars"></span>
 								</div>
 							-->
-								<h2><a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>"><?php echo $courseList[$i]['course_name']; ?></a></h2>
+								<h2>
+									<?php if ($start !=""): ?>
+									<a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>"><?php echo $courseList[$i]['course_name']; ?></a>
+									<?php else: ?>
+									<a href="course?id=<?php echo $courseList[$i]['course_id']; ?>"><?php echo $courseList[$i]['course_name']; ?></a>
+									<?php endif; ?>
+								</h2>
+
 								<p><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> 
 								<?php 
 								$max_offset = 190;
@@ -512,7 +519,11 @@
 								<ul class="sessions-list">
 									<?php foreach($courseList[$i]['sessionList'] as $session): ?>
 									<li>
+										<?php if ($start !=""): ?>
 										<a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>&session=<?php echo $session['session_id']; ?>">
+										<?php else: ?>
+										<a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&session=<?php echo $session['session_id']; ?>">
+										<?php endif; ?>
 											<div class="chevron-container">
 												<span class="icon chevron-right"></span>
 											</div>

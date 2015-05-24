@@ -1,5 +1,6 @@
 <?php
 include 'session_settings.php';
+$location = $_GET['location'];
 $search_sql = "
 	SELECT course.vendor_id, course.course_name, course.course_description, course.avg_rating, 
 		categories.category_name, categories.parent_category_id, course.benefits, course.prereqs,
@@ -154,7 +155,7 @@ foreach ($get_results as $temp) {
 }
 
 $templateFields = array('course_name' => $course_name, 'course_description' =>  $course_description, 'course_url' => $course_url, 'tags' => $tags,
-	'course_rating' => $course_rating, 'vendor_name' => $vendor_name, 'branding_url' => $branding_url, 'sessionList' => $sessionList, 
+	'course_rating' => $course_rating, 'vendor_name' => $vendor_name, 'branding_url' => $branding_url, 'sessionList' => $sessionList,  'location' => $location,
 	'vendor_contact_number' => $vendor_contact_number, 'vendor_contact_email' => $vendor_contact_email, 'vendor_website_url' => $vendor_website_url,
 	'category_name' => $category_name, 'parent_category_name' => $parent_category_name, 'video_url' => $video_url, 'designation' => $designation,
 	'benefits' => $benefits, 'prereqs' => $prereqs, 'audience' => $audience, 'suite' => $_GET['suite'], 'street_address' => $_GET['street_address'],
