@@ -480,7 +480,6 @@
 						</ul>
 
 						<ul id="info-sessions">
-							
 							<form id="add_session" action="edit_session" method="get">
 								<input type="hidden" value="<?php echo $course_id ?>" name="id">
 								<button type="submit" class="form-submit">Add Session</button>
@@ -514,6 +513,7 @@
 							<?php endif ?>
 						</ul>
 					</div>
+					<?php else: ?><div style="padding:10px 0 10px 10px;border-bottom: 1px solid #4ca166;">Add sessions after completing course profile.</div>
 					<?php endif ?>
 					</div>
 					</div>
