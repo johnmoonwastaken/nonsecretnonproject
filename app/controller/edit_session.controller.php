@@ -37,6 +37,19 @@ if (isset($_GET['id'])) {
 		$session_count++;
 	}
 
+	$metro_list_sql = "SELECT country_name, metro_name FROM metro ORDER BY country_name, metro_name asc";
+	$get_results = $GLOBALS['_db']->prepare($metro_list_sql);
+	$get_results->execute();
+
+	$metro_list = array();
+	$count = 0;
+	foreach ($get_results as $temp) {
+		$metro_list[$count]['country'] = $temp['country_name'];
+		$metro_list[$count]['metro'] = $temp['metro_name'];
+		$count++;
+	}
+
+
 	if (isset($_GET['session_id'])) {
 		// GETS THE SESSION INFORMATION
 		$search_sql = "
@@ -93,7 +106,7 @@ if (isset($_GET['id'])) {
 		$templateFields = array('course_name' => $course_name, 'description' => $description, 'metro_name' => $metro_name, 'start_date' => $start_date, 'end_date' => $end_date,
 			'start_date_time' => $start_date_time, 'end_date_time' => $end_date_time, 'session_type' => $session_type, 'cost' => $cost, 'currency' => $currency, 'active' => $active,
 			'suite' => $suite, 'street_address' => $street_address, 'city_name' => $city_name, 'sessionList' => $sessionList, 'start_hour' => $start_hour,
-			'end_hour' => $end_hour, 'start_minute' => $start_minute, 'end_minute' => $end_minute);
+			'end_hour' => $end_hour, 'start_minute' => $start_minute, 'end_minute' => $end_minute, 'metro_list' => $metro_list);
 	}
 	else {
 		$search_sql = "
@@ -107,7 +120,7 @@ if (isset($_GET['id'])) {
 		$session_result = $get_results->fetch(PDO::FETCH_ASSOC);
 
 		$course_name = $session_result['course_name'];
-		$templateFields = array('sessionList' => $sessionList, 'course_name' => $course_name);
+		$templateFields = array('sessionList' => $sessionList, 'course_name' => $course_name, 'metro_list' => $metro_list);
 	}
 }
 else {

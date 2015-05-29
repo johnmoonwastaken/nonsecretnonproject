@@ -494,7 +494,10 @@
 						      <div class="input-row">
 						        <div class="input-left">
 						          <select name="metro" id="metro" class="select-box">
-						            <option value="Vancouver">Vancouver</option>
+						            <option value="Online" <?php if($metro_name == 'Online') { echo 'selected'; } ?>>Online</option>
+						            <?php if (is_array($metro_list)) { foreach($metro_list as $metro): ?>
+						            	<option value="<?php echo $metro['metro']; ?>" <?php if($metro_name == $metro['metro']) { echo 'selected'; } ?>><?php echo $metro['country'] . ' - ' .$metro['metro']; ?></option>
+						            <?php endforeach; } ?>
 						          </select>
 						        </div>
 						        <div>
