@@ -2,6 +2,10 @@
 include 'session_settings.php';
 $courseList = array();
 
+if (is_null($_GET['category']) && is_null($_GET['tag']) && is_null($_GET['keyword'])) {
+	header("Location: /");
+}
+
 if ($_GET['min'] or $_GET['max']) {
 	$min_max_sql = " HAVING ";
 	if ($_GET['min']) {
