@@ -2,7 +2,7 @@
 include 'session_settings.php';
 $courseList = array();
 
-if (is_null($_GET['category']) && is_null($_GET['tag']) && is_null($_GET['keyword'])) {
+if (is_null($_GET['category']) && is_null($_GET['tag']) && is_null($_GET['keywords'])) {
 	header("Location: /");
 }
 
