@@ -129,7 +129,7 @@
 		background: #cde4d4;
 	}
 
-	#info-sessions .dates {
+	#info-sessions .dates-right {
 		font-weight: 400;
 		font-size: 1.2em;
 		color: #666;
@@ -366,7 +366,17 @@
 							<h2>Session Information</h2>
 
 							<div class="explanation">Session Type*</div>
-							<select name="session_type" id="session-type-box" class="select-box" onchange="if(this.value == 'Online - Self Learning') { document.getElementById('dates').style.display = 'hidden'; }">
+							<select name="session_type" id="session-type-box" class="select-box" 
+								onchange="if(this.value == 'Online - Self Learning') { 
+									document.getElementById('dates').style.display = 'none';
+									document.getElementById('searchbox-start').required = false;
+									document.getElementById('searchbox-end').required = false;
+								} 
+								else { 
+									document.getElementById('dates').style.display = 'inline'; 
+									document.getElementById('searchbox-start').required = true;
+									document.getElementById('searchbox-end').required = true;
+								}">
 					        	<option value="Classroom - Live Instructor"<?php if($session_type == "Classroom - Live Instructor") echo " selected"; ?>>Classroom - Live Instructor</option>
 						        <option value="Classroom - Webcast Instructor"<?php if($session_type == "Classroom - Webcast Instructor") echo " selected"; ?>>Classroom - Webcast Instructor</option>
 						        <option value="Online - Webcast Instructor"<?php if($session_type == "Online - Webcast Instructor") echo " selected"; ?>>Online - Webcast Instructor</option>
@@ -376,7 +386,7 @@
 						    <div id="dates">
 								<div class="input-row">
 									<div class="input-left">
-										<div class="explanation">Start and End Date</div>
+										<div class="explanation">Start and End Date*</div>
 									</div>
 									<div class="input-left25">
 										<div class="explanation">Start Time (optional)</div>
@@ -388,14 +398,14 @@
 								<div class="input-row">
 									<div class="input-left">
 										<div class="inputbox">
-											<input type="text" id="searchbox-start" name="start" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if(isset($start_date)) { echo 'value='.$start_date; } ?>> to
+											<input type="text" id="searchbox-start" name="start" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if(isset($start_date)) { echo 'value='.$start_date; } ?> required> to
 											<script type="text/javascript">
 								               $(document).ready(function() {
 							    	              $('#searchbox-start').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
 							            	      });
 								               });
 						    	           	</script>
-											<input type="text" id="searchbox-end" name="end" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if(isset($end_date)) { echo 'value='.$end_date; } ?>>
+											<input type="text" id="searchbox-end" name="end" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if(isset($end_date)) { echo 'value='.$end_date; } ?> required>
 											<script type="text/javascript">
 								               $(document).ready(function() {
 							    	              $('#searchbox-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
@@ -592,7 +602,7 @@
 								<span id="display-sessions">
 									<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
 										<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="window.location.href='edit_session?id=<?php echo $_GET['id'] ?>&session_id=<?php echo $session['session_id'] ?>'">
-											<div><span class="icon calendar"></span> <span class="dates"><?php { 
+											<div><span class="icon calendar"></span> <span class="dates-right"><?php { 
 											if ($session['session_type'] == "Online - Self Learning") {
 												echo "Online";
 											}

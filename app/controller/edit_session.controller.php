@@ -98,6 +98,9 @@ if (isset($_GET['id'])) {
 		//$discount_end_date = $session_result['discount_end_date'];
 		//$discount_currency = $session_result['discount_currency'];
 		$suite = $session_result['suite'];
+		if ($suite == "-1") {
+			$suite = "";
+		}
 		$street_address = $session_result['street_address'];
 		$city_name = $session_result['city_name'];
 		//$cost_alternate = $session_result['cost_alternate'];
