@@ -50,7 +50,7 @@ if ($session_id != "") {
 		city_name = ?
 		WHERE session_id = ?';
 	$get_results = $GLOBALS['_db']->prepare($session_sql);
-	$get_results->execute(array($metro, $start, $end, $start_date_time, $end_date_time, $session_type, $description, $cost, $currency, $suite, $street_address, $city_name, $session_id));
+	$get_results->execute(array($metro, $start, $end, $start_date_time, $end_date_time, $session_type, $description, $cost, $currency, $suite, $street, $city, $session_id));
 	header('Location: /edit_course?id='.$course_id.'&return=saved');
 	exit;
 }
@@ -58,7 +58,11 @@ else {
 	$session_sql = 'INSERT INTO course_session (metro_name, start_date, end_date, start_date_time, end_date_time, session_type, description, cost, currency, suite, street_address, city_name, timestamp, course_id, active)
 	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)';
 	$get_results = $GLOBALS['_db']->prepare($session_sql);
-	$get_results->execute(array($metro, $start, $end, $start_date_time, $end_date_time, $session_type, $description, $cost, $currency, $suite, $street_address, $city_name, "now()", $course_id));
+	$get_results->execute(array($metro, $start, $end, $start_date_time, $end_date_time, $session_type, $description, $cost, $currency, $suite, $street, $city, "now()", $course_id));
+
+	$course_sql = 'UPDATE course SET active_sessions = active_sessions + 1 WHERE course_id = ?';
+	$get_results = $GLOBALS['_db']->prepare($course_sql);
+	$get_results->execute(array($course_id));
 	header('Location: /edit_course?id='.$course_id.'&return=added');
 	exit;
 }
