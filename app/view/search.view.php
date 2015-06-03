@@ -10,12 +10,22 @@
 	elseif ($_GET['category']) { 
 		echo $parent_category_name . " - " . $category_name . " courses and training";
 	}
-	else {
-		echo $keywords . " courses and training in " . $location;
+	else 
+{		echo $keywords . " courses and training in " . $location;
 	} ?></title>
 	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
 	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
 	<meta name="Description" content="<?php echo $keywords . " courses" ?> The fastest and easiest way to search for professional courses with thousands of course sessions.">
+
+	<?php if ($totalResults == 0) {
+		echo '<link rel="import" href="../../bower_components/elements/guarantee-action-dialog.html">';
+		echo '<script>$( document ).ready(function() {
+				document.querySelector("#guarantee").ip_address = "' . $_SERVER['REMOTE_ADDR'] . '";
+				document.querySelector("#guarantee").query_string = "' . $_SERVER['QUERY_STRING'] . '";
+				document.querySelector("#guarantee").toggle();
+			});
+			</script>';
+	} ?>
 	<style>
 	#main-section {
 		background: #f8f8f8;
@@ -607,8 +617,7 @@
 					</div>
 				</div>
 			</div>
-		
 		</div>
-		
+		<guarantee-action-dialog id="guarantee" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $keywords ?>"></guarantee-action-dialog>
 		
 	</section>
