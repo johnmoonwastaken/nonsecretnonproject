@@ -25,8 +25,8 @@ $course_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $course_name = $course_result['course_name'];
 $course_description = nl2br($course_result['course_description']);
 $course_avg_rating = $course_result['course_rating'];
-if (isset($course_result['course_registration_url']) && $course_result['course_registration_url'] != "-1") {
-	$course_url = $course_result['course_registration_url'];
+if (isset($course_result['registration_url']) && $course_result['registration_url'] != "-1") {
+	$course_url = $course_result['registration_url'];
 }
 else {
 	$course_url = $course_result['course_url'];

@@ -12,6 +12,7 @@ $get_results = $GLOBALS['_db']->prepare($insert_sql);
 $get_results->execute(array($session_id, $url, $_SERVER['REMOTE_ADDR']));
 
 header('Location: '.$url);
+
 die();
 exit;
 ?>

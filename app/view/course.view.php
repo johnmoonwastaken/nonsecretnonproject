@@ -323,12 +323,12 @@
 		}
 
 		if (sessioninfo[session_id].registration_url != "-1" && sessioninfo[session_id].registration_url != "") {
-			document.querySelector('#sad').courseurl = "<img src='/images/extlink.png' height='10' width='10' style='margin-right:5px;'><a href='/external_redirect?url="+sessioninfo[session_id].registration_url+"&session_id="+session_id+"' target='_blank'>External Website</a>";
-			document.querySelector('#sad').externalurl = '/external_redirect?url='+sessioninfo[session_id].registration_url+'&session_id='+session_id;
+			document.querySelector('#sad').courseurl = "<img src='/images/extlink.png' height='10' width='10' style='margin-right:5px;'><a href='/external_redirect?url="+encodeURIComponent(sessioninfo[session_id].registration_url)+"&session_id="+session_id+"' target='_blank'>External Website</a>";
+			document.querySelector('#sad').externalurl = '/external_redirect?url='+encodeURIComponent(sessioninfo[session_id].registration_url)+'&session_id='+session_id;
 		}
 		else {
-			document.querySelector('#sad').courseurl = "<img src='/images/extlink.png' height='10' width='10' style='margin-right:5px;'><a href='/external_redirect?url="+"<?php echo $course_url; ?>"+"&session_id="+session_id+"' target='_blank'>External Website</a>";
-			document.querySelector('#sad').externalurl = '/external_redirect?url='+'<?php echo $course_url; ?>'+'&session_id='+session_id+'';
+			document.querySelector('#sad').courseurl = "<img src='/images/extlink.png' height='10' width='10' style='margin-right:5px;'><a href='/external_redirect?url="+"<?php echo urlencode($course_url); ?>"+"&session_id="+session_id+"' target='_blank'>External Website</a>";
+			document.querySelector('#sad').externalurl = '/external_redirect?url='+'<?php echo urlencode($course_url); ?>'+'&session_id='+session_id+'';
 		}
 
 		if (sessioninfo[session_id].discount_applicable == "1") {
@@ -357,7 +357,6 @@
 	<header>
 <?php include 'header.view.php' ?>
 	</header>
-	
 	<section id="main-section">
 		<div class="container" id="main-container">
 			<div id="query-summary-bar" class="container">
