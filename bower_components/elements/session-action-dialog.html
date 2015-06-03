@@ -173,6 +173,7 @@
     
     <div id="register_buttons">
     	<paper-button dismissive on-tap="{{cancelForm}}">Cancel</paper-button>
+      <paper-button affirmative hover on-tap="{{submitForm}}"><img src='/images/extlink.png' height='10' width='10' style='margin-right:5px;'>Register Now</paper-button>
       <!--
     	<paper-button affirmative hover on-tap="{{submitForm}}">Register</paper-button>
       -->
@@ -194,6 +195,7 @@
   	vendorname: "",
   	vendorurl: "",
     courseurl: "",
+    externalurl: "",
   	vendoremail: "",
   	vendorcontact: "",
   	sessionid: "",
@@ -204,6 +206,8 @@
       closeSelector: '[affirmative],[dismissive]'
     },
     submitForm: function() {
+      window.open(this.externalurl);
+      /*
     	this.$.register_form.actiontime = Date.now();
       var firstNameDom = this.$.register_form.first_name;
       if (typeof firstNameDom === "undefined") {
@@ -248,6 +252,7 @@
     		this.$.register_buttons.style.display = "none";
     		this.$.close_button.style.display = "inline";
     	}
+      */
     },
     cancelForm: function() {
       //this.$.confirmation_message.style.display = "none";
