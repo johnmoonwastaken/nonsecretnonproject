@@ -205,8 +205,18 @@
     publish: {
       closeSelector: '[affirmative],[dismissive]'
     },
-    submitForm: function() {
-      window.open(this.externalurl);
+    submitForm: function(e) {
+      var newWindow = window.open(this.externalurl);
+      $.ajax({
+        type: "POST",
+        url: form_url,
+        dataType: 'json',
+        data: form_data,
+        success: function(data) {
+          newWindow.location = url;
+          //window.open(url, '_blank');
+        }
+      });      
       /*
     	this.$.register_form.actiontime = Date.now();
       var firstNameDom = this.$.register_form.first_name;
