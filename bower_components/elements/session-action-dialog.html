@@ -173,7 +173,7 @@
     
     <div id="register_buttons">
     	<paper-button dismissive on-tap="{{cancelForm}}">Cancel</paper-button>
-      <paper-button affirmative hover on-tap="{{submitForm}}"><img src='/images/extlink.png' height='10' width='10' style='margin-right:5px;'>Register Now</paper-button>
+      <a href="{{externalurl}}" target="_blank"><paper-button affirmative hover><img src='/images/extlink.png' height='10' width='10' style='margin-right:5px;'>Register Now</paper-button></a>
       <!--
     	<paper-button affirmative hover on-tap="{{submitForm}}">Register</paper-button>
       -->
@@ -205,18 +205,8 @@
     publish: {
       closeSelector: '[affirmative],[dismissive]'
     },
-    submitForm: function(e) {
-      var newWindow = window.open(this.externalurl);
-      $.ajax({
-        type: "POST",
-        url: form_url,
-        dataType: 'json',
-        data: form_data,
-        success: function(data) {
-          newWindow.location = url;
-          //window.open(url, '_blank');
-        }
-      });      
+    submitForm: function() {
+      window.open(this.externalurl);
       /*
     	this.$.register_form.actiontime = Date.now();
       var firstNameDom = this.$.register_form.first_name;
