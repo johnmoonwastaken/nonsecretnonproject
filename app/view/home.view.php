@@ -207,11 +207,9 @@
 					<!--<input type="text" id="searchbox-location" name="location" placeholder="Location" class="form-text"  <?php // if ($_GET['location']) { echo 'value='.$_GET['location']; } else echo 'value="Vancouver"'; ?>>-->
 					<select id="searchbox-location" name="location" placeholder="Location" style="font-size:1.3em;height:51px;padding:9px 9px 10px 9px;border: 1px solid #aaa;border-radius:0;color: #555555;width:365px;">
 						<option value="Everywhere">Everywhere</option>
-						<option value="Toronto" <?php if ($_GET['location'] == "Toronto") echo 'selected'; ?>>Canada - Toronto</option>
-						<option value="Vancouver" <?php if ($_GET['location'] == "Vancouver") echo 'selected'; ?>>Canada - Vancouver</option>
-						<option value="New York" <?php if ($_GET['location'] == "New York") echo 'selected'; ?>>United States - New York</option>
-						<option value="Seattle" <?php if ($_GET['location'] == "Seattle") echo 'selected'; ?>>United States - Seattle</option>
-						<option value="Washington DC" <?php if ($_GET['location'] == "Washington DC") echo 'selected'; ?>>United States - Washington DC</option>
+						<?php foreach ($locationList as $metro): ?>
+							<option value="<?php echo $metro['metro_name']; ?>" <?php if ($_GET['location'] == $metro['metro_name']) echo 'selected'; ?>><?php echo $metro['country_name'] . " - " . $metro['metro_name']; ?></option>
+						<?php endforeach ?>
 					</select>
 				</div>
 			</div>
