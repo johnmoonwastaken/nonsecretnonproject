@@ -44,6 +44,11 @@ if ($_GET['category']) {
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($_GET['category'], date('Y-m-d')));
+
+	$save_search_sql = "
+		INSERT INTO searches (search_term, ip_address) VALUES (?, ?)";
+	$query = $GLOBALS['_db']->prepare($save_search_sql);
+	$query->execute(array('category='.$_GET['category'],$_SERVER['REMOTE_ADDR']));
 }
 elseif ($_GET['tag']) {
 	$search_sql = "
@@ -63,6 +68,11 @@ elseif ($_GET['tag']) {
 		ORDER BY verified, course_name, course_id, start_date, course.click_count";
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array("%".($_GET['tag'])."%", date('Y-m-d')));
+
+	$save_search_sql = "
+		INSERT INTO searches (search_term, ip_address) VALUES (?, ?)";
+	$query = $GLOBALS['_db']->prepare($save_search_sql);
+	$query->execute(array('tag='.$_GET['tag'],$_SERVER['REMOTE_ADDR']));
 }
 else {
 	$search_sql = "
