@@ -1,10 +1,10 @@
 <?php
 
-	$email = $_REQUEST['email'];
-	$name = $_REQUEST['name'];
-	$comments = $_REQUEST['comments'];
-	$ip_address = $_REQUEST['ip_address'];
-	$query_string = $_REQUEST['query_string'];
+	$email = $_POST['email'];
+	$name = $_POST['name'];
+	$comments = $_POST['comments'];
+	$ip_address = $_POST['ip_address'];
+	$query_string = $_POST['query_string'];
 
 	$add_sql = "INSERT INTO guarantee (email, name, comments, ip_address, query_string, time) VALUES (?,?,?,?,?,now());";
 	$get_results = $GLOBALS['_db']->prepare($add_sql);
