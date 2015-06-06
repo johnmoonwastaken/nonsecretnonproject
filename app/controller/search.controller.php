@@ -168,6 +168,23 @@ foreach ($get_results as $temp) {
 	$session_count++;
 }
 
+$locationList = array();
+$search_sql = "
+	SELECT country_name, metro_name 
+	FROM metro 
+	WHERE country_name = 'Canada' or country_name = 'United States'
+	ORDER BY country_name, metro_name asc";
+
+$get_results = $GLOBALS['_db']->prepare($search_sql);
+$get_results->execute();
+
+$row_count = 0;
+foreach ($get_results as $temp) {
+	$locationList[$row_count]['country_name'] = $temp['country_name'];
+	$locationList[$row_count]['metro_name'] = $temp['metro_name'];
+	$row_count++;
+}
+
 if ($_GET['category']) {
 	$search_sql = "
 			SELECT p.category_name as primary_name, c.category_name as secondary_name from categories c
@@ -180,11 +197,11 @@ if ($_GET['category']) {
 		$parent_category_name = $category_result['primary_name'];
 		$category_name = $category_result['secondary_name'];
 
-	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count + 1,
+	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count + 1, 'locationList' => $locationList,
 		'category_id' => $_GET['category'], 'parent_category_name' => $parent_category_name, 'category_name' => $category_name);
 }
 else {
-	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count + 1,
+	$templateFields = array('courseList' => $courseList, 'totalResults' => $course_count + 1, 'locationList' => $locationList, 
 		'keywords' => $_GET['keywords'], 'start' => $_GET['start'], 'end' => $_GET['end'], 'location' => $_GET['location']);
 }
 displayTemplate('search', $templateFields);

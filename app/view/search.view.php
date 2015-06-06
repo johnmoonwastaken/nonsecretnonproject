@@ -333,6 +333,10 @@
 		font-size: 1.6em;
 	}
 
+	#searchbox-location {
+		font-size: 0.8em;
+	}
+
 	#trainingful-guarantee {
 		border: 2px dotted rgba(0,0,0,0.5);
 		border-radius: 10px;
@@ -486,7 +490,9 @@
 								<a href="#"><span class="icon triangle-down"></span>Location</a>
 								<div class="inputbox">
 									<select id="searchbox-location" name="location" placeholder="Location">
-										<option value="Vancouver">Vancouver</option>
+										<?php foreach ($locationList as $metro): ?>
+											<option value="<?php echo $metro['metro_name']; ?>" <?php if ($_GET['location'] == $metro['metro_name']) echo 'selected'; ?>><?php echo $metro['country_name'] . " - " . $metro['metro_name']; ?></option>
+										<?php endforeach ?>
 										<option value="Everywhere" <?php if ($_GET['location'] == "Everywhere") echo 'selected'; ?>>Everywhere</option>
 									</select>
 								</div>
