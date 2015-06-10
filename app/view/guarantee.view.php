@@ -19,7 +19,9 @@
 
 		header("Location: /trainingful_guarantee?return=sent");
 	}
-
+	else {
+		header("Location: /trainingful_guarantee");
+	}
 	die();
 
 ?>
