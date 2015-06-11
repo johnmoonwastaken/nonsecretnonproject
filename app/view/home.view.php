@@ -154,7 +154,7 @@
 	<header>
 		<?php include 'header.view.php' ?>
 
-		<h1>Find courses and conferences</h1>
+		<h1>Find courses near you</h1>
 		<form id="searchbox" action="search" method="get">
 			<div class="row">
 				<div class="12u">
@@ -217,8 +217,8 @@
 					<input type="hidden" id="input-location" name="location">
 					<ul id="menu">
 					    <li><a href="#" class="drop" id="searchbox-location">Everywhere</a>
-					        <div class="dropdown_5columns">
-					        	<div class="col_5" style="cursor:pointer;" onClick="updateLocation('Everywhere');">
+					        <div class="dropdown_4columns">
+					        	<div class="col_4" style="cursor:pointer;" onClick="updateLocation('Everywhere');">
 					            <strong><p>Everywhere</p></strong>
 					            </div>
 					        	<?php 
