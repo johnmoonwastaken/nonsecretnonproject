@@ -218,7 +218,7 @@
 					<ul id="menu">
 					    <li><a href="#" class="drop" id="searchbox-location">Everywhere</a>
 					        <div class="dropdown_5columns">
-					        	<div class="col_5">
+					        	<div class="col_5" style="cursor:pointer;" onClick="updateLocation('Everywhere');">
 					            <strong><p>Everywhere</p></strong>
 					            </div>
 					        	<?php 
