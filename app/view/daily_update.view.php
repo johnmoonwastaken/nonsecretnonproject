@@ -124,6 +124,9 @@ foreach ($get_results as $temp) {
 }
 
 echo "Total Locations: " . $count;
+
+$data = $data . "</urlset>";
+
 file_put_contents("sitemap.xml", $data);
 
 ?>
