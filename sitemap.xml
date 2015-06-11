@@ -54,15 +54,15 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?tag=Amazon+Web+Services+%28AWS%29</loc>
-	<changefreq>weekly</changefreq>
-	</url>
-	<url>
 	<loc>http://www.trainingful.com/search?tag=Arbitrations</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
 	<loc>http://www.trainingful.com/search?tag=ASP.NET</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?tag=AWS+%28Amazon+Web+Services%29</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
@@ -102,19 +102,15 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
+	<loc>http://www.trainingful.com/search?tag=CCNA+%28Cisco+Certified+Network+Associate%29</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?tag=CEH+%28EC-Council+Certified+Ethical+Hacker%29</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
 	<loc>http://www.trainingful.com/search?tag=Certified+Disaster+Recovery+Engineer</loc>
-	<changefreq>weekly</changefreq>
-	</url>
-	<url>
-	<loc>http://www.trainingful.com/search?tag=Certified+Scrum+Master+%28CSM%29</loc>
-	<changefreq>weekly</changefreq>
-	</url>
-	<url>
-	<loc>http://www.trainingful.com/search?tag=Certified+Scrum+Product+Owner+%28CSPO%29</loc>
-	<changefreq>weekly</changefreq>
-	</url>
-	<url>
-	<loc>http://www.trainingful.com/search?tag=Cisco+Certified+Network+Associate+%28CCNA%29</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
@@ -162,6 +158,14 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
+	<loc>http://www.trainingful.com/search?tag=CSM+%28Certified+Scrum+Master%29</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?tag=CSPO+%28Certified+Scrum+Product+Owner%29</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
 	<loc>http://www.trainingful.com/search?tag=CSS</loc>
 	<changefreq>weekly</changefreq>
 	</url>
@@ -198,15 +202,15 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?tag=EC-Council+Certified+Ethical+Hacker+%28CEH%29</loc>
-	<changefreq>weekly</changefreq>
-	</url>
-	<url>
 	<loc>http://www.trainingful.com/search?tag=Employment+and+Labor+Law</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
 	<loc>http://www.trainingful.com/search?tag=Enterprise+Architecture</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?tag=Environmental+Design</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
@@ -250,6 +254,10 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
+	<loc>http://www.trainingful.com/search?tag=Health+and+Safety</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
 	<loc>http://www.trainingful.com/search?tag=HTML</loc>
 	<changefreq>weekly</changefreq>
 	</url>
@@ -258,15 +266,15 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
+	<loc>http://www.trainingful.com/search?tag=IIS+%28Internet+Information+Services%29</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
 	<loc>http://www.trainingful.com/search?tag=Illustrator</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
 	<loc>http://www.trainingful.com/search?tag=InDesign</loc>
-	<changefreq>weekly</changefreq>
-	</url>
-	<url>
-	<loc>http://www.trainingful.com/search?tag=Internet+Information+Services+%28IIS%29</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
@@ -302,6 +310,10 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
+	<loc>http://www.trainingful.com/search?tag=LEED</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
 	<loc>http://www.trainingful.com/search?tag=Legal+Practice+and+Advocacy+Skills</loc>
 	<changefreq>weekly</changefreq>
 	</url>
@@ -326,15 +338,15 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
+	<loc>http://www.trainingful.com/search?tag=MCSA+%28Microsoft+Certified+Solutions+Associate%29</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?tag=MDT+%28Microsoft+Deployment+Toolkit%29</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
 	<loc>http://www.trainingful.com/search?tag=Microsoft+Access</loc>
-	<changefreq>weekly</changefreq>
-	</url>
-	<url>
-	<loc>http://www.trainingful.com/search?tag=Microsoft+Certified+Solutions+Associate+%28MCSA%29</loc>
-	<changefreq>weekly</changefreq>
-	</url>
-	<url>
-	<loc>http://www.trainingful.com/search?tag=Microsoft+Deployment+Toolkit+%28MDT%29</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
@@ -470,7 +482,7 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?tag=Precision+Questioning+and+Answering+%28PQ%26A%29</loc>
+	<loc>http://www.trainingful.com/search?tag=PQ%26A+%28Precision+Questioning+and+Answering%29</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
@@ -479,6 +491,10 @@
 	</url>
 	<url>
 	<loc>http://www.trainingful.com/search?tag=Presentation+Skills</loc>
+	<changefreq>weekly</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?tag=Primavera</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
@@ -594,11 +610,11 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?tag=User+State+Migration+Tool+%28USMT%29</loc>
+	<loc>http://www.trainingful.com/search?tag=USMT+%28User+State+Migration+Tool%29</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?tag=Virtual+Desktop+Infrastructure+%28VDI%29</loc>
+	<loc>http://www.trainingful.com/search?tag=VDI+%28Virtual+Desktop+Infrastructure%29</loc>
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
@@ -638,935 +654,1571 @@
 	<changefreq>weekly</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Excel&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Excel&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Washington+DC&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Washington+DC&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=San+Francisco&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=San+Francisco&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Atlanta&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Atlanta&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+Windows+Server&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+Windows+Server&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=New+York&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=New+York&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Silicon+Valley&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Silicon+Valley&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Chicago&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Toronto&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Toronto&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Philadelphia&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Philadelphia&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=San+Francisco&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=San+Francisco&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Boston&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Boston&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Ottawa&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Ottawa&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+Word&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+Word&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=New+York&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=New+York&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+Certified+Solutions+Associate+%28MCSA%29&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=MCSA+%28Microsoft+Certified+Solutions+Associate%29&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Exam+Prep&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Exam+Prep&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=SharePoint&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=SharePoint&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Los+Angeles&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Los+Angeles&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+SQL+Server&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+SQL+Server&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=SQL&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=SQL&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Montreal&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Montreal&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+System+Center&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+System+Center&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Dallas&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Dallas&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Chicago&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Chicago&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Cloud&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Cloud&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Phoenix&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Phoenix&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Sacramento&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Sacramento&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=San+Francisco&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=San+Francisco&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Atlanta&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Atlanta&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Atlanta&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Atlanta&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Active+Directory&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Active+Directory&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Azure&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Azure&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Management+Skills&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Los+Angeles&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=PowerPoint&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Los+Angeles&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Outlook&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Los+Angeles&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Seattle&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Management+Skills&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Orlando&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=PowerPoint&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Washington+DC&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Washington+DC&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Communication+Skills&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Washington+DC&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Communication+Skills&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Washington+DC&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Time+Management&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Outlook&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=InDesign&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Seattle&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Business+Analysis&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Orlando&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Los+Angeles&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Washington+DC&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=PMP&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Communication+Skills&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Communication+Skills&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Writing+Skills&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Time+Management&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+Access&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Fall+Protection&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Silicon+Valley&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=InDesign&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Boston&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Business+Analysis&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=ITIL&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Los+Angeles&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Fall+Protection&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Health+and+Safety&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+Exchange+Server&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=San+Francisco&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Scrum&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=New+York&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Denver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=San+Francisco&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Toronto&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=New+York&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Business+Intelligence&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=San+Francisco&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+Windows+PowerShell&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=New+York&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+Windows&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=PMP&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Toronto&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Houston&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Writing+Skills&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=ITSM&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+Access&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Data+Warehouse&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Silicon+Valley&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Hyper-V&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Boston&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Acrobat&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Boston&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Enterprise+Architecture&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Boston&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Legal+Practice+and+Advocacy+Skills&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Boston&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Houston&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=ITIL&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Philadelphia&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+Exchange+Server&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Denver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Scrum&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Writing+Skills&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Denver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=San+Diego&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Toronto&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Boston&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=San+Diego&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Dallas&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=San+Diego&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Phoenix&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=San+Diego&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=ETL&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Business+Intelligence&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=VMware+vSphere&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+Windows+PowerShell&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=VMware+ESX&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+Windows&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=VMware+vCenter&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Toronto&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Linux&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Houston&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Photoshop&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=ASP.NET&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Atlanta&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Process+Management&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Miami&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Tampa&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Conflict+Resolution&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Atlanta&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Business+Analysis&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Miami&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Philadelphia&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Accounting&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Atlanta&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Prince2&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Miami&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Presentation+Skills&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=ITSM&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Public+Speaking&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Data+Warehouse&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Six+Sigma+Yellow+Belt&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Hyper-V&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Datacenter&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Acrobat&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Premiere+Pro&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Enterprise+Architecture&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Agile&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Legal+Practice+and+Advocacy+Skills&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Family+Law&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Houston&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Wills%2C+Trusts+and+Estates+Law&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Philadelphia&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Denver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Washington+DC&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Writing+Skills&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=San+Francisco&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=San+Diego&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=New+York&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Boston&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Charlotte&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Dallas&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Austin&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Phoenix&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Cincinnati&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Charlotte&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Negotiation+Skills&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Charlotte&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Finance&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Charlotte&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=CAPM&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=ETL&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Marketing&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=VMware+vSphere&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Train+the+Trainer&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=VMware+ESX&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Not-for-Profit+Organization+Governance&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=VMware+vCenter&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+Report+Builder+3.0&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Linux&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Internet+Information+Services+%28IIS%29&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Photoshop&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Cisco+Certified+Network+Associate+%28CCNA%29&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=ASP.NET&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Final+Cut+Pro&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Process+Management&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Illustrator&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Tampa&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+Project&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Conflict+Resolution&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=CompTIA+A%2B&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Business+Analysis&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=CompTIA+Network%2B&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Primavera&start=2015-06-12&end=2016-06-11&location=Edmonton&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=C%23&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Primavera&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=CSS&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-12&end=2016-06-11&location=Calgary&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=HTML&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Philadelphia&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=JavaScript&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-12&end=2016-06-11&location=Edmonton&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Certified+Scrum+Master+%28CSM%29&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Seattle&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=OpenStack&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Dallas&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Administrative+Law&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Seattle&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Paralegals+and+Legal+Support+Staff&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Dallas&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Minneapolis&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Seattle&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Charlotte&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Dallas&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Memphis&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Accounting&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Austin&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Prince2&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Miami&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Presentation+Skills&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=DevOps&start=2015-06-11&end=2016-06-10&location=Seattle&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Public+Speaking&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=DevOps&start=2015-06-11&end=2016-06-10&location=San+Francisco&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Six+Sigma+Yellow+Belt&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Montreal&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Datacenter&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Ottawa&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Premiere+Pro&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Toronto&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Agile&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Silicon+Valley&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Family+Law&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Philadelphia&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Wills%2C+Trusts+and+Estates+Law&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Seattle&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Miami&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Washington+DC&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=St.+Louis&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=San+Francisco&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=San+Diego&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=New+York&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Minneapolis&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Charlotte&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Dallas&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Austin&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Negotiation+Skills&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Cincinnati&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Exam+Prep&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Primavera&start=2015-06-12&end=2016-06-11&location=Calgary&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Public+Speaking&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Silicon+Valley&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=San+Francisco&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Denver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Chicago&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Tucson&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Orlando&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Albuquerque&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Baltimore&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Nashville&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Orlando&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Kansas+City&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Minneapolis&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Portland&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Toronto&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Silicon+Valley&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=New+York&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Denver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Denver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Tucson&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Raleigh&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Albuquerque&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Washington+DC&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Nashville&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-11&end=2016-06-10&location=Chicago&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Kansas+City&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=PMP&start=2015-06-11&end=2016-06-10&location=Chicago&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Portland&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=PMP&start=2015-06-11&end=2016-06-10&location=Victoria&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Silicon+Valley&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Exam+Prep&start=2015-06-11&end=2016-06-10&location=Victoria&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Denver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-11&end=2016-06-10&location=Victoria&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Tucson&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=CAPM&start=2015-06-11&end=2016-06-10&location=Victoria&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Albuquerque&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Exam+Prep&start=2015-06-11&end=2016-06-10&location=Chicago&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Nashville&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Keynote&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Kansas+City&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Cultural+Sensitivity&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Portland&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Trusts+and+Estates&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Negotiation+Skills&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Lync+Server&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Finance&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=After+Effects&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=CAPM&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Certified+Scrum+Product+Owner+%28CSPO%29&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Marketing&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Maven&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Train+the+Trainer&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=TOGAF&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Not-for-Profit+Organization+Governance&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Aboriginal+Law&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+Report+Builder+3.0&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Tort+and+Personal+Injury+Law&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=IIS+%28Internet+Information+Services%29&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Real+Estate+Law&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=CCNA+%28Cisco+Certified+Network+Associate%29&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Legal+Practice+and+Advocacy+Skills&start=2015-06-11&end=2016-06-10&location=Victoria&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Final+Cut+Pro&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Office+Administration&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Illustrator&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Google+Drive&start=2015-06-11&end=2016-06-10&location=Vancouver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+Project&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Raleigh&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=CompTIA+A%2B&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Salt+Lake+City&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=CompTIA+Network%2B&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Amazon+Web+Services+%28AWS%29&start=2015-06-11&end=2016-06-10&location=Baltimore&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=C%23&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Seattle&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=CSS&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=DevOps&start=2015-06-11&end=2016-06-10&location=New+York&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=HTML&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Los+Angeles&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=JavaScript&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Phoenix&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=CSM+%28Certified+Scrum+Master%29&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Sacramento&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=OpenStack&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Atlanta&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Administrative+Law&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Boston&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Paralegals+and+Legal+Support+Staff&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Orlando&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Minneapolis&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Chicago&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Charlotte&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-11&end=2016-06-10&location=Denver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Memphis&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Orlando&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Austin&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Raleigh&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Miami&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Phoenix&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=DevOps&start=2015-06-12&end=2016-06-11&location=Seattle&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Omaha&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=DevOps&start=2015-06-12&end=2016-06-11&location=San+Francisco&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Kansas+City&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Montreal&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Indianapolis&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Ottawa&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Houston&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Toronto&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-11&end=2016-06-10&location=Lansing&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Silicon+Valley&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=PMP&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Philadelphia&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Microsoft+Project&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Seattle&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Accounting&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Miami&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Coaching+and+Mentoring&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=St.+Louis&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Lean&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=San+Diego&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Time+Management&start=2015-06-11&end=2016-06-10&location=Waterloo&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Minneapolis&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-11&end=2016-06-10&location=Calgary&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Dallas&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-11&end=2016-06-10&location=Toronto&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Negotiation+Skills&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Winnipeg&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Exam+Prep&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Los+Angeles&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Public+Speaking&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Salt+Lake+City&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-12&end=2016-06-11&location=Toronto&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Seattle&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=San+Francisco&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Atlanta&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Portland&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Orlando&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=San+Diego&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Baltimore&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Washington+DC&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Orlando&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Houston&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Minneapolis&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Philadelphia&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Toronto&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Miami&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=New+York&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Nashville&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Denver&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Denver&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Raleigh&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-11&end=2016-06-10&location=Boston&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Washington+DC&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Silicon+Valley&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Eugene&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Los+Angeles&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Corpus+Christi&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Albany&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Tampa&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Columbus&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Hong+Kong&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	<url>
-	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-11&end=2016-06-10&location=Salt+Lake+City&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Phoenix&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Raleigh&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Pittsburgh&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Detroit&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=San+Antonio&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Mumbai&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Dubai&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Milwaukee&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Salt+Lake+City&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Indianapolis&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Spokane&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Baltimore&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Doha&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Sacramento&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Las+Vegas&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Philadelphia&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Minneapolis&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Grand+Rapids&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Fresno&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=New+Orleans&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Houston&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Columbus&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Madison&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Columbus+GA&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Macau&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Eugene&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Corpus+Christi&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Tampa&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Hong+Kong&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Phoenix&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Raleigh&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Pittsburgh&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Detroit&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=San+Antonio&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Mumbai&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Dubai&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Milwaukee&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Salt+Lake+City&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Indianapolis&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Spokane&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Baltimore&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Doha&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Sacramento&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Las+Vegas&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Philadelphia&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Minneapolis&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Grand+Rapids&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Fresno&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=New+Orleans&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Houston&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Columbus&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Madison&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Columbus+GA&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Macau&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Eugene&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Corpus+Christi&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Tampa&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Hong+Kong&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Phoenix&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Raleigh&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Pittsburgh&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Detroit&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=San+Antonio&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Mumbai&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Dubai&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Milwaukee&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Salt+Lake+City&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Indianapolis&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Spokane&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Baltimore&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Doha&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Sacramento&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Las+Vegas&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Philadelphia&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Minneapolis&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Grand+Rapids&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Fresno&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=New+Orleans&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Houston&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Columbus&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Madison&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Columbus+GA&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Macau&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=PMP&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=PMP&start=2015-06-12&end=2016-06-11&location=Victoria&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Exam+Prep&start=2015-06-12&end=2016-06-11&location=Victoria&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Project+Management&start=2015-06-12&end=2016-06-11&location=Victoria&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=CAPM&start=2015-06-12&end=2016-06-11&location=Victoria&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Exam+Prep&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Keynote&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Cultural+Sensitivity&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Trusts+and+Estates&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Lync+Server&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=After+Effects&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=CSPO+%28Certified+Scrum+Product+Owner%29&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Maven&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=TOGAF&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Aboriginal+Law&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Tort+and+Personal+Injury+Law&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Real+Estate+Law&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Legal+Practice+and+Advocacy+Skills&start=2015-06-12&end=2016-06-11&location=Victoria&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Office+Administration&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Google+Drive&start=2015-06-12&end=2016-06-11&location=Vancouver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Raleigh&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Salt+Lake+City&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=AWS+%28Amazon+Web+Services%29&start=2015-06-12&end=2016-06-11&location=Baltimore&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Seattle&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=DevOps&start=2015-06-12&end=2016-06-11&location=New+York&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Los+Angeles&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Phoenix&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Sacramento&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Atlanta&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Boston&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Orlando&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Chicago&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Big+Data&start=2015-06-12&end=2016-06-11&location=Denver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Orlando&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Raleigh&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Phoenix&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Omaha&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Kansas+City&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Indianapolis&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Houston&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Salesforce&start=2015-06-12&end=2016-06-11&location=Lansing&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=PMP&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Microsoft+Project&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Accounting&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Coaching+and+Mentoring&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Lean&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Time+Management&start=2015-06-12&end=2016-06-11&location=Waterloo&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Primavera&start=2015-06-12&end=2016-06-11&location=Toronto&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Winnipeg&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Los+Angeles&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Salt+Lake+City&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Seattle&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Atlanta&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Portland&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=San+Diego&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Washington+DC&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Houston&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Philadelphia&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Miami&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Nashville&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Denver&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Leadership+Skills&start=2015-06-12&end=2016-06-11&location=Boston&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Silicon+Valley&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Los+Angeles&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Albany&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Columbus&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Sales&start=2015-06-12&end=2016-06-11&location=Salt+Lake+City&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Toronto&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Richmond&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Construction&start=2015-06-12&end=2016-06-11&location=Charleston&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Toronto&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Richmond&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=LEED&start=2015-06-12&end=2016-06-11&location=Charleston&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Toronto&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Richmond&include_online=on</loc>
+	<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>http://www.trainingful.com/search?keywords=Environmental+Design&start=2015-06-12&end=2016-06-11&location=Charleston&include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	
