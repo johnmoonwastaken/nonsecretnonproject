@@ -116,7 +116,7 @@ foreach ($get_results as $temp) {
 	$end_date->modify('+1 year');
 
 	$data = $data . '<url>
-	<loc>http://www.trainingful.com/search?keywords=' . urlencode($temp['tag_name']) . '&start=' . $tomorrow->format('Y-m-d') . '&end=' . $end_date->format('Y-m-d') . '&location=' . urlencode($temp['metro_name']) . '&include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=' . urlencode($temp['tag_name']) . '&amp;start=' . $tomorrow->format('Y-m-d') . '&amp;end=' . $end_date->format('Y-m-d') . '&amp;location=' . urlencode($temp['metro_name']) . '&amp;include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	';
