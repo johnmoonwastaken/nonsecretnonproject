@@ -44,10 +44,6 @@
 		border: 2px solid #4ca166;
 	}
 	
-	#searchbox-keywords {
-		
-	}
-	
 	#main-section {
 		background: #f8f8f8;
 		padding: 40px 0;
@@ -130,6 +126,11 @@
 		};
 		var demo = new countUp("myTargetElement", 0, <?php echo $total_sessions ?>, -1, 2.0, options);
 		demo.start();
+
+		<?php if (isset($_GET['location'])): ?>
+		updateLocation('<?php echo $_GET["location"]; ?>');
+		<?php endif ?>
+
 	});
 	</script>
 
@@ -138,6 +139,15 @@
 	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../bower_components/moment/moment.js"></script>
 	<script type="text/javascript" src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+	<link rel="stylesheet" href="../../css/menu_styles.css">
+
+	<script>
+		function updateLocation(metro_name) {
+			document.getElementById('searchbox-location').innerHTML = metro_name;
+			document.getElementById('input-location').value = metro_name;
+		}
+	</script>
 
 </head>
 <body>
@@ -204,13 +214,27 @@
 	               });
     	           </script>
 				<div class="6u">
-					<!--<input type="text" id="searchbox-location" name="location" placeholder="Location" class="form-text"  <?php // if ($_GET['location']) { echo 'value='.$_GET['location']; } else echo 'value="Vancouver"'; ?>>-->
-					<select id="searchbox-location" name="location" placeholder="Location" style="font-size:1.3em;height:51px;padding:9px 9px 10px 9px;border: 1px solid #aaa;border-radius:0;color: #555555;width:365px;">
-						<option value="Everywhere">Everywhere</option>
-						<?php foreach ($locationList as $metro): ?>
-							<option value="<?php echo $metro['metro_name']; ?>" <?php if ($_GET['location'] == $metro['metro_name']) echo 'selected'; ?>><?php echo $metro['country_name'] . " - " . $metro['metro_name']; ?></option>
-						<?php endforeach ?>
-					</select>
+					<input type="hidden" id="input-location" name="location">
+					<ul id="menu">
+					    <li><a href="#" class="drop" id="searchbox-location">Everywhere</a>
+					        <div class="dropdown_5columns">
+					        	<div class="col_5">
+					            <strong><p>Everywhere</p></strong>
+					            </div>
+					        	<?php 
+					        	$country = "";
+					        	foreach ($locationList as $metro) {
+					        		if ($metro['country_name'] != $country) {
+					        			echo '<div class="col_5"><p><strong>'. $metro['country_name'] .'</strong></p></div>';
+					        			$country = $metro['country_name'];
+					        		}
+					        		echo '<div class="col_1" style="cursor:pointer;" onClick="updateLocation(\''.$metro['metro_name'].'\');"><p>'. $metro['metro_name'].'</p></div>';
+					        	}
+					        	?>
+					        </div>
+					    </li>
+					</ul>
+
 				</div>
 			</div>
 			<div class="row 25% uniform">
