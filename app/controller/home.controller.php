@@ -84,7 +84,20 @@ foreach ($get_results as $temp) {
 	$row_count++;
 }
 
-$templateFields = array('functions' => $functionsCategories, 'industries' => $industriesCategories, 'tags' => $tagCloud,
+$vendorList = array();
+$search_sql = "
+	SELECT branding_url FROM vendor WHERE branding_url != -1 AND branding_url !=' ' AND branding_url NOT LIKE 'http%' ORDER BY vendor_name ASC";
+
+$get_results = $GLOBALS['_db']->prepare($search_sql);
+$get_results->execute();
+$row_count = 0;
+foreach ($get_results as $temp) {
+	$vendorList[$row_count] = $temp['branding_url'];
+	$row_count++;
+}
+
+
+$templateFields = array('functions' => $functionsCategories, 'industries' => $industriesCategories, 'tags' => $tagCloud, 'vendorList' => $vendorList,
 	'tag_max' => $tag_max, 'tag_min' => $tag_min, 'total_sessions' => $total_sessions, 'locationList' => $locationList);
 
 displayTemplate('home', $templateFields);

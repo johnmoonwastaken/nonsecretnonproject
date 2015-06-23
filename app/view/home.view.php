@@ -105,6 +105,14 @@
 		font-size: 0.8em;
 	}
 
+	.grey-logo {
+		max-height:40px;
+		opacity:0.4;
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+		margin-right: 10px;
+		margin-bottom: 5px;
+	}
 	.tag {
 		margin-right:18px;
 		white-space: nowrap;
@@ -279,6 +287,13 @@
 
 	<section id="main-section">
 		<div class="container">
+			<h2>Training providers from around North America:</h2>
+			<div style="text-align:justify;">
+				<?php foreach($vendorList as $branding_url): ?>
+					<img src="images/vendors/<?php echo $branding_url ?>" class="grey-logo" />
+				<?php endforeach ?>
+			</div>
+<!--
 			<h3>Explore Courses by Function</h3>
 			<div id="functions-container">
 				<div class="row">
@@ -358,6 +373,7 @@
 					</ul>
 				</div>
 			</div>			
+		-->
 		</div>
 	</section>
 

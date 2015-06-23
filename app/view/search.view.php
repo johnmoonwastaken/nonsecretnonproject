@@ -491,10 +491,10 @@
 								<a href="#"><span class="icon triangle-down"></span>Location</a>
 								<div class="inputbox">
 									<select id="searchbox-location" name="location" placeholder="Location">
+										<option value="Everywhere" <?php if ($_GET['location'] == "Everywhere") echo 'selected'; ?>>Everywhere</option>
 										<?php foreach ($locationList as $metro): ?>
 											<option value="<?php echo $metro['metro_name']; ?>" <?php if ($_GET['location'] == $metro['metro_name']) echo 'selected'; ?>><?php echo $metro['country_name'] . " - " . $metro['metro_name']; ?></option>
 										<?php endforeach ?>
-										<option value="Everywhere" <?php if ($_GET['location'] == "Everywhere") echo 'selected'; ?>>Everywhere</option>
 									</select>
 								</div>
 								<div class="row 0% uniform" style="margin-top:5px;">
