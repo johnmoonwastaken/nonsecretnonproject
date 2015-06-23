@@ -380,7 +380,7 @@
 	<section id="social-section">
 		<div class="container">
 			<h1>Follow Us:</h1>
-			<a data-pin-do="embedBoard" href="http://www.pinterest.com/trainingful/advance-your-career/" data-pin-scale-width="320" data-pin-scale-height="900" data-pin-board-width="980"></a>
+			<a data-pin-do="embedBoard" href="http://www.pinterest.com/trainingful/advance-your-career/" data-pin-scale-width="190" data-pin-scale-height="600" data-pin-board-width="980"></a>
 			<!-- Please call pinit.js only once per page -->
 			<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 		</div>
