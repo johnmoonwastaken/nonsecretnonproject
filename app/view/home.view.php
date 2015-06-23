@@ -59,6 +59,11 @@
 		margin-bottom: 40px;
 	}
 
+	#social-section {
+		background: #fff;
+		padding: 40px 0;
+	}
+
 	#tags-container {
 		text-align: justify;
 		padding-bottom: 40px;
@@ -353,5 +358,14 @@
 					</ul>
 				</div>
 			</div>			
+		</div>
+	</section>
+
+	<section id="social-section">
+		<div class="container">
+			<h1>Follow Us:</h1>
+			<a data-pin-do="embedBoard" href="http://www.pinterest.com/trainingful/advance-your-career/" data-pin-scale-width="320" data-pin-scale-height="900" data-pin-board-width="980"></a>
+			<!-- Please call pinit.js only once per page -->
+			<script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 		</div>
 	</section>

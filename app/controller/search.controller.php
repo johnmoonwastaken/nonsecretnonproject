@@ -48,7 +48,7 @@ if ($_GET['category']) {
 	$save_search_sql = "
 		INSERT INTO searches (search_term, ip_address, session_results) VALUES (?, ?, ?)";
 	$query = $GLOBALS['_db']->prepare($save_search_sql);
-	$query->execute(array('category='.$_GET['category'],$_SERVER['REMOTE_ADDR'],$get_results->rowCount()));
+	$query->execute(array('category='.$_GET['category'],gethostbyaddr($_SERVER['REMOTE_ADDR']),$get_results->rowCount()));
 }
 elseif ($_GET['tag']) {
 	$search_sql = "
@@ -72,7 +72,7 @@ elseif ($_GET['tag']) {
 	$save_search_sql = "
 		INSERT INTO searches (search_term, ip_address, session_results) VALUES (?, ?, ?)";
 	$query = $GLOBALS['_db']->prepare($save_search_sql);
-	$query->execute(array('tag='.$_GET['tag'],$_SERVER['REMOTE_ADDR'],$get_results->rowCount()));
+	$query->execute(array('tag='.$_GET['tag'],gethostbyaddr($_SERVER['REMOTE_ADDR']),$get_results->rowCount()));
 }
 else {
 	$search_sql = "
@@ -114,7 +114,7 @@ else {
 	$save_search_sql = "
 		INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name, include_online, session_results) VALUES (?, ?, ?, ?, ?, ?, ?)";
 	$query = $GLOBALS['_db']->prepare($save_search_sql);
-	$query->execute(array($_GET["keywords"],$_SERVER['REMOTE_ADDR'],$_GET["start"],$_GET["end"],$search_location,$include_online_bool,$get_results->rowCount()));
+	$query->execute(array($_GET["keywords"],gethostbyaddr($_SERVER['REMOTE_ADDR']),$_GET["start"],$_GET["end"],$search_location,$include_online_bool,$get_results->rowCount()));
 }
 $course_count = -1;
 $session_count = 0;
