@@ -282,6 +282,17 @@
 			}
 			?>
 			</div>
+			<!--
+			<h2 style="text-align:center">A few upcoming courses:</h2>
+			<div class="row 25% uniform">
+				<div class="4u">
+					<h5 style="text-align:center">Computing, Applications and IT</h5>
+					<div></div>
+				</div>
+				<div class="4u"><h5 style="text-align:center">Management and Leadership</h5></div>
+				<div class="4u"><h5 style="text-align:center"s>Project Management</h5></div>
+			</div>
+			-->
 		</div>
 	</section>
 
