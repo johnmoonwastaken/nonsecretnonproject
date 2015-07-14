@@ -221,3 +221,4 @@ app/config/app.conf.php
 
 #Configuration
 .htaccess
+sitemap.xml
