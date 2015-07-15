@@ -1,0 +1,1 @@
+UPDATE categories_secondary SET secondary_category_name = 'Project Management - General', description = '222222' WHERE secondary_category_id = 1
