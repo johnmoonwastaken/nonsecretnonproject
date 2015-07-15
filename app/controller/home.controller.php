@@ -19,6 +19,8 @@ $get_results->execute(array());
 $metrics_result = $get_results->fetch(PDO::FETCH_ASSOC);
 $total_sessions = intval($metrics_result['metric_value']);
 
+/*
+
 $functionsCategories = array();
 $search_sql = "
 	SELECT p.category_id, p.category_name, COUNT(course.course_id) AS course_count 
@@ -67,6 +69,7 @@ foreach ($get_results as $temp) {
 		}
 }
 
+*/
 $locationList = array();
 $search_sql = "
 	SELECT country_name, metro_name 
@@ -97,7 +100,7 @@ foreach ($get_results as $temp) {
 }
 
 
-$templateFields = array('functions' => $functionsCategories, 'industries' => $industriesCategories, 'tags' => $tagCloud, 'vendorList' => $vendorList,
+$templateFields = array(/*'functions' => $functionsCategories, 'industries' => $industriesCategories, */'tags' => $tagCloud, 'vendorList' => $vendorList,
 	'tag_max' => $tag_max, 'tag_min' => $tag_min, 'total_sessions' => $total_sessions, 'locationList' => $locationList);
 
 displayTemplate('home', $templateFields);

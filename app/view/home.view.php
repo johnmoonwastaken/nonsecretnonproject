@@ -171,7 +171,7 @@
 		<form id="searchbox" action="search" method="get">
 			<div class="row">
 				<div class="12u">
-					<input type="text" id="searchbox-keywords" name="keywords" placeholder="Search course names or course tags" required class="form-text" <?php if ($_GET['keywords']) { echo 'value='.$_GET['keywords']; } ?>>
+					<input type="text" id="searchbox-keywords" name="keywords" placeholder="Search course names or course tags" required class="form-text" <?php if ($_GET['keywords']) { echo 'value="'.$_GET['keywords'].'"'; } ?>>
 				</div>
 			</div>
 			<div class="row 25% uniform">
@@ -282,6 +282,17 @@
 			}
 			?>
 			</div>
+			<!--
+			<h2 style="text-align:center">A few upcoming courses:</h2>
+			<div class="row 25% uniform">
+				<div class="4u">
+					<h5 style="text-align:center">Computing, Applications and IT</h5>
+					<div></div>
+				</div>
+				<div class="4u"><h5 style="text-align:center">Management and Leadership</h5></div>
+				<div class="4u"><h5 style="text-align:center"s>Project Management</h5></div>
+			</div>
+			-->
 		</div>
 	</section>
 

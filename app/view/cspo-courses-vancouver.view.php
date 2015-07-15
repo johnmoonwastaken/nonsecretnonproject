@@ -3,17 +3,7 @@
 <head>
 <?php include 'header_required.php' ?>
 	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<title><?php 
-	if ($_GET['tag']) { 
-		echo "Top " . $_GET['tag'] . " courses - Trainingful professional training search engine";
-	}
-	elseif ($_GET['category']) { 
-		echo /*$parent_category_name . " - " .*/ $category_name . " courses - Trainingful professional training search engine";
-	}
-	else 
-	{		
-		echo "Top " . $keywords . " courses in " . $location . " - Trainingful professional training search engine";
-	} ?></title>
+	<title>Top 20 CSPO Courses in Vancouver - Trainingful professional training search engine</title>
 	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
 	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
 	<meta name="Description" content="<?php echo $keywords . " courses" ?> The fastest and easiest way to search for professional courses with thousands of course sessions.">
@@ -404,7 +394,7 @@
 		<div class="container">
 		
 			<div id="query-summary-bar" class="container">
-				<?php if ($_GET['start']): ?>
+				<?php if ($start): ?>
 				<h1><?php echo $keywords; ?> courses in <?php if (empty($location)) { $location = "Everywhere"; echo "Everywhere"; } else echo $location; ?></h1>
 				<p>Between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
 				<?php elseif ($_GET['category']): ?>
@@ -453,7 +443,7 @@
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Name contains</a>
 								<div class="inputbox">
-									<input type="text" id="searchbox-keywords" name="keywords" placeholder="" required class="form-text form-name" <?php if ($_GET['keywords']) { echo 'value="'.$_GET['keywords'].'"'; } ?>>
+									<input type="text" id="searchbox-keywords" name="keywords" placeholder="" required class="form-text form-name" <?php if ($keywords) { echo 'value="'.$keywords.'"'; } ?>>
 								</div>
 							</li>
 							<!--
@@ -464,14 +454,14 @@
 							<li>
 								<a href="#"><span class="icon triangle-down"></span>Date</a>
 								<div class="inputbox">
-									<input type="text" id="searchbox-start" name="start" class="form-text form-date" <?php if ($_GET['start']) { echo 'value='.$_GET['start']; } ?>> to
+									<input type="text" id="searchbox-start" name="start" class="form-text form-date" <?php if ($start) { echo 'value='.$start; } ?>> to
 									<script type="text/javascript">
 						               $(document).ready(function() {
 					    	              $('#searchbox-start').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
 					            	      });
 						               });
 				    	           	</script>
-									<input type="text" id="searchbox-end" name="end" class="form-text form-date" <?php if ($_GET['end']) { echo 'value='.$_GET['end']; } ?>>
+									<input type="text" id="searchbox-end" name="end" class="form-text form-date" <?php if ($end) { echo 'value='.$end; } ?>>
 									<script type="text/javascript">
 						               $(document).ready(function() {
 					    	              $('#searchbox-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
@@ -491,14 +481,14 @@
 								<a href="#"><span class="icon triangle-down"></span>Location</a>
 								<div class="inputbox">
 									<select id="searchbox-location" name="location" placeholder="Location">
-										<option value="Everywhere" <?php if ($_GET['location'] == "Everywhere") echo 'selected'; ?>>Everywhere</option>
+										<option value="Everywhere" <?php if ($location == "Everywhere") echo 'selected'; ?>>Everywhere</option>
 										<?php foreach ($locationList as $metro): ?>
-											<option value="<?php echo $metro['metro_name']; ?>" <?php if ($_GET['location'] == $metro['metro_name']) echo 'selected'; ?>><?php echo $metro['country_name'] . " - " . $metro['metro_name']; ?></option>
+											<option value="<?php echo $metro['metro_name']; ?>" <?php if ($location == $metro['metro_name']) echo 'selected'; ?>><?php echo $metro['country_name'] . " - " . $metro['metro_name']; ?></option>
 										<?php endforeach ?>
 									</select>
 								</div>
 								<div class="row 0% uniform" style="margin-top:5px;">
-									<input type="checkbox" name="include_online" <?php if ($_GET['include_online'] == on) echo "checked"; ?> style="width:15px;height:15px;vertical-align:bottom;margin-bottom:2px;display:inline;"><span style="font-size:0.9em;margin-left:5px;">Include online courses</span>
+									<input type="checkbox" name="include_online" <?php if ($include_online == "on") echo "checked"; ?> style="width:15px;height:15px;vertical-align:bottom;margin-bottom:2px;display:inline;"><span style="font-size:0.9em;margin-left:5px;">Include online courses</span>
 								</div>
 							</li>
 						</ul>
