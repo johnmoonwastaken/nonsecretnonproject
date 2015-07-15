@@ -78,6 +78,34 @@ $data = '<?xml version="1.0" encoding="UTF-8"?>
   <loc>http://www.trainingful.com/categories</loc>
   <changefreq>weekly</changefreq>
 </url>
+<url>
+  <loc>http://www.trainingful.com/cspo-courses-vancouver</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.trainingful.com/excel-courses-vancouver</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.trainingful.com/pmp-courses-vancouver</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.trainingful.com/leed-courses-vancouver</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.trainingful.com/salesforce-courses-vancouver</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.trainingful.com/project-management-courses-vancouver</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.trainingful.com/web-development-courses-vancouver</loc>
+  <changefreq>weekly</changefreq>
+</url>
 ';
 
 $count = 2;
