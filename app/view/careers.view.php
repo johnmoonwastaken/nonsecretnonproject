@@ -64,7 +64,7 @@
 						<strong>To apply, please send your resume to tina@trainingful.com along with your answers to the following 2 questions (400 words max for both answers):</strong>
 						<ul>
 							<li>What do you think of our product?</li>
-							<li>How do you want this internship contribute to your long-term career goals?</li> 
+							<li>How do you want this internship to contribute to your long-term career goals?</li> 
 						</ul>
 						<strong>Additionally, tell us why we should hire you within one tweet (i.e. in 140 or fewer characters.)</strong>
 					</h5>
