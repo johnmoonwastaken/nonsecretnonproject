@@ -6,23 +6,24 @@
 	<title><?php 
 	if ($_GET['tag']) { 
 		echo "Top " . $_GET['tag'] . " courses - Trainingful professional training search engine";
+		$keywords = $_GET['tag'];
 	}
 	elseif ($_GET['category']) { 
 		echo /*$parent_category_name . " - " .*/ $category_name . " courses - Trainingful professional training search engine";
+		$keywords = $category_name;
 	}
 	else 
 	{	
-		if ($location == "")
-		{
+		if ($location == "") {
 			echo "Top " . $keywords . " courses - Trainingful professional training search engine";
 		}
 		else {
 			echo "Top " . $keywords . " courses in " . $location . " - Trainingful professional training search engine";	
 		}
 	} ?></title>
-	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
-	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
-	<meta name="Description" content="Top <?php echo $keywords ?> courses <?php if($location == "") { echo "near you"; } else { echo "in " . $location; } ?> from hundreds of professional training vendors.">
+	<meta name="Title" content="Trainingful: Find the top professional courses from hundreds of training vendors.">
+	<meta name="Keywords" content="<?php { echo $keywords; } ?>, courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
+	<meta name="Description" content="Top <?php { echo $keywords; } ?> courses <?php if($location == "") { echo "near you"; } else { echo "in " . $location; } ?> from hundreds of professional training vendors.">
 
 	<?php if ($totalResults == 0) {
 		echo '<link rel="import" href="../../bower_components/elements/guarantee-action-dialog.html">';
