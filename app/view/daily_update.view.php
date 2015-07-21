@@ -137,14 +137,8 @@ $get_results = $GLOBALS['_db']->prepare($search_results_sql);
 $get_results->execute();
 
 foreach ($get_results as $temp) {
-	$tomorrow = new DateTime('today');
-	$tomorrow->modify('+1 day');
-
-	$end_date = new DateTime('today');
-	$end_date->modify('+1 year');
-
 	$data = $data . '<url>
-	<loc>http://www.trainingful.com/search?keywords=' . urlencode($temp['tag_name']) . '&amp;start=' . $tomorrow->format('Y-m-d') . '&amp;end=' . $end_date->format('Y-m-d') . '&amp;location=' . urlencode($temp['metro_name']) . '&amp;include_online=on</loc>
+	<loc>http://www.trainingful.com/search?keywords=' . urlencode($temp['tag_name']) . '&amp;location=' . urlencode($temp['metro_name']) . '&amp;include_online=on</loc>
 	<changefreq>daily</changefreq>
 	</url>
 	';

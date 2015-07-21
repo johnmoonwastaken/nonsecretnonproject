@@ -411,15 +411,21 @@
 		<div class="container">
 		
 			<div id="query-summary-bar" class="container">
-				<?php if ($_GET['start']): ?>
-				<h1><?php echo $keywords; ?> courses in <?php if (empty($location)) { $location = "Everywhere"; echo "Everywhere"; } else echo $location; ?></h1>
-				<p>Between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
+				<?php if ($_GET['tag']): ?>	
+					<h1><?php echo $_GET['tag']; ?> courses</h1>
+					<p><!--Courses tagged with <strong><?php echo $_GET['tag']; ?></strong> <small>(<a href="/">Home</a>)</small>--></p>
 				<?php elseif ($_GET['category']): ?>
 					<h1>Explore Categories</h1>
 					<p>In <strong><?php echo $parent_category_name . " - " . $category_name; ?></strong> <small>(<a href="/categories">Change Category</a>)</small></p>
-				<?php elseif ($_GET['tag']): ?>	
-					<h1><?php echo $_GET['tag']; ?> courses</h1>
-					<p><!--Courses tagged with <strong><?php echo $_GET['tag']; ?></strong> <small>(<a href="/">Home</a>)</small>--></p>
+				<?php else: ?>
+				<?php 
+				if ($_GET['start'] == "" || $_GET['end'] == "") {
+					$start = date('Y-m-d',strtotime(date("Y-m-d", mktime())));
+					$end = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
+				}
+				?>
+				<h1><?php echo $keywords; ?> courses in <?php if (empty($location)) { $location = "Everywhere"; echo "Everywhere"; } else echo $location; ?></h1>
+				<p>Between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
 				<?php endif; ?>
 			</div>
 			

@@ -122,8 +122,14 @@ else {
 	if ($_GET['location'] == "Everywhere" || $_GET['location'] == "everywhere") {
 		$search_location = '';
 	}
-
-	$get_results->execute(array(date("Y-m-d"),$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
+	if ($_GET['start'] == "" || $_GET['end'] == "") {
+		$start = date('Y-m-d',strtotime(date("Y-m-d", mktime())));
+		$end = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
+		$get_results->execute(array(date("Y-m-d"),$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$start,$end,"%".$search_location."%","%".$search_location."%"));
+	}
+	else {
+		$get_results->execute(array(date("Y-m-d"),$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
+	}
 
 	$resolved_ip_address = gethostbyaddr($_SERVER['REMOTE_ADDR']);
 	if (!strpos($resolved_ip_address,"googlebot.com") 
@@ -159,7 +165,7 @@ foreach ($get_results as $temp) {
 	$metro_name = $temp['metro_name'];
 	$cost = $temp['cost'];
 	$currency = $temp['currency'];
-	
+
 	if ($course_id != $last_course_id) {
 		$last_course_id = $course_id;
 		$course_count++;
@@ -172,6 +178,19 @@ foreach ($get_results as $temp) {
 		$courseList[$course_count]['branding_url'] = $branding_url;
 		$courseList[$course_count]['avg_rating'] = $avg_rating;
 		$session_count = 0;
+		$tags = array();
+		$tags_sql = "SELECT tag_name
+			FROM tag
+			LEFT JOIN course_tags
+			ON course_tags.tag_id = tag.tag_id
+			WHERE course_tags.course_id = ?
+			ORDER BY tag_name asc";
+		$get_results = $GLOBALS['_db']->prepare($tags_sql);
+		$get_results->execute(array($course_id));
+		foreach ($get_results as $temp) {
+			array_push($tags, $temp['tag_name']);
+		}
+		$courseList[$course_count]['tags'] = $tags;
 	}
 	$courseList[$course_count]['sessionList'][$session_count]['session_id'] = $session_id;
 	$courseList[$course_count]['sessionList'][$session_count]['session_type'] = $session_type;
