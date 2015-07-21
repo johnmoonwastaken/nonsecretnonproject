@@ -261,11 +261,13 @@
 					<input type="checkbox" name="include_online" checked style="width:15px;height:15px;vertical-align:bottom;margin-bottom:2px;display:inline;"><span style="font-size:0.9em;margin-left:5px;">Include online courses</span>
 				</div>
 			</div>
+			<!--
 			<div class="row 25% uniform">
 				<div id="trainingful-guarantee">
 					the trainingful guarantee: <span class="description">If you can't find the course you're looking for, we'll personally find it for you.</span>
 				</div>
 			</div>
+		-->
 		</form>
 	</header>
 
