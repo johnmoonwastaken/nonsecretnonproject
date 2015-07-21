@@ -27,7 +27,7 @@
 
 	<?php if ($totalResults == 0) {
 		echo '<link rel="import" href="../../bower_components/elements/guarantee-action-dialog.html">';
-		echo '<script>window.addEventListener("polymer-ready", funciton(e) {
+		echo '<script>window.addEventListener("polymer-ready", function(e) {
 				document.querySelector("#guarantee").ip_address = "' . gethostbyaddr($_SERVER['REMOTE_ADDR']) . '";
 				document.querySelector("#guarantee").query_string = "' . $_SERVER['QUERY_STRING'] . '";
 				document.querySelector("#guarantee").toggle();
