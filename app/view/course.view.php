@@ -389,7 +389,7 @@
 							<?php endif ?>
 
 							<?php if($prereqs):?>
-							<h3>Pre-Requisites</h3>
+							<h3>Prerequisites</h3>
 							<p><h4><?php echo $prereqs; ?>
 							<?php endif ?>
 
