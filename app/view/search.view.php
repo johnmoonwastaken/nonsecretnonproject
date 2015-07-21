@@ -235,6 +235,7 @@
 		margin-bottom:10px;
 		color: #555;
 	}
+
 	.sessions-list {
 		list-style: none;
 		margin: 0 70px 0 80px;
@@ -327,6 +328,29 @@
 		font-size: 1em;
 	}
 	
+	.tags-list {
+		list-style: none;
+		margin: 5px 70px 0 80px;
+		padding: 0;
+		font-size: 0.7em;
+	}
+	
+	.tags-list li {
+		margin: 0 0 1px 0;
+		padding: 0 0 0 0px;
+		background: #fff;
+	}
+	
+	.tags-list li > a {
+		display: inline;
+		height: 33px;
+		overflow: hidden;
+	}
+	
+	.tags-list li > a:hover {
+		text-decoration: underline;
+	}
+
 	#results-list .more-sessions {
 		margin: 3px 0 0 80px;
 		color: #969696;
@@ -584,6 +608,10 @@
 										</a>
 									</li>
 									<?php endforeach; ?>
+								</ul>
+								<ul class="tags-list">
+									<li>Tags: <?php $tag_count = 0; foreach($courseList[$i]['tags'] as $tag): ?><?php if($tag_count>0) { echo ", ";} else { $tag_count++; } ?><a href="search?tag=<?php echo urlencode($tag); ?>"><?php echo $tag;?></a><?php endforeach ?>
+									</li>
 								</ul>
 							</li>
 							<?php endfor; } else echo "<li class='no-results'>Sorry, no results available. Please try another search.</li>";?>
