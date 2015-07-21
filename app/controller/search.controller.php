@@ -45,10 +45,18 @@ if ($_GET['category']) {
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array($_GET['category'], date('Y-m-d')));
 
-	$save_search_sql = "
+	$resolved_ip_address = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+	if (!strpos($resolved_ip_address,"googlebot.com") 
+		|| !strpos($resolved_ip_address,"baidu.com") 
+		|| !strpos($resolved_ip_address,"msn.com")
+		|| !strpos($resolved_ip_address,"sitelock.com")) {
+		$save_search_sql = "
 		INSERT INTO searches (search_term, ip_address, session_results, referrer) VALUES (?, ?, ?, ?)";
-	$query = $GLOBALS['_db']->prepare($save_search_sql);
-	$query->execute(array('category='.$_GET['category'],gethostbyaddr($_SERVER['REMOTE_ADDR']),$get_results->rowCount(),$_SERVER["HTTP_REFERER"]));
+		$query = $GLOBALS['_db']->prepare($save_search_sql);
+		$query->execute(array('category='.$_GET['category'],$resolved_ip_address,$get_results->rowCount(),$_SERVER["HTTP_REFERER"]));
+	}
+
+	
 }
 elseif ($_GET['tag']) {
 	$search_sql = "
@@ -69,10 +77,16 @@ elseif ($_GET['tag']) {
 	$get_results = $GLOBALS['_db']->prepare($search_sql);
 	$get_results->execute(array("%".($_GET['tag'])."%", date('Y-m-d')));
 
-	$save_search_sql = "
-		INSERT INTO searches (search_term, ip_address, session_results, referrer) VALUES (?, ?, ?, ?)";
-	$query = $GLOBALS['_db']->prepare($save_search_sql);
-	$query->execute(array('tag='.$_GET['tag'],gethostbyaddr($_SERVER['REMOTE_ADDR']),$get_results->rowCount(),$_SERVER["HTTP_REFERER"]));
+	$resolved_ip_address = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+	if (!strpos($resolved_ip_address,"googlebot.com") 
+		|| !strpos($resolved_ip_address,"baidu.com") 
+		|| !strpos($resolved_ip_address,"msn.com")
+		|| !strpos($resolved_ip_address,"sitelock.com")) {
+		$save_search_sql = "
+			INSERT INTO searches (search_term, ip_address, session_results, referrer) VALUES (?, ?, ?, ?)";
+		$query = $GLOBALS['_db']->prepare($save_search_sql);
+		$query->execute(array('tag='.$_GET['tag'],$resolved_ip_address,$get_results->rowCount(),$_SERVER["HTTP_REFERER"]));
+	}
 }
 else {
 	$search_sql = "
@@ -111,10 +125,16 @@ else {
 
 	$get_results->execute(array(date("Y-m-d"),$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["keywords"],$_GET["start"],$_GET["end"],"%".$search_location."%","%".$search_location."%"));
 
-	$save_search_sql = "
-		INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name, include_online, session_results, referrer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-	$query = $GLOBALS['_db']->prepare($save_search_sql);
-	$query->execute(array($_GET["keywords"],gethostbyaddr($_SERVER['REMOTE_ADDR']),$_GET["start"],$_GET["end"],$search_location,$include_online_bool,$get_results->rowCount(), $_SERVER["HTTP_REFERER"]));
+	$resolved_ip_address = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+	if (!strpos($resolved_ip_address,"googlebot.com") 
+		|| !strpos($resolved_ip_address,"baidu.com") 
+		|| !strpos($resolved_ip_address,"msn.com")
+		|| !strpos($resolved_ip_address,"sitelock.com")) {
+		$save_search_sql = "
+			INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name, include_online, session_results, referrer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+		$query = $GLOBALS['_db']->prepare($save_search_sql);
+		$query->execute(array($_GET["keywords"],$resolved_ip_address,$_GET["start"],$_GET["end"],$search_location,$include_online_bool,$get_results->rowCount(), $_SERVER["HTTP_REFERER"]));
+	}
 }
 $course_count = -1;
 $session_count = 0;

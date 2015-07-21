@@ -27,8 +27,8 @@
 
 	<?php if ($totalResults == 0) {
 		echo '<link rel="import" href="../../bower_components/elements/guarantee-action-dialog.html">';
-		echo '<script>window.addEventListener("polymer-ready", function(e) {
-				document.querySelector("#guarantee").ip_address = "' . $_SERVER['REMOTE_ADDR'] . '";
+		echo '<script>window.addEventListener("polymer-ready", funciton(e) {
+				document.querySelector("#guarantee").ip_address = "' . gethostbyaddr($_SERVER['REMOTE_ADDR']) . '";
 				document.querySelector("#guarantee").query_string = "' . $_SERVER['QUERY_STRING'] . '";
 				document.querySelector("#guarantee").toggle();
 			});
@@ -621,7 +621,7 @@
 										<input type="text" id="guarantee-box-email" name="email" placeholder="abc@xyz.com" class="form-text form-guarantee-input">
 										<div class="guarantee-form-title">What were you looking for?</div>
 										<textarea class="form-text form-guarantee-input" rows="2" name="comments" placeholder="Type of course, location, date range, etc."></textarea>
-										<input type="hidden" name="ip_address" value="<?php echo $_SERVER['REMOTE_ADDR'] ?>">
+										<input type="hidden" name="ip_address" value="<?php echo gethostbyaddr($_SERVER['REMOTE_ADDR']) ?>">
 										<input type="hidden" name="query_string" value="<?php echo $_SERVER['QUERY_STRING'] ?>">
 									</div>
 									<button type="submit" class="form-submit smaller-button" style="margin-left:90px">Let us help!</button>
