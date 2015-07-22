@@ -46,12 +46,12 @@ if ($_GET['category']) {
 	$get_results->execute(array($_GET['category'], date('Y-m-d')));
 
 	$resolved_ip_address = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-	if ((strpos($resolved_ip_address,"googlebot.com") 
-		|| strpos($resolved_ip_address,"baidu.com") 
-		|| strpos($resolved_ip_address,"msn.com")
-		|| strpos($resolved_ip_address,"sitelock.com")
-		|| strpos($resolved_ip_address,"199-195-48-9.dyn.novuscom.net")
-		|| strpos($resolved_ip_address,"199-195-148-9.dyn.novuscom.net")) == false) {
+	$filter_addresses = array("googlebot.com","baidu.com","msn.com","sitelock.com","199-195-48-9.dyn.novuscom.net","199-195-148-9.dyn.novuscom.net");
+	$matches = 0;
+	foreach( $filter_addresses as $filter_address ) {
+	   $matches += ( strpos( $resolved_ip_address, $filter_address ) !== false ) ? 1 : 0;
+	}
+	if (!$matches) {
 		$save_search_sql = "
 		INSERT INTO searches (search_term, ip_address, session_results, referrer) VALUES (?, ?, ?, ?)";
 		$query = $GLOBALS['_db']->prepare($save_search_sql);
@@ -80,12 +80,12 @@ elseif ($_GET['tag']) {
 	$get_results->execute(array("%".($_GET['tag'])."%", date('Y-m-d')));
 
 	$resolved_ip_address = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-	if ((strpos($resolved_ip_address,"googlebot.com") 
-		|| strpos($resolved_ip_address,"baidu.com") 
-		|| strpos($resolved_ip_address,"msn.com")
-		|| strpos($resolved_ip_address,"sitelock.com")
-		|| strpos($resolved_ip_address,"199-195-48-9.dyn.novuscom.net")
-		|| strpos($resolved_ip_address,"199-195-148-9.dyn.novuscom.net")) == false) {
+	$filter_addresses = array("googlebot.com","baidu.com","msn.com","sitelock.com","199-195-48-9.dyn.novuscom.net","199-195-148-9.dyn.novuscom.net");
+	$matches = 0;
+	foreach( $filter_addresses as $filter_address ) {
+	   $matches += ( strpos( $resolved_ip_address, $filter_address ) !== false ) ? 1 : 0;
+	}
+	if (!$matches) {
 		$save_search_sql = "
 			INSERT INTO searches (search_term, ip_address, session_results, referrer) VALUES (?, ?, ?, ?)";
 		$query = $GLOBALS['_db']->prepare($save_search_sql);
@@ -136,12 +136,12 @@ else {
 	}
 
 	$resolved_ip_address = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-	if ((strpos($resolved_ip_address,"googlebot.com") 
-		|| strpos($resolved_ip_address,"baidu.com") 
-		|| strpos($resolved_ip_address,"msn.com")
-		|| strpos($resolved_ip_address,"sitelock.com")
-		|| strpos($resolved_ip_address,"199-195-48-9.dyn.novuscom.net")
-		|| strpos($resolved_ip_address,"199-195-148-9.dyn.novuscom.net")) == false) {
+	$filter_addresses = array("googlebot.com","baidu.com","msn.com","sitelock.com","199-195-48-9.dyn.novuscom.net","199-195-148-9.dyn.novuscom.net");
+	$matches = 0;
+	foreach( $filter_addresses as $filter_address ) {
+	   $matches += ( strpos( $resolved_ip_address, $filter_address ) !== false ) ? 1 : 0;
+	}
+	if (!$matches) {
 		$save_search_sql = "
 			INSERT INTO searches (search_term, ip_address, min_date, max_date, metro_name, include_online, session_results, referrer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		$query = $GLOBALS['_db']->prepare($save_search_sql);
