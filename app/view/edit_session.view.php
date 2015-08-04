@@ -3,9 +3,7 @@
 <head>
 <?php include 'header_required.php' ?>
 	<title>Trainingful: <?php if(isset($_GET['session_id'])) { echo "edit"; } else { echo "add"; } ?> session</title>
-	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
-	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
-	<meta name="Description" content="The fastest and easiest way to search for professional courses with thousands of course sessions. Find the course you're looking for, guaranteed.">
+<?php include 'below_title.php' ?>
 	
 	<style>
 	.wrapper {
@@ -235,7 +233,9 @@
 		border-left: none;
 		border-bottom: 2px solid #ddd;
 	}
-
+	.discount {
+		color: #ff7777;
+	}
 	.explanation {
 		color: #000;
 		font-size: 0.8em;
@@ -352,7 +352,7 @@
 	<section id="main-section">
 		<div class="container" id="main-container">
 			<div id="query-summary-bar" class="container">
-				<h1><?php if(isset($_GET['session_id'])) { echo "Edit"; } else { echo "Add"; } ?> Session</h1>
+				<h1><?php echo $course_name . " > "; if(isset($_GET['session_id'])) { echo "Edit"; } else { echo "Add"; } ?> Session</h1>
 				<small>(<a href="/manage_courses"><strong>Back to courses</strong></a> | <a href="/edit_course?id=<?php echo $_GET['id']; ?>"><strong>Back to <?php echo $course_name; ?></strong></a>)</small>
 			</div>
 			<div id="main-content">
@@ -539,9 +539,6 @@
 							    </div>
 							    <div>
 							    	<div class="explanation">&nbsp;</div>
-							    	<!--
-							        <div class="explanation">Discount Price (optional)</div>
-							        -->
 							    </div>
 							    
 							</div>
@@ -549,8 +546,8 @@
 					    	<div class="input-row">
 					    		<div class="input-left25">
 					          		<select name="currency" id="currency" class="select-box" required>
-					            		<option value="CAD" <?php if($currency == "CAD") echo "selected"; ?>>CAD</option>
 					            		<option value="USD" <?php if($currency == "USD") echo "selected"; ?>>USD</option>
+					            		<option value="CAD" <?php if($currency == "CAD") echo "selected"; ?>>CAD</option>
 					          		</select>
 					        	</div>
 					        	<div class="input-left25">
@@ -560,13 +557,41 @@
 					        	
 					        	<div>
 					        		<div>&nbsp;</div>
-					        		<!--
-					          		<input type="number" id="cost_discount" name="cost_discount" placeholder="899.99" step="0.01" min="0" class="cost-input"
-					          		value="<?php echo $discount_cost ?>">
-					          		-->
 				        		</div>
 					      	</div>
 
+							<div class="input-row">
+							    <div class="input-left25">
+							        <div class="explanation">Early Discount (optional)</div>
+							    </div>
+							    <div class="input-left25">
+							        <div class="explanation">Early Discount End (optional)</div>
+							    </div>
+							    <div>
+							    	<div class="explanation">&nbsp;</div>
+							    </div>
+							    
+							</div>
+
+					    	<div class="input-row">
+					    		<div class="input-left25">
+					          		<input type="number" id="cost_discount" name="discount_cost" placeholder="899.99" step="0.01" min="0" class="cost-input"
+					          		value="<?php echo $discount_cost ?>">
+					        	</div>
+					        	<div class="input-left25">
+				        		<input type="text" id="searchbox-discount-end" name="discount_end_date" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if(isset($discount_end_date)) { echo 'value='.$discount_end_date; } ?>>
+										<script type="text/javascript">
+							               $(document).ready(function() {
+						    	              $('#searchbox-discount-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
+						            	      });
+							               });
+					    	           	</script>
+					        	</div>
+					        	
+					        	<div>
+					        		<div>&nbsp;</div>
+				        		</div>
+					      	</div>
 							<div style="clear:all;"></div><br />
 							<input type="hidden" value="<?php echo $_SESSION['vendor_id']?>" name="vendor_id">
 							<input type="hidden" value="<?php echo $_GET['id'] ?>" name="course_id">
@@ -613,7 +638,15 @@
 												} 
 											}
 										} ?></span></div>
-										<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
+										<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div>
+										<div class="price"><?php 
+													if (isset($session['discount_end_date']) && date('Y-m-d') < $session['discount_end_date']) {
+														echo '<span class="discount">'.$session['discount_cost'].'</span>';
+													}
+													else {
+														echo $session['cost'];
+													}
+													?> <?php echo $session['currency']; ?></div>
 										<!-- <img src="../../images/lower-triangle.png" style="margin: 0px 0 -5px 234px;" /> -->
 										<div class="folded-corner"></div>
 									</li>

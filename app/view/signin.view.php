@@ -12,11 +12,8 @@ $_SESSION['state'] = $state;
 	<link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
 <?php include 'header_required.php' ?>
 	<title>Trainingful: log in</title>
-	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
-	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
-	<meta name="Description" content="The fastest and easiest way to search for professional courses with thousands of course sessions. Find the course you're looking for, guaranteed.">
+<?php include 'below_title.php' ?>
 	
-	<link href="http://fonts.googleapis.com/css?family=Pacifico:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/signup.css">
 	<script>
 	window.addEventListener('polymer-ready', function(e) {
@@ -44,7 +41,7 @@ $_SESSION['state'] = $state;
 						<p><h3>Use your LinkedIn account <span class="recommended">(Recommended)</span></h3></p>
 						<ul class="benefits">
 							<li>The easiest way to sign up and sign in
-							<li>LinkedIn ratings are given <strong>5x</strong> more weight than ratings from standard users
+							<!-- <li>LinkedIn ratings are given <strong>5x</strong> more weight than ratings from standard users -->
 							<li>Exclusive designation as a verified professional within Trainingful community
 						</ul>
 						<form action="https://www.linkedin.com/uas/oauth2/authorization" method="get">

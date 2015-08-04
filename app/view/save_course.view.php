@@ -37,10 +37,11 @@ else {
 	VALUES (?,?,?,?,?,?,?,?,?,?,?)';
 	$get_results = $GLOBALS['_db']->prepare($course_sql);
 	$get_results->execute(array($vendor_id, $category, $course_name, $description, $length, $url, $benefits, $prereqs, $audience, $designation, $video_url));
+	$last_id = $GLOBALS['_db']->lastInsertId();
 }
 
 if ($course_id == "") {
-	header('Location: /manage_courses?return=added');
+	header('Location: /edit_session?id='.$last_id);
 	exit;
 }
 else {

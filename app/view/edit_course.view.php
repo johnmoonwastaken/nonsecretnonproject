@@ -4,9 +4,7 @@
 <link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
 <?php include 'header_required.php' ?>
 	<title>Trainingful: <?php if($_GET['id'] == "") { echo "add"; } else { echo "edit"; } ?> course</title>
-	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
-	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
-	<meta name="Description" content="The fastest and easiest way to search for professional courses with thousands of course sessions. Find the course you're looking for, guaranteed.">
+<?php include 'below_title.php' ?>
 
 	<style>
 	.wrapper {
@@ -247,7 +245,9 @@
 		border-right: none;
 		border-bottom: 2px solid #ddd;
 	}
-
+	.discount {
+		color: #ff7777;
+	}
 	.edit-course-input {
 		padding: 0;
 		margin: 0;
@@ -504,7 +504,15 @@
 												} 
 											}
 										} ?></span></div>
-										<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php echo $session['cost']; ?> <?php echo $session['currency']; ?></div>
+										<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div>
+										<div class="price"><?php 
+													if (isset($session['discount_end_date']) && date('Y-m-d') < $session['discount_end_date']) {
+														echo '<span class="discount">'.$session['discount_cost'].'</span>';
+													}
+													else {
+														echo $session['cost'];
+													}
+													?> <?php echo $session['currency']; ?></div>
 										<!-- <img src="../../images/lower-triangle.png" style="margin: 0px 0 -5px 234px;" /> -->
 										<div class="folded-corner"></div>
 									</li>

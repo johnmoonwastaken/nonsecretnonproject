@@ -9,7 +9,8 @@ if (isset($_GET['id'])) {
 
 	$search_sql = "
 		SELECT course_session.session_id, course_session.start_date, course_session.end_date,
-			course_session.metro_name, course_session.cost, course_session.currency, course_session.session_type
+			course_session.metro_name, course_session.cost, course_session.currency, course_session.session_type,
+			course_session.discount_cost, course_session.discount_end_date
 		FROM course_session
 		WHERE course_session.course_id = ? and course_session.active = 1 and (course_session.start_date >= ? OR course_session.session_type = 'Online - Self Learning')
 		ORDER BY start_date, metro_name";
@@ -30,10 +31,13 @@ if (isset($_GET['id'])) {
 		$sessionList[$session_count]['session_type'] = $temp['session_type'];
 		if ($currency == "USD" || "CAD" || "HKD" || "SGD") {
 			$sessionList[$session_count]['cost'] = "$" . number_format((float)$temp['cost'],2,'.','');
+			$sessionList[$session_count]['discount_cost'] = "$" . number_format((float)$temp['discount_cost'],2,'.','');
 		}
 		else  {
 			$sessionList[$session_count]['cost'] = number_format((float)$temp['cost'],2,'.','');
+			$sessionList[$session_count]['discount_cost'] = number_format((float)$temp['discount_cost'],2,'.','');
 		}
+		$sessionList[$session_count]['discount_end_date'] = $temp['discount_end_date'];
 		$session_count++;
 	}
 
@@ -94,8 +98,8 @@ if (isset($_GET['id'])) {
 		$cost = number_format((float)$session_result['cost'],2,'.','');
 		$currency = $session_result['currency'];
 		$active = $session_result['active'];
-		//$discount_cost = $session_result['discount_cost'];
-		//$discount_end_date = $session_result['discount_end_date'];
+		$discount_cost = number_format((float)$session_result['discount_cost'],2,'.','');
+		$discount_end_date = $session_result['discount_end_date'];
 		//$discount_currency = $session_result['discount_currency'];
 		$suite = $session_result['suite'];
 		if ($suite == "-1") {
@@ -109,7 +113,8 @@ if (isset($_GET['id'])) {
 		$templateFields = array('course_name' => $course_name, 'description' => $description, 'metro_name' => $metro_name, 'start_date' => $start_date, 'end_date' => $end_date,
 			'start_date_time' => $start_date_time, 'end_date_time' => $end_date_time, 'session_type' => $session_type, 'cost' => $cost, 'currency' => $currency, 'active' => $active,
 			'suite' => $suite, 'street_address' => $street_address, 'city_name' => $city_name, 'sessionList' => $sessionList, 'start_hour' => $start_hour,
-			'end_hour' => $end_hour, 'start_minute' => $start_minute, 'end_minute' => $end_minute, 'metro_list' => $metro_list);
+			'end_hour' => $end_hour, 'start_minute' => $start_minute, 'end_minute' => $end_minute, 'metro_list' => $metro_list, 
+			'discount_cost' => $discount_cost, 'discount_end_date' => $discount_end_date);
 	}
 	else {
 		$search_sql = "

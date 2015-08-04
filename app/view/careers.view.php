@@ -25,6 +25,8 @@
 						<br></br>
 						We believe in results and productivity in a collaborative setting. We value innovation, creativity and diversity. 
 					</h4>
+
+					<!--
 					<h2>Current Openings:</h2>
 
 					<h5>
@@ -63,6 +65,7 @@
 						</ul>
 						<strong>Additionally, tell us why we should hire you within one tweet (i.e. in 140 or fewer characters.)</strong>
 					</h5>
+				-->
 					<h4>
 						Interested? Have any questions? E-mail us at <a href="mailto:careers@trainingful.com">careers@trainingful.com</a> and let's start talking.
 					</h4>

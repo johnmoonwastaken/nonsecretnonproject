@@ -3,7 +3,7 @@
 		<div class="container" id="topnav">
 			<ul class="leftnav">
 				<li><a href="categories">Explore Career Training</a></li>
-				<li><a href="#">Explore Vendors</a></li>			
+				<!--<li><a href="#">Explore Vendors</a></li>-->
 			</ul>
 			<ul class="rightnav">
 				<!--

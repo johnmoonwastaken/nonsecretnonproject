@@ -69,7 +69,8 @@ if (isset($_GET['id'])) {
 	// GETS ALL ASSOCIATED COURSE SESSIONS
 	$search_sql = "
 		SELECT course_session.session_id, course_session.start_date, course_session.end_date,
-			course_session.metro_name, course_session.cost, course_session.currency, course_session.session_type
+			course_session.metro_name, course_session.cost, course_session.currency, course_session.session_type,
+			course_session.discount_cost, course_session.discount_end_date
 		FROM course_session
 		WHERE course_session.course_id = ? and course_session.active = 1 and (course_session.start_date >= ? OR course_session.session_type = 'Online - Self Learning')
 		ORDER BY start_date, metro_name";
@@ -91,10 +92,13 @@ if (isset($_GET['id'])) {
 		$sessionList[$session_count]['session_type'] = $temp['session_type'];
 		if ($currency == "USD" || "CAD" || "HKD" || "SGD") {
 			$sessionList[$session_count]['cost'] = "$" . number_format((float)$temp['cost'],2,'.','');
+			$sessionList[$session_count]['discount_cost'] = "$" . number_format((float)$temp['discount_cost'],2,'.','');
 		}
 		else  {
 			$sessionList[$session_count]['cost'] = number_format((float)$temp['cost'],2,'.','');
+			$sessionList[$session_count]['discount_cost'] = number_format((float)$temp['discount_cost'],2,'.','');
 		}
+		$sessionList[$session_count]['discount_end_date'] = $temp['discount_end_date'];
 		$session_count++;
 	}
 
