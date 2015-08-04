@@ -29,15 +29,14 @@
 
 					<h5>
 						<a href="internshipjoblisting.pdf">(Printable PDF Job Posting)</a><br /><br />
-						<strong>Job Title:</strong> Student Intern (Unpaid)<br />
+						<strong>Job Title:</strong> Volunteer Student Intern<br />
 						<strong>Posting Close Date:</strong> Wednesday, July 29th, 2015<br />
 						<strong>Start Date:</strong> ASAP or August 3, 2015<br /><br />
-						We are hiring!<br /><br />
-						Trainingful.com is currently hiring 2-3 generalist summer interns. Hours can be flexible to your schedule but we do expect you to contribute 25-40 hours a week. This position can also be extended into the school year on a part-time basis.   <br /><br />
-						Our team includes a former US lawyer, an investment banker, and an international MBA grad building the world's largest aggregation site for professional training. We are looking for a motivated, driven business student (ideally finance, accounting, or marketing but we will consider everyone) who is able to wear many hats and help drive growth. We are focused on mentoring and developing student interns who can succeed at our company or other companies in the future.   <br /><br />
+						Trainingful.com is currently seeking 2-3 generalist volunteer interns. Hours can be flexible to your schedule but we do expect you to contribute 10-20  hours a week. This position can also be extended into the school year.  <br /><br />
+						Our team includes a former US lawyer, an investment banker, and an international MBA grad building the world's largest aggregation site for professional training. We are looking for a motivated, driven business student (ideally finance, accounting, or marketing but we will consider everyone) who is able to wear many hats and help drive growth. We are focused on mentoring and developing student interns who can succeed in their future careers. You will have a choice of projects to choose from which will make a real impact on Trainingful.com.<br /><br />
 						<strong>Your main focus is to drive growth - this includes: </strong><br />
 						<ul>
-							<li>Product development and broadening our product offerings (unfortunately, this sometimes means grunt work such as data entry alongside our founders)</li>
+							<li>Product development and broadening our product offerings  (data collection and aggregation)</li>
 							<li>Develop career / position certification roadmaps for various potential users</li>
 							<li>Grow size and engagement across social platforms such as Facebook, LinkedIn, Twitter, blogging etc</li>
 							<li>To encourage professional development, we typically ask our interns to spend 10-25% of their time on developing their own growth project (for example, video campaign, partnerships, other growth ideas) - top projects may be selected and executed on a company-wide basis</li>
