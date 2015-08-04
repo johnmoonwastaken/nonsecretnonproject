@@ -3,13 +3,8 @@
 <head>
 	<?php include 'header_required.php' ?>
 	<title>Trainingful: about us</title>
-	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
-	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
-	<meta name="Description" content="The fastest and easiest way to search for professional courses with thousands of course sessions. Find the course you're looking for, guaranteed.">
-	
-	<link href="http://fonts.googleapis.com/css?family=Pacifico:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<?php include 'below_title.php' ?>
 	<link rel="stylesheet" href="css/static-style.css">
-	
 </head>
 <body>
 

@@ -1,0 +1,3 @@
+<meta name="Title" content="Trainingful: Find the top professional courses from hundreds of training vendors.">
+<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online course, review, reviews, training providers, course">
+<meta name="Description" content="The fastest and easiest way to search for professional courses with thousands of course sessions. Find the course you're looking for, guaranteed.">

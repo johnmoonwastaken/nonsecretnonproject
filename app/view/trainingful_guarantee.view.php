@@ -4,11 +4,7 @@
 	<?php include 'header_required.php' ?>
 	<link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
 	<title>Trainingful: trainingful guarantee</title>
-	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
-	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online courses, review, reviews, training providers">
-	<meta name="Description" content="Can't find the professional development training course you need? Trainingful is here to help by personally searching for those courses. It's the Trainingful guarantee.">
-	
-	<link href="http://fonts.googleapis.com/css?family=Pacifico:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<?php include 'below_title.php' ?>
 	<link rel="stylesheet" href="css/static-style.css">
 	
 	<script>

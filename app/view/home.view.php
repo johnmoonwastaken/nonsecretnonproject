@@ -2,158 +2,23 @@
 <html>
 <head>
 	<?php include 'header_required.php' ?>
-	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-	<title>Trainingful: Find courses in US and Canada</title>
-	<meta name="Title" content="Trainingful: Find the professional course you're looking for, guaranteed.">
-	<meta name="Keywords" content="courses, conferences, professional training, training, professional development, online course, review, reviews, training providers, course">
-	<meta name="Description" content="The fastest and easiest way to search for professional courses with thousands of course sessions. Find the course you're looking for, guaranteed.">
+	<title>Trainingful: Find the top professional courses from hundreds of training vendors.</title>
+	<?php include 'below_title.php' ?>
 
-	<style>
-	header {
-		height: 505px;
-	}
-	
-	header h1 {
-		color: #fff;
-		font-size: 2.5em;
-		font-weight: 400;
-		width: 783px;
-		margin: 85px auto 5px;
-	}
-	
-	#searchbox {
-		width: 783px;
-		margin: 0 auto;
-		background-color: rgba(237, 237, 237, 0.9);
-		border-radius: 3px;
-		border: 1px solid #ededed;
-		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-		padding: 20px;
-	}
-	
-	#searchbox input {
-		padding: 11px;
-		font-size: 1.2em;
-		border: 1px solid #acacac;
-		width: 100%;
-		display: block;
-	}
-	
-	#searchbox input:focus {
-		padding: 10px;
-		border: 2px solid #4ca166;
-	}
-	
-	#main-section {
-		background: #f8f8f8;
-		padding: 40px 0;
-	}
-	
-	#functions-container {
-		border-bottom: 1px solid #d7d7d7;
-		padding-bottom: 40px;
-		margin-bottom: 40px;
-	}
-	
-	#industries-container {
-		margin-bottom: 40px;
-	}
-
-	#social-section {
-		background: #fff;
-		padding: 40px 0;
-	}
-
-	#tags-container {
-		text-align: justify;
-		padding-bottom: 40px;
-		margin-bottom: 0px;
-	}
-
-	#tag-section {
-		background: #fff;
-		padding: 40px 0;
-	}
-
-	#trainingful-guarantee {
-		border: 2px dotted rgba(0,0,0,0.5);
-		border-radius: 10px;
-		padding: 6px 20px 6px 20px;
-		margin: 15px 50px 0px 50px;
-		font-family: "Pacifico";
-		font-size: 1em;
-		color: rgba(0,0,0,0.85);
-	}
-
-	.category-list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		font-size: 0.85em;
-		line-height: 1.5em;
-		font-weight: 300;
-	}
-	
-	.category-list li a {
-		color: #6e6e6e;
-	}
-
-	.description {
-		font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
-		font-weight: 600;
-		color: #5b5b5b;
-		font-size: 0.8em;
-	}
-
-	.grey-logo {
-		max-height:40px;
-		opacity:0.4;
-		-webkit-filter: grayscale(100%);
-		filter: grayscale(100%);
-		margin-right: 10px;
-		margin-bottom: 5px;
-	}
-	.tag {
-		margin-right:18px;
-		white-space: nowrap;
-	}
-
-
-	</style>
-	
 	<script src="js/skel.min.js"></script>
-	<script src="js/countUp.min.js"></script>
 	<script>
 	skel.init({
 		containers: '990px'
 	});
-
-	$( document ).ready(function() {
-		var options = {
-		  useEasing : true, 
-		  useGrouping : true, 
-		  separator : ',', 
-		  decimal : '.', 
-		  prefix : '', 
-		  suffix : '' 
-		};
-		var demo = new countUp("myTargetElement", 0, <?php echo $total_sessions ?>, -1, 2.0, options);
-		demo.start();
-
-		<?php if (isset($_GET['location'])): ?>
-		updateLocation('<?php echo $_GET["location"]; ?>');
-		<?php endif ?>
-
-	});
 	</script>
 
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" media="all" href="../../bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css" />
 	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../bower_components/moment/moment.js"></script>
 	<script type="text/javascript" src="../../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 	<link rel="stylesheet" href="../../css/menu_styles.css">
+	<link rel="stylesheet" href="../../css/home_style.css">
 
 	<script>
 		function updateLocation(metro_name) {
@@ -272,7 +137,7 @@
 	</header>
 
 	<section id="tag-section">
-		<h1 style="text-align:center;font-size:3em;padding-left:100px;padding-right:100px;"><span id="myTargetElement">2000</span> course sessions in US & Canada to further your career</h1>
+		<h1 style="text-align:center;font-size:3em;padding-left:100px;padding-right:100px;">Courses from leading vendors to advance your career</h1>
 		<!--<h1 style="text-align:center">+ our trainingful guarantee to help you find courses you're looking for.</h1>-->
 		<h2 style="text-align:center">Our most popular course tags:</h2>
 		<div class="container">
