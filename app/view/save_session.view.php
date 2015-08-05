@@ -27,7 +27,6 @@ elseif ($_POST['registration_url'] == "") {
 else{
 	$registration_url = "http://" . $_POST['registration_url'];
 }
-echo $registration_url;
 $discount_cost = $_POST['discount_cost'];
 $discount_end_date = $_POST['discount_end_date'];
 
