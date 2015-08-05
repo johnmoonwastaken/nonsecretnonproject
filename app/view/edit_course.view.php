@@ -450,8 +450,8 @@
 
 							<div class="preview" id="video_preview"></div>
 
-							<div class="explanation">Course URL (optional)</div>
-							<input type="text" id="course_url" name="course_url" placeholder="Direct URL to Course Info on Your Website" class="edit-course-input" value="<?php echo $course_url; ?>" maxlength="255">
+							<div class="explanation">Course URL (optional, starting with http://)</div>
+							<input type="url" id="course_url" name="course_url" placeholder="Direct URL to Course Info on Your Website" class="edit-course-input" value="<?php echo $course_url; ?>" maxlength="255">
 
 							<div style="clear:all;"></div><br />
 							<input type="hidden" value="<?php echo $_SESSION['vendor_id']?>" name="vendor_id">

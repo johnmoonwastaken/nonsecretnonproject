@@ -120,7 +120,7 @@ if (isset($_GET['id'])) {
 	}
 	else {
 		$search_sql = "
-			SELECT course_name
+			SELECT course_name, course_url
 			FROM course
 			WHERE course.course_id = ? and course.vendor_id = ?";
 
@@ -130,7 +130,8 @@ if (isset($_GET['id'])) {
 		$session_result = $get_results->fetch(PDO::FETCH_ASSOC);
 
 		$course_name = $session_result['course_name'];
-		$templateFields = array('sessionList' => $sessionList, 'course_name' => $course_name, 'metro_list' => $metro_list);
+		$course_url = $session_result['course_url'];
+		$templateFields = array('sessionList' => $sessionList, 'course_name' => $course_name, 'metro_list' => $metro_list, 'course_url' => $course_url);
 	}
 }
 else {
