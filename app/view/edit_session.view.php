@@ -498,7 +498,7 @@
 								</div>
 							</div>
 							
-							<div class="explanation">Session Registration URL (if different from Course URL)</div>
+							<div class="explanation">Session Registration URL (if different from Course URL, starting with http://)</div>
 						          <input type="url" id="registration_url" name="registration_url" placeholder="http://registration.url" class="register-long-input" 
 						          value="<?php if ($registration_url != "-1") { echo $registration_url; } else { echo ""; }?>">
 

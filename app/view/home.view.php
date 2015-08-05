@@ -137,7 +137,7 @@
 	</header>
 
 	<section id="tag-section">
-		<h1 style="text-align:center;font-size:3em;padding-left:100px;padding-right:100px;">Courses from leading vendors to advance your career</h1>
+		<h1 style="text-align:center;font-size:3em;padding-left:100px;padding-right:100px;">Find courses from leading vendors to advance your career</h1>
 		<!--<h1 style="text-align:center">+ our trainingful guarantee to help you find courses you're looking for.</h1>-->
 		<h2 style="text-align:center">Our most popular course tags:</h2>
 		<div class="container">
