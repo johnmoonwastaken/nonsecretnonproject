@@ -59,7 +59,7 @@ if (isset($_GET['id'])) {
 		$search_sql = "
 			SELECT course.course_name, course_session.instructor_id, course_session.metro_name, course_session.start_date, course_session.end_date, 
 			course_session.start_date_time,	course_session.end_date_time, course_session.session_type, course_session.description, 
-			course_session.cost, course_session.currency, course_session.seats_remaining, course_session.registration_url, 
+			course_session.cost, course_session.currency, course_session.seats_remaining, course_session.registration_url, course.course_url,
 			course_session.discount_cost, course_session.discount_end_date,	course_session.active, course_session.suite, 
 			course_session.street_address, course_session.city_name, course_session.cost_alternate, course_session.currency_alternate
 			FROM course_session
@@ -95,6 +95,7 @@ if (isset($_GET['id'])) {
 			$end_minute = date("i", strtotime($end_date_time));
 		}
 		$session_type = $session_result['session_type'];
+		$course_url = $session_result['course_url'];
 		$registration_url = $session_result['registration_url'];
 		$cost = number_format((float)$session_result['cost'],2,'.','');
 		$currency = $session_result['currency'];
@@ -115,7 +116,7 @@ if (isset($_GET['id'])) {
 			'start_date_time' => $start_date_time, 'end_date_time' => $end_date_time, 'session_type' => $session_type, 'cost' => $cost, 'currency' => $currency, 'active' => $active,
 			'suite' => $suite, 'street_address' => $street_address, 'city_name' => $city_name, 'sessionList' => $sessionList, 'start_hour' => $start_hour,
 			'end_hour' => $end_hour, 'start_minute' => $start_minute, 'end_minute' => $end_minute, 'metro_list' => $metro_list, 'registration_url' => $registration_url,
-			'discount_cost' => $discount_cost, 'discount_end_date' => $discount_end_date);
+			'discount_cost' => $discount_cost, 'discount_end_date' => $discount_end_date, 'course_url' => $course_url);
 	}
 	else {
 		$search_sql = "
