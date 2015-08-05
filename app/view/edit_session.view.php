@@ -578,7 +578,7 @@
 							        <div class="explanation">Early Discount (optional)</div>
 							    </div>
 							    <div class="input-left25">
-							        <div class="explanation">Early Discount End (optional)</div>
+							        <div class="explanation">Discount End (if discount)</div>
 							    </div>
 							    <div>
 							    	<div class="explanation">&nbsp;</div>
@@ -589,10 +589,10 @@
 					    	<div class="input-row">
 					    		<div class="input-left25">
 					          		<input type="number" id="cost_discount" name="discount_cost" placeholder="899.99" step="0.01" min="0" class="cost-input"
-					          		value="<?php echo $discount_cost ?>">
+					          		value="<?php if ($discount_cost != "-1" && $discount_cost != "0.00") { echo $discount_cost; } ?>">
 					        	</div>
 					        	<div class="input-left25">
-				        		<input type="text" id="searchbox-discount-end" name="discount_end_date" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if(isset($discount_end_date)) { echo 'value='.$discount_end_date; } ?>>
+				        		<input type="text" id="searchbox-discount-end" name="discount_end_date" placeholder="yyyy-mm-dd" class="form-text form-date" <?php if($discount_end_date != "0000-00-00") { echo 'value='.$discount_end_date; } ?>>
 										<script type="text/javascript">
 							               $(document).ready(function() {
 						    	              $('#searchbox-discount-end').daterangepicker({ singleDatePicker: true, format: 'YYYY-MM-DD' }, function(start, end, label) {
