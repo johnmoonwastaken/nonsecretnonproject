@@ -69,11 +69,10 @@ if ($session_id != "") {
 	exit;
 }
 else {
-	$session_sql = 'INSERT INTO course_session (metro_name, start_date, end_date, start_date_time, end_date_time, session_type, description, cost, currency, suite, street_address, city_name, timestamp, course_id, active, discount_cost, discount_end_date)
+	$session_sql = 'INSERT INTO course_session (metro_name, start_date, end_date, start_date_time, end_date_time, session_type, description, cost, currency, suite, street_address, city_name, timestamp, course_id, active, discount_cost, discount_end_date, registration_url)
 	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,1,?,?,?)';
 	$get_results = $GLOBALS['_db']->prepare($session_sql);
 	$get_results->execute(array($metro, $start, $end, $start_date_time, $end_date_time, $session_type, $description, $cost, $currency, $suite, $street, $city, "now()", $course_id, $discount_cost, $discount_end_date, $registration_url));
-
 	$course_sql = 'UPDATE course SET active_sessions = active_sessions + 1 WHERE course_id = ?';
 	$get_results = $GLOBALS['_db']->prepare($course_sql);
 	$get_results->execute(array($course_id));
