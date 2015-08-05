@@ -446,7 +446,7 @@
 
 							<h2>Media and Links</h2>
 							<div class="explanation">Video URL (optional, e.g. https://www.youtube.com/embed/XYZ123XYZ123)</div>
-							<input type="text" id="video_url" name="video_url" placeholder="Embed URL of video or direct URL to video file" class="edit-course-input" value="<?php echo $course_video_url; ?>" maxlength="255" onchange="updateVideo();">
+							<input type="text" id="video_url" name="video_url" placeholder="Embed URL of video or direct URL to video file" class="edit-course-input" value="<?php if ($course_video_url != "-1") { echo $course_video_url; } else { echo ""; } ?>" maxlength="255" onchange="updateVideo();">
 
 							<div class="preview" id="video_preview"></div>
 

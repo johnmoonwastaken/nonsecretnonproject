@@ -295,6 +295,15 @@
 		border-bottom: 2px solid #ddd;
 	}
 
+	.register-long-input {
+		width: 500px;
+		padding: 0px 3px 0px 3px;
+		border-top: none;
+		border-right: none;
+		border-left: none;
+		border-bottom: 2px solid #ddd;
+	}
+
 	.select-box {
 		border-left:none;
 		border-top:none;
@@ -489,6 +498,10 @@
 								</div>
 							</div>
 							
+							<div class="explanation">Session Registration URL (if different from Course URL)</div>
+						          <input type="url" id="registration_url" name="registration_url" placeholder="http://registration.url" class="register-long-input" 
+						          value="<?php if ($registration_url != "-1") { echo $registration_url; } else { echo ""; }?>">
+
 							<div class="explanation">Notes/Remarks (optional)</div>
 							<textarea id="session-description" name="session_description" placeholder="Session notes/remarks" rows="2" cols="65"><?php echo $description ?></textarea>
 

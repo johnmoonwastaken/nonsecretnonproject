@@ -18,6 +18,16 @@ $street = $_POST['street'];
 $city = $_POST['city'];
 $currency = $_POST['currency'];
 $cost = $_POST['cost'];
+if ("" || strrpos($_POST['registration_url'], "http", -strlen($_POST['registration_url'])) !== FALSE) {
+	$registration_url = $_POST['registration_url'];
+}
+elseif ($_POST['registration_url'] == "") {
+	$registration_url = "-1";
+}
+else{
+	$registration_url = "http://" . $_POST['registration_url'];
+}
+echo $registration_url;
 $discount_cost = $_POST['discount_cost'];
 $discount_end_date = $_POST['discount_end_date'];
 
@@ -51,18 +61,19 @@ if ($session_id != "") {
 		street_address = ?,
 		city_name = ?,
 		discount_cost = ?,
-		discount_end_date = ?
+		discount_end_date = ?,
+		registration_url = ?
 		WHERE session_id = ?';
 	$get_results = $GLOBALS['_db']->prepare($session_sql);
-	$get_results->execute(array($metro, $start, $end, $start_date_time, $end_date_time, $session_type, $description, $cost, $currency, $suite, $street, $city, $discount_cost, $discount_end_date, $session_id));
+	$get_results->execute(array($metro, $start, $end, $start_date_time, $end_date_time, $session_type, $description, $cost, $currency, $suite, $street, $city, $discount_cost, $discount_end_date, $registration_url, $session_id));
 	header('Location: /edit_course?id='.$course_id.'&return=saved');
 	exit;
 }
 else {
 	$session_sql = 'INSERT INTO course_session (metro_name, start_date, end_date, start_date_time, end_date_time, session_type, description, cost, currency, suite, street_address, city_name, timestamp, course_id, active, discount_cost, discount_end_date)
-	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,1,?,?)';
+	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,1,?,?,?)';
 	$get_results = $GLOBALS['_db']->prepare($session_sql);
-	$get_results->execute(array($metro, $start, $end, $start_date_time, $end_date_time, $session_type, $description, $cost, $currency, $suite, $street, $city, "now()", $course_id, $discount_cost, $discount_end_date));
+	$get_results->execute(array($metro, $start, $end, $start_date_time, $end_date_time, $session_type, $description, $cost, $currency, $suite, $street, $city, "now()", $course_id, $discount_cost, $discount_end_date, $registration_url));
 
 	$course_sql = 'UPDATE course SET active_sessions = active_sessions + 1 WHERE course_id = ?';
 	$get_results = $GLOBALS['_db']->prepare($course_sql);

@@ -95,6 +95,7 @@ if (isset($_GET['id'])) {
 			$end_minute = date("i", strtotime($end_date_time));
 		}
 		$session_type = $session_result['session_type'];
+		$registration_url = $session_result['registration_url'];
 		$cost = number_format((float)$session_result['cost'],2,'.','');
 		$currency = $session_result['currency'];
 		$active = $session_result['active'];
@@ -113,7 +114,7 @@ if (isset($_GET['id'])) {
 		$templateFields = array('course_name' => $course_name, 'description' => $description, 'metro_name' => $metro_name, 'start_date' => $start_date, 'end_date' => $end_date,
 			'start_date_time' => $start_date_time, 'end_date_time' => $end_date_time, 'session_type' => $session_type, 'cost' => $cost, 'currency' => $currency, 'active' => $active,
 			'suite' => $suite, 'street_address' => $street_address, 'city_name' => $city_name, 'sessionList' => $sessionList, 'start_hour' => $start_hour,
-			'end_hour' => $end_hour, 'start_minute' => $start_minute, 'end_minute' => $end_minute, 'metro_list' => $metro_list, 
+			'end_hour' => $end_hour, 'start_minute' => $start_minute, 'end_minute' => $end_minute, 'metro_list' => $metro_list, 'registration_url' => $registration_url,
 			'discount_cost' => $discount_cost, 'discount_end_date' => $discount_end_date);
 	}
 	else {
