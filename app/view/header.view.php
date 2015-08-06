@@ -22,5 +22,3 @@
 			</ul>
 			<a href="/" id="header-logo"><img src="images/header-logo.png" alt="Trainingful: Find the top professional courses from hundreds of training vendors."></a>
 		</div>
-		<script src="js/util.js"></script>
-		<script src="js/main.js"></script>
