@@ -1,8 +1,6 @@
 	<meta charset="UTF-8">
 
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
-
+	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
@@ -22,20 +20,31 @@
 	<meta name="theme-color" content="#ffffff">
 	<link rel="image_src" href="images/favicon/favicon-96x96.png" />
 
-	<link rel="stylesheet" href="css/style.css">
+	<!-- Stylesheets -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="css/main.css">
 
+	<!-- Polymer Material Design -->
+	<!--
 	<script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
 	<link href="../../bower_components/paper-button/paper-button.html" rel="import">
 	<link href="../../bower_components/paper-dialog/paper-action-dialog.html" rel="import">
-
-	<!--<link href="../../bower_components/paper-slider/paper-slider.html" rel="import">-->
+	<link href="../../bower_components/paper-slider/paper-slider.html" rel="import">-->
 	
-	<script src="js/jquery-2.1.1.min.js"></script>
+	<!--<script src="js/skel-layers.min.js"></script>-->
+
+	<!-- JavaScript: jquery, skel -->
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.dropotron.min.js"></script>
 	<script src="js/skel.min.js"></script>
-	<script src="js/skel-layers.min.js"></script>
-	<script>
+	<script src="js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="js/main.js"></script>
+
+	<!--<script>
 	skel.init({
 		containers: '990px'
 	});
-	</script>
+	</script> -->
 	<?php include_once("analyticstracking.php") ?>

@@ -1,0 +1,14 @@
+/* @import 'main'; */
+#online-checkbox {
+  width: 0.75em;
+  height: 0.75em;
+  vertical-align: center;
+  display: inline; }
+
+#checkbox-text {
+  font-size: 0.75em;
+  vertical-align: center;
+  margin-left: 3px;
+  color: #000; }
+
+/*# sourceMappingURL=home.css.map */
