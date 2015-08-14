@@ -261,7 +261,8 @@
 		/*border-bottom: dotted 1px #62676c;*/
 
 		&:hover {
-			color: #f35858;
+			/*color: #f35858;*/
+			text-decoration: underline;
 			border-bottom-color: rgba(255, 255, 255, 0);
 		}
 	}
@@ -347,6 +348,28 @@
 		&.major {
 			text-align: center;
 		}
+	}
+
+	footer {
+		margin: 40px 0 50px;
+	}
+
+	footer p {
+		text-align: center;
+		font-size: 0.7em;
+		font-weight: 300;
+		color: #9d9d9d;
+		margin: 0;
+		padding: 0;
+	}
+
+	footer p a {
+		color: #9d9d9d;
+		margin: 0 0.5em;
+	}
+
+	footer p span {
+		margin: 0 0.5em;
 	}
 
 /* Image */
