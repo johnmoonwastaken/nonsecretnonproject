@@ -2169,6 +2169,13 @@ button,
     header > p {
       font-size: 1em; }
 
+  footer {
+    margin: 10px 10px 10px 10px; }
+
+  footer p {
+    font-size: 0.8em;
+    margin-top: 10px; }
+
   /* List */
   ul.divided li {
     padding-top: 0.75em;
