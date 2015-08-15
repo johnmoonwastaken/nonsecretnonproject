@@ -1459,7 +1459,8 @@ header {
     text-align: center; }
 
 footer {
-  margin: 40px 0 50px; }
+  padding: 40px 0 50px 0;
+  background: #dfdfdf; }
 
 footer p {
   text-align: center;
@@ -2170,7 +2171,7 @@ button,
       font-size: 1em; }
 
   footer {
-    margin: 10px 10px 10px 10px; }
+    padding: 10px 10px 10px 10px; }
 
   footer p {
     font-size: 0.8em;
