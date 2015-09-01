@@ -1,0 +1,323 @@
+#main-section {
+  background: #f8f8f8;
+  position: relative;
+  top: 152px;
+  padding-bottom: 40px; }
+
+#query-summary-bar {
+  height: 120px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px 25px 0 25px;
+  color: #fff;
+  position: absolute;
+  top: -180px; }
+
+#query-summary-bar h1 {
+  margin: 0 0 0.05em;
+  color: #fff;
+  font-weight: 400;
+  font-size: 2.2em; }
+
+#query-summary-bar p {
+  margin: 0;
+  font-weight: 300; }
+
+#query-summary-bar a {
+  color: #fff;
+  text-decoration: underline; }
+
+#query-summary-bar a:hover {
+  text-decoration: none; }
+
+#search-control-bar {
+  height: 60px;
+  background: #4ca166;
+  color: #fff;
+  position: absolute;
+  top: -60px; }
+
+#results-counter {
+  display: block;
+  margin: 0;
+  padding-left: 20px;
+  font-weight: 400;
+  background: #489961;
+  height: 60px;
+  line-height: 60px;
+  font-size: 0.8em; }
+
+#type-switcher {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+#type-switcher li {
+  float: left;
+  margin-left: 35px;
+  position: relative; }
+
+#type-switcher li:first-child {
+  margin-left: 0; }
+
+#type-switcher li a {
+  line-height: 60px;
+  color: #fff;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+  font-size: 1.1em; }
+
+#type-switcher .tick {
+  background: url("images/sprites.png") no-repeat 0 0;
+  margin: 0 auto;
+  width: 11px;
+  height: 6px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none; }
+
+#type-switcher li.active .tick {
+  display: block; }
+
+#results-container {
+  background: #fff; }
+
+#filters-accordion {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 5px 0 0;
+  /*border-right: 1px solid #d7d7d7;*/ }
+
+#filters-accordion li {
+  padding: 10px 5px;
+  margin: 0 10px;
+  color: #585858;
+  font-size: 0.85em;
+  border-top: 1px solid #d7d7d7; }
+
+#filters-accordion li:first-child {
+  border-top: 0; }
+
+#filters-accordion > li > a {
+  color: #585858; }
+
+#filters-accordion > li > a:hover {
+  text-decoration: none; }
+
+#filters-accordion > li > a > .icon {
+  margin-right: 3px; }
+
+#results-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+#results-list > li {
+  overflow: hidden;
+  padding: 30px 0 0;
+  border-top: 1px solid #d7d7d7;
+  margin: 30px 30px 30px 0; }
+
+#results-list > li:first-child {
+  padding: 0;
+  border-top: none; }
+
+#results-list .result-rating {
+  margin-top: 5px;
+  float: right; }
+
+#results-list h2 {
+  margin: 0 0 0.1em; }
+
+#results-list p {
+  margin: 0.3em 0 0.8em;
+  font-size: 0.85em;
+  font-weight: 300;
+  color: #969696; }
+
+#results-list p strong {
+  color: #656565; }
+
+#results-list .company-logo {
+  float: left;
+  max-height: 70px;
+  max-width: 70px; }
+
+.discount {
+  color: #ff7777; }
+
+.form-date {
+  width: 82px;
+  padding-left: 4px;
+  padding-right: 4px; }
+
+.form-name {
+  width: 185px;
+  padding-left: 4px;
+  padding-right: 4px; }
+
+.form-price {
+  width: 73px;
+  padding-left: 4px;
+  padding-right: 4px; }
+
+.inputbox {
+  margin-top: 10px; }
+
+.pricebox {
+  margin-left: 15px;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  color: #555; }
+
+.sessions-list {
+  list-style: none;
+  margin: 0 70px 0 80px;
+  padding: 0; }
+
+.sessions-list li {
+  margin: 0 0 1px 0;
+  padding: 0 0 0 15px;
+  background: #f2f2f2; }
+
+.sessions-list li > a {
+  display: block;
+  height: 33px;
+  overflow: hidden; }
+
+.sessions-list li > a:hover {
+  text-decoration: none; }
+
+.sessions-list h4 {
+  color: #515151;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1em;
+  font-size: 0.8em; }
+
+.sessions-list small {
+  font-weight: 300; }
+
+.sessions-list .icon.calendar {
+  float: left;
+  color: #afafaf;
+  margin-top: 15px; }
+
+.sessions-list .session-dates {
+  margin: 3px 0 0 23px; }
+
+.sessions-list .session-location {
+  color: #969696;
+  margin: 0 0 0 23px;
+  display: block;
+  line-height: 1.5em; }
+
+.sessions-list .session-price-container {
+  margin: 3px 15px 0 0;
+  float: right;
+  text-align: right;
+  color: #969696; }
+
+.sessions-list .session-price-container h4 {
+  color: #515151;
+  line-height: 0.8em;
+  font-size: 0.8em; }
+
+.sessions-list .session-price-container small {
+  line-height: 1.5em; }
+
+.sessions-list .chevron-container {
+  float: right;
+  text-align: center;
+  height: 63px;
+  width: 46px;
+  background: #f6c66b; }
+
+.sessions-list .icon.chevron-right {
+  color: #fff;
+  font-size: 2em;
+  line-height: 34px; }
+
+.smaller-button {
+  margin-top: 10px;
+  margin-left: 45px;
+  margin-bottom: 10px;
+  height: 35px;
+  width: 120px;
+  padding: 5px 10px 5px 10px;
+  font-size: 1em; }
+
+.tags-list {
+  list-style: none;
+  margin: 5px 70px 0 80px;
+  padding: 0;
+  font-size: 0.7em; }
+
+.tags-list li {
+  margin: 0 0 1px 0;
+  padding: 0 0 0 0px;
+  background: #fff; }
+
+.tags-list li > a {
+  display: inline;
+  height: 33px;
+  overflow: hidden; }
+
+.tags-list li > a:hover {
+  text-decoration: underline; }
+
+#results-list .more-sessions {
+  margin: 3px 0 0 80px;
+  color: #969696;
+  display: block; }
+
+#results-list .more-sessions a {
+  color: #969696; }
+
+#results-list .more-sessions .icon {
+  font-size: 1.6em; }
+
+#searchbox-location {
+  font-size: 0.8em; }
+
+#trainingful-guarantee {
+  border: 2px dotted rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 6px 20px 6px 20px;
+  margin: 15px 165px 15px 165px;
+  width: 350px; }
+
+.description {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+  font-weight: 600;
+  color: #5b5b5b;
+  font-size: 0.8em;
+  text-align: center; }
+
+.guarantee {
+  text-align: center;
+  font-family: "Pacifico";
+  font-size: 1.3em;
+  color: rgba(0, 0, 0, 0.85);
+  margin-bottom: 10px; }
+
+.no-results {
+  font-family: "Pacifico", 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+  font-size: 1.0em; }
+
+#guarantee-form {
+  margin-top: 15px;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+  color: rgba(0, 0, 0, 0.85); }
+
+.guarantee-form-title {
+  margin-top: 10px;
+  font-size: 0.9em; }
+
+.form-guarantee-input {
+  width: 285px;
+  padding-left: 4px;
+  padding-right: 4px; }
+
+/*# sourceMappingURL=search.css.map */
