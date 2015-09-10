@@ -38,57 +38,55 @@
 	<body class="homepage">
 		<div id="page-wrapper">
 			<?php include 'header.view.php' ?>
-				<div class="container">
-					<!-- Hero -->
-						<section id="hero" class="container">
-							<section id="main-section" style="width:400px;">
-								<div id="query-summary-bar" class="container">
-									<?php if ($_GET['tag']): ?>	
-										<h1><?php echo $_GET['tag']; ?> courses</h1>
-										<p><!--Courses tagged with <strong><?php echo $_GET['tag']; ?></strong> <small>(<a href="/">Home</a>)</small>--></p>
-									<?php elseif ($_GET['category']): ?>
-										<h1>Explore Categories</h1>
-										<p>In <strong><?php echo $parent_category_name . " - " . $category_name; ?></strong> <small>(<a href="/categories">Change Category</a>)</small></p>
-									<?php else: ?>
-									<?php 
-									if ($_GET['start'] == "" || $_GET['end'] == "") {
-										$start = date('Y-m-d',strtotime(date("Y-m-d", mktime())));
-										$end = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
-									}
-									?>
-									<h1><?php echo $keywords; ?> courses in <?php if (empty($location)) { $location = "Everywhere"; echo "Everywhere"; } else echo $location; ?></h1>
-									<p>Between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
-									<?php endif; ?>
-								</div>
-								<div id="search-control-bar" class="container">
-									<div class="row">
-										<div class="3u">
-										<?php  	$page = 1;
-											$shown = 20;
-											if ($_GET['page'] != "") {
-												$page = $_GET['page'];
-											}
-											$upto = $page * $shown;
-											if ($upto > $totalResults)
-											{
-												$upto = $totalResults;
-											} ?>
-											<h4 id="results-counter"><!--Filter--> <?php if ($upto > 1) {echo "Showing " . (($page -1) * $shown + 1) . "-" . $upto . " of " . $totalResults . " results"; } else { echo "No results found"; } ?></h4>
-										</div>
-										<div class="9u">
-											<ul id="type-switcher">
-												<!--<li class="active"><span class="tick"></span><a href="#">All Training</a></li>-->
-												
-												<li class="active"><span class="tick"></span><a href="#">Courses</a></li>
-												<!--<li><span class="tick"></span><a href="#">Conferences</a></li>
-												-->
-											</ul>
-										</div>
+				<!-- Hero -->
+					<section id="hero" class="container">
+						<section id="main-section">
+							<div id="query-summary-bar">
+								<?php if ($_GET['tag']): ?>	
+									<h1><?php echo $_GET['tag']; ?> courses</h1>
+									<p><!--Courses tagged with <strong><?php echo $_GET['tag']; ?></strong> <small>(<a href="/">Home</a>)</small>--></p>
+								<?php elseif ($_GET['category']): ?>
+									<h1>Explore Categories</h1>
+									<p>In <strong><?php echo $parent_category_name . " - " . $category_name; ?></strong> <small>(<a href="/categories">Change Category</a>)</small></p>
+								<?php else: ?>
+								<?php 
+								if ($_GET['start'] == "" || $_GET['end'] == "") {
+									$start = date('Y-m-d',strtotime(date("Y-m-d", mktime())));
+									$end = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
+								}
+								?>
+								<h1><?php echo $keywords; ?> courses in <?php if (empty($location)) { $location = "Everywhere"; echo "Everywhere"; } else echo $location; ?></h1>
+								<p>Between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong> <small>(<a href="/?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Change Search</a>)</small></p>
+								<?php endif; ?>
+							</div>
+							<div id="search-control-bar">
+								<div class="row">
+									<div class="3u">
+									<?php  	$page = 1;
+										$shown = 20;
+										if ($_GET['page'] != "") {
+											$page = $_GET['page'];
+										}
+										$upto = $page * $shown;
+										if ($upto > $totalResults)
+										{
+											$upto = $totalResults;
+										} ?>
+										<h4 id="results-counter"><!--Filter--> <?php if ($upto > 1) {echo "Showing " . (($page -1) * $shown + 1) . "-" . $upto . " of " . $totalResults . " results"; } else { echo "No results found"; } ?></h4>
+									</div>
+									<div class="9u">
+										<ul id="type-switcher">
+											<!--<li class="active"><span class="tick"></span><a href="#">All Training</a></li>-->
+											
+											<li class="active"><span class="tick"></span><a href="#">Courses</a></li>
+											<!--<li><span class="tick"></span><a href="#">Conferences</a></li>
+											-->
+										</ul>
 									</div>
 								</div>
-							</section>
+							</div>
 						</section>
-					</div>
+					</section>
 				</div>
 
 			<!-- Features 1 -->
