@@ -1,20 +1,7 @@
 {
   "name": "trainingful",
   "version": "0.0.0",
-  "homepage": "www.trainingful.com",
-  "authors": [
-    "Renbo"
-  ],
-  "description": "Trainingful website",
-  "main": "index.php",
-  "moduleType": [
-    "node"
-  ],
-  "keywords": [
-    "training"
-  ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -23,9 +10,7 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#~0.5.4",
-    "core-elements": "Polymer/core-elements#master",
-    "google-map": "PolymerLabs/google-map",
-    "polymer-date-picker": "~0.0.11"
+    "juicy-html": "Juicy/juicy-html#master",
+    "polymer": "Polymer/polymer#1.0.0"
   }
 }

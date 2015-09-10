@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <title>ajax-form demo</title>
 
-    <script src="../webcomponentsjs/webcomponents.js"></script>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="ajax-form.html">
 
     <!--For nicer-looking dialogs - only used by the demo-->
@@ -46,7 +46,7 @@
 
 </head>
 
-<body unresolved>
+<body>
 
     <h1><code>ajax-form</code> in action:</h1>
 
@@ -56,7 +56,7 @@
         <h1 id="pleaseWait" class="hidden">Sending your data...</h1>
 
         <div id="content">
-            <form is="ajax-form" action="test" method="post">
+            <form is="ajax-form" action="test" method="post" enctype="multipart/form-data">
                 <div>
                     <label>Full Name: <input type="text" name="name" required></label>
                 </div>
@@ -73,6 +73,7 @@
                     <b>Receive periodic email updates from us?</b>
                     <input type="radio" name="emailCommunication" value="yes" checked>yes
                     <input type="radio" name="emailCommunication" value="no">no
+                    <input type="checkbox" name="testcheck" value="testval">testcheck
                 </div>
 
                 <input type="submit">

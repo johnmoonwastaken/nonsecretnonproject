@@ -5,15 +5,37 @@ HTML forms on performance-enhancing drugs
 
 [![Build Status](https://travis-ci.org/rnicholus/ajax-form.svg?branch=master)](https://travis-ci.org/rnicholus/ajax-form)
 
+## What's wrong with a traditional `<form>`?
+1. Form submission changes/reloads the page, and it's not trivial to properly prevent this.
+2. You can't send custom headers with a submitted form.
+3. You can't (easily) parse the server response after a form is submitted.
+4. Programmatically tracking invalid forms/fields is frustrating.
+5. You can't send form data as JSON.
+6. You have no opportunity to programmatically augment user-entered data before it is sent to the server.
+7. Custom form elements (such as those created using the web components spec) cannot be submitted using a traditional unadulterated `<form>`.
+
+The `ajax-form` custom element augments a traditional `<form>` to provide additional features and solve the problems listed above. See the [API documentation page](http://ajax-form.raynicholus.com) for complete documentation and demos.
+
 ## Installation
 
-`bower install ajax-form`
+`npm install ajax-form`
 
-...or if you have a bower.json file with an entry for ajax-form:
+## Use
 
-`bower update`
+Use ajax-form just like you would use a traditional form, with the exception of the required `is="ajax-form"` attribute that you _must_ include in your `<form>` element markup. Since ajax-form is a web component, you may need to include a web component polyfill, such as [webcomponents.js](http://webcomponents.org/) to ensure browsers
+that do not implement the WC spec are able to make use of ajax-form. Ajax-form has *no* hard
+dependencies.
 
-See the [component page](http://ajax-form.raynicholus.com) for complete documentation and demos.
+A very simple use of `ajax-form` looks just like a normal `<form>`, with the addition of an `is` attribute:
+
+```html
+<form is="ajax-form" action="my/form/handler" method="post">
+    <label>Enter your name: <input type="text" name="full_name"></label>
+    ...
+</form>
+```
+
+See the [API documentation page](http://ajax-form.raynicholus.com) for complete documentation and demos.
 
 
 ## Integration
@@ -51,12 +73,9 @@ for an example.
 ```
 npm install
 npm install -g grunt-cli
-bower update
 grunt
 ```
 
 - Running `grunt` without any parameters will test against a few locally installed browsers (see the codebase for details).
 
-- Running `grunt wct-test:remote` will run tests against a number of browsers in SauceLabs.  Ensure you have your SauceLabs username and key attached to the proper environment variables first.
-
-See [documentation](https://github.com/Polymer/web-component-tester) for more details.
+- Running `grunt shell:wctSauce` will run tests against a number of browsers in SauceLabs.  Ensure you have your SauceLabs username and key attached to the proper environment variables first.

@@ -5,9 +5,13 @@
 	<title><?php echo $course_name; ?></title>
 	<?php include 'below_title.php' ?>
 	
+	
 	<link rel="import" href="../../bower_components/elements/session-action-dialog.html">
 	<link rel="import" href="../../bower_components/elements/review-action-dialog.html">
-
+	
+	<!--
+	<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+	-->	
 	<style>
 	
 	.wrapper {
@@ -481,9 +485,14 @@
 					</div>
 					</div>
 				</div>
+				
 				<session-action-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
 				<review-action-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></review-action-dialog>
-
+				
+				<!--
+				<paper-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
+				<paper-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></paper-dialog>
+				-->	
 			</div>
 		</div>
 </section>
