@@ -3,8 +3,8 @@
 	#main-section {
 		background: #f8f8f8;
 		position: relative;
-		top: 152px;
-		padding-bottom: 40px;
+		top: 112px;
+		padding-bottom: 0px;
 		padding-left: 105px;
 	}
 	
@@ -17,6 +17,7 @@
 		top: -180px;
 		width: $query-bar-width;
 		text-align: left;
+		z-index: 4;
 	}
 	
 	#query-summary-bar h1 {
@@ -40,6 +41,7 @@
 	#query-summary-bar a {
 		color: #fff;
 		text-decoration: underline;
+		line-height: 0.8em;
 	}
 	
 	#query-summary-bar a:hover {
@@ -109,6 +111,8 @@
 	
 	#results-container {
 		background: #fff;
+		width: $query-bar-width;
+		margin-left: 105px;
 	}
 	
 	#filters-accordion {
