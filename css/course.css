@@ -1,0 +1,219 @@
+.wrapper {
+  position: relative;
+  margin: 30px;
+  padding-bottom: 180px; }
+
+.arc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  border: 7px solid; }
+
+.arc_start {
+  border-color: transparent transparent transparent #ffb830;
+  transform: rotate(0deg);
+  /* Arc from 0 degrees */ }
+
+.arc_end {
+  border-color: #ffb830 #ffb830 #ffb830 transparent;
+  transform: rotate(45deg);
+  /* to 30 degrees (clockwise) */ }
+
+#average-rating {
+  color: #aaa;
+  font-size: 0.18em;
+  font-weight: 400;
+  margin-left: 12px;
+  margin-top: -5px; }
+
+#container2 {
+  clear: left;
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  border-right: 1px solid #d7d7d7; }
+
+#container1 {
+  float: left;
+  width: 100%;
+  position: relative;
+  right: 260px;
+  border-right: 1px solid #d7d7d7; }
+
+#col1 {
+  float: left;
+  width: 727px;
+  position: relative;
+  left: 260px;
+  overflow: hidden; }
+
+#col2 {
+  float: left;
+  width: 260px;
+  position: relative;
+  left: 261px;
+  overflow: hidden; }
+
+#content-section {
+  position: relative;
+  padding: 0 20px 0 20px;
+  border-bottom: 1px solid #d7d7d7; }
+
+#info-bar {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 5px; }
+
+#info-tags {
+  margin: 0px 0px 0px 0px;
+  background: #f2f2f2;
+  color: #999;
+  font-size: 0.8em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+  list-style: none;
+  padding: 0 0 0px 0px;
+  border-bottom: 1px solid #d7d7d7; }
+
+#info-tags li {
+  padding: 10px 10px 10px 10px;
+  border-top: 1px solid #d7d7d7; }
+
+#info-sessions {
+  margin: 0;
+  color: #999;
+  font-size: 0.8em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+  list-style: none;
+  padding: 0; }
+
+#info-sessions li {
+  padding: 20px 0 0px 10px;
+  border-bottom: 1px solid #d7d7d7;
+  cursor: pointer; }
+
+#info-sessions li:hover {
+  background: #cde4d4; }
+
+#info-sessions .dates {
+  font-weight: 400;
+  font-size: 1.2em;
+  color: #666;
+  margin-left: 5px;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif; }
+
+#info-sessions .location {
+  float: left;
+  margin-left: 25px;
+  font-size: 0.9em;
+  width: 100px;
+  margin-right: 5px;
+  color: #aaa; }
+
+#info-sessions .price {
+  font-size: 0.9em;
+  color: #aaa; }
+
+#info-sessions .selected {
+  background-color: #cde4d4; }
+
+#main-content {
+  overflow: hidden;
+  background: #fff;
+  border-top: 7px solid #4ca166;
+  border-left: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
+  padding: 0px 0px 0px 0px;
+  width: 82.5%;
+  margin-left: 105px; }
+
+#main-content h1 {
+  margin: 0;
+  padding-top: 10px;
+  font-size: 2.2em;
+  color: #444;
+  font-weight: 400; }
+
+#main-content h4 {
+  color: #666;
+  margin-left: 0.2em;
+  font-weight: 400;
+  font-size: 0.9em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif; }
+
+#main-content h5 {
+  color: #666;
+  margin-left: 0.2em;
+  font-weight: 400;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif; }
+
+#main-section {
+  position: relative;
+  top: 120px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  margin-top: -100px; }
+
+#query-summary-bar {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  color: #fff;
+  width: 82.5%;
+  margin-left: 105px; }
+
+#query-summary-bar h1 {
+  margin: 0 0 0.05em;
+  color: #fff;
+  font-weight: 400;
+  font-size: 2.2em; }
+
+#query-summary-bar p {
+  margin: 0;
+  font-weight: 300; }
+
+#query-summary-bar a {
+  color: #fff;
+  text-decoration: underline; }
+
+#query-summary-bar a:hover {
+  text-decoration: none; }
+
+#rating-percent {
+  position: absolute;
+  margin: 35px 35px;
+  font-size: 4.5em;
+  font-weight: 300;
+  color: #444;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif; }
+
+#ratings-section {
+  position: relative; }
+
+#vendor-image .company-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  max-width: 240px; }
+
+#vendor-name {
+  text-align: center;
+  color: #999; }
+
+.discount {
+  color: #ff7777; }
+
+.folded-corner {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 16px 16px;
+  border-color: transparent transparent #4ca067 transparent;
+  margin: 0 0 -1px 234px;
+  -webkit-transform: rotate(360deg); }
+
+/*# sourceMappingURL=course.css.map */
