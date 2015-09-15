@@ -1,9 +1,10 @@
 #main-section {
   background: #f8f8f8;
   position: relative;
-  top: 112px;
+  top: 96px;
   padding-bottom: 0px;
-  padding-left: 105px; }
+  padding-left: 105px;
+  margin-top: 40px; }
 
 #query-summary-bar {
   height: 120px;
