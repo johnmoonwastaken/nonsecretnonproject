@@ -1349,7 +1349,7 @@ body {
   font-weight: 400;
   color: #52575c;
   line-height: 1.75em;
-  font-size: 14pt; }
+  font-size: 12pt; }
   body.is-loading * {
     -moz-transition: none !important;
     -webkit-transition: none !important;
@@ -1365,15 +1365,15 @@ input, textarea, select {
   font-weight: 300;
   color: #52575c;
   line-height: 1.75em;
-  font-size: 9pt; }
+  font-size: inherit; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   color: #52575c; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: inherit;
-  text-decoration: none; }
+  text-decoration: none;
+  color: #5a7db2; }
 
 h2 {
   font-size: 2em;
@@ -1397,7 +1397,7 @@ a {
     border-bottom-color: rgba(255, 255, 255, 0); }
 
 strong, b {
-  font-weight: 600;
+  font-weight: 400;
   color: #42474c; }
 
 em, i {
@@ -1576,13 +1576,13 @@ form textarea {
   -ms-transition: background-color 0.25s ease-in-out;
   transition: background-color 0.25s ease-in-out;
   -webkit-appearance: none;
-  display: block;
+  display: inline;
   background: #f9fbfe;
   border: solid 1px #d2d7dc;
   /*border-radius: 0.35em; */
-  width: 100%;
+  width: 78px;
   line-height: 1.5em;
-  padding: 0.75em; }
+  padding: 4px; }
   form input[type="text"]:focus,
   form input[type="email"]:focus,
   form input[type="password"]:focus,
