@@ -144,7 +144,7 @@
 													</select>
 												</div>
 												<div class="row 0% uniform" style="margin-top:5px;">
-													<input type="checkbox" name="include_online" <?php if ($_GET['include_online'] == on) echo "checked"; ?> style="width:15px;height:15px;vertical-align:bottom;margin-bottom:2px;display:inline;"><span style="font-size:0.9em;margin-left:5px;">Include online courses</span>
+													<input id="checkbox" type="checkbox" name="include_online" <?php if ($_GET['include_online'] == on) echo "checked"; ?> <span id="online-span">Include online courses</span>
 												</div>
 											</li>
 										</ul>

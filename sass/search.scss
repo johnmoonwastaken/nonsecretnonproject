@@ -45,6 +45,10 @@
 		line-height: 0.8em;
 	}
 	
+	#query-summary-bar strong{
+		font-weight: 600;
+	}
+
 	#query-summary-bar a:hover {
 		text-decoration: none;
 	}
@@ -121,14 +125,15 @@
 		width: 100%;
 		margin: 0;
 		padding: 5px 0 0;
+		font-size: 0.85em;
 		/*border-right: 1px solid #d7d7d7;*/
 	}
 	
 	#filters-accordion li {
-		padding: 10px 5px;
+		padding: 5px 5px;
 		margin: 0 10px;
 		color: #585858;
-		font-size: 0.85em;
+		font-size: 0.87em;
 		border-top: 1px solid #d7d7d7;
 	}
 	
@@ -147,7 +152,23 @@
 	#filters-accordion > li > a > .icon {
 		margin-right: 3px;
 	}
-	
+
+	#online-span {
+		font-size: 0.9em;
+		margin-left: 3px;
+		margin-top: -6px;
+	}
+
+	#checkbox {
+		width: 15px;
+		height: 15px;
+		vertical-align: bottom;
+		margin-left: -1px;
+		margin-bottom:2px;
+		margin-top: 7px;
+		display:inline;
+	}
+
 	#results-list {
 		list-style: none;
 		margin: 0;
@@ -173,13 +194,14 @@
 	
 	#results-list h2 {
 		margin: 0 0 0.1em;
-		font-size: 1.5em;
+		font-size: 1.32em;
 		line-height: 1.25em;
+		font-weight: 400;
 	}
 	
 	#results-list p {
 		margin: 0.3em 0 0.8em;
-		font-size: 0.83em;
+		font-size: 0.78em;
 		font-weight: 300;
 		color: #ABABAB;
 		line-height: 1.5em;
@@ -188,6 +210,7 @@
 	
 	#results-list p strong {
 		color: #656565;
+		font-weight: 600;
 	}
 	
 	#results-list .company-logo {
@@ -207,6 +230,7 @@
 		width:185px;
 		padding-left: 4px;
 		padding-right: 4px;
+		border: solid 1px red;
 	}
 	.form-price {
 		width:73px;
@@ -214,13 +238,19 @@
 		padding-right: 4px;
 	}
 	.inputbox {
-		margin-top:10px;
+		margin-top: 0px;
 	}
 	.pricebox {
 		margin-left: 15px;
 		font-size: 0.9em;
 		margin-bottom:10px;
 		color: #555;
+	}
+	.pricebox .form-price {
+		width:70px;
+		padding-left: 4px;
+		padding-right: 4px;
+		line-height: 1.2em;
 	}
 
 	.sessions-list {
@@ -249,13 +279,13 @@
 		color: #515151;
 		font-weight: 400;
 		margin: 0;
-		line-height: 1em;
-		font-size: 0.8em;
+		line-height: 0.7em;
+		font-size: 0.7em;
 	}
 	
 	.sessions-list small {
 		font-weight: 300;
-		font-size: 80%;
+		font-size: 70%;
 	}
 	
 	.sessions-list .icon.calendar {
@@ -272,7 +302,7 @@
 		color: #969696;
 		margin: 0 0 0 23px;
 		display: block;
-		line-height: 1.5em;
+		line-height: 1.8em;
 	}
 	
 	.sessions-list .session-price-container {
@@ -284,12 +314,14 @@
 	
 	.sessions-list .session-price-container h4 {
 		color: #515151;
-		line-height: 0.8em;
-		font-size: 0.8em;
+		line-height: 0.7em;
+		font-size: 0.7em;
 	}
 	
 	.sessions-list .session-price-container small {
-		line-height: 1.5em;
+		line-height: 1.8em;
+		margin-top: 20px;
+		vertical-align: top;
 	}
 	
 	.sessions-list .chevron-container {
@@ -313,14 +345,18 @@
 		height: 35px;
 		width: 120px;
 		padding: 5px 10px 5px 10px;
-		font-size: 1em;
+		border: 0px none;
+		border-radius: 3px;
+		color: #FFF;
+		background: #4CA166 none repeat scroll 0% 0%;
+		font-size: 0.88em;
 	}
 	
 	.tags-list {
 		list-style: none;
 		margin: 5px 70px 0 80px;
 		padding: 0;
-		font-size: 0.7em;
+		font-size: 0.6em;
 	}
 	
 	.tags-list li {
@@ -333,6 +369,7 @@
 		display: inline;
 		height: 33px;
 		overflow: hidden;
+		color: #5A7DB2
 	}
 	
 	.tags-list li > a:hover {
@@ -353,7 +390,33 @@
 		font-size: 1.6em;
 	}
 
+	#searchbox-keywords {
+		width: 180px;
+		padding-left: 6px;
+		padding-right: 6px;
+		line-height: 1.1em;
+	}
+
+	#searchbox-start {
+		width: 79px;
+		padding-left: 4px;
+		padding-right: 4px;
+		line-height: 1.2em;
+		font-size: 0.9em;
+	} 
+
+	#searchbox-end {
+		width: 79px;
+		padding-left: 4px;
+		padding-right: 4px;
+		line-height: 1.2em;
+		font-size: 0.9em;
+	} 
+
 	#searchbox-location {
+		width: 180px;
+		padding-left: 1px;
+		padding-right: 1px;
 		font-size: 0.8em;
 	}
 
