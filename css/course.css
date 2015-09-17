@@ -60,7 +60,9 @@
 #content-section {
   position: relative;
   padding: 0 20px 0 20px;
-  border-bottom: 1px solid #d7d7d7; }
+  border-bottom: 1px solid #d7d7d7;
+  line-height: 1.21em;
+  font-size: 0.85em; }
 
 #info-bar {
   list-style: none;
@@ -76,24 +78,43 @@
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
   list-style: none;
   padding: 0 0 0px 0px;
-  border-bottom: 1px solid #d7d7d7; }
+  border-bottom: 1px solid #d7d7d7;
+  line-height: 1.21em; }
 
 #info-tags li {
   padding: 10px 10px 10px 10px;
   border-top: 1px solid #d7d7d7; }
 
+#info-tags a {
+  color: #5A7DB2;
+  font-size: 0.9em; }
+
+#info-tags strong {
+  font-weight: 700;
+  font-size: 0.85em;
+  color: #999; }
+
 #info-sessions {
   margin: 0;
-  color: #999;
   font-size: 0.8em;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
   list-style: none;
-  padding: 0; }
+  padding: 0;
+  line-height: 1.21em; }
 
 #info-sessions li {
   padding: 20px 0 0px 10px;
   border-bottom: 1px solid #d7d7d7;
   cursor: pointer; }
+
+#info-sessions strong {
+  color: #999;
+  font-weight: 600;
+  font-size: 0.85em; }
+
+#register-session {
+  padding: 10px 0 10px 10px;
+  border-bottom: 5px solid #4ca166; }
 
 #info-sessions li:hover {
   background: #cde4d4; }
@@ -133,7 +154,8 @@
 #main-content h1 {
   margin: 0;
   padding-top: 10px;
-  font-size: 2.2em;
+  padding-bottom: 5px;
+  font-size: 1.8em;
   color: #444;
   font-weight: 400; }
 
@@ -142,17 +164,20 @@
   margin-left: 0.2em;
   font-weight: 400;
   font-size: 0.9em;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif; }
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+  line-height: 1.6em; }
 
 #main-content h5 {
   color: #666;
+  margin-top: -1.3em;
   margin-left: 0.2em;
   font-weight: 400;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif; }
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+  font-size: 0.8em; }
 
 #main-section {
   position: relative;
-  top: 120px;
+  top: 116px;
   padding-bottom: 0px;
   padding-left: 0px;
   margin-top: -100px; }
@@ -162,7 +187,8 @@
   padding: 25px;
   color: #fff;
   width: 82.5%;
-  margin-left: 105px; }
+  margin-left: 105px;
+  text-align: left; }
 
 #query-summary-bar h1 {
   margin: 0 0 0.05em;
@@ -176,10 +202,14 @@
 
 #query-summary-bar a {
   color: #fff;
-  text-decoration: underline; }
+  text-decoration: underline;
+  font-size: 0.6em; }
 
 #query-summary-bar a:hover {
   text-decoration: none; }
+
+#query-summary-bar strong {
+  font-weight: 600; }
 
 #rating-percent {
   position: absolute;
@@ -201,8 +231,15 @@
   max-width: 240px; }
 
 #vendor-name {
-  text-align: center;
-  color: #999; }
+  line-height: 1.21em;
+  text-align: center; }
+
+#vendor-name a {
+  color: #5A7DB2;
+  font-weight: 600; }
+
+#vendor-name strong {
+  font-size: 0.9em; }
 
 .discount {
   color: #ff7777; }

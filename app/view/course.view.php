@@ -32,7 +32,7 @@
 									<div id="content-section">
 										<h1><?php echo $course_name; ?>
 										<!-- &nbsp;&nbsp;<span class="rating s4" title="4 stars"></span> --></h1>
-										<p style="margin-top:-1.3em;"><span><h5><?php if ($parent_category_name == "") { echo $category_name; } else { echo $parent_category_name." - ".$category_name; }?></h5></span></p>
+										<p><span><h5><?php if ($parent_category_name == "") { echo $category_name; } else { echo $parent_category_name." - ".$category_name; }?></h5></span></p>
 
 										<?php if(isset($video_url) && $video_url != ""): ?>
 										<iframe width="640" height="362" src="<?php echo $video_url ?>"></iframe>
@@ -106,8 +106,8 @@
 									</ul>
 
 									<ul id="info-sessions">
-										<div style="padding:10px 0 10px 10px;border-bottom: 5px solid #4ca166;">
-											<span class="icon triangle-down"></span> <strong>Register & Session Information</strong>
+										<div id="register-session">
+											<span class="icon triangle-down"></span><strong>Register & Session Information</strong>
 										</div>
 										<li id="loading-sessions">Loading course sessions... <img src="../../images/polymer-loader.gif" /></li>
 										<span id="display-sessions" style="display:none;">
