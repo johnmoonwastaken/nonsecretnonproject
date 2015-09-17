@@ -30,7 +30,9 @@
 #static-content h4 {
   color: #666;
   font-weight: 300;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif; }
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+  font-size: 0.88em;
+  line-height: 1.5em; }
 
 #static-content h5 {
   color: #666;
@@ -50,7 +52,7 @@
   margin: 0 0 0.05em;
   color: #fff;
   font-weight: 300;
-  font-size: 2.2em;
+  font-size: 1.8em;
   font-family: 'Pacifico'; }
 
 #static-document p {
