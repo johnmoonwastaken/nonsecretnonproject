@@ -170,7 +170,7 @@
 												<p><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> 
 												<?php 
 												$max_offset = 190;
-												if (strlen($courseList[$i]['course_description']) < $max_offset) {
+												if (strlen($coursLeist[$i]['course_description']) < $max_offset) {
 													echo $courseList[$i]['course_description'];
 												}
 												else {
