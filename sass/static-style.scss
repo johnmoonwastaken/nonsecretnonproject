@@ -18,6 +18,7 @@ $query-bar-width: 82.5%;
 	margin-left: 105px;
 	margin-bottom: 60px;
 	width: $query-bar-width;
+	font-size: 0.85em;
 }
 
 #static-content h1 {
@@ -37,8 +38,7 @@ $query-bar-width: 82.5%;
 	color:#666;
 	font-weight:300;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
-	font-size: 0.88em;
-	line-height: 1.5em;
+	line-height: 1.3em;
 }
 
 #static-content h5 {
@@ -46,6 +46,18 @@ $query-bar-width: 82.5%;
 	margin-left:0.2em;
 	font-weight:300;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+}
+
+#static-content h6 {
+	color:#666;
+	font-weight:300;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
+	line-height: 1.75em;
+	margin-left: 100px; margin-right: 100px;
+}
+
+#static-content strong {
+	font-weight: 600;
 }
 
 #static-document {
@@ -61,7 +73,7 @@ $query-bar-width: 82.5%;
 	margin: 0 0 0.05em;
 	color: #fff;
 	font-weight: 300;
-	font-size: 1.8em;
+	font-size: 1.85em;
 	font-family: 'Pacifico';
 }
 

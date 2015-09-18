@@ -143,7 +143,7 @@
 														<?php endforeach ?>
 													</select>
 												</div>
-												<div class="row 0% uniform" style="margin-top:5px;">
+												<div class="row 0% uniform";>
 													<input id="checkbox" type="checkbox" name="include_online" <?php if ($_GET['include_online'] == on) echo "checked"; ?> <span id="online-span">Include online courses</span>
 												</div>
 											</li>
@@ -170,7 +170,7 @@
 												<p><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> 
 												<?php 
 												$max_offset = 190;
-												if (strlen($courseList[$i]['course_description']) < $max_offset) {
+												if (strlen($coursLeist[$i]['course_description']) < $max_offset) {
 													echo $courseList[$i]['course_description'];
 												}
 												else {
