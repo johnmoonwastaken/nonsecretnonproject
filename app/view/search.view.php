@@ -140,7 +140,7 @@
 											<?php endforeach ?>
 										</select>
 									</div>
-									<div class="row 0% uniform";>
+									<div class="row 0% uniform" id="online-span";>
 										<input id="checkbox" type="checkbox" name="include_online" <?php if ($_GET['include_online'] == on) echo "checked"; ?> <span id="online-span">Include online courses</span>
 									</div>
 								</li>
