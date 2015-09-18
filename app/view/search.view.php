@@ -39,7 +39,6 @@
 		<div id="page-wrapper">
 			<?php include 'header.view.php' ?>
 				<!-- Hero -->
-					<section id="hero" class="container">
 						<section id="main-section">
 							<div id="query-summary-bar">
 								<?php if ($_GET['tag']): ?>	
@@ -86,13 +85,14 @@
 								</div>
 							</div>
 						</section>
+					<section id="hero" class="container">
 					</section>
 				</div>
 			<!-- Features 1 -->
 					<div class="container">
 							<div id="results-container">
 								<div class="row">
-									<div class="3u">
+									<div class="3u" id="left-box">
 										<form id="filterbox" action="search" method="get">
 											<?php if ($_GET['category'] != '') { echo '<input type="hidden" name="category" value="' . $_GET['category'] . '">'; } ?>
 										<ul id="filters-accordion">
@@ -151,7 +151,7 @@
 										<button type="submit" class="form-submit smaller-button">Filter Results</button>
 										</form>
 									</div>
-									<div class="9u">
+									<div class="9u 12u(mobile)">
 										<ul id="results-list">
 												<?php if (is_array($courseList) and $totalResults > 0) { for($i = ($page - 1) * $shown; $i < $upto; ++$i): ?>
 											<li><!--
