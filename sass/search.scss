@@ -551,8 +551,18 @@
 		.sessions-list {
 			margin: 0;
 		}
+		.sessions-list .session-dates {
+			margin: 3px 0px 3px 0;
+		}
 		.tags-list {
 			margin: 10px 0;
+		}
+		#query-summary-bar {
+			font-size: 0.8em;
+		}
+		.sessions-list .chevron-container {
+			display: none;
+			width: 0;
 		}
 	}
 
