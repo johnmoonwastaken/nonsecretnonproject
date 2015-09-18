@@ -83,10 +83,8 @@
 										</ul>
 									</div>
 								</div>
-							</div>
 						</section>
-					<section id="hero" class="container">
-					</section>
+					</div>
 				</div>
 			<!-- Features 1 -->
 					<div class="container">
