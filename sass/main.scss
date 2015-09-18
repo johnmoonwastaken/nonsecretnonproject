@@ -1516,7 +1516,7 @@
 			#page-wrapper {
 				@include vendor('backface-visibility', 'hidden');
 				@include vendor('transition', 'transform #{_duration(navPanel)} ease');
-				padding-bottom: 1px;
+				padding-bottom: 2px;
 			}
 
 			#navButton {

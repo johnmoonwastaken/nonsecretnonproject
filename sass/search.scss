@@ -516,7 +516,8 @@
 	@include breakpoint(mobile) {
 		#main-section {
 			margin-top: 60px;
-			margin-left: -20px;
+			margin-left: 0px;
+			width: 100%;
 		}
 
 		#query-summary-bar {

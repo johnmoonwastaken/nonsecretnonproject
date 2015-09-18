@@ -1592,7 +1592,8 @@ body {
 @media screen and (max-width: 736px) {
   #main-section {
     margin-top: 60px;
-    margin-left: -20px; }
+    margin-left: 0px;
+    width: 100%; }
 
   #query-summary-bar {
     height: 100px;
