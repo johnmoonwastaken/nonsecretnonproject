@@ -2163,7 +2163,7 @@ button,
 @media screen and (max-width: 736px) {
   /* Basic */
   html, body {
-    overflow-x: hidden; }
+    overflow-y: visible; }
 
   body, input, textarea, select {
     font-size: 13pt;
