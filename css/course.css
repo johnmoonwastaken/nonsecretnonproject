@@ -153,9 +153,9 @@
 
 #main-content h1 {
   margin: 0;
-  padding-top: 10px;
+  padding-top: 25px;
   padding-bottom: 5px;
-  font-size: 1.8em;
+  font-size: 2.2em;
   color: #444;
   font-weight: 400; }
 
@@ -196,20 +196,20 @@
   font-weight: 400;
   font-size: 2.2em; }
 
-#query-summary-bar p {
-  margin: 0;
-  font-weight: 300; }
-
 #query-summary-bar a {
-  color: #fff;
-  text-decoration: underline;
-  font-size: 0.6em; }
+  text-decoration: underline; }
 
 #query-summary-bar a:hover {
   text-decoration: none; }
 
 #query-summary-bar strong {
-  font-weight: 600; }
+  font-weight: 600;
+  color: #fff; }
+
+#query-summary-bar p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 0.9em; }
 
 #rating-percent {
   position: absolute;

@@ -1323,7 +1323,16 @@ body {
   content: "\e623"; }
 
 .icon-twitter:before {
-  content: "\e624"; }
+  content: "\e624";
+  height: 300px;
+  width: 35px;
+  text-align: left;
+  border-radius: 3px;
+  border: 0;
+  color: #fff;
+  font-size: 1.2em;
+  box-shadow: 1px 1px 5px #888888;
+  background: #00b0ed; }
 
 .icon-twitter2:before {
   content: "\e625"; }
