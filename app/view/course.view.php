@@ -10,16 +10,14 @@
 		<div id="page-wrapper">
 			<?php include 'header.view.php' ?>
 			<!-- Hero -->
-				<section id="hero" class="container">
-					<section id="main-section">
-						<div id="query-summary-bar">
-							<?php if ($start !=""): ?>
-								<p><strong><a href="search?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Back to Results</a></strong> | In <strong><?php echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong></p>
-							<?php else: ?>
-								<p><strong><a href="<?php echo $_SESSION['prevpage']; ?>">Back to Previous Page</a></strong></p>
-							<?php endif; ?>
-						</div>
-					</section>
+				<section id="main-section">
+					<div id="query-summary-bar">
+						<?php if ($start !=""): ?>
+							<p><strong><a href="search?keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>">Back to Results</a></strong> | In <strong><?php echo $location; ?></strong> between <strong><?php echo $start; ?></strong> and <strong><?php echo $end; ?></strong></p>
+						<?php else: ?>
+							<p><strong><a href="<?php echo $_SESSION['prevpage']; ?>">Back to Previous Page</a></strong></p>
+						<?php endif; ?>
+					</div>
 				</section>
 			</div>
 			<!-- Features 1 -->
