@@ -541,4 +541,18 @@
 		#results-list {
 			padding-left: 1em;
 		}
+
+	@include breakpoint(mobilep) {
+		.company-logo {
+			display: none;
+			width:0;
+		}
+		.sessions-list {
+			margin: 0;
+		}
+		.tags-list {
+			margin: 10px 0;
+		}
+	}
+
 	}
