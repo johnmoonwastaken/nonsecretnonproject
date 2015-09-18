@@ -1194,8 +1194,7 @@ body {
   top: 96px;
   padding-bottom: 0px;
   margin: 60px auto;
-  width: 980px;
-  margin-bottom: 16px; }
+  width: 980px; }
 
 #query-summary-bar {
   height: 120px;
@@ -1319,9 +1318,10 @@ body {
   margin-right: 3px; }
 
 #online-span {
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin-left: 3px;
-  margin-top: -6px; }
+  margin-top: -6px;
+  color: #012002; }
 
 #checkbox {
   width: 15px;
