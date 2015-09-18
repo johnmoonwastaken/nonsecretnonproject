@@ -164,7 +164,7 @@
 										<?php endif; ?>
 									</h2>
 
-									<p><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> 
+									<p id="short-desc"><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> 
 									<?php 
 									$max_offset = 190;
 									if (strlen($courseList[$i]['course_description']) < $max_offset) {

@@ -1614,8 +1614,7 @@ body {
     padding-left: 1em; } }
 @media screen and (max-width: 736px) and (max-width: 480px) {
   .company-logo {
-    display: none;
-    width: 0; }
+    display: none; }
 
   .sessions-list {
     margin: 0; }

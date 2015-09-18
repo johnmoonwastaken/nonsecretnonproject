@@ -546,8 +546,11 @@
 	@include breakpoint(mobilep) {
 		.company-logo {
 			display: none;
-			width:0;
 		}
+
+		#results-list #short-desc {
+		}
+
 		.sessions-list {
 			margin: 0;
 		}
