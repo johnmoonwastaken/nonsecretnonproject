@@ -170,7 +170,7 @@
 												<p><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> 
 												<?php 
 												$max_offset = 190;
-												if (strlen($coursLeist[$i]['course_description']) < $max_offset) {
+												if (strlen($courseList[$i]['course_description']) < $max_offset) {
 													echo $courseList[$i]['course_description'];
 												}
 												else {
@@ -238,7 +238,7 @@
 														else echo '<a href="search?keywords=' . $keywords . '&start=' . $start . '&end=' . $end . '&location=' . $location . '&page=' . ($page-1) . '">< Previous Page</a>'; 
 													} ?>
 											</div>
-											<div class="6u" style="text-align:right;">
+											<div class="6u" id="next-page">
 												<?php
 													if ($totalResults > $upto) { 
 														if ($_GET['category'] != "") {
