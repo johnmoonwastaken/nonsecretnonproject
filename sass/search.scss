@@ -49,7 +49,7 @@
 	#main-section {
 		background: #f8f8f8;
 		position: relative;
-		top: 112px;
+		top: 96px;
 		padding-bottom: 0px;
 		margin: 60px auto;
 		width: $query-bar-width;
@@ -72,13 +72,13 @@
 		margin: 0 0 0.05em;
 		color: #fff;
 		font-weight: 400;
-		font-size: 1.8em;
+		font-size: 2.1em;
 	}
 
 	#query-summary-bar p {
 		margin: 0;
 		font-weight: 300;
-		font-size: 0.85em;
+		font-size: 1.1em;
 		padding-top: 5px;
 	}
 
@@ -171,16 +171,15 @@
 		list-style: none;
 		width: 100%;
 		margin: 0;
-		padding: 5px 0 0;
-		font-size: 0.85em;
+		padding: 5px 0 5px;
+		font-size: 0.9em;
 		/*border-right: 1px solid #d7d7d7;*/
 	}
 
 	#filters-accordion li {
 		padding: 5px 5px;
-		margin: 0 10px;
+		margin: 0px 10px 8px;
 		color: #585858;
-		font-size: 0.87em;
 		border-top: 1px solid #d7d7d7;
 	}
 
@@ -190,6 +189,7 @@
 
 	#filters-accordion > li > a {
 		color: #585858;
+
 	}
 
 	#filters-accordion > li > a:hover {
@@ -201,7 +201,7 @@
 	}
 
 	#online-span {
-		font-size: 0.9em;
+		font-size: 0.8em;
 		margin-left: 3px;
 		margin-top: -6px;
 	}
@@ -212,7 +212,7 @@
 		vertical-align: bottom;
 		margin-left: -1px;
 		margin-bottom:2px;
-		margin-top: 7px;
+		margin-top: -2px;
 		display:inline;
 	}
 
@@ -284,7 +284,7 @@
 		padding-right: 4px;
 	}
 	.inputbox {
-		margin-top: 0px;
+		margin-top: 10px;
 	}
 	.pricebox {
 		margin-left: 15px;
@@ -293,7 +293,7 @@
 		color: #555;
 	}
 	.pricebox .form-price {
-		width:70px;
+		width: 72px;
 		padding-left: 4px;
 		padding-right: 4px;
 		line-height: 1.2em;
@@ -437,25 +437,25 @@
 	}
 
 	#searchbox-keywords {
-		width: 180px;
+		width: 177px;
 		padding-left: 6px;
 		padding-right: 6px;
 		line-height: 1.1em;
 	}
 
 	#searchbox-start {
-		width: 79px;
+		width: 78px;
 		padding-left: 4px;
 		padding-right: 4px;
-		line-height: 1.2em;
+		line-height: 1.1em;
 		font-size: 0.9em;
 	} 
 
 	#searchbox-end {
-		width: 79px;
+		width: 78px;
 		padding-left: 4px;
 		padding-right: 4px;
-		line-height: 1.2em;
+		line-height: 1.1em;
 		font-size: 0.9em;
 	} 
 
@@ -463,6 +463,7 @@
 		width: 180px;
 		padding-left: 1px;
 		padding-right: 1px;
+		margin-bottom: 10px;
 		font-size: 0.8em;
 	}
 
@@ -524,6 +525,7 @@
 			margin: 0;
 			width: 100%;
 			top: -164px;
+			font-size: 0.95em;
 		}
 
 		#search-control-bar {
@@ -541,14 +543,31 @@
 		#results-list {
 			padding-left: 1em;
 		}
+		.sessions-list .session-dates {
+			margin: 3px 0px 3px 0;
+		}
+		
 
 	@include breakpoint(mobilep) {
 		.company-logo {
 			display: none;
 			width:0;
 		}
+		#query-summary-bar {
+			font-size: 0.8em;
+		}
+		#results-list #short-desc {
+		}
 		.sessions-list {
 			margin: 0;
+		}
+		.sessions-list .session-dates {
+			margin: 3px 0px 3px 0;
+		}
+		
+		.sessions-list .chevron-container {
+			display: none;
+			width: 0;
 		}
 		.tags-list {
 			margin: 10px 0;
