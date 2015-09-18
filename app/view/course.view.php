@@ -19,13 +19,13 @@
 						<?php endif; ?>
 					</div>
 				</section>
-			</div>
-			<!-- Features 1 -->
-				<div class="container">
-					<div id="main-content">
-						<div class="row 25% uniform">
-							<div id="container2">
-								<div id="container1">
+		</div>
+		<!-- Features 1 -->
+			<div class="container">
+				<div id="main-content">
+					<div class="row 25% uniform">
+						<div id="container2">
+							<div id="container1">
 								<div class="9u" id="col1">
 									<div id="content-section">
 										<h1><?php echo $course_name; ?>
@@ -76,7 +76,6 @@
 									</div>
 								</div>
 								<div class="3u" id="col2">
-								
 									<div id="vendor-image">
 										<?php echo '<a href="'. $vendor_website_url .'">'; ?><img src="images/vendors/<?php if ($branding_url == '-1' || $branding_url == "") { echo 'trainingful-branding-140.gif'; } else echo $branding_url; ?>" class="company-logo"></a>
 									</div>
@@ -136,18 +135,16 @@
 										</span>
 									</ul>
 								</div>
-								</div>
 							</div>
 						</div>
-						
-						<session-action-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
-						<review-action-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></review-action-dialog>
-						
-						<!--
-						<paper-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
-						<paper-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></paper-dialog>
-						-->	
 					</div>
+					
+					<session-action-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
+					<review-action-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></review-action-dialog>
+					
+					<!--
+					<paper-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
+					<paper-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></paper-dialog>
+					-->	
 				</div>
 			</div>
-		</div>
