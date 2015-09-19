@@ -25,8 +25,35 @@
 				<div id="main-content">
 					<div class="row 25% uniform">
 						<div id="container2">
+							<div id="vendor-tags-mobile">
+								<div id="vendor-image">
+									<?php echo '<a href="'. $vendor_website_url .'">'; ?><img src="images/vendors/<?php if ($branding_url == '-1' || $branding_url == "") { echo 'trainingful-branding-140.gif'; } else echo $branding_url; ?>" class="company-logo"></a>
+								</div>
+								<div id="vendor-name">
+									<strong><?php echo '<a href="'. $vendor_website_url .'">' . $vendor_name . '</a>'; ?></strong>
+								</div>
+								<ul id="info-tags">
+								
+									<?php if ($designation != "" && $designation != "-1"): ?>
+									<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
+									<?php echo $designation ?></li>
+									<?php endif ?>
+									<li><span class="icon price-tag"></span> <strong>Tags</strong><br />
+									<?php
+										$count = 0;
+										foreach($tags as $tag) {
+											if ($count != 0) {
+												echo ", ";
+											}
+											echo "<a href='search?tag=".urlencode($tag)."'>".$tag."</a>";
+											$count++;
+										}
+									?>
+									</li>
+								</ul>
+							</div>
 							<div id="container1">
-								<div class="9u" id="col1">
+								<div id="col1">
 									<div id="content-section">
 										<h1><?php echo $course_name; ?>
 										<!-- &nbsp;&nbsp;<span class="rating s4" title="4 stars"></span> --></h1>
@@ -75,39 +102,41 @@
 										</div>
 									</div>
 								</div>
-								<div class="3u" id="col2">
-									<div id="vendor-image">
-										<?php echo '<a href="'. $vendor_website_url .'">'; ?><img src="images/vendors/<?php if ($branding_url == '-1' || $branding_url == "") { echo 'trainingful-branding-140.gif'; } else echo $branding_url; ?>" class="company-logo"></a>
-									</div>
-									<div id="vendor-name">
-										<strong><?php echo '<a href="'. $vendor_website_url .'">' . $vendor_name . '</a>'; ?></strong>
-									</div>
-									<ul id="info-tags">
-									
-										<?php if ($designation != "" && $designation != "-1"): ?>
-										<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
-										<?php echo $designation ?></li>
-										<?php endif ?>
-										<li><span class="icon price-tag"></span> <strong>Tags</strong><br />
-										<?php
-											$count = 0;
-											foreach($tags as $tag) {
-												if ($count != 0) {
-													echo ", ";
+								<div id="col2">
+									<div id="vendor-tags-full">
+										<div id="vendor-image">
+											<?php echo '<a href="'. $vendor_website_url .'">'; ?><img src="images/vendors/<?php if ($branding_url == '-1' || $branding_url == "") { echo 'trainingful-branding-140.gif'; } else echo $branding_url; ?>" class="company-logo"></a>
+										</div>
+										<div id="vendor-name">
+											<strong><?php echo '<a href="'. $vendor_website_url .'">' . $vendor_name . '</a>'; ?></strong>
+										</div>
+										<ul id="info-tags">
+										
+											<?php if ($designation != "" && $designation != "-1"): ?>
+											<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
+											<?php echo $designation ?></li>
+											<?php endif ?>
+											<li><span class="icon price-tag"></span> <strong>Tags</strong><br />
+											<?php
+												$count = 0;
+												foreach($tags as $tag) {
+													if ($count != 0) {
+														echo ", ";
+													}
+													echo "<a href='search?tag=".urlencode($tag)."'>".$tag."</a>";
+													$count++;
 												}
-												echo "<a href='search?tag=".urlencode($tag)."'>".$tag."</a>";
-												$count++;
-											}
-										?>
-										</li>
-									</ul>
-
+											?>
+											</li>
+										</ul>
+									</div>
 									<ul id="info-sessions">
 										<div id="register-session">
 											<span class="icon triangle-down"></span><strong>Register & Session Information</strong>
-										</div>
+										</div><!--
 										<li id="loading-sessions">Loading course sessions... <img src="../../images/polymer-loader.gif" /></li>
-										<span id="display-sessions" style="display:none;">
+										-->
+										<span id="display-sessions">
 											<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
 												<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);">
 													<div><span class="icon calendar"></span> <span class="dates"><?php { 
@@ -128,7 +157,6 @@
 																else {
 																	echo $session['cost'];
 																} ?> <?php echo $session['currency']; ?></div>
-												<!-- <img src="../../images/lower-triangle.png" style="margin: 0px 0 -5px 234px;" /> -->
 												<div class="folded-corner"></div>
 											</li>
 											<?php endforeach; } ?>
