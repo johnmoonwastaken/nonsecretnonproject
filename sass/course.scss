@@ -1,4 +1,4 @@
-	@import "libs/skel";
+@import "libs/skel";
 
 	@include skel-breakpoints((
 		normal: '(max-width: 1280px)',
@@ -82,35 +82,39 @@
 	#container2 {
 		clear:left;
 		float:left;
-		width: 100%;
+		width:100%;
 		overflow:hidden;
 		border-right:1px solid #d7d7d7;
-		padding: 0;
 	}
 	#container1 {
 		float:left;
-		width: 100%;
+		width:100%;
 		position:relative;
 		right:260px;
 		border-right:1px solid #d7d7d7;
-		padding: 0;
 	}
 
 	#col1 {
 		float:left;
 		width:727px;
 		position:relative;
+<<<<<<< HEAD
 		left:270px;
+=======
+		left:260px;
+>>>>>>> origin/master
 		overflow:hidden;
-		padding: 0;
 	}
 	#col2 {
 		float:left;
 		width:260px;
 		position:relative;
+<<<<<<< HEAD
 		left:264px;
+=======
+		left:261px;
+>>>>>>> origin/master
 		overflow:hidden;
-		padding: 0;
 	}
 
 	#content-section {
@@ -217,16 +221,20 @@
 		border-top: 7px solid #4ca166;
 		border-left: 1px solid #d7d7d7;
 		border-bottom: 1px solid #d7d7d7;
-		padding: 0;
+		padding: 0px 0px 0px 0px;
 		width: $query-bar-width;
+<<<<<<< HEAD
 		margin: 0 auto;
 		margin-bottom: 5em;
+=======
+		margin-left: 105px;
+>>>>>>> origin/master
 	}
 
 	#main-content h1 {
 		margin: 0;
 		padding-top: 25px;
-		padding-bottom: 25px;
+		padding-bottom: 5px;
 		font-size: 2.2em;
 		color: #444;
 		font-weight:400;
@@ -252,15 +260,18 @@
 
 	#main-section {
 		position: relative;
-		top: 72px;
-		margin: -24px auto;
-		width: $query-bar-width;
+		top: 116px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		margin-top: -100px;
 	}
 
 	#query-summary-bar {
 		background: rgba(0, 0, 0, 0.5);
 		padding: 25px;
 		color: #fff;
+		width: $query-bar-width;
+		margin-left: 105px;
 		text-align: left;
 	}
 

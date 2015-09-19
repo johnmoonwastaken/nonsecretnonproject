@@ -19,6 +19,7 @@
 						<?php endif; ?>
 					</div>
 				</section>
+<<<<<<< HEAD
 		</div>
 		<!-- Features 1 -->
 			<div class="container">
@@ -54,6 +55,16 @@
 							</div>
 							<div id="container1">
 								<div id="col1">
+=======
+			</div>
+			<!-- Features 1 -->
+				<div class="container">
+					<div id="main-content">
+						<div class="row 25% uniform">
+							<div id="container2">
+								<div id="container1">
+								<div class="9u" id="col1">
+>>>>>>> origin/master
 									<div id="content-section">
 										<h1><?php echo $course_name; ?>
 										<!-- &nbsp;&nbsp;<span class="rating s4" title="4 stars"></span> --></h1>
@@ -102,6 +113,7 @@
 										</div>
 									</div>
 								</div>
+<<<<<<< HEAD
 								<div id="col2">
 									<div id="vendor-tags-full">
 										<div id="vendor-image">
@@ -125,6 +137,28 @@
 													}
 													echo "<a href='search?tag=".urlencode($tag)."'>".$tag."</a>";
 													$count++;
+=======
+								<div class="3u" id="col2">
+								
+									<div id="vendor-image">
+										<?php echo '<a href="'. $vendor_website_url .'">'; ?><img src="images/vendors/<?php if ($branding_url == '-1' || $branding_url == "") { echo 'trainingful-branding-140.gif'; } else echo $branding_url; ?>" class="company-logo"></a>
+									</div>
+									<div id="vendor-name">
+										<strong><?php echo '<a href="'. $vendor_website_url .'">' . $vendor_name . '</a>'; ?></strong>
+									</div>
+									<ul id="info-tags">
+									
+										<?php if ($designation != "" && $designation != "-1"): ?>
+										<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
+										<?php echo $designation ?></li>
+										<?php endif ?>
+										<li><span class="icon price-tag"></span> <strong>Tags</strong><br />
+										<?php
+											$count = 0;
+											foreach($tags as $tag) {
+												if ($count != 0) {
+													echo ", ";
+>>>>>>> origin/master
 												}
 											?>
 											</li>
@@ -163,16 +197,18 @@
 										</span>
 									</ul>
 								</div>
+								</div>
 							</div>
 						</div>
+						
+						<session-action-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
+						<review-action-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></review-action-dialog>
+						
+						<!--
+						<paper-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
+						<paper-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></paper-dialog>
+						-->	
 					</div>
-					
-					<session-action-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
-					<review-action-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></review-action-dialog>
-					
-					<!--
-					<paper-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
-					<paper-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></paper-dialog>
-					-->	
 				</div>
 			</div>
+		</div>
