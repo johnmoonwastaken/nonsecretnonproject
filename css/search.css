@@ -1186,7 +1186,8 @@ body {
 @-ms-viewport {
   width: device-width; }
 body {
-  font-family: "Open Sans",Helvetica,Arial,Sans Serif; }
+  font-family: "Open Sans",Helvetica,Arial,Sans Serif;
+  font-size: 14pt; }
 
 #main-section {
   background: #f8f8f8;
@@ -1626,11 +1627,14 @@ body {
 
   #query-summary-bar {
     font-size: 0.65em;
-    padding: 0; }
+    padding: 1px; }
 
-  #results-list a {
+  #results-list {
     font-size: 0.65em;
-    padding: 0; }
+    padding: 1px; }
+
+  #results-list p {
+    font-size: 1.2em; }
 
   .sessions-list {
     margin: 0;
@@ -1645,6 +1649,13 @@ body {
     width: 0; }
 
   .tags-list {
-    margin: 10px 0; } }
+    margin: 0;
+    font-size: 0.8em; }
+
+  .tags-list li > a {
+    font-size: 1.2em; }
+
+  .tags-list li {
+    font-size: 1.1em; } }
 
 /*# sourceMappingURL=search.css.map */
