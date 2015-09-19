@@ -1599,8 +1599,8 @@ body {
     height: 100px;
     margin: 0;
     width: 100%;
-    top: -164px;
-    font-size: 0.95em; }
+    top: -147px;
+    font-size: 0.8em; }
 
   #search-control-bar {
     display: none; }
@@ -1614,6 +1614,9 @@ body {
   #results-list {
     padding-left: 1em; }
 
+  .sessions-list {
+    font-size: 1.05em; }
+
   .sessions-list .session-dates {
     margin: 3px 0px 3px 0; } }
 @media screen and (max-width: 736px) and (max-width: 480px) {
@@ -1622,10 +1625,14 @@ body {
     width: 0; }
 
   #query-summary-bar {
-    font-size: 0.8em; }
+    font-size: 0.65em; }
+
+  #results-list a {
+    font-size: 0.65em; }
 
   .sessions-list {
-    margin: 0; }
+    margin: 0;
+    font-size: 1.5em; }
 
   .sessions-list .session-dates {
     margin: 3px 0px 3px 0; }
