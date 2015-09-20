@@ -1589,6 +1589,19 @@ body {
   padding-left: 4px;
   padding-right: 4px; }
 
+@media screen and (max-width: 1280px) {
+  #query-summary-bar {
+    height: 100px;
+    top: -192px; }
+
+  #search-control-bar {
+    top: -92px; }
+
+  #main-section {
+    margin-top: 70px; }
+
+  #results-container {
+    margin-left: -10px; } }
 @media screen and (max-width: 736px) {
   #main-section {
     margin-top: 60px;

@@ -338,6 +338,10 @@
 		display: none;
 	}
 
+	@include breakpoint(narrow) {
+		
+	}
+
 	@include breakpoint(mobile) {
 		#main-section {
 			margin-top: 0px;

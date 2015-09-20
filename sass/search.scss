@@ -514,6 +514,25 @@
 		padding-right: 4px;
 	}
 
+	@include breakpoint(normal) {
+		#query-summary-bar {
+			height: 100px;
+			top:-192px;
+		}
+		#search-control-bar {
+			top: -92px;
+		}
+
+		#main-section {
+			margin-top: 70px;
+		}
+
+		#results-container {
+			margin-left: -10px;
+		}
+	}
+
+
 	@include breakpoint(mobile) {
 		#main-section {
 			margin-top: 60px;
