@@ -44,7 +44,6 @@
 
 	body {
 		font-family: "Open Sans",Helvetica,Arial,Sans Serif;
-		font-size: 14pt;
 	}
 
 	#main-section {
@@ -521,6 +520,7 @@
 			margin-left: 0px;
 			width: 100%;
 		}
+
 		#query-summary-bar {
 			height: 100px;
 			margin: 0;
@@ -559,14 +559,11 @@
 		}
 		#query-summary-bar {
 			font-size: 0.65em;
-			padding: 1px;
+			padding: 0;
 		}
-		#results-list  {
+		#results-list a {
 			font-size: 0.65em;
-			padding: 1px;
-		}
-		#results-list p{
-			font-size: 1.2em;
+			padding: 0;
 		}
 		#results-list #short-desc {
 		}
@@ -583,18 +580,8 @@
 			width: 0;
 		}
 		.tags-list {
-			margin: 0;
-			font-size: 0.8em;
+			margin: 10px 0;
 		}
-		.tags-list li > a{ 
-			font-size: 1.2em;
-		}
-		.tags-list li{ 
-			font-size: 1.1em;
-		}
-		
-
 	}
-
 
 	}
