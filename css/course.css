@@ -1446,11 +1446,17 @@ body {
 #vendor-tags-mobile {
   display: none; }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 1280px) {
+  #main-section {
+    top: 40px; }
+
+  #main-content {
+    margin-left: -10px; } }
+@media screen and (max-width: 1080px) {
   #main-section {
     margin-top: 0px;
     margin-left: 0px;
-    top: 8px;
+    top: 24px;
     width: 100%; }
 
   #vendor-tags-mobile {
@@ -1459,14 +1465,11 @@ body {
   #vendor-tags-full {
     display: none; }
 
-  #main-content {
-    width: 100%; }
-
   #query-summary-bar {
     height: 80px;
     margin: 0;
-    width: 100%;
-    top: -164px; }
+    top: -164px;
+    width: 100%; }
 
   #col1 {
     width: 100%; }
@@ -1481,7 +1484,11 @@ body {
 
   .folded-corner {
     margin-left: auto;
-    margin-right: 1px; } }
+    margin-right: 1px; }
+
+  #main-content {
+    width: 100%;
+    margin-left: 0; } }
 @media screen and (max-width: 480px) {
   #content-section {
     padding-left: 5px; }

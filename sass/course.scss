@@ -338,15 +338,24 @@
 		display: none;
 	}
 
-	@include breakpoint(narrow) {
-		
+	@include breakpoint(normal) {
+
+		#main-section {
+			top:40px;
+		}
+
+		#main-content {
+			margin-left: -10px;
+		}
+
 	}
 
-	@include breakpoint(mobile) {
+
+	@include breakpoint(narrow) {
 		#main-section {
 			margin-top: 0px;
 			margin-left: 0px;
-			top: 8px;
+			top: 24px;
 			width: 100%;
 		}
 
@@ -358,15 +367,11 @@
 			display: none;
 		}
 
-		#main-content {
-			width: 100%
-		}
-
 		#query-summary-bar {
 			height: 80px;
 			margin: 0;
-			width: 100%;
 			top: -164px;
+			width: 100%;
 		}
 
 		#col1 {
@@ -387,6 +392,11 @@
 		.folded-corner {
 			margin-left: auto;
 			margin-right: 1px;
+		}
+
+		#main-content {
+			width: 100%;
+			margin-left: 0;
 		}
 	}
 
