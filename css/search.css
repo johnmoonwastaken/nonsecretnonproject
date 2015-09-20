@@ -1602,24 +1602,33 @@ body {
 
   #results-container {
     margin-left: -10px; } }
+@media screen and (max-width: 1080px) {
+  #main-section {
+    width: 100%;
+    margin-top: 120px;
+    top: 110px; }
+
+  #query-summary-bar {
+    width: 100%;
+    top: -206px; }
+
+  #search-control-bar {
+    width: 100%;
+    top: -106px; }
+
+  #results-container {
+    width: 100%; } }
 @media screen and (max-width: 736px) {
   #main-section {
-    margin-top: 60px;
-    margin-left: 0px;
-    width: 100%; }
+    margin-left: 0px; }
 
   #query-summary-bar {
     height: 100px;
     margin: 0;
-    width: 100%;
-    top: -147px;
     font-size: 0.8em; }
 
   #search-control-bar {
     display: none; }
-
-  #results-container {
-    width: 100%; }
 
   #left-box {
     display: none; }
