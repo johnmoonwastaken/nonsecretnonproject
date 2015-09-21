@@ -403,7 +403,7 @@
 		list-style: none;
 		margin: 5px 70px 0 80px;
 		padding: 0;
-		font-size: 0.65em;
+		font-size: 0.7em;
 	}
 
 	.tags-list li {
@@ -416,7 +416,7 @@
 		display: inline;
 		height: 33px;
 		overflow: hidden;
-		color: #5A7DB2
+		color: #5A7DB2;
 	}
 
 	.tags-list li > a:hover {
@@ -594,7 +594,7 @@
 			padding: 0;
 		}
 		#results-list a {
-			font-size: 0.65em;
+			font-size: 0.7em;
 			padding: 0;
 		}
 		#results-list #short-desc {
@@ -614,6 +614,7 @@
 		.tags-list {
 			margin: 10px 0;
 		}
+	
 	}
 
 	}

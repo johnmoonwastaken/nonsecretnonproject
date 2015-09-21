@@ -127,12 +127,12 @@
 		margin: 0px 0px 0px 0px;
 		background:#f2f2f2;
 		color: #999;
-		font-size: 0.8em;
+		font-size: 0.84em;
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
 		list-style: none;
 		padding: 0 0 0px 0px;
 		border-bottom: 1px solid #d7d7d7;
-		line-height: 1.21em;
+		line-height: 1.31em;
 	}
 
 	#info-tags li {
@@ -142,21 +142,20 @@
 
 	#info-tags a {
 		color: #5A7DB2;
-		font-size: 0.9em;
 	}
 
 	#info-tags strong {
 		font-weight: 700;
-		font-size: 0.85em;
+		font-size: 0.9em;
 		color: #999
 	}
 
 	#info-sessions {
 		margin:0;
+		padding:0;
 		font-size: 0.8em;
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
 		list-style: none;
-		padding:0;
 		line-height: 1.21em;
 	}
 
@@ -169,11 +168,11 @@
 	#info-sessions strong {
 		color: #999;
 		font-weight: 600;
-		font-size: 0.85em;
+		
 	}
 
 	#register-session {
-		padding:10px 0 10px 10px;
+		padding:13px 0 13px 10px;
 		border-bottom: 5px solid #4ca166;
 	}
 
@@ -223,7 +222,7 @@
 		margin: 0;
 		padding-top: 25px;
 		padding-bottom: 25px;
-		font-size: 2.2em;
+		font-size: 2.5em;
 		color: #444;
 		font-weight:400;
 		line-height: 1em;
@@ -233,7 +232,7 @@
 		color:#666;
 		margin-left:0.2em;
 		font-weight:400;
-		font-size: 0.9em;
+		font-size: 1.0em;
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
 		line-height: 1.6em;
 	}
@@ -242,9 +241,9 @@
 		color:#666;
 		margin-top:-1.3em;
 		margin-left:0.2em;
+		margin-bottom:1.2em;
 		font-weight:400;
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
-		font-size: 0.8em;
 	}
 
 	#main-section {
@@ -286,7 +285,6 @@
 	#query-summary-bar p {
 		margin: 0;
 		font-weight: 300;
-		font-size: 0.9em;
 	}
 
 	#rating-percent {
@@ -316,10 +314,9 @@
 	}
 	#vendor-name a{
 		color: #5A7DB2;
-		font-weight: 600;
-	}
+			}
 	#vendor-name strong{
-		font-size: 0.9em;
+		font-weight: 600;
 	}
 	.discount {
 		color: #ff7777;
@@ -352,6 +349,10 @@
 
 
 	@include breakpoint(narrow) {
+		#info-tags li{
+		padding-left: 21px
+		}
+
 		#main-section {
 			margin-top: 0px;
 			margin-left: 0px;
@@ -383,6 +384,7 @@
 			width: 100%;
 			border-top: 1px solid #d7d7d7;
 			margin-top: 20px;
+
 		}
 
 		#container1 {
