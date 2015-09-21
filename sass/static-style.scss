@@ -139,17 +139,29 @@
 		text-decoration: none;
 	}
 
-	@include breakpoint(mobile) {
+	@include breakpoint(normal) {
+		#main-section {
+			top: 90px;
+		}
+
+		#static-content {
+			margin: 0 auto;
+		}
+	}
+
+	@include breakpoint(narrow) {
 
 		#main-section {
 			width: 100%;
-			top: 71px;
-			margin-top: 40px;
+			top: 90px;
+			margin-top: 30px;
 			text-align: left;
 		}
 
 		#static-content {
 			width: 100%;
+			border-right: 0;
+			border-left: 0;
 		}
 
 		#static-content h6 {
@@ -157,6 +169,14 @@
 			margin-right: 20px;
 		}
 	}
+
+	@include breakpoint(mobile) {
+		#main-section {
+			top: 71px;
+			margin-top: 40px;
+		}
+	}
+
 
 	@include breakpoint(mobilep) {
 		#static-content {

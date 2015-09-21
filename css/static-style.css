@@ -1268,19 +1268,31 @@ body {
 #static-document a:hover {
   text-decoration: none; }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 1280px) {
+  #main-section {
+    top: 90px; }
+
+  #static-content {
+    margin: 0 auto; } }
+@media screen and (max-width: 1080px) {
   #main-section {
     width: 100%;
-    top: 71px;
-    margin-top: 40px;
+    top: 90px;
+    margin-top: 30px;
     text-align: left; }
 
   #static-content {
-    width: 100%; }
+    width: 100%;
+    border-right: 0;
+    border-left: 0; }
 
   #static-content h6 {
     margin-left: 20px;
     margin-right: 20px; } }
+@media screen and (max-width: 736px) {
+  #main-section {
+    top: 71px;
+    margin-top: 40px; } }
 @media screen and (max-width: 480px) {
   #static-content {
     padding-left: 10px;
