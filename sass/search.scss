@@ -594,7 +594,7 @@
 			padding: 0;
 		}
 		#results-list a {
-			font-size: 0.7em;
+			font-size: 0.77em;
 			padding: 0;
 		}
 		#results-list #short-desc {
@@ -613,8 +613,12 @@
 		}
 		.tags-list {
 			margin: 10px 0;
+			font-size: 1.0em;
 		}
-	
+		.tags-list li{
+			margin: 10px 0;
+			font-size: 0.2em;
+		}
 	}
 
 	}

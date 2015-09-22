@@ -1651,7 +1651,7 @@ body {
     padding: 0; }
 
   #results-list a {
-    font-size: 0.7em;
+    font-size: 0.77em;
     padding: 0; }
 
   .sessions-list {
@@ -1667,6 +1667,11 @@ body {
     width: 0; }
 
   .tags-list {
-    margin: 10px 0; } }
+    margin: 10px 0;
+    font-size: 1.0em; }
+
+  .tags-list li {
+    margin: 10px 0;
+    font-size: 0.2em; } }
 
 /*# sourceMappingURL=search.css.map */
