@@ -403,8 +403,14 @@
 	}
 
 	@include breakpoint(mobilep) {
+		#query-summary-bar {
+			padding: 25px 25px 25px 5px;
+		}
+		#info-tags li{
+			padding-left: 6px;
+		}
 		#content-section {
-			padding-left: 5px;
+			padding-left: 6px;
 		}
 
 		#container2 {

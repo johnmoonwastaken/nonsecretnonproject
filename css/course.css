@@ -1489,8 +1489,14 @@ body {
     width: 100%;
     margin-left: 0; } }
 @media screen and (max-width: 480px) {
+  #query-summary-bar {
+    padding: 25px 25px 25px 5px; }
+
+  #info-tags li {
+    padding-left: 6px; }
+
   #content-section {
-    padding-left: 5px; }
+    padding-left: 6px; }
 
   #container2 {
     border-right: none; }
