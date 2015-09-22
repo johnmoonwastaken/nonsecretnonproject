@@ -554,6 +554,23 @@
 		}
 	}
 
+	@include breakpoint(narrower) {
+		#query-summary-bar {
+			margin: -20px;
+		}
+
+		#results-counter {
+			padding-left: 5px;
+			font-size: 0.95em;
+		}
+		#searchbox-keywords {
+			width: 90%;
+		}
+		#searchbox-location {
+			width: 90%;
+		}
+	}
+
 	@include breakpoint(mobile) {
 		#main-section {
 			margin-left: 0px;
@@ -561,7 +578,7 @@
 
 		#query-summary-bar {
 			height: 100px;
-			margin: 0;
+			margin: -18px;
 			font-size: 0.8em;
 		}
 
@@ -591,7 +608,6 @@
 		}
 		#query-summary-bar {
 			font-size: 0.65em;
-			padding: 0;
 		}
 		#results-list a {
 			font-size: 0.77em;
@@ -600,8 +616,11 @@
 		#results-list #short-desc {
 		}
 		.sessions-list {
-			margin: 0;
+			margin: 0px;
 			font-size: 1.5em;
+			padding: 0;
+		}
+		.sessions-list li {
 			padding: 0;
 		}
 		.sessions-list .session-dates {
@@ -613,11 +632,10 @@
 		}
 		.tags-list {
 			margin: 10px 0;
-			font-size: 1.0em;
+			
 		}
 		.tags-list li{
 			margin: 10px 0;
-			font-size: 0.2em;
 		}
 	}
 

@@ -1618,13 +1618,26 @@ body {
 
   #results-container {
     width: 100%; } }
+@media screen and (max-width: 820px) {
+  #query-summary-bar {
+    margin: -20px; }
+
+  #results-counter {
+    padding-left: 5px;
+    font-size: 0.95em; }
+
+  #searchbox-keywords {
+    width: 90%; }
+
+  #searchbox-location {
+    width: 90%; } }
 @media screen and (max-width: 736px) {
   #main-section {
     margin-left: 0px; }
 
   #query-summary-bar {
     height: 100px;
-    margin: 0;
+    margin: -18px;
     font-size: 0.8em; }
 
   #search-control-bar {
@@ -1647,16 +1660,18 @@ body {
     width: 0; }
 
   #query-summary-bar {
-    font-size: 0.65em;
-    padding: 0; }
+    font-size: 0.65em; }
 
   #results-list a {
     font-size: 0.77em;
     padding: 0; }
 
   .sessions-list {
-    margin: 0;
+    margin: 0px;
     font-size: 1.5em;
+    padding: 0; }
+
+  .sessions-list li {
     padding: 0; }
 
   .sessions-list .session-dates {
@@ -1667,11 +1682,9 @@ body {
     width: 0; }
 
   .tags-list {
-    margin: 10px 0;
-    font-size: 1.0em; }
+    margin: 10px 0; }
 
   .tags-list li {
-    margin: 10px 0;
-    font-size: 0.2em; } }
+    margin: 10px 0; } }
 
 /*# sourceMappingURL=search.css.map */
