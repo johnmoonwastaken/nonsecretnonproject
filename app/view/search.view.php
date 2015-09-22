@@ -127,8 +127,8 @@
 									<a href="#"><span class="icon triangle-down"></span>Price</a>
 								</li>
 									<div class="pricebox">
-										$<input type="text" id="min-price" name="min" class="form-text form-price" <?php if ($_GET['min'] == '') { echo 'value="0"'; } else echo 'value="' . $_GET['min'] . '"'; ?>> to 
-										$<input type="text" id="max-price" name="max" class="form-text form-price" <?php if ($_GET['max'] == '-1') { echo 'value=""'; } else echo 'value="' . $_GET['max'] . '"';?>>
+									 	<span class="pricedollarbox">$<input type="text" id="min-price" name="min" class="form-text form-price" <?php if ($_GET['min'] == '') { echo 'value="0"'; } else echo 'value="' . $_GET['min'] . '"'; ?>></span> to 
+										<span class="pricedollarbox">$<input type="text" id="max-price" name="max" class="form-text form-price" <?php if ($_GET['max'] == '-1') { echo 'value=""'; } else echo 'value="' . $_GET['max'] . '"';?>></span>
 									</div>
 								<li>
 									<a href="#"><span class="icon triangle-down"></span>Location</a>

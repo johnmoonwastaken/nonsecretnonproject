@@ -292,6 +292,9 @@
 		margin-bottom:10px;
 		color: #555;
 	}
+	.pricebox .pricedollarbox {
+		display:inline-block;
+	}
 	.pricebox .form-price {
 		width: 72px;
 		padding-left: 4px;
@@ -526,19 +529,21 @@
 		#main-section {
 			margin-top: 70px;
 		}
-
-		#results-container {
-			margin-left: -10px;
-		}
 	}
 
 	@include breakpoint(narrow) {
+		.inputbox {
+			line-height: 1.8em;
+		}
+		.pricebox {
+			line-height: 2.15em;
+		}
 		#main-section {
 			width: 100%;
 			margin-top: 120px;
 			top: 110px;
 		}
-
+		
 		#query-summary-bar {
 			width: 100%;
 			top: -206px;
@@ -555,10 +560,12 @@
 	}
 
 	@include breakpoint(narrower) {
+		.pricebox {
+			width: 60%
+		}
 		#query-summary-bar {
 			margin: -20px;
 		}
-
 		#results-counter {
 			padding-left: 5px;
 			font-size: 0.95em;
@@ -607,7 +614,7 @@
 			width:0;
 		}
 		#query-summary-bar {
-			font-size: 0.65em;
+			font-size: 0.75em;
 		}
 		#results-list a {
 			font-size: 0.77em;

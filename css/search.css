@@ -1401,6 +1401,9 @@ body {
   margin-bottom: 10px;
   color: #555; }
 
+.pricebox .pricedollarbox {
+  display: inline-block; }
+
 .pricebox .form-price {
   width: 72px;
   padding-left: 4px;
@@ -1598,11 +1601,14 @@ body {
     top: -92px; }
 
   #main-section {
-    margin-top: 70px; }
-
-  #results-container {
-    margin-left: -10px; } }
+    margin-top: 70px; } }
 @media screen and (max-width: 1080px) {
+  .inputbox {
+    line-height: 1.8em; }
+
+  .pricebox {
+    line-height: 2.15em; }
+
   #main-section {
     width: 100%;
     margin-top: 120px;
@@ -1619,6 +1625,9 @@ body {
   #results-container {
     width: 100%; } }
 @media screen and (max-width: 820px) {
+  .pricebox {
+    width: 60%; }
+
   #query-summary-bar {
     margin: -20px; }
 
@@ -1660,7 +1669,7 @@ body {
     width: 0; }
 
   #query-summary-bar {
-    font-size: 0.65em; }
+    font-size: 0.75em; }
 
   #results-list a {
     font-size: 0.77em;
