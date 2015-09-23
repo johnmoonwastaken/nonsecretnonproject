@@ -24,9 +24,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="css/main.css">
 
-	<!-- Polymer Material Design -->
+	<!-- Polymer Material Design 1.0 -->
+	
+	<script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 	<!--
-	<script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
 	<link href="../../bower_components/paper-button/paper-button.html" rel="import">
 	<link href="../../bower_components/paper-dialog/paper-action-dialog.html" rel="import">
 	<link href="../../bower_components/paper-slider/paper-slider.html" rel="import">-->

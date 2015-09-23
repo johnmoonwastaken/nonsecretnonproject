@@ -5,6 +5,7 @@
 		<title><?php echo $course_name; ?></title>
 		<?php include 'below_title.php' ?>
 		<link rel="stylesheet" href="../../css/course.css">
+		<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -136,45 +137,64 @@
 										</div><!--
 										<li id="loading-sessions">Loading course sessions... <img src="../../images/polymer-loader.gif" /></li>
 										-->
-										<span id="display-sessions">
-											<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
-												<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);">
-													<div><span class="icon calendar"></span> <span class="dates"><?php { 
-														if ($session['session_type'] == "Online - Self Learning") {
-															echo "Online";
-														}
-														else {
-															echo date("M j, Y", strtotime($session['start_date'])); 
-															if ($session['start_date'] != $session['end_date']) { 
-																echo " - ".date("M j, Y", strtotime($session['end_date']));
-															} 
-														}
-													} ?></span></div>
-												<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php 
-												if (isset($session['discount_end_date']) && date('Y-m-d') < $session['discount_end_date']) {
-																	echo '<span class="discount">'.$session['discount'].'</span>';
-																}
-																else {
-																	echo $session['cost'];
-																} ?> <?php echo $session['currency']; ?></div>
-												<div class="folded-corner"></div>
-											</li>
-											<?php endforeach; } ?>
-										</span>
+										<section onclick="clickHandler(event)">
+											<span data-dialog="modal">modal dialog</span>
+										</section>
+											<span id="display-sessions">
+												<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
+													<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);">
+														<div><span class="icon calendar"></span> <span class="dates"><?php { 
+															if ($session['session_type'] == "Online - Self Learning") {
+																echo "Online";
+															}
+															else {
+																echo date("M j, Y", strtotime($session['start_date'])); 
+																if ($session['start_date'] != $session['end_date']) { 
+																	echo " - ".date("M j, Y", strtotime($session['end_date']));
+																} 
+															}
+														} ?></span></div>
+													<div class="location"><?php if($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></div><div class="price"><?php 
+													if (isset($session['discount_end_date']) && date('Y-m-d') < $session['discount_end_date']) {
+																		echo '<span class="discount">'.$session['discount'].'</span>';
+																	}
+																	else {
+																		echo $session['cost'];
+																	} ?> <?php echo $session['currency']; ?></div>
+													<div class="folded-corner"></div>
+												</li>
+												<?php endforeach; } ?>
+											</span>
+
 									</ul>
 								</div>
 								</div>
 							</div>
 						</div>
-						
-						<session-action-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
-						<review-action-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></review-action-dialog>
-						
-						<!--
-						<paper-dialog id="sad" backdrop transition="paper-dialog-transition-bottom" heading="<?php echo $course_name ?>"></session-action-dialog>
-						<paper-dialog id="rad" backdrop transition="paper-dialog-transition-bottom" ?></paper-dialog>
-						-->	
+						<paper-dialog id="modal" modal>
+					    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				    		<div class="buttons">
+				    			<paper-button dialog-confirm autofocus>Tap me to close</paper-button>
+				    		</div>
+					    </paper-dialog>
+					    <script>
+					    function clickHandler(e) {
+					      var button = e.target;
+					      while (!button.hasAttribute('data-dialog') && button !== document.body) {
+					        button = button.parentElement;
+					      }
+					      if (!button.hasAttribute('data-dialog')) {
+					        return;
+					      }
+					      var id = button.getAttribute('data-dialog');
+					      var dialog = document.getElementById(id);
+					      if (dialog) {
+					        dialog.open();
+					      }
+					    }
+					  </script>
 					</div>
 				</div>
 			</div>
 		</div>
+		
