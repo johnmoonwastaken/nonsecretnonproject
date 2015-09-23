@@ -11,6 +11,11 @@
   ],
   "dependencies": {
     "juicy-html": "Juicy/juicy-html#master",
-    "polymer": "Polymer/polymer#1.0.0"
+    "paper-checkbox": "PolymerElements/paper-checkbox#~1.0.10",
+    "paper-fab": "PolymerElements/paper-fab#~1.0.4",
+    "paper-slider": "PolymerElements/paper-slider#~1.0.6",
+    "paper-toast": "PolymerElements/paper-toast#~1.0.0",
+    "paper-toggle-button": "PolymerElements/paper-toggle-button#~1.0.8",
+    "polymer": "Polymer/polymer#1.1.0"
   }
 }
