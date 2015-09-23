@@ -1358,7 +1358,7 @@ body {
   font-weight: 400;
   color: #52575c;
   line-height: 1.75em;
-  font-size: 14pt; }
+  font-size: 12pt; }
   body.is-loading * {
     -moz-transition: none !important;
     -webkit-transition: none !important;
@@ -1870,7 +1870,7 @@ button,
   #hero h1 {
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, Sans Serif;
     color: #fff;
-    font-size: 2.2em;
+    font-size: 2.0em;
     font-weight: 400;
     width: 70%;
     margin: 0px auto 10px;
