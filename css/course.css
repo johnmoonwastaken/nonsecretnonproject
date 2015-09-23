@@ -1488,6 +1488,9 @@ body {
   #main-content {
     width: 100%;
     margin-left: 0; } }
+@media screen and (max-width: 736px) {
+  #main-section {
+    top: 8px; } }
 @media screen and (max-width: 480px) {
   #query-summary-bar {
     padding: 25px 25px 25px 5px; }

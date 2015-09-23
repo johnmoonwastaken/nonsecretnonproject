@@ -402,6 +402,12 @@
 		}
 	}
 
+	@include breakpoint(mobile) {
+		#main-section {
+			top:8px;
+		}
+	}
+
 	@include breakpoint(mobilep) {
 		#query-summary-bar {
 			padding: 25px 25px 25px 5px;
