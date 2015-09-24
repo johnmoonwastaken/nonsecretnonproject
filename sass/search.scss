@@ -66,7 +66,11 @@
 		margin: 60px auto;
 		width: $query-bar-width;
 	}
-
+	
+	#next-page {
+		text-align: right;
+		color: #5A7DB2;
+	}
 	#query-summary-bar {
 		height: 120px;
 		background: rgba(0, 0, 0, 0.5);
@@ -440,7 +444,9 @@
 	}
 
 	#results-list .more-sessions {
-		margin: 3px 0 0 80px;
+		text-align: right;
+		font-size: 0.8em;
+		margin: 3px 70px 0 80px;
 		color: #969696;
 		display: block;
 	}
@@ -620,6 +626,9 @@
 		#results-list li{
 			margin-right: 0px;
 		}
+		#results-list .more-sessions {
+			margin-right: 4px;
+		}
 		.sessions-list {
 			font-size: 1.15em;
 			margin: 0px 5px 10px 80px;
@@ -668,7 +677,7 @@
 		.sessions-list {
 			margin: 0px;
 			font-size: 1.1em;
-			padding: 0 4px 0 2px;
+			padding: 0 5px 0 2px;
 		}
 		.sessions-list li {
 			padding: 0;

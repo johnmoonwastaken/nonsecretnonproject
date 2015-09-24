@@ -222,7 +222,7 @@
 										<?php endif; ?>
 										<?php $session_count++; endforeach; ?>
 									</ul>
-									<?php if ($session_count >= 4) { echo "<div style='text-align:right;margin-right:70px;font-size:0.7em;'><a href='".$course_url."'>more sessions...</a></div>";} ?>
+									<?php if ($session_count >= 4) { echo "<div class='more-sessions'><a href='".$course_url."'>more sessions...</a></div>";} ?>
 									<ul class="tags-list">
 										<li>Tags: <?php $tag_count = 0; foreach($courseList[$i]['tags'] as $tag): ?><?php if($tag_count>0) { echo ", ";} else { $tag_count++; } ?><a href="search?tag=<?php echo urlencode($tag); ?>"><?php echo $tag;?></a><?php endforeach ?>
 										</li>
