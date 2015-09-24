@@ -157,11 +157,16 @@
 									</div>
 								-->
 									<h2>
-										<?php if ($start !=""): ?>
-										<a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>"><?php echo $courseList[$i]['course_name']; ?></a>
-										<?php else: ?>
-										<a href="course?id=<?php echo $courseList[$i]['course_id']; ?>"><?php echo $courseList[$i]['course_name']; ?></a>
-										<?php endif; ?>
+										
+										<?php 
+											if ($start !="") {
+												$course_url = "course?id=".$courseList[$i]['course_id']."&keywords=".$keywords."&start=".$start."&end=".$end."&location=".$location;
+											}
+											else {
+												$course_url = "course?id=".$courseList[$i]['course_id'];
+											}
+											echo '<a href="'.$course_url.'">'.$courseList[$i]['course_name'].'</a>';
+										?>
 									</h2>
 
 									<p><strong><?php echo $courseList[$i]['vendor_name']; ?>:</strong> 
@@ -177,7 +182,8 @@
 									?></p>
 									<img src="images/vendors/<?php if ($courseList[$i]['branding_url'] == '-1' || $courseList[$i]['branding_url'] == "") { echo 'trainingful-branding-70.gif'; } else echo $courseList[$i]['branding_url']; ?>" alt="<?php echo $courseList[$i]['vendor_name']; ?>" class="company-logo">
 									<ul class="sessions-list">
-										<?php foreach($courseList[$i]['sessionList'] as $session): ?>
+										<?php $session_count = 0; foreach($courseList[$i]['sessionList'] as $session): ?>
+										<?php if ($session_count < 4): ?>
 										<li>
 											<?php if ($start !=""): ?>
 											<a href="course?id=<?php echo $courseList[$i]['course_id']; ?>&keywords=<?php echo $keywords; ?>&start=<?php echo $start; ?>&end=<?php echo $end; ?>&location=<?php echo $location; ?>&session=<?php echo $session['session_id']; ?>">
@@ -213,8 +219,10 @@
 												<small class="session-location"><?php if ($session['metro_name'] != "-1") { echo $session['metro_name']; } else echo "Inquire"; ?></small>
 											</a>
 										</li>
-										<?php endforeach; ?>
+										<?php endif; ?>
+										<?php $session_count++; endforeach; ?>
 									</ul>
+									<?php if ($session_count >= 4) { echo "<div style='text-align:right;margin-right:70px;font-size:0.7em;'><a href='".$course_url."'>more sessions...</a></div>";} ?>
 									<ul class="tags-list">
 										<li>Tags: <?php $tag_count = 0; foreach($courseList[$i]['tags'] as $tag): ?><?php if($tag_count>0) { echo ", ";} else { $tag_count++; } ?><a href="search?tag=<?php echo urlencode($tag); ?>"><?php echo $tag;?></a><?php endforeach ?>
 										</li>
