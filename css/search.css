@@ -1409,10 +1409,12 @@ body {
   margin-top: 10px; }
 
 .pricebox {
+  margin-top: -4px;
   margin-left: 15px;
   font-size: 1.0em;
   margin-bottom: 10px;
-  color: #555; }
+  color: #555;
+  line-height: 1.1em; }
 
 .pricebox .pricedollarbox {
   display: inline-block; }

@@ -1705,18 +1705,20 @@ button,
     border-color: rgba(243, 88, 88, 0.5); }
 
 /* Icons */
-.icon:before {
-  display: inline-block;
-  font-family: Pacifico;
-  font-size: 1.25em;
-  text-decoration: none;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-.icon > .label {
-  display: none; }
+.icon {
+  text-decoration: none; }
+  .icon:before {
+    display: inline-block;
+    font-family: Pacifico;
+    font-size: 1.25em;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .icon > .label {
+    display: none; }
 
 /* Wrappers */
 .wrapper {
