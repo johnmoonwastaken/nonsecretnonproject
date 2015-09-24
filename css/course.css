@@ -1495,9 +1495,18 @@ body {
     margin-left: auto;
     margin-right: 1px; }
 
+  #info-sessions .dates {
+    margin-left: 12px; }
+
+  #info-sessions .location {
+    margin-left: 12px; }
+
   #main-content {
     width: 100%;
-    margin-left: 0; } }
+    margin-left: 0; }
+
+  #register-session strong {
+    margin-left: 12px; } }
 @media screen and (max-width: 736px) {
   #main-section {
     top: 8px; } }
@@ -1513,6 +1522,15 @@ body {
 
   #container2 {
     border-right: none; }
+
+  #register-session strong {
+    margin-left: -4px; }
+
+  #info-sessions .dates {
+    margin-left: -3px; }
+
+  #info-sessions .location {
+    margin-left: -3px; }
 
   #main-content {
     border-bottom: none;

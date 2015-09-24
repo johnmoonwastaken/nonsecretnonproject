@@ -406,7 +406,7 @@
 		list-style: none;
 		margin: 5px 70px 0 80px;
 		padding: 0;
-		font-size: 0.85em;
+		font-size: 0.75em;
 	}
 
 	.tags-list li {
@@ -548,15 +548,14 @@
 			width: 100%;
 			top: -206px;
 		}
-
+		#results-container {
+			width: 100%;
+		}
 		#search-control-bar {
 			width: 100%;
 			top: -106px;
 		}
 
-		#results-container {
-			width: 100%;
-		}
 	}
 
 	@include breakpoint(narrower) {
@@ -634,6 +633,9 @@
 		.sessions-list small{
 			font-size: 0.75em;
 		}
+		.tags-list {
+			font-size: 0.9em;
+		}
 		
 	@include breakpoint(mobilep) {
 		.company-logo {
@@ -653,7 +655,7 @@
 		.sessions-list {
 			margin: 0px;
 			font-size: 1.1em;
-			padding: 0;
+			padding: 0 4px 0 2px;
 		}
 		.sessions-list li {
 			padding: 0;
@@ -670,6 +672,7 @@
 		}
 		.tags-list {
 			margin: 10px 0;
+			line-height: 1.3em;
 		}
 		.tags-list li {
 			margin: 10px 0;
