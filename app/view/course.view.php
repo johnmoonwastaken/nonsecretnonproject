@@ -117,7 +117,7 @@
 											<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
 											<?php echo $designation ?></li>
 											<?php endif ?>
-											<li><span class="icon price-tag"></span> <strong>Tags</strong><br />
+											<li><span class="icon-price-tag"></span> <strong>Tags</strong><br />
 											<?php
 												$count = 0;
 												foreach($tags as $tag) {
@@ -133,7 +133,7 @@
 									</div>
 									<ul id="info-sessions">
 										<div id="register-session">
-											<span class="icon triangle-down"></span><strong>Register & Session Information</strong>
+											<span class="icon-play3"></span><strong>Register & Session Information</strong>
 										</div><!--
 										<li id="loading-sessions">Loading course sessions... <img src="../../images/polymer-loader.gif" /></li>
 										-->

@@ -1263,6 +1263,13 @@ body {
 #content-section h4 {
   margin-top: 20px; }
 
+.icon-play3 {
+  display: block;
+  position: absolute;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(90deg); }
+
 #info-bar {
   list-style: none;
   width: 100%;
