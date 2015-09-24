@@ -406,7 +406,7 @@
 		list-style: none;
 		margin: 5px 70px 0 80px;
 		padding: 0;
-		font-size: 0.7em;
+		font-size: 0.85em;
 	}
 
 	.tags-list li {
@@ -602,18 +602,39 @@
 		#left-box {
 			display: none;
 		}
-
 		#results-list {
-			padding-left: 1em;
+			padding-left: 5px;
+		}
+		#results-list li{
+			margin-right: 0px;
 		}
 		.sessions-list {
-			font-size: 1.05em;
+			font-size: 1.15em;
+			margin: 0px 5px 10px 80px;
+		}
+		.sessions-list h4 {
+		    font-size: 0.77em;
+		}
+		.sessions-list li > a {
+		    height: 37px;
 		}
 		.sessions-list .session-dates {
 			margin: 3px 0px 3px 0;
 		}
+		.sessions-list .session-location {
+			margin: 0;
+		}
+		.sessions-list .session-price-container {
+			margin: 4px 10px 0 0;
+		}
+		.sessions-list .session-price-container h4 {
+			line-height: 0.8em;
+			font-size: 0.8em;
+		}
+		.sessions-list small{
+			font-size: 0.75em;
+		}
 		
-
 	@include breakpoint(mobilep) {
 		.company-logo {
 			display: none;
@@ -624,18 +645,21 @@
 			padding-top: 5px;
 		}
 		#results-list a {
-			font-size: 0.77em;
+			font-size: 1.0em;
 			padding: 0;
 		}
 		#results-list #short-desc {
 		}
 		.sessions-list {
 			margin: 0px;
-			font-size: 1.5em;
+			font-size: 1.1em;
 			padding: 0;
 		}
 		.sessions-list li {
 			padding: 0;
+		}
+		.sessions-list li > a {
+		    height: 38px;
 		}
 		.sessions-list .session-dates {
 			margin: 3px 0px 3px 0;
@@ -646,9 +670,8 @@
 		}
 		.tags-list {
 			margin: 10px 0;
-			
 		}
-		.tags-list li{
+		.tags-list li {
 			margin: 10px 0;
 		}
 	}
