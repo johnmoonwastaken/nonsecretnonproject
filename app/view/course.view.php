@@ -6,8 +6,22 @@
 		<?php include 'below_title.php' ?>
 		<link rel="stylesheet" href="../../css/course.css">
 		<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+
+		<style is="custom-style">
+			section > paper-button {
+		    	background-color: var(--google-grey-300);
+		    	padding: 25px;
+		    }
+		    section > paper-button:hover {
+		    	background-color: var(--paper-light-blue-200);
+		    	padding: 25px;
+		    }
+			paper-dialog.size-position {
+				padding: 5px;
+			}
+		</style>
 	</head>
-	<body class="homepage">
+	<body class="homepage" unresolved>
 		<div id="page-wrapper">
 			<?php include 'header.view.php' ?>
 			<!-- Hero -->
@@ -138,11 +152,9 @@
 										<li id="loading-sessions">Loading course sessions... <img src="../../images/polymer-loader.gif" /></li>
 										-->
 										<section onclick="clickHandler(event)">
-											<span data-dialog="modal">modal dialog</span>
-										</section>
 											<span id="display-sessions">
 												<?php if (is_array($sessionList)) { foreach($sessionList as $session): ?>
-													<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?>  onClick="showSession(<?php echo $session['session_id'] ?>);">
+													<li <?php if($session['session_id'] == $_GET['session']) echo 'class="selected"'; ?> data-dialog="sad">
 														<div><span class="icon calendar"></span> <span class="dates"><?php { 
 															if ($session['session_type'] == "Online - Self Learning") {
 																echo "Online";
@@ -166,17 +178,22 @@
 												<?php endforeach; } ?>
 											</span>
 
+											<paper-dialog id="sad" class="size-position">
+												<h1>{{heading}}</h1>
+												<paper-dialog-scrollable>
+												</paper-dialog-scrollable>
+												<div class="buttons">
+													<paper-button dialog-dismiss>Close</paper-button>
+										        	<paper-button dialog-confirm autofocus>Register</paper-button>
+										      	</div>
+										    </paper-dialog>
+
+										</section>
 									</ul>
 								</div>
 								</div>
 							</div>
 						</div>
-						<paper-dialog id="modal" modal>
-					    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				    		<div class="buttons">
-				    			<paper-button dialog-confirm autofocus>Tap me to close</paper-button>
-				    		</div>
-					    </paper-dialog>
 					    <script>
 					    function clickHandler(e) {
 					      var button = e.target;
