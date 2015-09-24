@@ -1195,8 +1195,8 @@ body {
   width: device-width; }
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?2fzrdo");
-  src: url("../fonts/icomoon.eot?#iefix2fzrdo") format("embedded-opentype"), url("../fonts/icomoon.ttf?2fzrdo") format("truetype"), url("../fonts/icomoon.woff?2fzrdo") format("woff"), url("../fonts/icomoon.svg?2fzrdo#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?-jd195j");
+  src: url("../fonts/icomoon.eot?#iefix-jd195j") format("embedded-opentype"), url("../fonts/icomoon.ttf?-jd195j") format("truetype"), url("../fonts/icomoon.woff?-jd195j") format("woff"), url("../fonts/icomoon.svg?-jd195j#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -1393,6 +1393,9 @@ body {
 
 .icon-paypal:before {
   content: "\e63c"; }
+
+.icon-library:before {
+  content: "\e63d"; }
 
 body {
   background: #f5f7fa;
@@ -1702,20 +1705,18 @@ button,
     border-color: rgba(243, 88, 88, 0.5); }
 
 /* Icons */
-.icon {
-  text-decoration: none; }
-  .icon:before {
-    display: inline-block;
-    font-family: Pacifico;
-    font-size: 1.25em;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-  .icon > .label {
-    display: none; }
+.icon:before {
+  display: inline-block;
+  font-family: Pacifico;
+  font-size: 1.25em;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+.icon > .label {
+  display: none; }
 
 /* Wrappers */
 .wrapper {
@@ -2327,7 +2328,7 @@ button,
         font-weight: normal;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        content: '\e615';
+        content: '\e619';
         color: rgba(255, 255, 255, 0.9);
         font-size: 20px;
         text-align: center;

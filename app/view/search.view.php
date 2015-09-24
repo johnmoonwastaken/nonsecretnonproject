@@ -94,7 +94,7 @@
 								<?php if ($_GET['category'] != '') { echo '<input type="hidden" name="category" value="' . $_GET['category'] . '">'; } ?>
 							<ul id="filters-accordion">
 								<li>
-									<a href="#"><span class="icon triangle-down"></span>Name contains</a>
+									<a href="#"><span class="icon-play3"></span><span class="filters-accordion-element">Name contains</span></a>
 									<div class="inputbox">
 										<input type="text" id="searchbox-keywords" name="keywords" placeholder="" required class="form-text form-name" <?php if ($_GET['keywords']) { echo 'value="'.$_GET['keywords'].'"'; } ?>>
 									</div>
@@ -105,7 +105,7 @@
 								</li>
 								-->
 								<li>
-									<a href="#"><span class="icon triangle-down"></span>Date</a>
+									<a href="#"><span class="icon-play3"></span><span class="filters-accordion-element">Date</span></a>
 									<div class="inputbox">
 										<input type="text" id="searchbox-start" name="start" class="form-text form-date" <?php if ($_GET['start']) { echo 'value='.$_GET['start']; } ?>> to
 										<script type="text/javascript">
@@ -124,14 +124,14 @@
 									</div>
 								</li>
 								<li>
-									<a href="#"><span class="icon triangle-down"></span>Price</a>
+									<a href="#"><span class="icon-play3"></span><span class="filters-accordion-element">Price</span></a>
 								</li>
 									<div class="pricebox">
 									 	<span class="pricedollarbox">$<input type="text" id="min-price" name="min" class="form-text form-price" <?php if ($_GET['min'] == '') { echo 'value="0"'; } else echo 'value="' . $_GET['min'] . '"'; ?>></span> to 
 										<span class="pricedollarbox">$<input type="text" id="max-price" name="max" class="form-text form-price" <?php if ($_GET['max'] == '-1') { echo 'value=""'; } else echo 'value="' . $_GET['max'] . '"';?>></span>
 									</div>
 								<li>
-									<a href="#"><span class="icon triangle-down"></span>Location</a>
+									<a href="#"><span class="icon-play3"></span><span class="filters-accordion-element">Location</span></a>
 									<div class="inputbox">
 										<select id="searchbox-location" name="location" placeholder="Location">
 											<option value="Everywhere" <?php if ($_GET['location'] == "Everywhere") echo 'selected'; ?>>Everywhere</option>

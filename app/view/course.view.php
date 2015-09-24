@@ -36,10 +36,10 @@
 								<ul id="info-tags">
 								
 									<?php if ($designation != "" && $designation != "-1"): ?>
-									<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
+									<li><span class="icon-library"></span> <strong>Credits and Designations</strong><br />
 									<?php echo $designation ?></li>
 									<?php endif ?>
-									<li><span class="icon price-tag"></span> <strong>Tags</strong><br />
+									<li><span class="icon-price-tag"></span> <strong>Tags</strong><br />
 									<?php
 										$count = 0;
 										foreach($tags as $tag) {
@@ -114,7 +114,7 @@
 										<ul id="info-tags">
 										
 											<?php if ($designation != "" && $designation != "-1"): ?>
-											<li><span class="icon graduation-cap"></span> <strong>Credits and Designations</strong><br />
+											<li><span class="icon-library"></span> <strong>Credits and Designations</strong><br />
 											<?php echo $designation ?></li>
 											<?php endif ?>
 											<li><span class="icon-price-tag"></span> <strong>Tags</strong><br />

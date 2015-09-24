@@ -126,8 +126,9 @@
 		margin-top: 20px;
 	}
 	.icon-play3 {
+		color: #999;
 		display:block; 
-		position:absolute; 
+	 	position:absolute; 
 		-ms-transform: rotate(0deg); 
 		-webkit-transform: rotate(0deg); 
 		transform: rotate(90deg);
@@ -190,7 +191,9 @@
 		padding:13px 0 13px 10px;
 		border-bottom: 5px solid #4ca166;
 	}
-
+	#register-session strong{
+		margin-left: 16px;
+	}
 	#info-sessions li:hover {
 		background: #cde4d4;
 	}
@@ -420,8 +423,11 @@
 			width: 100%;
 			margin-left: 0;
 		}
+		.icon-play3 {
+			margin-left: 9px;
+		}
 		#register-session strong {
-			margin-left: 12px;
+			margin-left: 21px;
 		}
 	}
 
@@ -441,9 +447,14 @@
 		#content-section {
 			padding-left: 6px;
 		}
-
 		#container2 {
 			border-right: none;
+		}
+		.icon-play3 {
+			display: none;
+		}		
+		.icon-price-tag {
+			display: none;
 		}
 		#register-session strong{
 			margin-left: -4px;

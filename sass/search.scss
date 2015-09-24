@@ -46,6 +46,18 @@
 		font-family: "Open Sans",Helvetica,Arial,Sans Serif;
 	}
 
+	.icon-play3 {
+		display:block; 
+	 	width: 0px;
+	 	height: 0px;
+	 	margin-left: 12px;
+	 	-ms-transform: rotate(0deg); 
+		-webkit-transform: rotate(0deg); 
+		transform: rotate(90deg);
+	}
+	.filters-accordion-element {
+		margin-left: 15px;
+	}
 	#main-section {
 		background: #f8f8f8;
 		position: relative;
@@ -175,7 +187,6 @@
 		font-size: 0.9em;
 		/*border-right: 1px solid #d7d7d7;*/
 	}
-
 	#filters-accordion li {
 		padding: 5px 5px;
 		margin: 0px 10px 8px;
@@ -189,7 +200,7 @@
 
 	#filters-accordion > li > a {
 		color: #585858;
-
+		margin-left: 15px;
 	}
 
 	#filters-accordion > li > a:hover {
